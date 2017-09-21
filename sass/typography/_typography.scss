@@ -6,8 +6,21 @@ optgroup,
 textarea {
 	color: $color__text-main;
 	font-family: $font__main;
-	@include font-size(1);
+	@include font-size(.9);
 	line-height: $font__line-height-body;
+        
+        /* Media Breakpoints for Responsive Typography */
+        @media #{$tablet__breakpoint} {
+            @include font-size(1);
+        }
+        
+        @media #{$desktop__breakpoint} {
+            @include font-size(1.125);
+        }
+        
+        @media #{$lg-desktop__breakpoint} {
+            @include font-size(1.250);
+        }
 }
 
 @import "headings";

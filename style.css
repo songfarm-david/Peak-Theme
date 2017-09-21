@@ -266,9 +266,46 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: "Titillium Web", sans-serif;
-	font-size: 20px;
-	font-size: 1.25rem;
+	font-size: 18px;
+	font-size: 1.125rem;
 	line-height: 1.5;
+	/* Media Breakpoints for Responsive Typography */
+}
+
+@media (min-width: 48em) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 20px;
+		font-size: 1.25rem;
+	}
+}
+
+@media (min-width: 75em) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 22.5px;
+		font-size: 1.40625rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body,
+	button,
+	input,
+	select,
+	optgroup,
+	textarea {
+		font-size: 25px;
+		font-size: 1.5625rem;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {

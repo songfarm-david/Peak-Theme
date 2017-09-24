@@ -760,10 +760,47 @@ a:hover, a:active {
 # Content
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
+## Global styles
+--------------------------------------------------------------*/
+/**
+  * This file is for global/site-wide styles like padding and margins
+  */
+/*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
 .site-header {
 	border: 5px solid red;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 0 0.25em;
+}
+
+@media (min-width: 75em) {
+	.site-header {
+		padding: 0 1em;
+	}
+}
+
+.site-branding {
+	border: solid blue;
+	width: 33%;
+}
+
+.site-title,
+.site-description {
+	margin: 0;
+}
+
+.site-title {
+	line-height: normal;
+}
+
+.main-navigation {
+	width: 66%;
 }
 
 /*--------------------------------------------------------------

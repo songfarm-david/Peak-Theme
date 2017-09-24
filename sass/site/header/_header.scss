@@ -1,4 +1,68 @@
 .site-header {
-    @include border(5px);
+    //@include border(5px);
+    display: flex;
+    // justify-content: space-between;
+    padding: 0.10em;
+    @media #{$desktop__breakpoint} {
+        // padding: 0 1em;
+    }
+    
+
 }
 
+.site-branding {
+    //@include border(null,blue);
+    min-height: 65px;
+    //width: 33%;
+    display: flex;
+}
+
+.custom-logo-link {
+    //@include border;
+    margin-right: 0.25em;
+    width: 10%;
+    //display: flex;
+    //width: 100;
+    //height: 100;
+    //display: block;
+    img {
+        vertical-align: middle;
+        //@include border(1px,black);
+        //width: 300px;
+    }
+}
+
+.site-title,
+.site-description {
+    margin: 0;
+    
+}
+
+.custom-logo-link,
+.site-branding-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // have flexible height container: what is the em equivalent of 65px, 90px?
+}
+
+.site-title {
+    //font-size: 1.777em;
+    font-size: 2.369em;
+    //font-size: 4em;
+    line-height: normal;
+    font-weight: 300;
+    a {
+        text-decoration: none;
+    }
+}
+
+.site-description {
+    //line-height: 1;
+    font-style: italic;
+    display: none; // write function to toggle this off?? customizer??
+}
+
+.main-navigation {
+    // width: 66%;
+}

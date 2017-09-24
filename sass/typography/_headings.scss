@@ -3,6 +3,11 @@ h1, h2, h3, h4, h5, h6 {
         font-family: $font__header;
 }
 
+// select elements forced to inherit from header font family 
+.site-title {
+    font-family: $font__header;
+}
+
 h1 {
     font-size: 3.157em;
 }
@@ -22,6 +27,8 @@ h4 {
 h5 {
     font-size: 1em;
 }
+
+/* NOTE: write mixin function that can quickly calculate these header size values to use within site styles */
 
 h6,
 small,

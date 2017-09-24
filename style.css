@@ -316,6 +316,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
 }
 
+.site-title {
+	font-family: "Raleway", sans-serif;
+}
+
 h1 {
 	font-size: 3.157em;
 }
@@ -336,6 +340,7 @@ h5 {
 	font-size: 1em;
 }
 
+/* NOTE: write mixin function that can quickly calculate these header size values to use within site styles */
 h6,
 small,
 .font_small {
@@ -769,25 +774,26 @@ a:hover, a:active {
 ## Posts and pages
 --------------------------------------------------------------*/
 .site-header {
-	border: 5px solid red;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-pack: justify;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	padding: 0 0.25em;
-}
-
-@media (min-width: 75em) {
-	.site-header {
-		padding: 0 1em;
-	}
+	padding: 0.10em;
 }
 
 .site-branding {
-	border: solid blue;
-	width: 33%;
+	min-height: 65px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.custom-logo-link {
+	margin-right: 0.25em;
+	width: 10%;
+}
+
+.custom-logo-link img {
+	vertical-align: middle;
 }
 
 .site-title,
@@ -795,12 +801,33 @@ a:hover, a:active {
 	margin: 0;
 }
 
-.site-title {
-	line-height: normal;
+.custom-logo-link,
+.site-branding-text-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 
-.main-navigation {
-	width: 66%;
+.site-title {
+	font-size: 2.369em;
+	line-height: normal;
+	font-weight: 300;
+}
+
+.site-title a {
+	text-decoration: none;
+}
+
+.site-description {
+	font-style: italic;
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -887,10 +914,6 @@ object {
 }
 
 /* Make sure logo link wraps around logo image. */
-.custom-logo-link {
-	display: inline-block;
-}
-
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/

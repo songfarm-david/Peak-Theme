@@ -74,10 +74,10 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 111,
+			'width'       => 111,
 			'flex-width'  => true,
-			'flex-height' => true,
+                        'flex-height' => true
 		) );
 	}
 endif;
@@ -145,7 +145,7 @@ function peak_theme_scripts() {
 	wp_enqueue_script( 'peak-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// load Google fonts
-        wp_enqueue_style( 'peak-theme-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800|Titillium+Web');
+        wp_enqueue_style( 'peak-theme-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300|Titillium+Web');
         
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

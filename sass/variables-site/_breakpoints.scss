@@ -1,3 +1,8 @@
+/**
+  * Note: em values are calculated by desired content width and dividing by global px value
+  * Ex: 1200px / 16px = 75em
+  */
+
 $tablet__breakpoint: "(min-width: 48em)";
 $desktop__breakpoint: "(min-width: 75em)";
 $lg-desktop__breakpoint: "(min-width: 118.75em)";

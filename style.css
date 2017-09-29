@@ -41,6 +41,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/**
+  * Note: em values are calculated by desired content width and dividing by global px value
+  * Ex: 1200px / 16px = 75em
+  */
 /*--------------------------------------------------------------
 ## Helper Mixins
 --------------------------------------------------------------*/
@@ -316,7 +320,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
 }
 
-.site-title {
+.site-title,
+.main-navigation {
 	font-family: "Raleway", sans-serif;
 }
 
@@ -770,6 +775,29 @@ a:hover, a:active {
 /**
   * This file is for global/site-wide styles like padding and margins
   */
+.site-content {
+	padding: 0 0.5em;
+}
+
+@media (min-width: 48em) {
+	.site-content .content-area {
+		margin: 0 auto;
+		max-width: 40em;
+	}
+}
+
+@media (min-width: 75em) {
+	.site-content .content-area {
+		max-width: 44em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.site-content .content-area {
+		max-width: 48em;
+	}
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -777,19 +805,28 @@ a:hover, a:active {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	padding: 0.10em;
 }
 
 .site-branding {
+	border: solid blue;
 	min-height: 65px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 40%;
+	        flex: 1 0 40%;
+	-ms-flex: 1 0 30%;
+	    flex: 1 0 30%;
 }
 
 .custom-logo-link {
 	margin-right: 0.25em;
 	width: 10%;
+	width: 15%;
 }
 
 .custom-logo-link img {
@@ -802,7 +839,8 @@ a:hover, a:active {
 }
 
 .custom-logo-link,
-.site-branding-text-container {
+.site-branding-text-container,
+.main-navigation {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -826,8 +864,23 @@ a:hover, a:active {
 }
 
 .site-description {
+	line-height: 1;
 	font-style: italic;
 	display: none;
+}
+
+.main-navigation {
+	border: 5px solid green;
+}
+
+.main-navigation .menu li {
+	padding: 0.5em 1.5em;
+	border: 2px solid red;
+}
+
+.main-navigation .menu li:last-child,
+.main-navigation .menu li:nth-last-child(2) {
+	float: right;
 }
 
 /*--------------------------------------------------------------

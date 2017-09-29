@@ -802,12 +802,20 @@ a:hover, a:active {
 ## Posts and pages
 --------------------------------------------------------------*/
 .site-header {
+	border: 5px solid red;
+	padding: 0.10em;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	padding: 0.10em;
+}
+
+@media (min-width: 75em) {
+	.site-header {
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+	}
 }
 
 .site-branding {
@@ -816,21 +824,52 @@ a:hover, a:active {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 0 40%;
-	        flex: 1 0 40%;
-	-ms-flex: 1 0 30%;
-	    flex: 1 0 30%;
 }
 
-.custom-logo-link {
+.site-branding .custom-logo-link {
 	margin-right: 0.25em;
-	width: 10%;
-	width: 15%;
+	max-width: 15%;
+	/* NOTE: revisit max-width property of Logo */
 }
 
-.custom-logo-link img {
+.site-branding .custom-logo-link img {
 	vertical-align: middle;
+	border: 1px solid black;
+}
+
+.main-navigation {
+	border: 1px solid green;
+}
+
+.main-navigation .menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: space-evenly;
+	    -ms-flex-pack: space-evenly;
+	        justify-content: space-evenly;
+	/* to split last two li items from others and float right */
+	/*        li:last-child,
+        li:nth-last-child(2){
+            float: right;
+        }*/
+}
+
+@media (min-width: 75em) {
+	.main-navigation .menu {
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+}
+
+.main-navigation .menu li {
+	float: none;
+	border: 2px solid red;
+}
+
+.main-navigation .menu li a {
+	padding: 0.5em 1.5em;
 }
 
 .site-title,
@@ -869,18 +908,10 @@ a:hover, a:active {
 	display: none;
 }
 
-.main-navigation {
-	border: 5px solid green;
-}
-
-.main-navigation .menu li {
-	padding: 0.5em 1.5em;
-	border: 2px solid red;
-}
-
-.main-navigation .menu li:last-child,
-.main-navigation .menu li:nth-last-child(2) {
-	float: right;
+.site-header:before,
+.site-header:after {
+	content: none;
+	/* this removes clears around site header so that flexbox justify properties will work */
 }
 
 /*--------------------------------------------------------------

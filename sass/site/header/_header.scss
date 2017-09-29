@@ -1,31 +1,57 @@
 .site-header {
-    //@include border(5px);
-    display: flex;
-    // justify-content: space-between;
+    @include border(5px);
     padding: 0.10em;
+    display: flex;
+    flex-wrap: wrap;
     @media #{$desktop__breakpoint} {
-        // padding: 0 1em;
+        flex-wrap: nowrap;
+        
     }
-    
-
 }
 
 .site-branding {
-    //@include border(null,blue);
+    @include border(null,blue);
     min-height: 65px;
-    //width: 33%;
     display: flex;
-}
-
-.custom-logo-link {
+    
+    .custom-logo-link {
     //@include border;
     margin-right: 0.25em;
-    width: 10%;
+    max-width: 15%;
+    /* NOTE: revisit max-width property of Logo */
+    
     img {
         vertical-align: middle;
-        //@include border(1px,black);
+        @include border(1px,black);
     }
 }
+}
+
+.main-navigation {
+    @include border(1px, green);
+    .menu {
+        display: flex;
+        justify-content: space-evenly;
+        @media #{$desktop__breakpoint} {
+            justify-content: flex-end;
+        }
+        li {
+            float: none;
+            @include border;
+            a {
+                padding: 0.5em 1.5em;
+            }
+        }
+        
+        /* to split last two li items from others and float right */
+/*        li:last-child,
+        li:nth-last-child(2){
+            float: right;
+        }*/
+    }
+}
+
+
 
 .site-title,
 .site-description {
@@ -34,7 +60,8 @@
 }
 
 .custom-logo-link,
-.site-branding-text-container {
+.site-branding-text-container,
+.main-navigation {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,11 +80,14 @@
 }
 
 .site-description {
-    //line-height: 1;
+    line-height: 1;
     font-style: italic;
     display: none; // write function to toggle this off?? customizer??
 }
 
-.main-navigation {
-    // width: 66%;
+
+
+.site-header:before,
+.site-header:after {
+    content: none; /* this removes clears around site header so that flexbox justify properties will work */
 }

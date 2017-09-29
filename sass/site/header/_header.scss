@@ -12,13 +12,26 @@
 .site-branding {
     @include border(null,blue);
     min-height: 65px;
+    //width: 100%;
     display: flex;
+    flex-basis: 100%;
+    @media #{$desktop__breakpoint} {
+        flex: 0 0 45%;
+    }
     
     .custom-logo-link {
     //@include border;
     margin-right: 0.25em;
-    max-width: 15%;
+    min-width: 65px;
+    max-width: 5em;
     /* NOTE: revisit max-width property of Logo */
+    @media #{$tablet__breakpoint} {
+        //max-width: 12%;
+        max-width: 6em;
+    }
+    @media #{$desktop__breakpoint} {
+        max-width: 5em;
+    }
     
     img {
         vertical-align: middle;
@@ -30,8 +43,10 @@
 .main-navigation {
     @include border(1px, green);
     .menu {
-        display: flex;
-        justify-content: space-evenly;
+        @media #{$tablet__breakpoint} {
+            display: flex;
+            justify-content: space-evenly;
+        }
         @media #{$desktop__breakpoint} {
             justify-content: flex-end;
         }
@@ -84,8 +99,6 @@
     font-style: italic;
     display: none; // write function to toggle this off?? customizer??
 }
-
-
 
 .site-header:before,
 .site-header:after {

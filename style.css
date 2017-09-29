@@ -587,9 +587,6 @@ a:hover, a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
 	width: 100%;
 }
 
@@ -644,7 +641,7 @@ a:hover, a:active {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: 48em) {
 	.menu-toggle {
 		display: none;
 	}
@@ -824,12 +821,35 @@ a:hover, a:active {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+}
+
+@media (min-width: 75em) {
+	.site-branding {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 45%;
+		        flex: 0 0 45%;
+	}
 }
 
 .site-branding .custom-logo-link {
 	margin-right: 0.25em;
-	max-width: 15%;
+	min-width: 65px;
+	max-width: 5em;
 	/* NOTE: revisit max-width property of Logo */
+}
+
+@media (min-width: 48em) {
+	.site-branding .custom-logo-link {
+		max-width: 6em;
+	}
+}
+
+@media (min-width: 75em) {
+	.site-branding .custom-logo-link {
+		max-width: 5em;
+	}
 }
 
 .site-branding .custom-logo-link img {
@@ -842,17 +862,22 @@ a:hover, a:active {
 }
 
 .main-navigation .menu {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: space-evenly;
-	    -ms-flex-pack: space-evenly;
-	        justify-content: space-evenly;
 	/* to split last two li items from others and float right */
 	/*        li:last-child,
         li:nth-last-child(2){
             float: right;
         }*/
+}
+
+@media (min-width: 48em) {
+	.main-navigation .menu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: space-evenly;
+		    -ms-flex-pack: space-evenly;
+		        justify-content: space-evenly;
+	}
 }
 
 @media (min-width: 75em) {

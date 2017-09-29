@@ -1,7 +1,7 @@
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
+	//clear: both;
+	//display: block;
+	//float: left;
 	width: 100%;
 
 	ul {
@@ -76,7 +76,7 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media #{$tablet__breakpoint} {
 	.menu-toggle {
 		display: none;
 	}

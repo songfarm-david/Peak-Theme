@@ -42,10 +42,10 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
+		// Use this function to register multiple menus at once.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Header', 'peak-theme' ),
-                        'menu-2' => esc_html__( 'Footer', 'peak-theme' )
+			'primary-menu' => esc_html__( 'Header', 'peak-theme' ),
+                        'footer-menu' => esc_html__( 'Footer', 'peak-theme' )
 		) );
 
 		/*
@@ -127,6 +127,16 @@ function peak_theme_widgets_init() {
 		'name'          => esc_html__( 'Sidebar', 'peak-theme' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'peak-theme' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+        
+        register_sidebar( array(
+		'name'          => esc_html__( 'Footer Widget', 'peak-theme' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Add footer widgets here.', 'peak-theme' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',

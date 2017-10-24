@@ -2,7 +2,7 @@
   * This file is for global/site-wide styles like padding and margins
   */
 .site-content {
-    padding: 0 0.5em;
+    padding: 0 1em;
     
     @media #{$tablet__breakpoint} {     
         .content-area {

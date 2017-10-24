@@ -2,63 +2,23 @@
     //@include border(5px);
     padding: 0.10em;
     display: flex;
-    flex-wrap: wrap;
-    @media #{$desktop__breakpoint} {
-        flex-wrap: nowrap; 
-    }
-}
+    justify-content: space-between;
 
-.site-branding {
-    //@include border(null,blue);
-    min-height: 65px;
-    //width: 100%;
-    display: flex;
-    flex-basis: 100%;
-    @media #{$desktop__breakpoint} {
-        flex: 0 0 45%;
-    }
-    
-    .custom-logo-link {
-    //@include border;
-    margin-right: 0.25em;
-    min-width: 65px;
-    max-width: 4.5em;
-    /* NOTE: revisit max-width property of Logo */
     @media #{$tablet__breakpoint} {
-        //max-width: 12%;
-        max-width: 5em;
-    }
-    @media #{$desktop__breakpoint} {
-        max-width: 4em;
-    }
-    
-    img {
-        vertical-align: middle;
-        //@include border(1px,black);
-    }
-}
-}
-
-.main-navigation {
-    //@include border(1px, green);
-    .menu {
-        @media #{$tablet__breakpoint} {
-            display: flex;
-            justify-content: space-evenly;
-        }
-        @media #{$desktop__breakpoint} {
-            justify-content: flex-end;
-        }
-        
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 1001;   
     }
 }
 
-.site-title,
-.site-description {
-    margin: 0;
-    
+.site-branding,
+.site-navigation {
+    flex: 1 0 auto;
 }
-
+/**
+  * (flex) center vertically header/branding content 
+  */
 .custom-logo-link,
 .site-branding-text-container,
 .main-navigation {
@@ -68,9 +28,72 @@
     // have flexible height container: what is the em equivalent of 65px, 90px?
 }
 
+.site-branding {
+
+    min-height: 65px;
+    display: flex;
+    margin-bottom: 3px; /* detail spacing */
+    margin-left: 3px;
+    //flex-basis: 100%;
+
+    @media #{$tablet__breakpoint} {
+        flex: 1 0 33%;
+    }
+
+    @media #{$desktop__breakpoint} {
+        flex-basis: 45%;
+    }
+
+    .custom-logo-link {
+        margin-right: 0.25em;
+        min-width: 65px;
+        max-width: 4.5em;
+        /* NOTE: revisit max-width property of Logo */
+        @media #{$tablet__breakpoint} {
+            max-width: 2em;
+        }
+        @media #{$desktop__breakpoint} {
+            max-width: 3em;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+}
+
+.site-navigation {
+
+}
+
+.main-navigation {
+    //@include border(1px, green);
+    .menu {
+        @media #{$tablet__breakpoint} {
+            display: flex;
+            //flex-wrap: nowrap;
+            //justify-content: space-evenly;
+            justify-content: flex-end;
+        }
+        @media #{$desktop__breakpoint} {
+            //justify-content: flex-end;
+        }
+
+    }
+}
+
+.site-title,
+.site-description {
+    margin: 0;
+
+}
+
+
+
 .site-title {
-    //font-size: 1.777em;
-    font-size: 2.369em;
+    font-size: 1.777em;
+    //font-size: 2.369em;
     //font-size: 4em;
     line-height: normal;
     font-weight: 300;

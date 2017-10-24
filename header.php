@@ -54,4 +54,18 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+        <?php if ( is_front_page() ) : ?>
+        <!-- Landing Page -->
+            <section id="hero-banner">
+                <!-- TEST: img commented out to reduce requests -->
+                <!--<img class="at-only" src="/" alt="The peak of a large, snow-covered mountain on a crisp and cloudy day" />-->
+                <div class="hero-headline-container">
+                    <h1 class="" itemprop="headline">Elevate Your Online Potential.</h1>
+                    <p itemprop="alternativeHeadline">Web Design and SEO to generate leads and drive more sales for your business</p>
+                    <a href="#">Get Started</a>
+                </div>
+                <!-- <a href="#complicated-web" id="down-arrow" class="scroll-link"></a> -->
+            </section><!-- #hero-banner -->
+        <?php endif; ?>
+        
 	<div id="content" class="site-content">

@@ -1,11 +1,13 @@
 .widget-area {
-    @include border;
+    //@include border;
 }
 
 .widget {
+    
+        //@include border(blue);
 	margin: 0 0 2em;
 	padding: 0 0 2em;
-	font-family: $font__main;
+	//font-family: $font__main;
 	
 	ul,
 	ol {
@@ -44,7 +46,7 @@
 		width: 100%;
 		height: 2.5em;
 		padding: 10px;
-		font-family: $font__main;
+		//font-family: $font__main;
 		border: 1px solid #ccc;
 	}
 	
@@ -100,7 +102,6 @@
 	
 }
 
-
 /* Meta widget */
 .widget_meta li {
 	padding: 0;
@@ -139,7 +140,7 @@
 
 .rssSummary {
 	padding: .5em 0;
-	font-family: $font__header;
+	//font-family: $font__header;
 	font-size: .8em;
     line-height: 1.4em;
 }
@@ -198,9 +199,58 @@
 }
 
 /* Text widget */
-.textwidget {
-	font-size: 80%;
-	line-height: 1.3em;
+
+/* MailChimp signup form */
+.widget #mc_embed_signup {
+    p {
+        margin: 0.5em 0 1em;
+    }
+    .indicates-required {
+        display: none;
+    }
+    .mc-field-group {
+        clear:left; 
+        position:relative; 
+        width:96%; 
+        padding-bottom:3%; 
+        min-height:50px;
+        .asterisk {
+            color: red;
+        }
+    }
+    .mc-field-group label {
+        display: block;
+        font-weight: bold;
+        font-size: 85%;
+        margin-bottom: 0.25em;
+    }
+    .mc-field-group input {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        text-indent: 2%;
+    }
+    .button {
+        clear: both; 
+        background-color: #aaa; 
+        border: 0 none; 
+        border-radius:4px; 
+        transition: all 0.23s ease-in-out 0s; 
+        color: #FFFFFF; 
+        cursor: pointer; 
+        display: inline-block; 
+        font-size: 1em; 
+        font-weight: normal; 
+        min-height: 1em; 
+        line-height: 1em; 
+        margin: 0 5px 10px 0; 
+        padding: 0.75em 1.25em; 
+        text-align: center; 
+        text-decoration: none; 
+        vertical-align: top; 
+        white-space: nowrap; 
+        width: auto;
+    }
 }
 
 /* Footer widget styles */
@@ -208,7 +258,9 @@
 .footer-widgets {
 	margin: 2em 0 0;
 	padding: 1em 0;
-	background-color: hsl(0, 0%, 10%);
+        
+	//background-color: hsl(0, 0%, 10%);
+        background-color: #ccc;
 	
 	@media #{$tablet__breakpoint} {
 		padding: 2em 1em;
@@ -216,13 +268,13 @@
 	
 	.widget {
 		flex: 1;
-		margin: 0 1em 2em;
+		margin: 0 1em 1em;
 		padding-top: 1em;
-		
 		.original-title {
-			color: hsla(0, 0%, 100%, .5);
+			//color: hsla(0, 0%, 100%, .5);
 		}
 	}
+       
 	
 	.widget,
 	.widget-title,
@@ -230,12 +282,12 @@
 	.widget_calendar thead,
 	.rss-date, 
 	.widget_rss cite {
-		color: white;
+		//color: white;
 	}
 	
 	.widget_calendar td,
 	.widget_calendar a {
-		color: black;
+		//color: black;
 	}
 		
 	@media #{$desktop__breakpoint} {
@@ -248,18 +300,24 @@
 		.widget:only-of-type {
 			width: 100%;
 		}
+                
+/*                .widget:nth-child(2) {
+                    flex: 2;
+                }*/
 
 		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
 		.widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) { 
-			flex: 2;
+			//flex: 2;
+                        width: 30%;
+			flex: 1 1 30%;
 		}
 		
 		/* If 4 or more widgets are displayed, show three across when available. */
-		.widget:nth-last-child(n+4), 
+/*		.widget:nth-last-child(n+4), 
 		.widget:nth-last-child(n+4) ~ .widget { 
 			width: 30%;
 			flex: 1 1 30%;
-		}
+		}*/
 	}
 	
 }

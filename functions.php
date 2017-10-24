@@ -20,9 +20,9 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on Peak Theme, use a find and replace
-		 * to change 'peak-theme' to the name of your theme in all the template files.
+		 * to change 'peak' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'peak-theme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'peak', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,8 +44,8 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 
 		// Use this function to register multiple menus at once.
 		register_nav_menus( array(
-			'primary-menu' => esc_html__( 'Header', 'peak-theme' ),
-                        'footer-menu' => esc_html__( 'Footer', 'peak-theme' )
+			'primary-menu' => esc_html__( 'Header', 'peak' ),
+                        'footer-menu' => esc_html__( 'Footer', 'peak' )
 		) );
 
 		/*
@@ -94,7 +94,7 @@ add_action( 'after_setup_theme', 'peak_theme_setup' );
  * @return array $urls           URLs to print for resource hints.
  */
 function peak_theme_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'peak-theme-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+	if ( wp_style_is( 'peak-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
@@ -124,9 +124,9 @@ add_action( 'after_setup_theme', 'peak_theme_content_width', 0 );
  */
 function peak_theme_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'peak-theme' ),
+		'name'          => esc_html__( 'Sidebar Widgets', 'peak' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'peak-theme' ),
+		'description'   => esc_html__( 'Add widgets here.', 'peak' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -134,9 +134,9 @@ function peak_theme_widgets_init() {
 	) );
         
         register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widget', 'peak-theme' ),
+		'name'          => esc_html__( 'Footer Widgets', 'peak' ),
 		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add footer widgets here.', 'peak-theme' ),
+		'description'   => esc_html__( 'Add footer widgets here.', 'peak' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -149,14 +149,18 @@ add_action( 'widgets_init', 'peak_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function peak_theme_scripts() {
-	wp_enqueue_style( 'peak-theme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'peak-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'peak-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
+        wp_localize_script('peak-navigation', 'peakScreenReaderText', array( 'expand' => __( 'Expand child menu', 'peak'), 
+                    'collapse' => __('Collapse child menu', 'peak') 
+            )
+        );
 
-	wp_enqueue_script( 'peak-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// load Google fonts
-        wp_enqueue_style( 'peak-theme-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300|Titillium+Web');
+        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
         
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

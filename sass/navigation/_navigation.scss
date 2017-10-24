@@ -57,6 +57,10 @@
                 
                 a {
                     padding: 0.5em 1.5em;
+                    font-weight: 400;
+                    text-align: center;
+                    white-space: nowrap;
+                    @include border;
                 }
         
 		&:hover > a,
@@ -131,4 +135,22 @@ a {
 	&:active {
 		outline: 0;
 	}
+}
+
+.main-navigation {
+    
+    .menu-item-has-children  {
+    
+    > a {
+        padding-right: 2em;
+    }
+    > button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0.35em;
+        line-height: inherit;
+    }
+}
+
 }

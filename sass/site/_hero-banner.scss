@@ -1,0 +1,30 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Oct-2017, 2:11:04 PM
+    Author     : David
+*/
+#hero-banner {
+    @include border;
+    position: relative;
+    background-color: #ccc;
+    background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 26.666em;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 2em;
+    
+    height: 100vh;
+    
+    .hero-headline-container {
+        @include border(1px, blue);
+        margin-top: 3.5em;
+    }
+}

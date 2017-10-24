@@ -609,6 +609,10 @@ textarea {
 
 .main-navigation li a {
 	padding: 0.5em 1.5em;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	border: 2px solid red;
 }
 
 .main-navigation a {
@@ -672,6 +676,19 @@ a:focus {
 
 a:hover, a:active {
 	outline: 0;
+}
+
+.main-navigation .menu-item-has-children > a {
+	padding-right: 2em;
+}
+
+.main-navigation .menu-item-has-children > button {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+	right: 0.35em;
+	line-height: inherit;
 }
 
 /*--------------------------------------------------------------
@@ -778,7 +795,7 @@ a:hover, a:active {
   * This file is for global/site-wide styles like padding and margins
   */
 .site-content {
-	padding: 0 0.5em;
+	padding: 0 1em;
 }
 
 @media (min-width: 48em) {
@@ -808,81 +825,30 @@ a:hover, a:active {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 48em) {
 	.site-header {
-		-ms-flex-wrap: nowrap;
-		    flex-wrap: nowrap;
+		position: fixed;
+		left: 0;
+		right: 0;
+		z-index: 1001;
 	}
 }
 
-.site-branding {
-	min-height: 65px;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-preferred-size: 100%;
-	    flex-basis: 100%;
+.site-branding,
+.site-navigation {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 auto;
+	        flex: 1 0 auto;
 }
 
-@media (min-width: 75em) {
-	.site-branding {
-		-webkit-box-flex: 0;
-		    -ms-flex: 0 0 45%;
-		        flex: 0 0 45%;
-	}
-}
-
-.site-branding .custom-logo-link {
-	margin-right: 0.25em;
-	min-width: 65px;
-	max-width: 4.5em;
-	/* NOTE: revisit max-width property of Logo */
-}
-
-@media (min-width: 48em) {
-	.site-branding .custom-logo-link {
-		max-width: 5em;
-	}
-}
-
-@media (min-width: 75em) {
-	.site-branding .custom-logo-link {
-		max-width: 4em;
-	}
-}
-
-.site-branding .custom-logo-link img {
-	vertical-align: middle;
-}
-
-@media (min-width: 48em) {
-	.main-navigation .menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: space-evenly;
-		    -ms-flex-pack: space-evenly;
-		        justify-content: space-evenly;
-	}
-}
-
-@media (min-width: 75em) {
-	.main-navigation .menu {
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
-	}
-}
-
-.site-title,
-.site-description {
-	margin: 0;
-}
-
+/**
+  * (flex) center vertically header/branding content 
+  */
 .custom-logo-link,
 .site-branding-text-container,
 .main-navigation {
@@ -898,8 +864,72 @@ a:hover, a:active {
 	        justify-content: center;
 }
 
+.site-branding {
+	min-height: 65px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin-bottom: 3px;
+	/* detail spacing */
+	margin-left: 3px;
+}
+
+@media (min-width: 48em) {
+	.site-branding {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 33%;
+		        flex: 1 0 33%;
+	}
+}
+
+@media (min-width: 75em) {
+	.site-branding {
+		-ms-flex-preferred-size: 45%;
+		    flex-basis: 45%;
+	}
+}
+
+.site-branding .custom-logo-link {
+	margin-right: 0.25em;
+	min-width: 65px;
+	max-width: 4.5em;
+	/* NOTE: revisit max-width property of Logo */
+}
+
+@media (min-width: 48em) {
+	.site-branding .custom-logo-link {
+		max-width: 2em;
+	}
+}
+
+@media (min-width: 75em) {
+	.site-branding .custom-logo-link {
+		max-width: 3em;
+	}
+}
+
+.site-branding .custom-logo-link img {
+	vertical-align: middle;
+}
+
+@media (min-width: 48em) {
+	.main-navigation .menu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+	}
+}
+
+.site-title,
+.site-description {
+	margin: 0;
+}
+
 .site-title {
-	font-size: 2.369em;
+	font-size: 1.777em;
 	line-height: normal;
 	font-weight: 300;
 }
@@ -918,6 +948,39 @@ a:hover, a:active {
 .site-header:after {
 	content: none;
 	/* this removes clears around site header so that flexbox justify properties will work */
+}
+
+/*--------------------------------------------------------------
+## Hero Banner
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Oct-2017, 2:11:04 PM
+    Author     : David
+*/
+#hero-banner {
+	border: 2px solid red;
+	position: relative;
+	background-color: #ccc;
+	background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: auto;
+	min-height: 26.666em;
+	text-align: center;
+	padding-top: 5rem;
+	padding-bottom: 2em;
+	height: 100vh;
+}
+
+#hero-banner .hero-headline-container {
+	border: 1px solid blue;
+	margin-top: 3.5em;
 }
 
 /*--------------------------------------------------------------
@@ -960,14 +1023,9 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
-.widget-area {
-	border: 2px solid red;
-}
-
 .widget {
 	margin: 0 0 2em;
 	padding: 0 0 2em;
-	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
 
@@ -1012,7 +1070,6 @@ a:hover, a:active {
 	width: 100%;
 	height: 2.5em;
 	padding: 10px;
-	font-family: "Titillium Web", sans-serif;
 	border: 1px solid #ccc;
 }
 
@@ -1098,7 +1155,6 @@ a:hover, a:active {
 
 .rssSummary {
 	padding: .5em 0;
-	font-family: "Raleway", sans-serif;
 	font-size: .8em;
 	line-height: 1.4em;
 }
@@ -1156,16 +1212,68 @@ a:hover, a:active {
 }
 
 /* Text widget */
-.textwidget {
-	font-size: 80%;
-	line-height: 1.3em;
+/* MailChimp signup form */
+.widget #mc_embed_signup p {
+	margin: 0.5em 0 1em;
+}
+
+.widget #mc_embed_signup .indicates-required {
+	display: none;
+}
+
+.widget #mc_embed_signup .mc-field-group {
+	clear: left;
+	position: relative;
+	width: 96%;
+	padding-bottom: 3%;
+	min-height: 50px;
+}
+
+.widget #mc_embed_signup .mc-field-group .asterisk {
+	color: red;
+}
+
+.widget #mc_embed_signup .mc-field-group label {
+	display: block;
+	font-weight: bold;
+	font-size: 85%;
+	margin-bottom: 0.25em;
+}
+
+.widget #mc_embed_signup .mc-field-group input {
+	display: block;
+	width: 100%;
+	padding: 8px 0;
+	text-indent: 2%;
+}
+
+.widget #mc_embed_signup .button {
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	min-height: 1em;
+	line-height: 1em;
+	margin: 0 5px 10px 0;
+	padding: 0.75em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
 }
 
 /* Footer widget styles */
 .footer-widgets {
 	margin: 2em 0 0;
 	padding: 1em 0;
-	background-color: #1a1a1a;
+	background-color: #ccc;
 }
 
 @media (min-width: 48em) {
@@ -1178,26 +1286,8 @@ a:hover, a:active {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1;
 	        flex: 1;
-	margin: 0 1em 2em;
+	margin: 0 1em 1em;
 	padding-top: 1em;
-}
-
-.footer-widgets .widget .original-title {
-	color: rgba(255, 255, 255, 0.5);
-}
-
-.footer-widgets .widget,
-.footer-widgets .widget-title,
-.footer-widgets .widget a,
-.footer-widgets .widget_calendar thead,
-.footer-widgets .rss-date,
-.footer-widgets .widget_rss cite {
-	color: white;
-}
-
-.footer-widgets .widget_calendar td,
-.footer-widgets .widget_calendar a {
-	color: black;
 }
 
 @media (min-width: 75em) {
@@ -1211,19 +1301,21 @@ a:hover, a:active {
 		-ms-flex-pack: distribute;
 		    justify-content: space-around;
 		/* If only one widget is displayed, make it full width. */
+		/*                .widget:nth-child(2) {
+                    flex: 2;
+                }*/
 		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
 		/* If 4 or more widgets are displayed, show three across when available. */
+		/*		.widget:nth-last-child(n+4), 
+		.widget:nth-last-child(n+4) ~ .widget { 
+			width: 30%;
+			flex: 1 1 30%;
+		}*/
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
 	}
 	.footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-		-webkit-box-flex: 2;
-		    -ms-flex: 2;
-		        flex: 2;
-	}
-	.footer-widgets .widget:nth-last-child(n+4),
-	.footer-widgets .widget:nth-last-child(n+4) ~ .widget {
 		width: 30%;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 30%;
@@ -1234,14 +1326,9 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget-area {
-	border: 2px solid red;
-}
-
 .widget {
 	margin: 0 0 2em;
 	padding: 0 0 2em;
-	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
 
@@ -1286,7 +1373,6 @@ a:hover, a:active {
 	width: 100%;
 	height: 2.5em;
 	padding: 10px;
-	font-family: "Titillium Web", sans-serif;
 	border: 1px solid #ccc;
 }
 
@@ -1372,7 +1458,6 @@ a:hover, a:active {
 
 .rssSummary {
 	padding: .5em 0;
-	font-family: "Raleway", sans-serif;
 	font-size: .8em;
 	line-height: 1.4em;
 }
@@ -1430,16 +1515,68 @@ a:hover, a:active {
 }
 
 /* Text widget */
-.textwidget {
-	font-size: 80%;
-	line-height: 1.3em;
+/* MailChimp signup form */
+.widget #mc_embed_signup p {
+	margin: 0.5em 0 1em;
+}
+
+.widget #mc_embed_signup .indicates-required {
+	display: none;
+}
+
+.widget #mc_embed_signup .mc-field-group {
+	clear: left;
+	position: relative;
+	width: 96%;
+	padding-bottom: 3%;
+	min-height: 50px;
+}
+
+.widget #mc_embed_signup .mc-field-group .asterisk {
+	color: red;
+}
+
+.widget #mc_embed_signup .mc-field-group label {
+	display: block;
+	font-weight: bold;
+	font-size: 85%;
+	margin-bottom: 0.25em;
+}
+
+.widget #mc_embed_signup .mc-field-group input {
+	display: block;
+	width: 100%;
+	padding: 8px 0;
+	text-indent: 2%;
+}
+
+.widget #mc_embed_signup .button {
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	min-height: 1em;
+	line-height: 1em;
+	margin: 0 5px 10px 0;
+	padding: 0.75em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
 }
 
 /* Footer widget styles */
 .footer-widgets {
 	margin: 2em 0 0;
 	padding: 1em 0;
-	background-color: #1a1a1a;
+	background-color: #ccc;
 }
 
 @media (min-width: 48em) {
@@ -1452,26 +1589,8 @@ a:hover, a:active {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1;
 	        flex: 1;
-	margin: 0 1em 2em;
+	margin: 0 1em 1em;
 	padding-top: 1em;
-}
-
-.footer-widgets .widget .original-title {
-	color: rgba(255, 255, 255, 0.5);
-}
-
-.footer-widgets .widget,
-.footer-widgets .widget-title,
-.footer-widgets .widget a,
-.footer-widgets .widget_calendar thead,
-.footer-widgets .rss-date,
-.footer-widgets .widget_rss cite {
-	color: white;
-}
-
-.footer-widgets .widget_calendar td,
-.footer-widgets .widget_calendar a {
-	color: black;
 }
 
 @media (min-width: 75em) {
@@ -1485,19 +1604,21 @@ a:hover, a:active {
 		-ms-flex-pack: distribute;
 		    justify-content: space-around;
 		/* If only one widget is displayed, make it full width. */
+		/*                .widget:nth-child(2) {
+                    flex: 2;
+                }*/
 		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
 		/* If 4 or more widgets are displayed, show three across when available. */
+		/*		.widget:nth-last-child(n+4), 
+		.widget:nth-last-child(n+4) ~ .widget { 
+			width: 30%;
+			flex: 1 1 30%;
+		}*/
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
 	}
 	.footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-		-webkit-box-flex: 2;
-		    -ms-flex: 2;
-		        flex: 2;
-	}
-	.footer-widgets .widget:nth-last-child(n+4),
-	.footer-widgets .widget:nth-last-child(n+4) ~ .widget {
 		width: 30%;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 30%;

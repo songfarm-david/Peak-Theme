@@ -1,26 +1,27 @@
 /**
   * This file is for global/site-wide styles like padding and margins
   */
-.site-content {
-    padding: 0 1em;
+.entry-header > div,
+.entry-content,
+.entry-footer {
+            padding: 0 1em;
     
     @media #{$tablet__breakpoint} {     
-        .content-area {
+
             margin: 0 auto;
             max-width: 40em;
-        }
+            @include border(4px,#ccc);
     }
     
     @media #{$desktop__breakpoint} {       
-        .content-area {
+        
             max-width: 44em;
-        }       
     }
     
     @media #{$lg-desktop__breakpoint} {      
-        .content-area {
+        
             max-width: 48em;
-        }
+            
     }
 }
 

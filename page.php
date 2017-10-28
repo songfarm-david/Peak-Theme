@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<?php
 			while ( have_posts() ) : the_post();
-
+                                
 				get_template_part( 'template-parts/content', 'page' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
@@ -34,7 +34,7 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-    if ( ! is_front_page() ) {
-       get_sidebar(); 
-    }
+//if ( ! is_front_page() ) {
+//   get_sidebar(); 
+//}
 get_footer();

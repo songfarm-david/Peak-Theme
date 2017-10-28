@@ -509,6 +509,85 @@ input[type="submit"]:focus {
 	border-color: #aaa #bbb #bbb;
 }
 
+button[type="submit"].peak-button,
+input[type="submit"].peak-button,
+.peak-button {
+	clear: both;
+	background-color: #aaa;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	min-height: 1em;
+	line-height: 1em;
+	margin: 0 5px 10px 0;
+	padding: 0.75em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+	background: #e1e1e1;
+	transition-property: color;
+	transition-duration: 0.3s;
+}
+
+button[type="submit"].peak-button::before,
+input[type="submit"].peak-button::before,
+.peak-button::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2098D1;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+}
+
+button[type="submit"].peak-button:hover, button[type="submit"].peak-button:focus,
+input[type="submit"].peak-button:hover,
+input[type="submit"].peak-button:focus,
+.peak-button:hover,
+.peak-button:focus {
+	color: white;
+}
+
+button[type="submit"].peak-button:hover:before, button[type="submit"].peak-button:focus:before, button[type="submit"].peak-button:active:before,
+input[type="submit"].peak-button:hover:before,
+input[type="submit"].peak-button:focus:before,
+input[type="submit"].peak-button:active:before,
+.peak-button:hover:before,
+.peak-button:focus:before,
+.peak-button:active:before {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+/*.peak-button-container {
+    position: relative;
+    &::before {
+        
+    }
+}*/
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -558,6 +637,26 @@ textarea {
 	width: 100%;
 }
 
+.wpforms-form {
+	border: 2px solid red;
+}
+
+.wpforms-form input {
+	padding: 8px 0;
+	text-indent: 2%;
+	border-radius: 3px;
+	border: 1px solid black;
+}
+
+.wpforms-form .wpforms-field-label {
+	font-size: 85%;
+}
+
+/*
+display: block;
+    width: 100%;
+    
+*/
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -883,25 +982,34 @@ a:hover, a:active {
 /**
   * This file is for global/site-wide styles like padding and margins
   */
-.site-content {
+.entry-header > div,
+.entry-content,
+.entry-footer {
 	padding: 0 1em;
 }
 
 @media (min-width: 48em) {
-	.site-content .content-area {
+	.entry-header > div,
+	.entry-content,
+	.entry-footer {
 		margin: 0 auto;
 		max-width: 40em;
+		border: 4px solid #ccc;
 	}
 }
 
 @media (min-width: 75em) {
-	.site-content .content-area {
+	.entry-header > div,
+	.entry-content,
+	.entry-footer {
 		max-width: 44em;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.site-content .content-area {
+	.entry-header > div,
+	.entry-content,
+	.entry-footer {
 		max-width: 48em;
 	}
 }
@@ -918,6 +1026,7 @@ a:hover, a:active {
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
+	background-color: #eee;
 }
 
 @media (min-width: 48em) {
@@ -1087,12 +1196,25 @@ and open the template in the editor.
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5em auto 0;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/**
+  * Custom styles
+  */
+.entry-header {
+	border: 2px solid red;
+	margin-top: 3em;
+	height: 100%;
+}
+
+.entry-header > div {
+	border: 2px solid green;
 }
 
 /*--------------------------------------------------------------
@@ -1333,26 +1455,8 @@ and open the template in the editor.
 	text-indent: 2%;
 }
 
-.widget #mc_embed_signup .button {
-	clear: both;
-	background-color: #aaa;
-	border: 0 none;
-	border-radius: 4px;
-	transition: all 0.23s ease-in-out 0s;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	font-weight: normal;
-	min-height: 1em;
-	line-height: 1em;
-	margin: 0 5px 10px 0;
-	padding: 0.75em 1.25em;
-	text-align: center;
-	text-decoration: none;
-	vertical-align: top;
-	white-space: nowrap;
-	width: auto;
+.widget #mc_embed_signup #mce-responses .response {
+	margin-bottom: .75em;
 }
 
 /* Footer widget styles */
@@ -1636,26 +1740,8 @@ and open the template in the editor.
 	text-indent: 2%;
 }
 
-.widget #mc_embed_signup .button {
-	clear: both;
-	background-color: #aaa;
-	border: 0 none;
-	border-radius: 4px;
-	transition: all 0.23s ease-in-out 0s;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	font-weight: normal;
-	min-height: 1em;
-	line-height: 1em;
-	margin: 0 5px 10px 0;
-	padding: 0.75em 1.25em;
-	text-align: center;
-	text-decoration: none;
-	vertical-align: top;
-	white-space: nowrap;
-	width: auto;
+.widget #mc_embed_signup #mce-responses .response {
+	margin-bottom: .75em;
 }
 
 /* Footer widget styles */

@@ -13,10 +13,24 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5em auto 0;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+/**
+  * Custom styles
+  */
+.entry-header {
+    @include border;
+    margin-top: 3em;
+    height: 100%;
+    > div {
+        //margin: 0 auto;
+        
+        @include border(2px, green);
+    }
 }

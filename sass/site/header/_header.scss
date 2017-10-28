@@ -4,6 +4,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
+    background-color: #eee;
 
     @media #{$tablet__breakpoint} {
         position: fixed;
@@ -93,6 +94,7 @@
     font-weight: 300;
     a {
         text-decoration: none;
+        //white-space: nowrap;
     }
 }
 

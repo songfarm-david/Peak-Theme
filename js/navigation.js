@@ -12,9 +12,9 @@
 
 		// Add button that toggles dropdown menu child items
 		var dropdownButton = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( $( '<span />', { 'class': 'dropdown-arrow', text: '+' }) )
+			.append( $( '<i />', { 'class': 'fa fa-angle-down', 'aria-hidden': 'true' }) )
 			.append( $( '<span />', { 'class': 'screen-reader-text', text: peakScreenReaderText.expand }) );
-
+               
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownButton );
 
 		// Set the active submenu dropdown toggle button initial state.
@@ -28,11 +28,20 @@
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
 			var _this = $( this ),
-				screenReaderSpan = _this.find( '.screen-reader-text' );
+				screenReaderSpan = _this.find( '.screen-reader-text' ),
+                                toggleArrow = _this.find( '.fa' );
 
 			e.preventDefault();
 			_this.toggleClass( 'toggled' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled' );
+                        
+                        if ( toggleArrow.hasClass( 'fa-angle-down') ) {
+                            toggleArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
+
+                        } else {
+                            toggleArrow.removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
+                        }
+                         
 
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 
@@ -72,38 +81,38 @@
 		}
 
 		// Toggle `focus` class to allow submenu access on tablets.
-//		function toggleFocusClassTouchScreen() {
-//			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
-//
-//				$( document.body ).on( 'touchstart.peak', function( e ) {
-//					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
-//						$( '.main-navigation li' ).removeClass( 'focus' );
-//					}
-//				});
-//
-//				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
-//					.on( 'touchstart.peak', function( e ) {
-//						var el = $( this ).parent( 'li' );
-//
-//						if ( ! el.hasClass( 'focus' ) ) {
-//							e.preventDefault();
-//							el.toggleClass( 'focus' );
-//							el.siblings( '.focus' ).removeClass( 'focus' );
-//						}
-//					});
-//
-//			} else {
-//				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.peak' );
-//			}
-//		}
+		function toggleFocusClassTouchScreen() {
+			if ( 'none' === $( '.menu-toggle' ).css( 'display' ) ) {
 
-//		if ( 'ontouchstart' in window ) {
-//			$( window ).on( 'resize.peak', toggleFocusClassTouchScreen );
-//			toggleFocusClassTouchScreen();
-//		}
-//
-//		siteNavigation.find( 'a' ).on( 'focus.peak blur.peak', function() {
-//			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
-//		});
+				$( document.body ).on( 'touchstart.peak', function( e ) {
+					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+						$( '.main-navigation li' ).removeClass( 'focus' );
+					}
+				});
+
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' )
+					.on( 'touchstart.peak', function( e ) {
+						var el = $( this ).parent( 'li' );
+
+						if ( ! el.hasClass( 'focus' ) ) {
+							e.preventDefault();
+							el.toggleClass( 'focus' );
+							el.siblings( '.focus' ).removeClass( 'focus' );
+						}
+					});
+
+			} else {
+				siteNavigation.find( '.menu-item-has-children > a, .page_item_has_children > a' ).unbind( 'touchstart.peak' );
+			}
+		}
+
+		if ( 'ontouchstart' in window ) {
+			$( window ).on( 'resize.peak', toggleFocusClassTouchScreen );
+			toggleFocusClassTouchScreen();
+		}
+
+		siteNavigation.find( 'a' ).on( 'focus.peak blur.peak', function() {
+			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+		});
 	})();
 })( jQuery );

@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : David
 */
 #hero-banner {
-    @include border;
     position: relative;
     background-color: #ccc;
     background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
@@ -20,11 +19,8 @@ and open the template in the editor.
     text-align: center;
     padding-top: 5rem;
     padding-bottom: 2em;
-    
     height: 100vh;
-    
     .hero-headline-container {
-        @include border(1px, blue);
         margin-top: 3.5em;
     }
 }

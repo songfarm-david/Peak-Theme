@@ -41,6 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
+/* theme colors */
 /**
   * Note: em values are calculated by desired content width and dividing by global px value
   * Ex: 1200px / 16px = 75em
@@ -572,6 +573,12 @@ textarea {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	/*                @media screen and (max-width: 48em) {
+                    li:hover > ul,
+                    li.focus > ul {
+                            left: inherit;
+                    }
+                }*/
 }
 
 .main-navigation ul ul {
@@ -597,9 +604,11 @@ textarea {
 	width: 200px;
 }
 
-.main-navigation ul li:hover > ul,
-.main-navigation ul li.focus > ul {
-	left: auto;
+@media (min-width: 48em) {
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		left: auto;
+	}
 }
 
 .main-navigation li {
@@ -612,7 +621,6 @@ textarea {
 	font-weight: 400;
 	text-align: center;
 	white-space: nowrap;
-	border: 2px solid red;
 }
 
 .main-navigation a {
@@ -624,14 +632,19 @@ textarea {
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	background-color: transparent;
+	margin-right: 3px;
+	border-width: 0;
+}
+
+.menu-toggle > i,
+.main-navigation.toggled ul > i {
+	font-size: 2em;
 }
 
 @media (min-width: 48em) {
 	.menu-toggle {
 		display: none;
-	}
-	.main-navigation ul {
-		display: block;
 	}
 }
 
@@ -664,6 +677,7 @@ a {
 
 a:visited {
 	color: purple;
+	color: #385f7e;
 }
 
 a:hover, a:focus, a:active {
@@ -678,17 +692,92 @@ a:hover, a:active {
 	outline: 0;
 }
 
+.main-navigation {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0;
+	        flex: 0;
+}
+
+.main-navigation .menu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1002;
+	top: 100%;
+}
+
+@media (min-width: 48em) {
+	.main-navigation .menu {
+		position: relative;
+		left: auto;
+		right: auto;
+		top: auto;
+		z-index: initial;
+	}
+	.main-navigation .menu .sub-menu li a {
+		text-align: left;
+	}
+}
+
+.main-navigation .menu .sub-menu > li,
+.main-navigation .menu .sub-menu a {
+	width: 100%;
+}
+
 .main-navigation .menu-item-has-children > a {
-	padding-right: 2em;
+	padding-right: 1.65em;
 }
 
 .main-navigation .menu-item-has-children > button {
 	position: absolute;
-	top: 50%;
-	-webkit-transform: translateY(-50%);
-	        transform: translateY(-50%);
-	right: 0.35em;
+	top: 3px;
+	right: 6px;
 	line-height: inherit;
+	background-color: transparent;
+	border: none;
+	font-size: 125%;
+	padding: 0 0.5em;
+}
+
+.main-navigation .menu-item-has-children > button > .fa {
+	color: #385f7e;
+}
+
+@media (min-width: 48em) {
+	.main-navigation .menu-item-has-children > button {
+		padding-top: 3px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		right: 0;
+	}
+}
+
+.main-navigation ul {
+	/**
+    * from mobile up until tablet breakpoint
+    * when toggled, turn off display and position properties on menu ul
+    */
+	/**
+    * from tablet breakpoint and on, make sure main ul is display block
+    */
+}
+
+@media screen and (max-width: 48em) {
+	.main-navigation ul ul.toggled {
+		border: 3px solid green;
+		position: initial;
+		float: none;
+		display: block;
+		width: 100%;
+		z-index: initial;
+	}
+}
+
+@media (min-width: 48em) {
+	.main-navigation ul {
+		display: block;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -822,6 +911,7 @@ a:hover, a:active {
 --------------------------------------------------------------*/
 .site-header {
 	padding: 0.10em;
+	position: relative;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -869,8 +959,6 @@ a:hover, a:active {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	margin-bottom: 3px;
-	/* detail spacing */
 	margin-left: 3px;
 }
 
@@ -891,8 +979,8 @@ a:hover, a:active {
 
 .site-branding .custom-logo-link {
 	margin-right: 0.25em;
-	min-width: 65px;
-	max-width: 4.5em;
+	min-width: 60px;
+	max-width: 1.5em;
 	/* NOTE: revisit max-width property of Logo */
 }
 
@@ -963,7 +1051,6 @@ and open the template in the editor.
     Author     : David
 */
 #hero-banner {
-	border: 2px solid red;
 	position: relative;
 	background-color: #ccc;
 	background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
@@ -979,7 +1066,6 @@ and open the template in the editor.
 }
 
 #hero-banner .hero-headline-container {
-	border: 1px solid blue;
 	margin-top: 3.5em;
 }
 

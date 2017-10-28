@@ -162,6 +162,9 @@ function peak_theme_scripts() {
 	// load Google fonts
         wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
         
+        // load Font Awesome CDN
+        wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
+        
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

@@ -1,6 +1,7 @@
 .site-header {
-    //@include border(5px);
+
     padding: 0.10em;
+    position: relative;
     display: flex;
     justify-content: space-between;
 
@@ -32,7 +33,7 @@
 
     min-height: 65px;
     display: flex;
-    margin-bottom: 3px; /* detail spacing */
+    //margin-bottom: 3px; /* detail spacing */
     margin-left: 3px;
     //flex-basis: 100%;
 
@@ -46,8 +47,8 @@
 
     .custom-logo-link {
         margin-right: 0.25em;
-        min-width: 65px;
-        max-width: 4.5em;
+        min-width: 60px;
+        max-width: 1.5em;
         /* NOTE: revisit max-width property of Logo */
         @media #{$tablet__breakpoint} {
             max-width: 2em;
@@ -63,24 +64,19 @@
 
 }
 
-.site-navigation {
-
-}
+.site-navigation {}
 
 .main-navigation {
-    //@include border(1px, green);
+
     .menu {
+        
         @media #{$tablet__breakpoint} {
             display: flex;
-            //flex-wrap: nowrap;
-            //justify-content: space-evenly;
             justify-content: flex-end;
         }
-        @media #{$desktop__breakpoint} {
-            //justify-content: flex-end;
-        }
-
+        
     }
+    
 }
 
 .site-title,
@@ -88,8 +84,6 @@
     margin: 0;
 
 }
-
-
 
 .site-title {
     font-size: 1.777em;

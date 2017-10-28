@@ -19,7 +19,7 @@
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-
+                        
 			ul {
 				left: -999em;
 				top: 0;
@@ -44,33 +44,40 @@
 			a.focus {
 			}
 		}
-
-		li:hover > ul,
-		li.focus > ul {
-			left: auto;
-		}
+/*                @media screen and (max-width: 48em) {
+                    li:hover > ul,
+                    li.focus > ul {
+                            left: inherit;
+                    }
+                }*/
+                @media #{$tablet__breakpoint} {
+                    li:hover > ul,
+                    li.focus > ul {
+                            left: auto;
+                    }
+                }
+		
 	}
 
 	li {
-		float: none;
-		position: relative;
-                
-                a {
-                    padding: 0.5em 1.5em;
-                    font-weight: 400;
-                    text-align: center;
-                    white-space: nowrap;
-                    @include border;
-                }
-        
-		&:hover > a,
-		&.focus > a {
-		}
+            float: none;
+            position: relative;
+
+            a {
+                padding: 0.5em 1.5em;
+                font-weight: 400;
+                text-align: center;
+                white-space: nowrap;
+            }
+
+            &:hover > a,
+            &.focus > a {
+            }
 	}
 
 	a {
-		display: block;
-		text-decoration: none;
+            display: block;
+            text-decoration: none;
 	}
 
 	.current_page_item > a,
@@ -81,18 +88,22 @@
 }
 
 /* Small menu. */
+// .menu-toggle refers to the hamburger icon
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+        background-color: transparent;
+        margin-right: 3px;
+        border-width: 0;
+        > i {
+            font-size: 2em;
+        }
 }
 
 @media #{$tablet__breakpoint} {
 	.menu-toggle {
 		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+	}	
 }
 
 .comment-navigation,
@@ -122,6 +133,7 @@ a {
 
 	&:visited {
 		color: $color__link-visited;
+                color: $hero__color;
 	}
 	&:hover,
 	&:focus,
@@ -139,18 +151,80 @@ a {
 
 .main-navigation {
     
-    .menu-item-has-children  {
+    flex: 0;
     
-    > a {
-        padding-right: 2em;
-    }
-    > button {
+    .menu {
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 0.35em;
-        line-height: inherit;
+        left: 0;
+        right: 0;
+        z-index: 1002;
+        top: 100%;
+        @media #{$tablet__breakpoint} {
+            position: relative;
+            left: auto; right: auto;
+            top: auto;
+            z-index: initial;
+            .sub-menu li a {
+                text-align: left;
+            }
+        }
+        .sub-menu {
+            > li,
+            a {
+                width: 100%;
+            }
+        }
     }
+    
+    .menu-item-has-children  {
+        > a {
+            padding-right: 1.65em;
+        }
+        > button {
+            position: absolute;
+            top: 3px;
+            right: 6px;
+            line-height: inherit;
+            background-color: transparent;
+            border: none;
+            font-size: 125%;
+            padding: 0 0.5em;
+            > .fa {
+                color: $hero__color;
+            }
+            @media #{$tablet__breakpoint} {
+                padding-top: 3px;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+            
+        }
+    }
+
 }
 
+.main-navigation ul {
+    /**
+    * from mobile up until tablet breakpoint
+    * when toggled, turn off display and position properties on menu ul
+    */
+    @media screen and (max-width: 48em) {
+        ul.toggled {
+            @include border(3px, green);
+        position: initial;
+        float: none;
+        display: block;
+        width: 100%;
+        z-index: initial;
+        }
+    }
+    
+    /**
+    * from tablet breakpoint and on, make sure main ul is display block
+    */
+    @media #{$tablet__breakpoint} {
+        display: block;
+    } 
+    
 }

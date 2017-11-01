@@ -26,7 +26,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 
 		$posted_on = sprintf(
 			/* translators: %s: post date. */
-			esc_html_x( 'Posted on %s', 'post date', 'peak-theme' ),
+			esc_html_x( '&ndash; %s', 'post date', 'peak-theme' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
@@ -35,8 +35,11 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 			esc_html_x( 'by %s', 'post author', 'peak-theme' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
+                
+                /* add avatar image - NOTE: not currently dynamic */
+                $avatar = '<figure class="author-avatar"><img src="http://localhost/peak-theme/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		echo $avatar . ' <span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -52,7 +55,7 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'peak-theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'peak-theme' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'peak-theme' ) . '</span>&nbsp;', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
@@ -69,7 +72,7 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'peak-theme' ),
+						__( '|&nbsp;Leave a Comment<span class="screen-reader-text"> on %s</span>', 'peak-theme' ),
 						array(
 							'span' => array(
 								'class' => array(),
@@ -86,7 +89,7 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+					__( ' Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -95,7 +98,7 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 				),
 				get_the_title()
 			),
-			'<span class="edit-link">',
+			'<br><span class="edit-link">',
 			'</span>'
 		);
 	}

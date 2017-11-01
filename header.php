@@ -51,7 +51,7 @@
                         </button>
 			<?php
 				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
+					'theme_location' => 'primary-menu',
 					'menu_id'        => 'primary-menu',
 				) );
 			?>
@@ -64,8 +64,8 @@
                 <!-- TEST: img commented out to reduce requests -->
                 <!--<img class="at-only" src="/" alt="The peak of a large, snow-covered mountain on a crisp and cloudy day" />-->
                 <div class="hero-headline-container">
-                    <h1 class="" itemprop="headline">Elevate Your Online Potential.</h1>
-                    <p itemprop="alternativeHeadline">Web Design and SEO to generate leads and drive more sales for your business</p>
+                    <h1 class="hero-headline" itemprop="headline">Elevate Your Online Potential.</h1>
+                    <p class="hero-byline" itemprop="alternativeHeadline">Get a Website and Search Engine Marketing designed to produce more leads and generate more sales for your small to medium-size business.</p>
                     <a href="#">Get Started</a>
                 </div>
                 <!-- <a href="#complicated-web" id="down-arrow" class="scroll-link"></a> -->

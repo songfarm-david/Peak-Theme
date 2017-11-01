@@ -13,10 +13,35 @@
 
 	</div><!-- #content -->
         
+        <!-- Display Footer widgets-->
         <?php get_sidebar( 'footer' ); ?>
 
 	<footer id="colophon" class="site-footer">
-            <div class="site-info">
+            
+            <div>
+                <span id="copyright">&copy; <?php echo date('Y'); ?> Peak Websites</span>
+            </div>
+            
+            <nav>
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'social-media',
+                        'menu_id'        => 'social-media-menu',
+                    ) );
+                ?>
+            </nav>
+            
+            <nav>
+                <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'legal',
+                        'menu_id'        => 'legal-menu',
+                    ) );
+                ?>
+            </nav>
+           
+            
+<!--            <div class="site-info">
                     <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'peak-theme' ) ); ?>"><?php
                             /* translators: %s: CMS name, i.e. WordPress. */
                             printf( esc_html__( 'Proudly powered by %s', 'peak-theme' ), 'WordPress' );
@@ -26,7 +51,7 @@
                             /* translators: 1: Theme name, 2: Theme author. */
                             printf( esc_html__( 'Theme: %1$s by %2$s.', 'peak-theme' ), 'peak-theme', '<a href="https://peakwebsites.ca">David Gaskin</a>' );
                     ?>
-            </div><!-- .site-info -->
+            </div> .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

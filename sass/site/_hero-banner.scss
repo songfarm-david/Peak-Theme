@@ -10,7 +10,7 @@ and open the template in the editor.
 #hero-banner {
     position: relative;
     background-color: #ccc;
-    background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
+    background-image: url(http://localhost/peak-theme/wp-content/uploads/2017/10/air-triangulated.jpg);
     background-position: center 0%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,6 +21,18 @@ and open the template in the editor.
     padding-bottom: 2em;
     height: 100vh;
     .hero-headline-container {
-        margin-top: 3.5em;
+        margin: 3.5em auto 0;
+        text-align: left;
+        
+        .hero-headline {
+            color: $hero__color;
+            margin: 0;
+            line-height: 1.25;
+        }
+        
+        @media #{$tablet__breakpoint} {
+            @include tablet_width;
+            @include border;
+        }
     }
 }

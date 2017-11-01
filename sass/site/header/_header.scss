@@ -4,7 +4,7 @@
     position: relative;
     display: flex;
     justify-content: space-between;
-    background-color: #eee;
+    background-color: transparent;
 
     @media #{$tablet__breakpoint} {
         position: fixed;
@@ -12,6 +12,9 @@
         right: 0;
         z-index: 1001;   
     }
+    
+    
+    
 }
 
 .site-branding,

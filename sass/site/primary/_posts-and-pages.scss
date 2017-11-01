@@ -25,12 +25,22 @@
   * Custom styles
   */
 .entry-header {
-    @include border;
-    margin-top: 3em;
-    height: 100%;
+    //@include border;
     > div {
-        //margin: 0 auto;
-        
-        @include border(2px, green);
+        //@include border(2px, green);
+    }
+}
+
+.post .entry-meta {
+    padding: 0;
+}
+
+figure.author-avatar {
+    @include border;
+    margin: 0;
+    padding-right: 0.25em;
+    display: inline-block;
+    > img {
+        vertical-align: middle;
     }
 }

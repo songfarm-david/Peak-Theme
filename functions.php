@@ -45,7 +45,10 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 		// Use this function to register multiple menus at once.
 		register_nav_menus( array(
 			'primary-menu' => esc_html__( 'Header', 'peak' ),
-                        'footer-menu' => esc_html__( 'Footer', 'peak' )
+                        'footer-menu' => esc_html__( 'Footer', 'peak' ),
+                        'social-media' => esc_html__( 'Social Media', 'peak' ),
+                        'legal' => esc_html__( 'Legal', 'peak' ),
+                        'sitemap' => esc_html__( 'Sitemap', 'peak' ),
 		) );
 
 		/*

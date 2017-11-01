@@ -49,6 +49,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Helper Mixins
 --------------------------------------------------------------*/
+/* site widths */
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -973,6 +974,64 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+/*.content-area {
+	float: left;
+	margin: 0 (-$size__site-sidebar) 0 0;
+	width: $size__site-main;
+}
+
+.site-main {
+	margin: 0 $size__site-sidebar 0 0;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: $size__site-sidebar;
+}
+
+.site-footer {
+	clear: both;
+	width: $size__site-main;
+}*/
+@media (min-width: 48em) {
+	#content {
+		max-width: 40em;
+		margin: 0 auto;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+	#content #primary {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 60%;
+		        flex: 1 1 60%;
+	}
+	#content #secondary {
+		border: 2px solid red;
+	}
+}
+
+@media (min-width: 75em) {
+	#content {
+		max-width: 44em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	#content {
+		max-width: 48em;
+	}
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
 /**
   * This file compiles all sitewide styles
   */
@@ -982,26 +1041,29 @@ a:hover, a:active {
 /**
   * This file is for global/site-wide styles like padding and margins
   */
+/* set content width maximums */
 .entry-header > div,
 .entry-content,
-.entry-footer {
+.entry-footer,
+.post .entry-header {
 	padding: 0 1em;
 }
 
 @media (min-width: 48em) {
 	.entry-header > div,
 	.entry-content,
-	.entry-footer {
+	.entry-footer,
+	.post .entry-header {
 		margin: 0 auto;
 		max-width: 40em;
-		border: 4px solid #ccc;
 	}
 }
 
 @media (min-width: 75em) {
 	.entry-header > div,
 	.entry-content,
-	.entry-footer {
+	.entry-footer,
+	.post .entry-header {
 		max-width: 44em;
 	}
 }
@@ -1009,9 +1071,20 @@ a:hover, a:active {
 @media (min-width: 118.75em) {
 	.entry-header > div,
 	.entry-content,
-	.entry-footer {
+	.entry-footer,
+	.post .entry-header {
 		max-width: 48em;
 	}
+}
+
+/* add page top padding to account for fixed nav */
+.site-content {
+	padding-top: 3em;
+}
+
+.post-navigation,
+.comments-area {
+	padding: 0 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1026,7 +1099,7 @@ a:hover, a:active {
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	background-color: #eee;
+	background-color: transparent;
 }
 
 @media (min-width: 48em) {
@@ -1162,7 +1235,7 @@ and open the template in the editor.
 #hero-banner {
 	position: relative;
 	background-color: #ccc;
-	background-image: url(http://localhost/peak_theme/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-image: url(http://localhost/peak-theme/wp-content/uploads/2017/10/air-triangulated.jpg);
 	background-position: center 0%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1175,7 +1248,21 @@ and open the template in the editor.
 }
 
 #hero-banner .hero-headline-container {
-	margin-top: 3.5em;
+	margin: 3.5em auto 0;
+	text-align: left;
+}
+
+#hero-banner .hero-headline-container .hero-headline {
+	color: #385f7e;
+	margin: 0;
+	line-height: 1.25;
+}
+
+@media (min-width: 48em) {
+	#hero-banner .hero-headline-container {
+		max-width: 40em;
+		border: 2px solid red;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1207,14 +1294,80 @@ and open the template in the editor.
 /**
   * Custom styles
   */
-.entry-header {
-	border: 2px solid red;
-	margin-top: 3em;
-	height: 100%;
+.post .entry-meta {
+	padding: 0;
 }
 
-.entry-header > div {
-	border: 2px solid green;
+figure.author-avatar {
+	border: 2px solid red;
+	margin: 0;
+	padding-right: 0.25em;
+	display: inline-block;
+}
+
+figure.author-avatar > img {
+	vertical-align: middle;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1-Nov-2017, 9:07:18 AM
+    Author     : David
+*/
+.site-footer {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-ms-flex-line-pack: center;
+	    align-content: center;
+}
+
+.site-footer nav a {
+	text-decoration: none;
+}
+
+.site-footer nav .menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.site-footer nav .menu li {
+	display: inline-block;
+	padding: 0 0.25em;
+}
+
+.site-footer > div,
+.site-footer > nav {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.site-footer #copyright,
+.site-footer #legal-menu {
+	font-size: 75%;
+}
+
+.site-footer #social-media-menu {
+	font-size: 125%;
+}
+
+.site-footer #legal-menu li:last-child {
+	margin-left: 0.65em;
 }
 
 /*--------------------------------------------------------------
@@ -1281,6 +1434,10 @@ and open the template in the editor.
 	border: 1px solid #ccc;
 }
 
+.widget:last-of-type {
+	margin-bottom: 0;
+}
+
 .widget-title {
 	margin-top: 0;
 	margin-bottom: .5em;
@@ -1342,6 +1499,11 @@ and open the template in the editor.
 .widget_recent_comments a:hover,
 .widget_recent_comments a:focus {
 	padding-left: 0;
+}
+
+.widget_recent_entries ul {
+	margin-left: 1.5em;
+	padding: 0;
 }
 
 /* RSS widget */
@@ -1432,7 +1594,7 @@ and open the template in the editor.
 .widget #mc_embed_signup .mc-field-group {
 	clear: left;
 	position: relative;
-	width: 96%;
+	width: 100%;
 	padding-bottom: 3%;
 	min-height: 50px;
 }
@@ -1511,6 +1673,10 @@ and open the template in the editor.
 		    -ms-flex: 1 1 30%;
 		        flex: 1 1 30%;
 	}
+}
+
+#secondary.widget-area {
+	padding: 0 1em;
 }
 
 /*--------------------------------------------------------------
@@ -1566,6 +1732,10 @@ and open the template in the editor.
 	border: 1px solid #ccc;
 }
 
+.widget:last-of-type {
+	margin-bottom: 0;
+}
+
 .widget-title {
 	margin-top: 0;
 	margin-bottom: .5em;
@@ -1627,6 +1797,11 @@ and open the template in the editor.
 .widget_recent_comments a:hover,
 .widget_recent_comments a:focus {
 	padding-left: 0;
+}
+
+.widget_recent_entries ul {
+	margin-left: 1.5em;
+	padding: 0;
 }
 
 /* RSS widget */
@@ -1717,7 +1892,7 @@ and open the template in the editor.
 .widget #mc_embed_signup .mc-field-group {
 	clear: left;
 	position: relative;
-	width: 96%;
+	width: 100%;
 	padding-bottom: 3%;
 	min-height: 50px;
 }
@@ -1796,6 +1971,10 @@ and open the template in the editor.
 		    -ms-flex: 1 1 30%;
 		        flex: 1 1 30%;
 	}
+}
+
+#secondary.widget-area {
+	padding: 0 1em;
 }
 
 /*--------------------------------------------------------------

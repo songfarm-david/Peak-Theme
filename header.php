@@ -58,18 +58,10 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-        <?php if ( is_front_page() ) : ?>
-        <!-- Landing Page -->
-            <section id="hero-banner">
-                <!-- TEST: img commented out to reduce requests -->
-                <!--<img class="at-only" src="/" alt="The peak of a large, snow-covered mountain on a crisp and cloudy day" />-->
-                <div class="hero-headline-container">
-                    <h1 class="hero-headline" itemprop="headline">Elevate Your Online Potential.</h1>
-                    <p class="hero-byline" itemprop="alternativeHeadline">Get a Website and Search Engine Marketing designed to produce more leads and generate more sales for your small to medium-size business.</p>
-                    <a href="#">Get Started</a>
-                </div>
-                <!-- <a href="#complicated-web" id="down-arrow" class="scroll-link"></a> -->
-            </section><!-- #hero-banner -->
-        <?php endif; ?>
+        <?php if ( is_front_page() ) : 
+            
+            include( get_template_directory() . '/landing-page-home.php' );
+        
+        endif; ?>
         
 	<div id="content" class="site-content">

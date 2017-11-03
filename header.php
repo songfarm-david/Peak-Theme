@@ -60,7 +60,7 @@
 
         <?php if ( is_front_page() ) : 
             
-            include( get_template_directory() . '/landing-page-home.php' );
+            include( get_template_directory() . '/hero-banner.php' );
         
         endif; ?>
         

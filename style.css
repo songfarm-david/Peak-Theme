@@ -1420,9 +1420,15 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	border: 2px solid red;
+}
+
 .widget {
+	border: 1px solid white;
 	margin: 0 0 2em;
 	padding: 0 0 2em;
+	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
 
@@ -1430,7 +1436,6 @@ and open the template in the editor.
 .widget ol {
 	padding: .7em 0 0;
 	margin-bottom: 0;
-	list-style-type: none;
 }
 
 .widget ul li,
@@ -1460,7 +1465,7 @@ and open the template in the editor.
 }
 
 .widget a:hover, .widget a:focus {
-	border-bottom: 3px solid orangered;
+	border-bottom: #338c5f;
 }
 
 .widget select {
@@ -1538,8 +1543,9 @@ and open the template in the editor.
 }
 
 .widget_recent_entries ul {
-	margin-left: 1.5em;
+	margin-left: 0;
 	padding: 0;
+	list-style-type: initial;
 }
 
 /* RSS widget */
@@ -1661,54 +1667,86 @@ and open the template in the editor.
 .footer-widgets {
 	margin: 2em 0 0;
 	padding: 1em 0;
-	background-color: #ccc;
+	background-color: #385f7e;
+	color: #f3f3f3;
+	/* connect with us menu */
+}
+
+.footer-widgets .widget {
+	margin: 0 1em 1em;
+	padding-top: 1em;
+}
+
+.footer-widgets a {
+	color: white;
+	padding: 0;
 }
 
 @media (min-width: 48em) {
 	.footer-widgets {
 		padding: 2em 1em;
-	}
-}
-
-.footer-widgets .widget {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-	margin: 0 1em 1em;
-	padding-top: 1em;
-}
-
-@media (min-width: 75em) {
-	.footer-widgets {
-		/* Use flex to create a responsive layout */
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
+	}
+	.footer-widgets .widget {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 45%;
+		        flex: 1 0 45%;
+	}
+}
+
+@media (min-width: 75em) {
+	.footer-widgets {
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
 		/* If only one widget is displayed, make it full width. */
-		/*                .widget:nth-child(2) {
-                    flex: 2;
-                }*/
+		/*          .widget:nth-child(2) {
+                flex: 2;
+            }*/
 		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+		/*            .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) { 
+                //flex: 2;
+                width: 30%;
+                flex: 1 1 30%;
+            }*/
 		/* If 4 or more widgets are displayed, show three across when available. */
-		/*		.widget:nth-last-child(n+4), 
-		.widget:nth-last-child(n+4) ~ .widget { 
-			width: 30%;
-			flex: 1 1 30%;
-		}*/
+		/*            .widget:nth-last-child(n+4), 
+            .widget:nth-last-child(n+4) ~ .widget { 
+                width: 30%;
+                flex: 1 1 30%;
+            }*/
+	}
+	.footer-widgets .widget {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 auto;
+		        flex: 1 1 auto;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
 	}
-	.footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-		width: 30%;
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 1 30%;
-		        flex: 1 1 30%;
+	.footer-widgets .widget:first-child {
+		-ms-flex-preferred-size: 40%;
+		    flex-basis: 40%;
 	}
+}
+
+.footer-widgets .widget_nav_menu ul {
+	margin-left: 0;
+	padding-top: 0;
+}
+
+.footer-widgets .widget_nav_menu ul li {
+	display: inline-block;
+	line-height: 1;
+	font-size: 175%;
+	margin-right: 0.25em;
+}
+
+.footer-widgets .widget_nav_menu ul li a {
+	border-width: 0;
 }
 
 #secondary.widget-area {
@@ -1718,9 +1756,15 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
+.widget-area {
+	border: 2px solid red;
+}
+
 .widget {
+	border: 1px solid white;
 	margin: 0 0 2em;
 	padding: 0 0 2em;
+	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
 
@@ -1728,7 +1772,6 @@ and open the template in the editor.
 .widget ol {
 	padding: .7em 0 0;
 	margin-bottom: 0;
-	list-style-type: none;
 }
 
 .widget ul li,
@@ -1758,7 +1801,7 @@ and open the template in the editor.
 }
 
 .widget a:hover, .widget a:focus {
-	border-bottom: 3px solid orangered;
+	border-bottom: #338c5f;
 }
 
 .widget select {
@@ -1836,8 +1879,9 @@ and open the template in the editor.
 }
 
 .widget_recent_entries ul {
-	margin-left: 1.5em;
+	margin-left: 0;
 	padding: 0;
+	list-style-type: initial;
 }
 
 /* RSS widget */
@@ -1959,54 +2003,86 @@ and open the template in the editor.
 .footer-widgets {
 	margin: 2em 0 0;
 	padding: 1em 0;
-	background-color: #ccc;
+	background-color: #385f7e;
+	color: #f3f3f3;
+	/* connect with us menu */
+}
+
+.footer-widgets .widget {
+	margin: 0 1em 1em;
+	padding-top: 1em;
+}
+
+.footer-widgets a {
+	color: white;
+	padding: 0;
 }
 
 @media (min-width: 48em) {
 	.footer-widgets {
 		padding: 2em 1em;
-	}
-}
-
-.footer-widgets .widget {
-	-webkit-box-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-	margin: 0 1em 1em;
-	padding-top: 1em;
-}
-
-@media (min-width: 75em) {
-	.footer-widgets {
-		/* Use flex to create a responsive layout */
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
+	}
+	.footer-widgets .widget {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 45%;
+		        flex: 1 0 45%;
+	}
+}
+
+@media (min-width: 75em) {
+	.footer-widgets {
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
 		/* If only one widget is displayed, make it full width. */
-		/*                .widget:nth-child(2) {
-                    flex: 2;
-                }*/
+		/*          .widget:nth-child(2) {
+                flex: 2;
+            }*/
 		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
+		/*            .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) { 
+                //flex: 2;
+                width: 30%;
+                flex: 1 1 30%;
+            }*/
 		/* If 4 or more widgets are displayed, show three across when available. */
-		/*		.widget:nth-last-child(n+4), 
-		.widget:nth-last-child(n+4) ~ .widget { 
-			width: 30%;
-			flex: 1 1 30%;
-		}*/
+		/*            .widget:nth-last-child(n+4), 
+            .widget:nth-last-child(n+4) ~ .widget { 
+                width: 30%;
+                flex: 1 1 30%;
+            }*/
+	}
+	.footer-widgets .widget {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 auto;
+		        flex: 1 1 auto;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
 	}
-	.footer-widgets .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) {
-		width: 30%;
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 1 30%;
-		        flex: 1 1 30%;
+	.footer-widgets .widget:first-child {
+		-ms-flex-preferred-size: 40%;
+		    flex-basis: 40%;
 	}
+}
+
+.footer-widgets .widget_nav_menu ul {
+	margin-left: 0;
+	padding-top: 0;
+}
+
+.footer-widgets .widget_nav_menu ul li {
+	display: inline-block;
+	line-height: 1;
+	font-size: 175%;
+	margin-right: 0.25em;
+}
+
+.footer-widgets .widget_nav_menu ul li a {
+	border-width: 0;
 }
 
 #secondary.widget-area {

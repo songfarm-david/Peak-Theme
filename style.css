@@ -1420,12 +1420,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/
-.widget-area {
-	border: 2px solid red;
-}
-
 .widget {
-	border: 1px solid white;
 	margin: 0 0 2em;
 	padding: 0 0 2em;
 	font-family: "Titillium Web", sans-serif;
@@ -1661,6 +1656,13 @@ and open the template in the editor.
 
 .widget #mc_embed_signup #mce-responses .response {
 	margin-bottom: .75em;
+}
+
+@media (min-width: 75em) {
+	.widget #mc_embed_signup .mc-field-group input,
+	.widget #mc_embed_signup div.mce_inline_error {
+		width: 96%;
+	}
 }
 
 /* Footer widget styles */
@@ -1756,12 +1758,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget-area {
-	border: 2px solid red;
-}
-
 .widget {
-	border: 1px solid white;
 	margin: 0 0 2em;
 	padding: 0 0 2em;
 	font-family: "Titillium Web", sans-serif;
@@ -1997,6 +1994,13 @@ and open the template in the editor.
 
 .widget #mc_embed_signup #mce-responses .response {
 	margin-bottom: .75em;
+}
+
+@media (min-width: 75em) {
+	.widget #mc_embed_signup .mc-field-group input,
+	.widget #mc_embed_signup div.mce_inline_error {
+		width: 96%;
+	}
 }
 
 /* Footer widget styles */

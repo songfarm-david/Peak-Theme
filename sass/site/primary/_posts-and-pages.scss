@@ -13,7 +13,7 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em auto 0;
+	margin: 1em auto 0;
 }
 
 .page-links {
@@ -24,11 +24,16 @@
 /**
   * Custom styles
   */
-.entry-header {
-    //@include border;
-    > div {
-        //@include border(2px, green);
-    }
+/* page header banners */
+.page .entry-header {
+    background-color: $hero__color;
+    padding: 0.5em 0 0.75em;
+    .entry-title {
+        color: white; 
+        line-height: $font__line-height-header;
+        margin: 0;
+        @include heading-2;
+    }  
 }
 
 .post .entry-meta {
@@ -44,3 +49,4 @@ figure.author-avatar {
         vertical-align: middle;
     }
 }
+

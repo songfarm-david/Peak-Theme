@@ -638,15 +638,10 @@ textarea {
 	width: 100%;
 }
 
-.wpforms-form {
-	border: 2px solid red;
-}
-
 .wpforms-form input {
 	padding: 8px 0;
 	text-indent: 2%;
 	border-radius: 3px;
-	border: 1px solid black;
 }
 
 .wpforms-form .wpforms-field-label {
@@ -772,16 +767,15 @@ display: block;
 
 /* Links */
 a {
-	color: royalblue;
+	color: #385f7e;
 }
 
 a:visited {
-	color: purple;
 	color: #385f7e;
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	color: #338c5f;
 }
 
 a:focus {
@@ -994,41 +988,34 @@ a:hover, a:active {
 	clear: both;
 	width: $size__site-main;
 }*/
-@media (min-width: 48em) {
-	#content {
-		max-width: 40em;
-		margin: 0 auto;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
-	}
-	#content #primary {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 1 60%;
-		        flex: 1 1 60%;
-	}
-	#content #secondary {
-		border: 2px solid red;
-	}
-}
-
-@media (min-width: 75em) {
-	#content {
-		max-width: 44em;
-	}
-}
-
-@media (min-width: 118.75em) {
-	#content {
-		max-width: 48em;
-	}
-}
-
+/*#content {
+    
+    @media (min-width: 48em) {       
+        @include tablet_width;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        #primary {
+            //width: 60%;
+            flex: 1 1 60%
+        }
+        #secondary {
+            @include border;
+            //width: 30%;
+        }
+        
+    }
+    
+    @media (min-width: 75em) {       
+        @include desktop_width;
+    }
+    
+    @media (min-width: 118.75em) {     
+        @include lg-desktop_width;            
+    }
+    
+}*/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1079,7 +1066,19 @@ a:hover, a:active {
 
 /* add page top padding to account for fixed nav */
 .site-content {
-	padding-top: 3em;
+	padding-top: 1em;
+}
+
+@media (min-width: 48em) {
+	.site-content {
+		padding-top: 4em;
+	}
+}
+
+@media (min-width: 75em) {
+	.site-content {
+		padding-top: 5em;
+	}
 }
 
 .post-navigation,
@@ -1248,8 +1247,9 @@ and open the template in the editor.
 }
 
 #hero-banner .hero-headline-container {
-	margin: 3.5em auto 0;
-	text-align: left;
+	text-align: center;
+	margin-top: 1em;
+	font-family: "Raleway", sans-serif;
 }
 
 #hero-banner .hero-headline-container .hero-headline {
@@ -1258,10 +1258,33 @@ and open the template in the editor.
 	line-height: 1.25;
 }
 
+#hero-banner .hero-headline-container .hero-headline > span {
+	color: #338c5f;
+}
+
 @media (min-width: 48em) {
 	#hero-banner .hero-headline-container {
-		max-width: 40em;
-		border: 2px solid red;
+		margin: 3.5em auto 0;
+		max-width: 34em;
+		font-size: 22.5px;
+		font-size: 1.40625rem;
+	}
+}
+
+@media (min-width: 75em) {
+	#hero-banner .hero-headline-container {
+		text-align: left;
+		max-width: 38em;
+		font-size: 25px;
+		font-size: 1.5625rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	#hero-banner .hero-headline-container {
+		max-width: 41.5em;
+		font-size: 27.5px;
+		font-size: 1.71875rem;
 	}
 }
 
@@ -1283,7 +1306,7 @@ and open the template in the editor.
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em auto 0;
+	margin: 1em auto 0;
 }
 
 .page-links {
@@ -1294,6 +1317,19 @@ and open the template in the editor.
 /**
   * Custom styles
   */
+/* page header banners */
+.page .entry-header {
+	background-color: #385f7e;
+	padding: 0.5em 0 0.75em;
+}
+
+.page .entry-header .entry-title {
+	color: white;
+	line-height: 1.25;
+	margin: 0;
+	font-size: 2.369em;
+}
+
 .post .entry-meta {
 	padding: 0;
 }

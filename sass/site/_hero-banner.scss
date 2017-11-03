@@ -21,18 +21,39 @@ and open the template in the editor.
     padding-bottom: 2em;
     height: 100vh;
     .hero-headline-container {
-        margin: 3.5em auto 0;
-        text-align: left;
-        
+        text-align: center;
+        margin-top: 1em;
+        font-family: $font__header;
         .hero-headline {
             color: $hero__color;
             margin: 0;
-            line-height: 1.25;
+            line-height: $font__line-height-header;
+            >span {
+                color: $hero__color-2;
+            }
+        }
+        .hero-byline {
+            
         }
         
         @media #{$tablet__breakpoint} {
-            @include tablet_width;
-            @include border;
+            margin: 3.5em auto 0;
+            max-width: 34em;
+
+            @include font-size(1.125);
+
+        }
+        
+        @media #{$desktop__breakpoint} {
+            text-align: left;
+            max-width: 38em;
+            @include font-size(1.250);
+
+        }
+        
+        @media #{$lg-desktop__breakpoint} {
+            max-width: 41.5em;
+            @include font-size(1.375);
         }
     }
 }

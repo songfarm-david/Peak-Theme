@@ -22,14 +22,14 @@
                 <span id="copyright">&copy; <?php echo date('Y'); ?> Peak Websites</span>
             </div>
             
-            <nav>
+<!--            <nav>
                 <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'social-media',
-                        'menu_id'        => 'social-media-menu',
-                    ) );
+//                    wp_nav_menu( array(
+//                        'theme_location' => 'social-media',
+//                        'menu_id'        => 'social-media-menu',
+//                    ) );
                 ?>
-            </nav>
+            </nav>-->
             
             <nav>
                 <?php

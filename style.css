@@ -359,7 +359,7 @@ small,
     font-size: 0.563em;
 }*/
 p {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 
 dfn, cite, em, i {
@@ -1334,15 +1334,24 @@ and open the template in the editor.
 	padding: 0;
 }
 
-figure.author-avatar {
+/**
+  * Blog post styles */
+.post .entry-header .entry-title {
+	margin-bottom: 0;
+}
+
+.post figure.author-avatar {
 	border: 2px solid red;
-	margin: 0;
-	padding-right: 0.25em;
+	margin: 0 0 0.5em;
 	display: inline-block;
 }
 
-figure.author-avatar > img {
+.post figure.author-avatar > img {
 	vertical-align: middle;
+}
+
+.post .entry-content {
+	margin-top: 0;
 }
 
 /*--------------------------------------------------------------

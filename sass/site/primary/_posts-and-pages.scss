@@ -36,7 +36,13 @@
     }  
 }
 
-/* set content width maximums for PAGES */
+/* mixin for above the fold position */
+@mixin above-the-fold-height {
+    //margin-top: 100 / 1.416 + vh;
+    margin-top: 5%;
+}
+
+/* PAGE styles */
 body.page {
     .entry-header > div,
     .entry-content,
@@ -51,6 +57,7 @@ body.page {
 
         @media #{$desktop__breakpoint} {       
             @include desktop_width;
+            //@include above-the-fold-height;
         }
 
         @media #{$lg-desktop__breakpoint} {     
@@ -63,9 +70,21 @@ body.page {
     }
 }
 
+body.page .site-content {
+    //@include above-the-fold-height;
+    @media screen and #{$tablet__breakpoint} and (min-height: 640px) {
+        @include border(10px);
+        margin-top: 1.416 * 6 + rem;
+    }
+    
+    @media screen and #{$desktop__breakpoint} and (min-height: 800px) {
+        margin-top: 1.416 * 12 + rem;
+    
+    }
 
+}
 /**
-  * Blog POST styles */
+  * POST styles */
 body.blog{
     .post {
         @include border;

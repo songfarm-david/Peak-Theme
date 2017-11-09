@@ -42,6 +42,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* theme colors */
+h1,
+h2,
+h3,
+h4 {
+	line-height: normal;
+	margin-top: 1.416rem;
+	margin-bottom: 0.708rem;
+}
+
+p {
+	line-height: 1.416;
+	margin-top: 1.416rem;
+	margin-bottom: 0.708rem;
+}
+
 /**
   * Note: em values are calculated by desired content width and dividing by global px value
   * Ex: 1200px / 16px = 75em
@@ -277,7 +292,7 @@ textarea {
 	font-family: "Titillium Web", sans-serif;
 	font-size: 18px;
 	font-size: 1.125rem;
-	line-height: 1.5;
+	line-height: 1.416;
 	/* Media Breakpoints for Responsive Typography */
 }
 
@@ -327,19 +342,23 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: "Raleway", sans-serif;
 }
 
-h1 {
+h1,
+.h1 {
 	font-size: 3.157em;
 }
 
-h2 {
+h2,
+.h2 {
 	font-size: 2.369em;
 }
 
-h3 {
+h3,
+.h3 {
 	font-size: 1.777em;
 }
 
-h4 {
+h4,
+.h4 {
 	font-size: 1.333em;
 }
 
@@ -358,10 +377,6 @@ small,
 .font-small {
     font-size: 0.563em;
 }*/
-p {
-	margin-bottom: 1em;
-}
-
 dfn, cite, em, i {
 	font-style: italic;
 }
@@ -1028,23 +1043,54 @@ a:hover, a:active {
 /**
   * This file is for global/site-wide styles like padding and margins
   */
+/**
+  * Force navigation to stick to the top even when children elements have top-margin
+  * Note: it seems that when you give a child element a margin-top, the parent element is affected by
+  * the child elements top margin. This rule keep the parent absolute top of the page
+  */
+body {
+	position: relative;
+}
+
+body .site {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+/**
+  * this style is a container to add a decorative background image to the page when a margin-top is added
+  * to the main child element header
+  */
+body.page {
+	/* if page is in tablet or desktop mode, give page a background image */
+}
+
+@media screen and (min-width: 48em) {
+	body.page {
+		background-color: #fca;
+	}
+}
+
+@media screen and (min-width: 75em) {
+	body.page {
+		background-color: #afc;
+	}
+}
+
 /* add page top padding to account for fixed nav */
-.site-content {
-	padding-top: 1em;
-}
-
-@media (min-width: 48em) {
-	.site-content {
-		padding-top: 4em;
-	}
-}
-
-@media (min-width: 75em) {
-	.site-content {
-		padding-top: 5em;
-	}
-}
-
+/*.site-content {
+    padding-top: 1em;
+    
+    @media (min-width: 48em) {
+        padding-top: 4em;
+    }
+    
+    @media (min-width: 75em) {
+        padding-top: 5em;
+    }
+    
+}*/
 .post-navigation,
 .comments-area {
 	padding: 0 1em;
@@ -1063,15 +1109,9 @@ a:hover, a:active {
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
 	background-color: transparent;
-}
-
-@media (min-width: 48em) {
-	.site-header {
-		position: fixed;
-		left: 0;
-		right: 0;
-		z-index: 1001;
-	}
+	/*    @media (min-width: 48em) {
+         
+    }*/
 }
 
 .site-branding,
@@ -1294,7 +1334,8 @@ and open the template in the editor.
 	font-size: 2.369em;
 }
 
-/* set content width maximums for PAGES */
+/* mixin for above the fold position */
+/* PAGE styles */
 body.page .entry-header > div,
 body.page .entry-content,
 body.page .entry-footer {
@@ -1330,8 +1371,21 @@ body.page .entry-content {
 	margin-top: 1em;
 }
 
+@media screen and (min-width: 48em) and (min-height: 640px) {
+	body.page .site-content {
+		border: 10px solid red;
+		margin-top: 8.496rem;
+	}
+}
+
+@media screen and (min-width: 75em) and (min-height: 800px) {
+	body.page .site-content {
+		margin-top: 16.992rem;
+	}
+}
+
 /**
-  * Blog POST styles */
+  * POST styles */
 body.blog .post {
 	border: 2px solid red;
 	margin-bottom: 1.5em;

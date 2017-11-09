@@ -2,11 +2,37 @@
   * This file is for global/site-wide styles like padding and margins
   */
 
+/**
+  * Force navigation to stick to the top even when children elements have top-margin
+  * Note: it seems that when you give a child element a margin-top, the parent element is affected by
+  * the child elements top margin. This rule keep the parent absolute top of the page
+  */
+body {
+    position: relative;
+    .site {
+        position: absolute;
+        left: 0; right: 0;
+    }
+}
 
+/**
+  * this style is a container to add a decorative background image to the page when a margin-top is added
+  * to the main child element header
+  */
+body.page {
+    /* if page is in tablet or desktop mode, give page a background image */
+    @media screen and #{$tablet__breakpoint} {
+        background-color: #fca;
+    }
+    @media screen and #{$desktop__breakpoint} {
+        background-color: #afc;
+
+    }
+}
 
 
 /* add page top padding to account for fixed nav */
-.site-content {
+/*.site-content {
     padding-top: 1em;
     
     @media #{$tablet__breakpoint} {
@@ -17,7 +43,7 @@
         padding-top: 5em;
     }
     
-}
+}*/
 
 .post-navigation,
 .comments-area {

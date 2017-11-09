@@ -6,15 +6,17 @@
     justify-content: space-between;
     background-color: transparent;
 
-    @media #{$tablet__breakpoint} {
-        position: fixed;
-        left: 0;
-        right: 0;
-        z-index: 1001;   
-    }
-    
-    
-    
+/*    @media #{$tablet__breakpoint} {
+         
+    }*/
+      
+}
+
+@mixin sticky-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1001;  
 }
 
 .site-branding,

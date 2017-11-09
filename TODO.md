@@ -4,6 +4,7 @@
 3. Create portfolio page, link to it from About Peak: "We have delivered on our promises for businesses before. (link to portfolio)"
 4. Setup same Google Analytics on website, mark as landmark event in Google
 5. Change footer widget 'Recent Posts' to 'Most Popular Posts'
+6. Style/add sticky header without use of JavaScript if possible
 
 #Testing:
 1. User-Test font size on various devices (see _breakpoints.scss for screen sizes). 
@@ -11,4 +12,6 @@
 
 # Design additions
 - Include "badges", i.e: CSS3, HTML5, PHP, WP. These are, essentially, technologies that Peak Websites is versed in.
+
+
 

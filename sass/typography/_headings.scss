@@ -28,6 +28,7 @@ h2,
 h3,
 .h3 {
     font-size: 1.777em;
+    font-weight: normal;
 }
 
 h4,
@@ -37,6 +38,11 @@ h4,
 
 h5 {
     font-size: 1em;
+}
+
+h6,
+.h6 {
+    text-transform: uppercase;
 }
 
 /* NOTE: write mixin function that can quickly calculate these header size values to use within site styles */

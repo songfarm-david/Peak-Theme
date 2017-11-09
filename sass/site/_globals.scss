@@ -2,28 +2,8 @@
   * This file is for global/site-wide styles like padding and margins
   */
 
-/* set content width maximums */
-.entry-header > div,
-.entry-content,
-.entry-footer,
-.post .entry-header {
-            
-    padding: 0 1em;
-    
-    @media #{$tablet__breakpoint} {     
-        margin: 0 auto;
-        @include tablet_width;
-    }
-    
-    @media #{$desktop__breakpoint} {       
-        @include desktop_width;
-    }
-    
-    @media #{$lg-desktop__breakpoint} {     
-        @include lg-desktop_width;            
-    }
-    
-}
+
+
 
 /* add page top padding to account for fixed nav */
 .site-content {

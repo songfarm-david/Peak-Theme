@@ -1028,42 +1028,6 @@ a:hover, a:active {
 /**
   * This file is for global/site-wide styles like padding and margins
   */
-/* set content width maximums */
-.entry-header > div,
-.entry-content,
-.entry-footer,
-.post .entry-header {
-	padding: 0 1em;
-}
-
-@media (min-width: 48em) {
-	.entry-header > div,
-	.entry-content,
-	.entry-footer,
-	.post .entry-header {
-		margin: 0 auto;
-		max-width: 40em;
-	}
-}
-
-@media (min-width: 75em) {
-	.entry-header > div,
-	.entry-content,
-	.entry-footer,
-	.post .entry-header {
-		max-width: 44em;
-	}
-}
-
-@media (min-width: 118.75em) {
-	.entry-header > div,
-	.entry-content,
-	.entry-footer,
-	.post .entry-header {
-		max-width: 48em;
-	}
-}
-
 /* add page top padding to account for fixed nav */
 .site-content {
 	padding-top: 1em;
@@ -1330,28 +1294,129 @@ and open the template in the editor.
 	font-size: 2.369em;
 }
 
-.post .entry-meta {
-	padding: 0;
+/* set content width maximums for PAGES */
+body.page .entry-header > div,
+body.page .entry-content,
+body.page .entry-footer {
+	padding: 0 1em;
+}
+
+@media (min-width: 48em) {
+	body.page .entry-header > div,
+	body.page .entry-content,
+	body.page .entry-footer {
+		margin: 0 auto;
+		max-width: 40em;
+	}
+}
+
+@media (min-width: 75em) {
+	body.page .entry-header > div,
+	body.page .entry-content,
+	body.page .entry-footer {
+		max-width: 44em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.page .entry-header > div,
+	body.page .entry-content,
+	body.page .entry-footer {
+		max-width: 48em;
+	}
+}
+
+body.page .entry-content {
+	margin-top: 1em;
 }
 
 /**
-  * Blog post styles */
-.post .entry-header .entry-title {
-	margin-bottom: 0;
+  * Blog POST styles */
+body.blog .post {
+	border: 2px solid red;
+	margin-bottom: 1.5em;
+	padding: 0 1em;
 }
 
-.post figure.author-avatar {
-	border: 2px solid red;
+body.blog .post .entry-header .entry-title {
+	margin: 0.5em 0 0.15em;
+}
+
+body.blog .post .entry-meta h6,
+body.blog .post .entry-footer h6 {
+	display: inline;
+}
+
+body.blog .post .entry-meta {
+	padding: 0;
+}
+
+body.blog .post figure.author-avatar {
 	margin: 0 0 0.5em;
 	display: inline-block;
 }
 
-.post figure.author-avatar > img {
+body.blog .post figure.author-avatar > img {
 	vertical-align: middle;
 }
 
-.post .entry-content {
+body.blog .post .entry-content {
 	margin-top: 0;
+}
+
+body.blog .site-content {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+@media (min-width: 48em) {
+	body.blog .site-content {
+		margin: 0 auto;
+		max-width: 40em;
+	}
+}
+
+@media (min-width: 75em) {
+	body.blog .site-content {
+		max-width: 44em;
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.blog .site-content {
+		max-width: 48em;
+	}
+}
+
+@media (min-width: 75em) {
+	body.blog #primary {
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 63%;
+		        flex: 0 0 63%;
+	}
+}
+
+body.blog #secondary {
+	border: 2px solid blue;
+	display: none;
+}
+
+@media (min-width: 75em) {
+	body.blog #secondary {
+		display: block;
+		padding-top: 1.65em;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 33%;
+		        flex: 0 0 33%;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -1428,8 +1493,8 @@ and open the template in the editor.
 ## Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 2em;
-	padding: 0 0 2em;
+	margin: 0 0 1em;
+	padding: 0 0 1em;
 	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
@@ -1678,7 +1743,6 @@ and open the template in the editor.
 	padding: 1em 0;
 	background-color: #385f7e;
 	color: #f3f3f3;
-	/* connect with us menu */
 }
 
 .footer-widgets .widget {
@@ -1711,6 +1775,9 @@ and open the template in the editor.
 	.footer-widgets {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		/* If only one widget is displayed, make it full width. */
 		/*          .widget:nth-child(2) {
                 flex: 2;
@@ -1732,6 +1799,8 @@ and open the template in the editor.
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 auto;
 		        flex: 1 1 auto;
+		-ms-flex: 1 0 45%;
+		    flex: 1 0 45%;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
@@ -1742,20 +1811,26 @@ and open the template in the editor.
 	}
 }
 
-.footer-widgets .widget_nav_menu ul {
+/* connect with us menu */
+.widget_nav_menu ul {
 	margin-left: 0;
 	padding-top: 0;
 }
 
-.footer-widgets .widget_nav_menu ul li {
+.widget_nav_menu ul li {
 	display: inline-block;
 	line-height: 1;
-	font-size: 175%;
+	font-size: 200%;
 	margin-right: 0.25em;
 }
 
-.footer-widgets .widget_nav_menu ul li a {
+.widget_nav_menu ul li a:first-child {
+	display: none;
+}
+
+.widget_nav_menu ul li a {
 	border-width: 0;
+	padding: 0.25em 0;
 }
 
 #secondary.widget-area {
@@ -1766,8 +1841,8 @@ and open the template in the editor.
 # Widgets
 --------------------------------------------------------------*/
 .widget {
-	margin: 0 0 2em;
-	padding: 0 0 2em;
+	margin: 0 0 1em;
+	padding: 0 0 1em;
 	font-family: "Titillium Web", sans-serif;
 	/* Make sure select elements fit in widgets. */
 }
@@ -2016,7 +2091,6 @@ and open the template in the editor.
 	padding: 1em 0;
 	background-color: #385f7e;
 	color: #f3f3f3;
-	/* connect with us menu */
 }
 
 .footer-widgets .widget {
@@ -2049,6 +2123,9 @@ and open the template in the editor.
 	.footer-widgets {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		/* If only one widget is displayed, make it full width. */
 		/*          .widget:nth-child(2) {
                 flex: 2;
@@ -2070,6 +2147,8 @@ and open the template in the editor.
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 auto;
 		        flex: 1 1 auto;
+		-ms-flex: 1 0 45%;
+		    flex: 1 0 45%;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
@@ -2080,20 +2159,26 @@ and open the template in the editor.
 	}
 }
 
-.footer-widgets .widget_nav_menu ul {
+/* connect with us menu */
+.widget_nav_menu ul {
 	margin-left: 0;
 	padding-top: 0;
 }
 
-.footer-widgets .widget_nav_menu ul li {
+.widget_nav_menu ul li {
 	display: inline-block;
 	line-height: 1;
-	font-size: 175%;
+	font-size: 200%;
 	margin-right: 0.25em;
 }
 
-.footer-widgets .widget_nav_menu ul li a {
+.widget_nav_menu ul li a:first-child {
+	display: none;
+}
+
+.widget_nav_menu ul li a {
 	border-width: 0;
+	padding: 0.25em 0;
 }
 
 #secondary.widget-area {

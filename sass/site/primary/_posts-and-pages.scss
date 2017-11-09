@@ -36,17 +36,101 @@
     }  
 }
 
-.post .entry-meta {
-    padding: 0;
-}
+/* set content width maximums for PAGES */
+body.page {
+    .entry-header > div,
+    .entry-content,
+    .entry-footer {
 
-figure.author-avatar {
-    @include border;
-    margin: 0;
-    padding-right: 0.25em;
-    display: inline-block;
-    > img {
-        vertical-align: middle;
+        padding: 0 1em;
+
+        @media #{$tablet__breakpoint} {     
+            margin: 0 auto;
+            @include tablet_width;
+        }
+
+        @media #{$desktop__breakpoint} {       
+            @include desktop_width;
+        }
+
+        @media #{$lg-desktop__breakpoint} {     
+            @include lg-desktop_width;            
+        }
+
+    }   
+    .entry-content {
+        margin-top: 1em;
     }
 }
 
+
+/**
+  * Blog POST styles */
+body.blog{
+    .post {
+        @include border;
+        margin-bottom: 1.5em;    
+        padding: 0 1em;
+        .entry-header .entry-title {
+            margin: 0.5em 0 0.15em;
+        }
+        .entry-meta,
+        .entry-footer {
+            h6 {
+                display: inline;
+            }
+        }
+        .entry-meta {
+            padding: 0;
+        }
+        figure.author-avatar {
+            //@include border;
+            margin: 0 0 0.5em;
+            display: inline-block;
+            > img {
+                vertical-align: middle;
+            }
+        }
+    
+        .entry-content {
+            margin-top: 0;
+        }
+
+        
+    
+    }  
+    
+    .site-content {
+        display: flex;
+        flex-wrap: wrap;
+        @media #{$tablet__breakpoint} {     
+            margin: 0 auto;
+            @include tablet_width;
+        }
+
+        @media #{$desktop__breakpoint} {       
+            @include desktop_width;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        @media #{$lg-desktop__breakpoint} {     
+            @include lg-desktop_width;            
+        }
+    }
+    
+    #primary {
+        @media #{$desktop__breakpoint} {
+            flex: 0 0 63%;
+        }
+    }
+    #secondary {
+        @include border(2px,blue);
+        display: none;
+        @media #{$desktop__breakpoint} {     
+            display: block;
+            padding-top: 1.65em;
+            flex: 0 0 33%;
+        }
+    }
+}

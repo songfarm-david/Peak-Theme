@@ -5,8 +5,8 @@
 .widget {
     
         //@include border(1px,white);
-	margin: 0 0 2em;
-	padding: 0 0 2em;
+	margin: 0 0 1em;
+	padding: 0 0 1em;
 	font-family: $font__main;
 	
 	ul,
@@ -286,15 +286,19 @@
         flex-wrap: wrap;
         .widget {
             flex: 1 0 45%;
+            
+            //@include border(2px,white);
         }
     }
 		
     @media #{$desktop__breakpoint} {
             
         flex-wrap: nowrap;
-        
+                justify-content: center;
+
         .widget {
             flex: 1 1 auto;
+            flex: 1 0 45%;
         }
 
         /* If only one widget is displayed, make it full width. */
@@ -326,7 +330,11 @@
             }*/
     }
     
-    /* connect with us menu */
+    
+	
+}
+
+/* connect with us menu */
     .widget_nav_menu {
         ul {
             margin-left: 0;
@@ -334,16 +342,18 @@
             li {
                 display: inline-block;
                 line-height: 1;
-                font-size: 175%;
+                font-size: 200%;
                 margin-right: 0.25em;
+                a:first-child {
+                    display: none;
+                }
                 a {
                     border-width: 0;
+                    padding: 0.25em 0;
                 }
             }    
         }
     }
-	
-}
 
 #secondary.widget-area {
     padding: 0 1em;

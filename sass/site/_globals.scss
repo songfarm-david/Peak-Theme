@@ -7,20 +7,20 @@
   * Note: it seems that when you give a child element a margin-top, the parent element is affected by
   * the child elements top margin. This rule keep the parent absolute top of the page
   */
-body {
+/*body {
     position: relative;
     .site {
         position: absolute;
         left: 0; right: 0;
     }
-}
+}*/
 
 /**
   * this style is a container to add a decorative background image to the page when a margin-top is added
   * to the main child element header
   */
-body.page {
-    /* if page is in tablet or desktop mode, give page a background image */
+/*body.page {
+     if page is in tablet or desktop mode, give page a background image 
     @media screen and #{$tablet__breakpoint} {
         background-color: #fca;
     }
@@ -28,7 +28,7 @@ body.page {
         background-color: #afc;
 
     }
-}
+}*/
 
 
 /* add page top padding to account for fixed nav */

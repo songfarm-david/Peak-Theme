@@ -1048,36 +1048,27 @@ a:hover, a:active {
   * Note: it seems that when you give a child element a margin-top, the parent element is affected by
   * the child elements top margin. This rule keep the parent absolute top of the page
   */
-body {
-	position: relative;
-}
-
-body .site {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
+/*body {
+    position: relative;
+    .site {
+        position: absolute;
+        left: 0; right: 0;
+    }
+}*/
 /**
   * this style is a container to add a decorative background image to the page when a margin-top is added
   * to the main child element header
   */
-body.page {
-	/* if page is in tablet or desktop mode, give page a background image */
-}
+/*body.page {
+     if page is in tablet or desktop mode, give page a background image 
+    @media screen and (min-width: 48em) {
+        background-color: #fca;
+    }
+    @media screen and (min-width: 75em) {
+        background-color: #afc;
 
-@media screen and (min-width: 48em) {
-	body.page {
-		background-color: #fca;
-	}
-}
-
-@media screen and (min-width: 75em) {
-	body.page {
-		background-color: #afc;
-	}
-}
-
+    }
+}*/
 /* add page top padding to account for fixed nav */
 /*.site-content {
     padding-top: 1em;
@@ -1371,17 +1362,16 @@ body.page .entry-content {
 	margin-top: 1em;
 }
 
-@media screen and (min-width: 48em) and (min-height: 640px) {
-	body.page .site-content {
-		border: 10px solid red;
-		margin-top: 8.496rem;
-	}
-}
-
-@media screen and (min-width: 75em) and (min-height: 800px) {
-	body.page .site-content {
-		margin-top: 16.992rem;
-	}
+body.page .site-content {
+	/*    @media screen and (min-width: 48em) and (min-height: 640px) {
+        @include border(10px);
+        margin-top: 1.416 * 6 + rem;
+    }
+    
+    @media screen and (min-width: 75em) and (min-height: 800px) {
+        margin-top: 1.416 * 12 + rem;
+    
+    }*/
 }
 
 /**

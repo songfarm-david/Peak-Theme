@@ -72,7 +72,7 @@ body.page {
 
 body.page .site-content {
     //@include above-the-fold-height;
-    @media screen and #{$tablet__breakpoint} and (min-height: 640px) {
+/*    @media screen and #{$tablet__breakpoint} and (min-height: 640px) {
         @include border(10px);
         margin-top: 1.416 * 6 + rem;
     }
@@ -80,7 +80,7 @@ body.page .site-content {
     @media screen and #{$desktop__breakpoint} and (min-height: 800px) {
         margin-top: 1.416 * 12 + rem;
     
-    }
+    }*/
 
 }
 /**

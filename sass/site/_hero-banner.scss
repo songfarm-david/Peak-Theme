@@ -17,12 +17,11 @@ and open the template in the editor.
     height: auto;
     min-height: 26.666em;
     text-align: center;
-    padding-top: 5rem;
-    padding-bottom: 2em;
+    padding: 1em 0.5em 2em;
     height: 100vh;
     .hero-headline-container {
         text-align: center;
-        margin-top: 1em;
+        //margin-top: 1em;
         font-family: $font__header;
         .hero-headline {
             color: $hero-color;
@@ -36,8 +35,14 @@ and open the template in the editor.
             
         }
         
+        .peak-button {
+            margin-top: $first-modular + em;
+        }
+        
         @media #{$tablet__breakpoint} {
-            margin: 3.5em auto 0;
+            margin: 5.5em auto 0;
+            //padding: 3em 0.5em 2em;
+
             max-width: 34em;
 
             @include font-size(1.125);
@@ -48,7 +53,7 @@ and open the template in the editor.
             text-align: left;
             max-width: 38em;
             @include font-size(1.250);
-
+            margin-top: 6.5em;
         }
         
         @media #{$lg-desktop__breakpoint} {

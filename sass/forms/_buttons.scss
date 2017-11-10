@@ -25,11 +25,12 @@ button[type="submit"].peak-button,
 input[type="submit"].peak-button,
 .peak-button {
     clear: both;
-    background-color: #aaa;
+    background-color: $hero-green;
     border: 0 none;
-    border-radius: 4px;
+    
+    @include border-radius;
     transition: all 0.23s ease-in-out 0s;
-    color: #FFFFFF;
+    color: $text-light;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -47,9 +48,9 @@ input[type="submit"].peak-button,
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
     transform: perspective(1px) translateZ(0);
-    box-shadow: 0 0 1px transparent;
+    //box-shadow: 0 0 1px transparent;
+    @include box-shadow;
     position: relative;
-    background: #e1e1e1;
     -webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 0.3s;
@@ -83,6 +84,9 @@ input[type="submit"].peak-button,
     &:active:before {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
+    }
+    &:visited {
+        color: $text-light;
     }
 }
 

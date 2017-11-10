@@ -59,7 +59,9 @@
 	</header><!-- #masthead -->
 
         <?php if ( is_front_page() ) : 
-            
+            /**
+             * Pull in hero section
+             */
             include( get_template_directory() . '/hero-banner.php' );
         
         endif; ?>

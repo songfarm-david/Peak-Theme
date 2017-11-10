@@ -2,8 +2,17 @@
     border: $width solid $color;
 }
 
-/* site widths */
+@mixin box-shadow {
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
 
+@mixin border-radius( $radius: 4px ) {
+    border-radius: $radius;
+}
+
+/**
+  * Site Widths
+  */
 // tablet width
 @mixin tablet_width() {
     max-width: 40em;

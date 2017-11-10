@@ -72,7 +72,88 @@ p {
 /*--------------------------------------------------------------
 ## Helper Mixins
 --------------------------------------------------------------*/
-/* site widths */
+/**
+  * Site Widths
+  */
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-Nov-2017, 12:44:13 AM
+    Author     : David
+*/
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/**
+  * Grow on hover
+  */
+/* Grow */
+.grow-animate {
+	display: inline-block;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	transition-duration: 0.25s;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+
+.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+@-webkit-keyframes fadeInUp {
+	0% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.fadeInUp {
+	-webkit-animation: fadeInUp 1.5s .23s ease-out forwards;
+	        animation: fadeInUp 1.5s .23s ease-out forwards;
+	-webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -543,11 +624,11 @@ button[type="submit"].peak-button,
 input[type="submit"].peak-button,
 .peak-button {
 	clear: both;
-	background-color: #aaa;
+	background-color: #338c5f;
 	border: 0 none;
 	border-radius: 4px;
 	transition: all 0.23s ease-in-out 0s;
-	color: #FFFFFF;
+	color: #EAF1F7;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1em;
@@ -565,9 +646,8 @@ input[type="submit"].peak-button,
 	vertical-align: middle;
 	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	position: relative;
-	background: #e1e1e1;
 	transition-property: color;
 	transition-duration: 0.3s;
 }
@@ -611,6 +691,12 @@ input[type="submit"].peak-button:active:before,
 .peak-button:active:before {
 	-webkit-transform: scaleX(1);
 	transform: scaleX(1);
+}
+
+button[type="submit"].peak-button:visited,
+input[type="submit"].peak-button:visited,
+.peak-button:visited {
+	color: #EAF1F7;
 }
 
 /*.peak-button-container {
@@ -904,6 +990,22 @@ a:hover, a:active {
 	}
 }
 
+/**
+  * Make last list item stand out
+  */
+/*.main-navigation ul.menu > li {
+    &:last-child {
+        @include border(3px, $hero-green);
+        //background-color: $hero-green;
+        @include border-radius;
+        > a {
+            //color: $text-light;
+            //@include box-shadow;
+            
+        }
+        
+    }
+}*/
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1108,7 +1210,7 @@ a:hover, a:active {
 .site-header {
 	padding: 0 0.15em;
 	background-color: transparent;
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 	z-index: 1001;
@@ -1120,21 +1222,9 @@ a:hover, a:active {
 	        justify-content: space-between;
 }
 
-@-webkit-keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
+@media (min-width: 48em) {
+	.site-header {
+		position: absolute;
 	}
 }
 
@@ -1301,14 +1391,12 @@ and open the template in the editor.
 	height: auto;
 	min-height: 26.666em;
 	text-align: center;
-	padding-top: 5rem;
-	padding-bottom: 2em;
+	padding: 1em 0.5em 2em;
 	height: 100vh;
 }
 
 #hero-banner .hero-headline-container {
 	text-align: center;
-	margin-top: 1em;
 	font-family: "Raleway", sans-serif;
 }
 
@@ -1322,9 +1410,13 @@ and open the template in the editor.
 	color: #338c5f;
 }
 
+#hero-banner .hero-headline-container .peak-button {
+	margin-top: 1.5em;
+}
+
 @media (min-width: 48em) {
 	#hero-banner .hero-headline-container {
-		margin: 3.5em auto 0;
+		margin: 5.5em auto 0;
 		max-width: 34em;
 		font-size: 22.5px;
 		font-size: 1.40625rem;
@@ -1337,6 +1429,7 @@ and open the template in the editor.
 		max-width: 38em;
 		font-size: 25px;
 		font-size: 1.5625rem;
+		margin-top: 6.5em;
 	}
 }
 
@@ -1391,6 +1484,42 @@ and open the template in the editor.
 }
 
 /* mixin for above the fold position */
+body:not(.home) .site-content {
+	padding-top: 0;
+}
+
+@media (min-width: 48em) {
+	body:not(.home) .site-content {
+		padding-top: 5em;
+	}
+}
+
+@media (min-width: 75em) {
+	body:not(.home) .site-content {
+		padding-top: 7.5em;
+	}
+}
+
+body.home .site-content {
+	padding-top: 0;
+}
+
+@media (min-width: 48em) {
+	body.home .site-content {
+		padding: 1em 0 0.5em;
+	}
+}
+
+@media (min-width: 75em) {
+	body.home .site-content {
+		padding: 2em 0 1em;
+	}
+}
+
+body:not(.blog) .site-content h2, body:not(.blog) .site-content h3 {
+	font-weight: normal;
+}
+
 /* PAGE styles */
 body.page .entry-header > div,
 body.page .entry-content,
@@ -1426,18 +1555,6 @@ body.page .entry-footer {
 
 body.page .entry-content {
 	margin-top: 1em;
-}
-
-body.page .site-content {
-	/*    @media screen and (min-width: 48em) and (min-height: 640px) {
-        @include border(10px);
-        margin-top: 1.416 * 6 + rem;
-    }
-    
-    @media screen and (min-width: 75em) and (min-height: 800px) {
-        margin-top: 1.416 * 12 + rem;
-    
-    }*/
 }
 
 /**
@@ -1862,6 +1979,14 @@ and open the template in the editor.
 .footer-widgets .widget {
 	margin: 0 1em 1em;
 	padding-top: 1em;
+	/**
+          * Show list items on 'Recent Posts' and other specific list-type footer widgets
+          */
+}
+
+.footer-widgets .widget.widget_recent_entries ul > li {
+	display: list-item;
+	list-style: disc inside;
 }
 
 .footer-widgets a {
@@ -1889,6 +2014,8 @@ and open the template in the editor.
 	.footer-widgets {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
@@ -1913,8 +2040,9 @@ and open the template in the editor.
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 auto;
 		        flex: 1 1 auto;
-		-ms-flex: 1 0 45%;
-		    flex: 1 0 45%;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 40%;
+		        flex: 0 1 40%;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
@@ -2208,6 +2336,14 @@ ul.social-media-menu li a {
 .footer-widgets .widget {
 	margin: 0 1em 1em;
 	padding-top: 1em;
+	/**
+          * Show list items on 'Recent Posts' and other specific list-type footer widgets
+          */
+}
+
+.footer-widgets .widget.widget_recent_entries ul > li {
+	display: list-item;
+	list-style: disc inside;
 }
 
 .footer-widgets a {
@@ -2235,6 +2371,8 @@ ul.social-media-menu li a {
 	.footer-widgets {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
+		-ms-flex-pack: distribute;
+		    justify-content: space-around;
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
 		        justify-content: center;
@@ -2259,8 +2397,9 @@ ul.social-media-menu li a {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 1 auto;
 		        flex: 1 1 auto;
-		-ms-flex: 1 0 45%;
-		    flex: 1 0 45%;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 40%;
+		        flex: 0 1 40%;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;

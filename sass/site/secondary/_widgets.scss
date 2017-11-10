@@ -273,6 +273,14 @@
     .widget {
         margin: 0 1em 1em;
         padding-top: 1em;
+        
+        /**
+          * Show list items on 'Recent Posts' and other specific list-type footer widgets
+          */
+        &.widget_recent_entries ul > li {
+            display: list-item;
+            list-style: disc inside;
+        }
     }
     
     a {
@@ -294,11 +302,13 @@
     @media #{$desktop__breakpoint} {
             
         flex-wrap: nowrap;
+                justify-content: space-around;
                 justify-content: center;
 
         .widget {
             flex: 1 1 auto;
-            flex: 1 0 45%;
+            flex: 0 1 40%;
+            //@include border;
         }
 
         /* If only one widget is displayed, make it full width. */

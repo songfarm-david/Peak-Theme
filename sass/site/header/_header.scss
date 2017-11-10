@@ -5,24 +5,21 @@
     padding: 0 0.15em;
     background-color: transparent;
     
-    position: absolute;
+    position: relative;
     left: 0;
     right: 0;
     z-index: 1001;
     
     display: flex;
     justify-content: space-between;
+    
+    @media #{$tablet__breakpoint} {
+        position: absolute;
+    }
   
 }
 
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
+
 
 .header-sticky {
     position: fixed;

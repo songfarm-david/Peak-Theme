@@ -227,3 +227,20 @@ a {
     } 
     
 }
+
+/**
+  * Make last list item stand out
+  */
+/*.main-navigation ul.menu > li {
+    &:last-child {
+        @include border(3px, $hero-green);
+        //background-color: $hero-green;
+        @include border-radius;
+        > a {
+            //color: $text-light;
+            //@include box-shadow;
+            
+        }
+        
+    }
+}*/

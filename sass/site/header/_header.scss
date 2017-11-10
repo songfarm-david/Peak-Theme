@@ -1,22 +1,55 @@
+
+
 .site-header {
 
-    padding: 0.10em;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+    padding: 0 0.15em;
     background-color: transparent;
-
-/*    @media #{$tablet__breakpoint} {
-         
-    }*/
-      
-}
-
-@mixin sticky-header {
-    position: fixed;
+    
+    position: absolute;
     left: 0;
     right: 0;
-    z-index: 1001;  
+    z-index: 1001;
+    
+    display: flex;
+    justify-content: space-between;
+  
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.header-sticky {
+    position: fixed;
+    background-color: $hero-color;  
+    transition: all .1s ease-in;
+    animation: fadeIn .5s .1s ease-in both;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    a {
+        color: $text-light;    
+    }
+    .fa {
+        color: $text-light !important;
+    }
+    .main-navigation ul.sub-menu {
+        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+        background-color: $hero-color;
+        opacity: 0.9;
+        & a:hover {
+            background-color: $text-light;
+            color: $hero-color;
+        }
+    }
+    
+    .site-branding .custom-logo-link {
+        max-width: 2.5em;
+    }
+    
 }
 
 .site-branding,

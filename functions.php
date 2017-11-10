@@ -161,7 +161,10 @@ function peak_theme_scripts() {
         );
 
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
+        
+        /* load custom javascript */
+        wp_enqueue_script('user_functions', get_template_directory_uri() . '/js/user_functions.js', array( 'jquery' ), '', true );
+        
 	// load Google fonts
         wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
         
@@ -200,4 +203,21 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Filter Nav Menu: Social Media Menu
+ */
+function register_social_menu( $items, $args ) {
+    /**
+     * if the menu requested is 'social-media', customize the nav items
+     * NOTE: it may be wise to insert the standard wordpress li classes into the tags below
+     */
+    if ($args->theme_location == 'social-media' ) {
+        $items .= '<li><a href="https://www.facebook.com/peakwebsiteservices/" target="_blank" title="Facebook: Peak Websites"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
+        $items .= '<li><a href="https://twitter.com/peakwebsite" target="_blank" title="Twitter: Peak Websites"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
+        $items .= '<li><a href="https://www.linkedin.com/in/david-gaskin-75339b134/" target="_blank" title="LinkedIn: Peak Websites"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>';
+    }
+    return $items;
+}
+add_filter('wp_nav_menu_items', 'register_social_menu', 10, 2);
 

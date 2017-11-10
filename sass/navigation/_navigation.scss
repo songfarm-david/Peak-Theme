@@ -13,7 +13,7 @@
 		padding-left: 0;
 
 		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: 100%;
@@ -189,7 +189,7 @@ a {
             font-size: 125%;
             padding: 0 0.5em;
             > .fa {
-                color: $hero__color;
+                color: $hero-color;
             }
             @media #{$tablet__breakpoint} {
                 padding-top: 3px;

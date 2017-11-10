@@ -267,7 +267,7 @@
     
     margin: 2em 0 0;
     padding: 1em 0;
-    background-color: $hero__color;
+    background-color: $hero-color;
     color: #f3f3f3;
     
     .widget {
@@ -335,24 +335,22 @@
 }
 
 /* connect with us menu */
-    .widget_nav_menu {
-        ul {
+    ul.social-media-menu {
             margin-left: 0;
             padding-top: 0;
             li {
                 display: inline-block;
                 line-height: 1;
                 font-size: 200%;
-                margin-right: 0.25em;
-                a:first-child {
-                    display: none;
-                }
+                margin-right: 0;
+                padding: 0;
+              
                 a {
                     border-width: 0;
-                    padding: 0.25em 0;
+                    padding: 0 0.25em;
+                    line-height: normal;
                 }
             }    
-        }
     }
 
 #secondary.widget-area {

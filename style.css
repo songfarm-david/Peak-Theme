@@ -42,6 +42,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 /* theme colors */
+/* hero color variations */
 h1,
 h2,
 h3,
@@ -706,7 +707,7 @@ display: block;
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -1105,18 +1106,68 @@ a:hover, a:active {
 ## Posts and pages
 --------------------------------------------------------------*/
 .site-header {
-	padding: 0.10em;
-	position: relative;
+	padding: 0 0.15em;
+	background-color: transparent;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1001;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	background-color: transparent;
-	/*    @media (min-width: 48em) {
-         
-    }*/
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.header-sticky {
+	position: fixed;
+	background-color: #385f7e;
+	transition: all .1s ease-in;
+	-webkit-animation: fadeIn .5s .1s ease-in both;
+	        animation: fadeIn .5s .1s ease-in both;
+	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-sticky a {
+	color: #EAF1F7;
+}
+
+.header-sticky .fa {
+	color: #EAF1F7 !important;
+}
+
+.header-sticky .main-navigation ul.sub-menu {
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	background-color: #385f7e;
+	opacity: 0.9;
+}
+
+.header-sticky .main-navigation ul.sub-menu a:hover {
+	background-color: #EAF1F7;
+	color: #385f7e;
+}
+
+.header-sticky .site-branding .custom-logo-link {
+	max-width: 2.5em;
 }
 
 .site-branding,
@@ -1368,7 +1419,8 @@ body.page .entry-footer {
 	body.page .entry-header > div,
 	body.page .entry-content,
 	body.page .entry-footer {
-		max-width: 44em;
+		max-width: 48em;
+		max-width: 46em;
 	}
 }
 
@@ -1450,7 +1502,8 @@ body.blog .site-content {
 
 @media (min-width: 118.75em) {
 	body.blog .site-content {
-		max-width: 44em;
+		max-width: 48em;
+		max-width: 46em;
 	}
 }
 
@@ -1510,6 +1563,9 @@ and open the template in the editor.
 
 .site-footer nav .menu li {
 	display: inline-block;
+}
+
+.site-footer nav .menu li a {
 	padding: 0 0.25em;
 }
 
@@ -1870,25 +1926,23 @@ and open the template in the editor.
 }
 
 /* connect with us menu */
-.widget_nav_menu ul {
+ul.social-media-menu {
 	margin-left: 0;
 	padding-top: 0;
 }
 
-.widget_nav_menu ul li {
+ul.social-media-menu li {
 	display: inline-block;
 	line-height: 1;
 	font-size: 200%;
-	margin-right: 0.25em;
+	margin-right: 0;
+	padding: 0;
 }
 
-.widget_nav_menu ul li a:first-child {
-	display: none;
-}
-
-.widget_nav_menu ul li a {
+ul.social-media-menu li a {
 	border-width: 0;
-	padding: 0.25em 0;
+	padding: 0 0.25em;
+	line-height: normal;
 }
 
 #secondary.widget-area {
@@ -2218,25 +2272,23 @@ and open the template in the editor.
 }
 
 /* connect with us menu */
-.widget_nav_menu ul {
+ul.social-media-menu {
 	margin-left: 0;
 	padding-top: 0;
 }
 
-.widget_nav_menu ul li {
+ul.social-media-menu li {
 	display: inline-block;
 	line-height: 1;
 	font-size: 200%;
-	margin-right: 0.25em;
+	margin-right: 0;
+	padding: 0;
 }
 
-.widget_nav_menu ul li a:first-child {
-	display: none;
-}
-
-.widget_nav_menu ul li a {
+ul.social-media-menu li a {
 	border-width: 0;
-	padding: 0.25em 0;
+	padding: 0 0.25em;
+	line-height: normal;
 }
 
 #secondary.widget-area {

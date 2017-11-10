@@ -5,10 +5,12 @@
 4. Setup same Google Analytics on website, mark as landmark event in Google
 5. Change footer widget 'Recent Posts' to 'Most Popular Posts'
 6. Style/add sticky header without use of JavaScript if possible
+7. 
 
 #Testing:
 1. User-Test font size on various devices (see _breakpoints.scss for screen sizes). 
     - At a glance, tests should be done on mobile phones, tablets, all the way up to screen size beyond 1900px.
+2. Social Media buttons on mobile are clickable (everything on mobile is clickable)
 
 # Design additions
 - Include "badges", i.e: CSS3, HTML5, PHP, WP. These are, essentially, technologies that Peak Websites is versed in.

@@ -25,11 +25,11 @@ and open the template in the editor.
         margin-top: 1em;
         font-family: $font__header;
         .hero-headline {
-            color: $hero__color;
+            color: $hero-color;
             margin: 0;
             line-height: $font__line-height-header;
             >span {
-                color: $hero__color-2;
+                color: $hero-green;
             }
         }
         .hero-byline {

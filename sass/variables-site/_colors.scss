@@ -1,6 +1,9 @@
 /* theme colors */
-$hero__color: #385f7e;
-$hero__color-2: #338c5f;
+$hero-color: #385f7e;
+$hero-green: #338c5f;
+
+/* hero color variations */
+$text-light: #EAF1F7;
 
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -12,9 +15,9 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: $hero__color;
-$color__link-visited: $hero__color;
-$color__link-hover: $hero__color-2;
+$color__link: $hero-color;
+$color__link-visited: $hero-color;
+$color__link-hover: $hero-green;
 $color__text-main: #404040;
 
 $color__border-button: #ccc #ccc #bbb;

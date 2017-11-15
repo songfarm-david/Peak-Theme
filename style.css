@@ -47,14 +47,10 @@ h1,
 h2,
 h3,
 h4 {
-	line-height: normal;
-	margin-top: 1.5rem;
-	margin-bottom: 0.75rem;
+	/*    line-height: $first_modular;
+    margin-top: $first_modular + em;
+    margin-bottom: ($first_modular  / 2) + em;*/
 	margin-bottom: 0.5rem;
-}
-
-h1, h2 {
-	margin-bottom: 2rem;
 }
 
 p {
@@ -383,6 +379,11 @@ textarea {
 	font-size: 1.125rem;
 	line-height: 1.5;
 	/* Media Breakpoints for Responsive Typography */
+	/*        h2,
+        h3,
+        h4 {
+            color: $hero-dark;
+        }*/
 }
 
 @media (min-width: 48em) {
@@ -424,6 +425,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: "Raleway", sans-serif;
+	line-height: 1.25;
 }
 
 .site-title,
@@ -448,7 +450,8 @@ h3,
 }
 
 h4,
-.h4 {
+.h4,
+.widget .widget-title {
 	font-size: 1.333em;
 }
 
@@ -464,7 +467,8 @@ h6,
 /* NOTE: write mixin function that can quickly calculate these header size values to use within site styles */
 h6,
 small,
-.font_small {
+.font-small,
+body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	font-size: 0.75em;
 }
 
@@ -494,6 +498,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	white-space: initial;
 }
 
 code, kbd, tt, var {
@@ -999,7 +1004,7 @@ a:hover, a:active {
         //background-color: $hero-green;
         @include border-radius;
         > a {
-            //color: $text-light;
+            //color: $color-light;
             //@include box-shadow;
             
         }
@@ -1467,10 +1472,10 @@ and open the template in the editor.
 	margin: 0 0 1.5em;
 }
 
+/** Custom styles **/
 /**
-  * Custom styles
+  * Page Headers Banners 
   */
-/* page header banners */
 .page .entry-header {
 	background-color: #385f7e;
 	padding: 0.5em 0 0.75em;
@@ -1480,10 +1485,11 @@ and open the template in the editor.
 	color: white;
 	line-height: 1.25;
 	margin: 0;
-	font-size: 2.369em;
 }
 
-/* mixin for above the fold position */
+/**
+  * Regulate top padding on PAGES
+  */
 body:not(.home) .site-content {
 	padding-top: 0;
 }
@@ -1500,6 +1506,9 @@ body:not(.home) .site-content {
 	}
 }
 
+/**
+  * Regulate top padding on HOME page
+  */
 body.home .site-content {
 	padding-top: 0;
 }
@@ -1516,11 +1525,13 @@ body.home .site-content {
 	}
 }
 
-body:not(.blog) .site-content h2, body:not(.blog) .site-content h3 {
+body.page .site-content h2, body.page .site-content h3 {
 	font-weight: normal;
 }
 
-/* PAGE styles */
+/** 
+  * PAGE styles 
+  */
 body.page .entry-header > div,
 body.page .entry-content,
 body.page .entry-footer {
@@ -1558,40 +1569,102 @@ body.page .entry-content {
 }
 
 /**
-  * POST styles */
-body.blog .post {
-	border: 2px solid red;
-	margin-bottom: 1.5em;
-	padding: 0 1em;
+  * Set content width for Blog index and Single blog posts
+  */
+@media (min-width: 48em) {
+	body.blog .site-content,
+	body.single .site-content {
+		margin: 0 auto;
+		max-width: 40em;
+	}
 }
 
-body.blog .post .entry-header .entry-title {
-	margin: 0.5em 0 0.15em;
+@media (min-width: 75em) {
+	body.blog .site-content,
+	body.single .site-content {
+		max-width: 44em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.blog .site-content,
+	body.single .site-content {
+		max-width: 48em;
+		max-width: 46em;
+	}
+}
+
+/**
+  * POST styles 
+  */
+body.blog,
+body.single {
+	/* article post styles */
+}
+
+body.blog .post,
+body.single .post {
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin-bottom: 1.5em;
+	padding: 0 1em 1em;
+}
+
+body.blog .post .entry-header .entry-title,
+body.single .post .entry-header .entry-title {
+	margin: 0.5em 0;
+	line-height: 1.25;
+}
+
+body.blog .post .entry-header .entry-title > a,
+body.single .post .entry-header .entry-title > a {
+	text-decoration: none;
+}
+
+body.blog .post .entry-header .entry-title > a:hover,
+body.single .post .entry-header .entry-title > a:hover {
+	text-decoration: underline;
 }
 
 body.blog .post .entry-meta h6,
-body.blog .post .entry-footer h6 {
+body.blog .post .entry-footer h6,
+body.single .post .entry-meta h6,
+body.single .post .entry-footer h6 {
 	display: inline;
+	font-weight: lighter;
 }
 
-body.blog .post .entry-meta {
+body.blog .post .entry-meta,
+body.single .post .entry-meta {
 	padding: 0;
 }
 
-body.blog .post figure.author-avatar {
+body.blog .post figure.author-avatar,
+body.single .post figure.author-avatar {
 	margin: 0 0 0.5em;
 	display: inline-block;
 }
 
-body.blog .post figure.author-avatar > img {
+body.blog .post figure.author-avatar > img,
+body.single .post figure.author-avatar > img {
 	vertical-align: middle;
 }
 
-body.blog .post .entry-content {
+body.blog .post .entry-content,
+body.single .post .entry-content {
 	margin-top: 0;
 }
 
-body.blog .site-content {
+body.blog .post .more-link,
+body.single .post .more-link {
+	font-weight: bolder;
+	font-style: italic;
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+body.blog .site-content,
+body.single .site-content {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1599,15 +1672,9 @@ body.blog .site-content {
 	    flex-wrap: wrap;
 }
 
-@media (min-width: 48em) {
-	body.blog .site-content {
-		margin: 0 auto;
-		max-width: 40em;
-	}
-}
-
 @media (min-width: 75em) {
-	body.blog .site-content {
+	body.blog .site-content,
+	body.single .site-content {
 		max-width: 44em;
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
@@ -1617,34 +1684,75 @@ body.blog .site-content {
 	}
 }
 
-@media (min-width: 118.75em) {
-	body.blog .site-content {
-		max-width: 48em;
-		max-width: 46em;
-	}
-}
-
 @media (min-width: 75em) {
-	body.blog #primary {
+	body.blog #primary,
+	body.single #primary {
 		-webkit-box-flex: 0;
 		    -ms-flex: 0 0 63%;
 		        flex: 0 0 63%;
 	}
 }
 
-body.blog #secondary {
-	border: 2px solid blue;
+body.blog #secondary,
+body.single #secondary {
 	display: none;
+	background-color: #EAF1F7;
 }
 
 @media (min-width: 75em) {
-	body.blog #secondary {
+	body.blog #secondary,
+	body.single #secondary {
 		display: block;
 		padding-top: 1.65em;
 		-webkit-box-flex: 0;
 		    -ms-flex: 0 0 33%;
 		        flex: 0 0 33%;
 	}
+}
+
+/**
+  * Single Blog posts
+  */
+body.single .entry-header .entry-title,
+body.single h2,
+body.single h3,
+body.single h4 {
+	color: #385f7e;
+}
+
+body.single .entry-header .entry-title {
+	line-height: 1.25;
+}
+
+body.single figure, body.single figcaption {
+	width: auto !important;
+}
+
+body.single .post .entry-footer .cat-links {
+	margin: 1.5em 0 0;
+	display: inline-block;
+}
+
+body.single .comments-area {
+	padding: 0;
+	margin-top: 1em;
+}
+
+body.single .comments-area .comment-list {
+	padding: 0;
+	margin-left: 0;
+	list-style: none;
+}
+
+body.single .comments-area .comment-body {
+	margin: 1em 0 1.5em;
+	border-left: 3px solid #EAF1F7;
+	padding: 1em;
+}
+
+body.single .comments-area .comment-body .comment-content > .comment-metadata {
+	margin-top: 0.5em;
+	font-style: italic;
 }
 
 /*--------------------------------------------------------------
@@ -1777,10 +1885,11 @@ and open the template in the editor.
 	margin-bottom: 0;
 }
 
-.widget-title {
+.widget .widget-title {
 	margin-top: 0;
 	margin-bottom: .5em;
-	font-size: 1.4em;
+	font-weight: bold;
+	color: #213647;
 }
 
 /* Archive and Categories widgets */
@@ -1984,6 +2093,10 @@ and open the template in the editor.
           */
 }
 
+.footer-widgets .widget .widget-title {
+	color: #EAF1F7;
+}
+
 .footer-widgets .widget.widget_recent_entries ul > li {
 	display: list-item;
 	list-style: disc inside;
@@ -2020,21 +2133,6 @@ and open the template in the editor.
 		    -ms-flex-pack: center;
 		        justify-content: center;
 		/* If only one widget is displayed, make it full width. */
-		/*          .widget:nth-child(2) {
-                flex: 2;
-            }*/
-		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-		/*            .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) { 
-                //flex: 2;
-                width: 30%;
-                flex: 1 1 30%;
-            }*/
-		/* If 4 or more widgets are displayed, show three across when available. */
-		/*            .widget:nth-last-child(n+4), 
-            .widget:nth-last-child(n+4) ~ .widget { 
-                width: 30%;
-                flex: 1 1 30%;
-            }*/
 	}
 	.footer-widgets .widget {
 		-webkit-box-flex: 1;
@@ -2134,10 +2232,11 @@ ul.social-media-menu li a {
 	margin-bottom: 0;
 }
 
-.widget-title {
+.widget .widget-title {
 	margin-top: 0;
 	margin-bottom: .5em;
-	font-size: 1.4em;
+	font-weight: bold;
+	color: #213647;
 }
 
 /* Archive and Categories widgets */
@@ -2341,6 +2440,10 @@ ul.social-media-menu li a {
           */
 }
 
+.footer-widgets .widget .widget-title {
+	color: #EAF1F7;
+}
+
 .footer-widgets .widget.widget_recent_entries ul > li {
 	display: list-item;
 	list-style: disc inside;
@@ -2377,21 +2480,6 @@ ul.social-media-menu li a {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 		/* If only one widget is displayed, make it full width. */
-		/*          .widget:nth-child(2) {
-                flex: 2;
-            }*/
-		/* If 2 or 3 widgets are displayed, make the second one twice as wide. */
-		/*            .widget:nth-last-child(n+2):nth-last-child(-n+3):first-child ~ .widget:nth-child(2) { 
-                //flex: 2;
-                width: 30%;
-                flex: 1 1 30%;
-            }*/
-		/* If 4 or more widgets are displayed, show three across when available. */
-		/*            .widget:nth-last-child(n+4), 
-            .widget:nth-last-child(n+4) ~ .widget { 
-                width: 30%;
-                flex: 1 1 30%;
-            }*/
 	}
 	.footer-widgets .widget {
 		-webkit-box-flex: 1;

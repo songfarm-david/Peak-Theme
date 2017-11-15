@@ -30,7 +30,7 @@ input[type="submit"].peak-button,
     
     @include border-radius;
     transition: all 0.23s ease-in-out 0s;
-    color: $text-light;
+    color: $color-light;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -86,7 +86,7 @@ input[type="submit"].peak-button,
         transform: scaleX(1);
     }
     &:visited {
-        color: $text-light;
+        color: $color-light;
     }
 }
 

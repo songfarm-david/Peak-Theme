@@ -10,29 +10,31 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $first_modular: 1.5;
 
 // line heights
-$font__line-height-body: $first_modular;
+$line-height-main: $first_modular;
+$line-height-header: 1.25;
+
 $font__line-height-pre: 1.6;
-$font__line-height-header: 1.25;
+
 
 h1,
 h2,
 h3,
 h4 {
-    line-height: normal;
-    margin-top: $font__line-height-body + rem;
-    margin-bottom: ($font__line-height-body  / 2) + rem;
+/*    line-height: $first_modular;
+    margin-top: $first_modular + em;
+    margin-bottom: ($first_modular  / 2) + em;*/
     margin-bottom: 0.5rem;
 }
 
 h1, h2 {
-    margin-bottom: 2rem;
+    //margin-bottom: 2rem;
 }
 
 p {
-    line-height: $font__line-height-body;
-    //margin: $font__line-height-body + rem 0 ($font__line-height-body + rem / 2);
-    margin-top: $font__line-height-body + rem;
-    margin-bottom: ($font__line-height-body  / 2) + rem;
+    line-height: $line-height-main;
+    //margin: $line-height-main + rem 0 ($line-height-main + rem / 2);
+    margin-top: $line-height-main + rem;
+    margin-bottom: ($line-height-main  / 2) + rem;
     margin: 1rem 0 0;
     line-height: 1.5;
 }

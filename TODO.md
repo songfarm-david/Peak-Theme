@@ -2,15 +2,11 @@
 - Ensure all images, particularly the hero image, is dynamically loaded
 - Add second editable section to landing page (hero text/banner)
 - Create portfolio page, link to it from About Peak: "We have delivered on our promises for businesses before. (link to portfolio)"
-- Setup same Google Analytics on website, mark as landmark event in Google
-- Change footer widget 'Recent Posts' to 'Most Popular Posts'
+- Change footer widget 'Recent Posts' to 'Most Popular Posts' (on 404 page)
 - Style/add sticky header without use of JavaScript if possible
 - Introduce 'Last updated' meta entry for blog posts (like Backlinko).
-- Add a poll somewhere on the page, trying to find out something like business owner's biggest pain point.
 - create a 'services' parent page, change 302 in .htaccess
-- style archives.php page
 - remove non-critical blog posts from live site blog feed
-- add back in broken blog images
 - find regex to replace blog date strings to omit them
 - fix figcaption shortcode width blog posts
 - Add Canonical URL to pages programatically
@@ -25,6 +21,4 @@
 
 # Design additions
 - Include "badges", i.e: CSS3, HTML5, PHP, WP. These are, essentially, technologies that Peak Websites is versed in.
-
-
-
+- Add a poll somewhere on the page, trying to find out something like business owner's biggest pain point.

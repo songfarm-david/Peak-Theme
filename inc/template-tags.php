@@ -37,7 +37,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 		);
                 
                 /* add avatar image - NOTE: not currently dynamic */
-                $avatar = '<figure class="author-avatar"><img src="http://localhost/peak-theme/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
+                $avatar = '<figure class="author-avatar"><img src="https://peakwebsites.ca/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
 
 		echo $avatar . ' <h6 class="byline"> ' . $byline . '</h6> <h6 class="posted-on">' . $posted_on . '</h6>'; // WPCS: XSS OK.
 

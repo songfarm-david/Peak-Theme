@@ -6,6 +6,14 @@
 - Change footer widget 'Recent Posts' to 'Most Popular Posts'
 - Style/add sticky header without use of JavaScript if possible
 - Introduce 'Last updated' meta entry for blog posts (like Backlinko).
+- Add a poll somewhere on the page, trying to find out something like business owner's biggest pain point.
+- create a 'services' parent page, change 302 in .htaccess
+- style archives.php page
+- remove non-critical blog posts from live site blog feed
+- add back in broken blog images
+- find regex to replace blog date strings to omit them
+- fix figcaption shortcode width blog posts
+- Add Canonical URL to pages programatically
 
 # SEO
 - Visit https://searchwebwork.info/contacts.htm and http://www.infotechvi.com/index.php to see about adding business citations here. Or search 'local business 1' 'local business 2' and look for directory sites that way, OR, use link intersection tools online.

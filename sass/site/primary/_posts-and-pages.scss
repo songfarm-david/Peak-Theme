@@ -108,7 +108,6 @@ body.page {
     
 }
 
-
 /**
   * Set content width for Blog index and Single blog posts
   */
@@ -128,12 +127,12 @@ body.single {
     }
 }
 
-
 /**
   * POST styles 
   */
 body.blog,
-body.single {
+body.single,
+body.archive {
     
     /* article post styles */
     .post {
@@ -283,4 +282,26 @@ body.single {
     }
     
     
+}
+
+/**
+ * Extraneous pages
+ */
+.error404 .site-content,
+.archive .site-content {
+    @include constrain-widths;
+}
+
+/**
+ * Archive page styles
+ */
+.archive {
+    .page-title {
+        @extend .h2;
+        font-weight: normal;
+        //display: block;
+        padding-left: 0.25em;
+        border-left: 3px solid $hero-color;
+        margin-top: 0;
+    }
 }

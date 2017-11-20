@@ -24,8 +24,8 @@ get_header(); ?>
 				comments_template();
 			endif;
                         
-                        the_post_navigation();
-
+                        //the_post_navigation();                   
+                        
 		endwhile; // End of the loop.
 		?>
 
@@ -33,5 +33,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+get_sidebar();          
 get_footer();

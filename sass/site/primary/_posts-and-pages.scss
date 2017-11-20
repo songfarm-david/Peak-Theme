@@ -27,6 +27,7 @@
   */
 .page .entry-header {
     background-color: $hero-color;
+    @include linear-gradient;
     padding: 0.5em 0 0.75em;
     .entry-title {
         color: white; 
@@ -144,7 +145,9 @@ body.single {
         
         .entry-header .entry-title {
             margin: 0.5em 0;
-            line-height: $line-height-header;
+            //line-height: $line-height-header;
+            @extend .h2;
+            //@include border;
             > a {
                 text-decoration: none;
                 &:hover {
@@ -245,7 +248,7 @@ body.single {
     }
     
     .comments-area {
-        padding: 0;
+        padding: 0 1em;
         margin-top: 1em;
         .comment-list {
             padding: 0;
@@ -272,6 +275,10 @@ body.single {
                 font-style: italic;
                 @extend .font-small;
             }
+        }
+        
+        @media #{$tablet__breakpoint} {
+            padding: 0 0;
         }
     }
     

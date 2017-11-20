@@ -270,10 +270,12 @@
 /* Footer widget styles */
 
 .footer-widgets {
-    
+    position: relative;
+    z-index: 1;
     margin: 2em 0 0;
     padding: 1em 0;
     background-color: $hero-color;
+    @include linear-gradient(to right);
     color: #f3f3f3;
     
     .widget {
@@ -356,5 +358,15 @@
 
 #secondary.widget-area {
     padding: 0 1em;
+    
+    .widget_recent_entries {
+        //@include border;
+        ul > li {
+            display: list-item;
+            list-style: disc inside;
+            line-height: $line-height-header;
+            margin-bottom: 0.75em;
+        }
+    }
 }
 

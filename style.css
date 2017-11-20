@@ -438,18 +438,22 @@ h1,
 }
 
 h2,
-.h2 {
+.h2,
+body.blog .post .entry-header .entry-title,
+body.single .post .entry-header .entry-title {
 	font-size: 2.369em;
 }
 
 h3,
-.h3 {
+.h3,
+h2#main-content {
 	font-size: 1.777em;
 	font-weight: normal;
 }
 
 h4,
 .h4,
+#blog-about-peak h3,
 .widget .widget-title {
 	font-size: 1.333em;
 }
@@ -467,7 +471,8 @@ h6,
 h6,
 small,
 .font-small,
-body.single .comments-area .comment-body .comment-content > .comment-metadata {
+body.single .comments-area .comment-body .comment-content > .comment-metadata,
+.wp-caption {
 	font-size: 0.75em;
 }
 
@@ -546,10 +551,6 @@ hr {
 	margin-bottom: 1.5em;
 }
 
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}
-
 ul {
 	list-style: disc;
 }
@@ -582,6 +583,7 @@ img {
 figure {
 	margin: 1em 0;
 	/* Extra wide images within figure tags don't overflow the content area. */
+	display: table-column;
 }
 
 table {
@@ -1374,13 +1376,8 @@ a:hover, a:active {
 }
 
 /*--------------------------------------------------------------
-## Hero Banner
+## Hero styles
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
@@ -1388,7 +1385,7 @@ and open the template in the editor.
 #hero-banner {
 	position: relative;
 	background-color: #ccc;
-	background-image: url(http://localhost/peak-theme/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
 	background-position: center 0%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -1445,8 +1442,73 @@ and open the template in the editor.
 	}
 }
 
-h2#maincontent:focus {
+h2#main-content:focus {
 	outline: none;
+}
+
+h2#main-content + p {
+	font-style: italic;
+	font-family: "Raleway", sans-serif;
+	margin-top: 1.5em;
+	font-weight: bold;
+}
+
+#blog-about-peak {
+	background-color: #338c5f;
+	color: #EAF1F7;
+	background: linear-gradient(45deg, #338c5f, #17422c);
+	margin-top: 2em;
+	margin-bottom: -4em;
+	-webkit-transform: skewY(2deg);
+	        transform: skewY(2deg);
+	border: 1px solid transparent;
+	position: relative;
+	z-index: 0;
+}
+
+#blog-about-peak > a, #blog-about-peak h3, #blog-about-peak a:visited {
+	color: #EAF1F7;
+}
+
+#blog-about-peak h3 {
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#blog-about-peak > div {
+	-webkit-transform: skewY(-2deg);
+	        transform: skewY(-2deg);
+	-webkit-backface-visibility: hidden;
+	        backface-visibility: hidden;
+	padding: 1em 1em 7em;
+	margin-top: 3em;
+	border: 2px solid transparent;
+}
+
+@media (min-width: 48em) {
+	#blog-about-peak > div {
+		width: 60%;
+	}
+}
+
+@media (min-width: 75em) {
+	#blog-about-peak > div {
+		max-width: 46em;
+		margin-left: 17%;
+		width: 43%;
+	}
+}
+
+@media (min-width: 118.75em) {
+	#blog-about-peak > div {
+		max-width: 48em;
+		margin-left: 17%;
+		width: 43%;
+	}
+}
+
+#blog-about-peak a:hover {
+	color: #338c5f;
 }
 
 /*--------------------------------------------------------------
@@ -1481,6 +1543,7 @@ h2#maincontent:focus {
   */
 .page .entry-header {
 	background-color: #385f7e;
+	background: linear-gradient(to right, #385f7e, #213647);
 	padding: 0.5em 0 0.75em;
 }
 
@@ -1616,7 +1679,6 @@ body.single .post {
 body.blog .post .entry-header .entry-title,
 body.single .post .entry-header .entry-title {
 	margin: 0.5em 0;
-	line-height: 1.25;
 }
 
 body.blog .post .entry-header .entry-title > a,
@@ -1737,7 +1799,7 @@ body.single .post .entry-footer .cat-links {
 }
 
 body.single .comments-area {
-	padding: 0;
+	padding: 0 1em;
 	margin-top: 1em;
 }
 
@@ -1756,6 +1818,12 @@ body.single .comments-area .comment-body {
 body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	margin-top: 0.5em;
 	font-style: italic;
+}
+
+@media (min-width: 48em) {
+	body.single .comments-area {
+		padding: 0 0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -2082,9 +2150,12 @@ and open the template in the editor.
 
 /* Footer widget styles */
 .footer-widgets {
+	position: relative;
+	z-index: 1;
 	margin: 2em 0 0;
 	padding: 1em 0;
 	background-color: #385f7e;
+	background: linear-gradient(to right, #385f7e, #213647);
 	color: #f3f3f3;
 }
 
@@ -2176,355 +2247,21 @@ ul.social-media-menu li a {
 
 #secondary.widget-area {
 	padding: 0 1em;
+}
+
+#secondary.widget-area .widget_recent_entries ul > li {
+	display: list-item;
+	list-style: disc inside;
+	line-height: 1.25;
+	margin-bottom: 0.75em;
 }
 
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-.widget {
-	margin: 0 0 1em;
-	padding: 0 0 1em;
-	font-family: "Titillium Web", sans-serif;
-	/* Make sure select elements fit in widgets. */
-}
-
-.widget ul,
-.widget ol {
-	padding: .7em 0 0;
-	margin-bottom: 0;
-}
-
-.widget ul li,
-.widget ol li {
-	display: block;
-	line-height: 2em;
-}
-
-.widget ul li ul,
-.widget ul li ol,
-.widget ol li ul,
-.widget ol li ol {
-	margin-left: .5em;
-}
-
-@media screen and (min-width: 30em) {
-	.widget ul li ul,
-	.widget ul li ol,
-	.widget ol li ul,
-	.widget ol li ol {
-		margin-left: 1em;
-	}
-}
-
-.widget a {
-	text-decoration: none;
-}
-
-.widget a:hover, .widget a:focus {
-	border-bottom: #338c5f;
-}
-
-.widget select {
-	width: 100%;
-	height: 2.5em;
-	padding: 10px;
-	border: 1px solid #ccc;
-}
-
-.widget:last-of-type {
-	margin-bottom: 0;
-}
-
-.widget .widget-title {
-	margin-top: 0;
-	margin-bottom: .5em;
-	font-weight: bold;
-	color: #213647;
-}
-
-/* Archive and Categories widgets */
-.widget_archive li {
-	color: #7D7D7D;
-}
-
-.widget_categories .children {
-	padding-top: 0;
-}
-
-/* Search widget. */
-.widget_search .search-submit {
-	display: none;
-}
-
-/* Pages and Menu widgets */
-.widget_pages .children,
-.widget_nav_menu .sub-menu {
-	padding-top: 0;
-	padding-bottom: .5em;
-}
-
-.widget_pages a,
-.widget_nav_menu a {
-	display: block;
-	padding: 1em 0;
-	text-decoration: none;
-	border-bottom: 1px dashed gray;
-}
-
-.widget_pages a:hover, .widget_pages a:focus,
-.widget_nav_menu a:hover,
-.widget_nav_menu a:focus {
-	text-decoration: none;
-	border-bottom: 1px dashed gray;
-}
-
-.widget_pages li,
-.widget_nav_menu li {
-	padding: 0;
-}
-
-/* Meta widget */
-.widget_meta li {
-	padding: 0;
-}
-
-/* Recent comments */
-.widget_recent_comments li {
-	line-height: 1.3em;
-	padding-bottom: .5em;
-}
-
-.widget_recent_comments a:hover,
-.widget_recent_comments a:focus {
-	padding-left: 0;
-}
-
-.widget_recent_entries ul {
-	margin-left: 0;
-	padding: 0;
-	list-style-type: initial;
-}
-
-/* RSS widget */
-.widget_rss li {
-	margin-bottom: 1em;
-}
-
-.widget li a.rsswidget {
-	padding-right: .5em;
-	font-size: 1em;
-	line-height: 1.4em;
-}
-
-.rss-date,
-.widget_rss cite {
-	color: #333;
-	font-size: .8em;
-}
-
-.rssSummary {
-	padding: .5em 0;
-	font-size: .8em;
-	line-height: 1.4em;
-}
-
-/* Search widget */
-.widget_search input[type="search"] {
-	box-sizing: border-box;
-	width: 100%;
-	padding: .5em 1em;
-	border: 1px solid #c3c3c3;
-	border-radius: 0;
-}
-
-/* Calendar widget */
-.widget_calendar {
-	font-weight: 400;
-}
-
-.widget_calendar caption {
-	padding: .5em 0;
-	font-size: 1em;
-	font-weight: 500;
-	text-align: left;
-}
-
-.widget_calendar thead {
-	background: transparent;
-	color: black;
-}
-
-.widget_calendar thead th {
-	border-bottom-width: 2px;
-}
-
-.widget_calendar td {
-	padding: .2em;
-	font-size: .8em;
-	text-align: center;
-	background: white;
-	border: 1px solid #cccccc;
-}
-
-.widget_calendar th {
-	border: none;
-	text-align: center;
-}
-
-.widget_calendar .pad {
-	background: #eaeaea;
-}
-
-.widget_calendar a {
-	font-weight: 900;
-	text-decoration: none;
-}
-
-/* Text widget */
-/* MailChimp signup form */
-.widget #mc_embed_signup p {
-	margin: 0.5em 0 1em;
-}
-
-.widget #mc_embed_signup .indicates-required {
-	display: none;
-}
-
-.widget #mc_embed_signup .mc-field-group {
-	clear: left;
-	position: relative;
-	width: 100%;
-	padding-bottom: 3%;
-	min-height: 50px;
-}
-
-.widget #mc_embed_signup .mc-field-group .asterisk {
-	color: red;
-}
-
-.widget #mc_embed_signup .mc-field-group label {
-	display: block;
-	font-weight: bold;
-	font-size: 85%;
-	margin-bottom: 0.25em;
-}
-
-.widget #mc_embed_signup .mc-field-group input {
-	display: block;
-	width: 100%;
-	padding: 8px 0;
-	text-indent: 2%;
-}
-
-.widget #mc_embed_signup #mce-responses .response {
-	margin-bottom: .75em;
-}
-
-@media (min-width: 75em) {
-	.widget #mc_embed_signup .mc-field-group input,
-	.widget #mc_embed_signup div.mce_inline_error {
-		width: 96%;
-	}
-}
-
-/* Footer widget styles */
-.footer-widgets {
-	margin: 2em 0 0;
-	padding: 1em 0;
-	background-color: #385f7e;
-	color: #f3f3f3;
-}
-
-.footer-widgets .widget {
-	margin: 0 1em 1em;
-	padding-top: 1em;
-	/**
-          * Show list items on 'Recent Posts' and other specific list-type footer widgets
-          */
-}
-
-.footer-widgets .widget .widget-title {
-	color: #EAF1F7;
-}
-
-.footer-widgets .widget.widget_recent_entries ul > li {
-	display: list-item;
-	list-style: disc inside;
-}
-
-.footer-widgets a {
-	color: white;
-	padding: 0;
-}
-
-@media (min-width: 48em) {
-	.footer-widgets {
-		padding: 2em 1em;
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		    flex-wrap: wrap;
-	}
-	.footer-widgets .widget {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 45%;
-		        flex: 1 0 45%;
-	}
-}
-
-@media (min-width: 75em) {
-	.footer-widgets {
-		-ms-flex-wrap: nowrap;
-		    flex-wrap: nowrap;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
-		/* If only one widget is displayed, make it full width. */
-	}
-	.footer-widgets .widget {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 1 auto;
-		        flex: 1 1 auto;
-		-webkit-box-flex: 0;
-		    -ms-flex: 0 1 40%;
-		        flex: 0 1 40%;
-	}
-	.footer-widgets .widget:only-of-type {
-		width: 100%;
-	}
-	.footer-widgets .widget:first-child {
-		-ms-flex-preferred-size: 40%;
-		    flex-basis: 40%;
-	}
-}
-
-/* connect with us menu */
-ul.social-media-menu {
-	margin-left: 0;
-	padding-top: 0;
-}
-
-ul.social-media-menu li {
-	display: inline-block;
-	line-height: 1;
-	font-size: 200%;
-	margin-right: 0;
-	padding: 0;
-}
-
-ul.social-media-menu li a {
-	border-width: 0;
-	padding: 0 0.25em;
-	line-height: normal;
-}
-
-#secondary.widget-area {
-	padding: 0 1em;
-}
-
+/*--------------------------------------------------------------
+# Hero Styles
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -2576,6 +2313,7 @@ object {
 
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
+	font-size: inherit;
 }
 
 .wp-caption-text {

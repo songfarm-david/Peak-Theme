@@ -23,7 +23,8 @@
 
 .header-sticky {
     position: fixed;
-    background-color: $hero-color;  
+    background-color: $hero-color;
+    //@include linear-gradient(to top);
     transition: all .1s ease-in;
     animation: fadeIn .5s .1s ease-in both;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);

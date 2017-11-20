@@ -25,10 +25,10 @@
 
     // filter handling for a /dir/ OR /indexordefault.page
     function filterPath(string) {
-      return string
-        .replace(/^\//, '')
-        .replace(/(index|default).[a-zA-Z]{3,4}$/, '')
-        .replace(/\/$/, '');
+        return string
+            .replace(/^\//, '')
+            .replace(/(index|default).[a-zA-Z]{3,4}$/, '')
+            .replace(/\/$/, '');
     }
 
     var locationPath = filterPath(location.pathname);
@@ -47,7 +47,7 @@
                         var scrollToPosition;
                   
                         if ( $(window).width() > 1200 ) {
-                            scrollToPosition = $(target).offset().top - 100;
+                            scrollToPosition = $(target).offset().top - 140;
                         } else if ( $(window).width() > 768 ) {
                             scrollToPosition = $(target).offset().top - 100;
                         } else {

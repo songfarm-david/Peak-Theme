@@ -153,6 +153,10 @@ add_action( 'widgets_init', 'peak_theme_widgets_init' );
  */
 function peak_theme_scripts() {
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
+        
+        // google analytics
+        wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
+        wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );
 
 	wp_enqueue_script( 'peak-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
         wp_localize_script('peak-navigation', 'peakScreenReaderText', array( 'expand' => __( 'Expand child menu', 'peak'), 
@@ -162,14 +166,14 @@ function peak_theme_scripts() {
 
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
         
-        /* load custom javascript */
-        wp_enqueue_script('custom-functions', get_template_directory_uri() . '/js/custom-functions.js', array( 'jquery' ), '', true );
-        
 	// load Google fonts
         wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
         
         // load Font Awesome CDN
         wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
+        
+        // load custom javascript
+        wp_enqueue_script('custom-functions', get_template_directory_uri() . '/js/custom-functions.js', array( 'jquery' ), '', true );
         
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

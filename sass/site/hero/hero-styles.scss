@@ -1,0 +1,117 @@
+/* 
+    Created on : 22-Oct-2017, 2:11:04 PM
+    Author     : David
+*/
+#hero-banner {
+    position: relative;
+    background-color: #ccc;
+    background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
+    background-position: center 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    min-height: 26.666em;
+    text-align: center;
+    padding: 1em 0.5em 2em;
+    height: 100vh;
+    .hero-headline-container {
+        text-align: center;
+        //margin-top: 1em;
+        font-family: $font__header;
+        .hero-headline {
+            color: $hero-color;
+            margin: 0;
+            line-height: $line-height-header;
+            >span {
+                color: $hero-green;
+            }
+        }
+        .hero-byline {
+            
+        }
+        
+        .peak-button {
+            margin-top: $first-modular + em;
+        }
+        
+        @media #{$tablet__breakpoint} {
+            margin: 5.5em auto 0;
+            //padding: 3em 0.5em 2em;
+
+            max-width: 34em;
+
+            @include font-size(1.125);
+
+        }
+        
+        @media #{$desktop__breakpoint} {
+            text-align: left;
+            max-width: 38em;
+            @include font-size(1.250);
+            margin-top: 6.5em;
+        }
+        
+        @media #{$lg-desktop__breakpoint} {
+            max-width: 41.5em;
+            @include font-size(1.375);
+        }
+    }
+}
+
+h2#main-content {
+    @extend .h3;
+    &:focus {
+        outline: none;   
+    }
+    
+    & + p {
+        font-style: italic;
+        font-family: $font__header;
+        margin-top: 1.5em;
+        font-weight: bold;
+    }
+}
+
+#blog-about-peak {
+    background-color: $hero-green;
+    color: $color-light;
+    @include linear-gradient(45deg, $hero-green, #17422c);
+    margin-top: 2em;
+    margin-bottom: -4em;
+    transform: skewY(2deg);
+    border: 1px solid transparent;
+    position: relative;
+    z-index: 0;
+    > a, h3, a:visited {
+        color: $color-light;
+    }
+    h3 {
+        @extend .h4;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    > div {
+        transform: skewY(-2deg);
+        backface-visibility: hidden;
+        padding: 1em 1em 7em;
+        margin-top: 3em;
+        @include border(2px, transparent);
+        @media #{$tablet__breakpoint} {
+            width: 60%;
+        }
+        @media #{$desktop__breakpoint} {
+            max-width: 46em;
+            //@include border(2px, blue);
+            margin-left: 17%;
+            width: 43%;
+        }
+        @media #{$lg-desktop__breakpoint} {
+            max-width: 48em;
+            margin-left: 17%;
+            width: 43%;
+        }
+    }
+    a:hover {
+        color: $hero-green;
+    }
+}

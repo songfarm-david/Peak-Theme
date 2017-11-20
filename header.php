@@ -60,9 +60,9 @@
 
         <?php if ( is_front_page() ) : 
             /**
-             * Pull in hero section
+             * If homepage/front page, include hero banner
              */
-            include( get_template_directory() . '/hero-banner.php' );
+            include( get_template_directory() . '/inc/hero/landing-banner.php' );
         
         endif; ?>
         

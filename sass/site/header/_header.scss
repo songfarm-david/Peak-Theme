@@ -24,7 +24,6 @@
 .header-sticky {
     position: fixed;
     background-color: $hero-color;
-    //@include linear-gradient(to top);
     transition: all .1s ease-in;
     animation: fadeIn .5s .1s ease-in both;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
@@ -32,15 +31,17 @@
         color: $color-light;    
     }
     .fa {
-        color: $color-light !important;
+        color: $color-light;
     }
     .main-navigation ul.sub-menu {
-        box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
         background-color: $hero-color;
         opacity: 0.9;
         & a:hover {
             background-color: $color-light;
             color: $hero-color;
+        }
+        @media #{$tablet__breakpoint} {
+            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
         }
     }
     

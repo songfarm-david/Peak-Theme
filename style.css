@@ -861,6 +861,28 @@ display: block;
 	font-size: 2em;
 }
 
+@media (max-width: 768px) {
+	#primary-menu {
+		background-color: white;
+	}
+	#primary-menu a,
+	#primary-menu .fa {
+		color: #385f7e;
+		line-height: 2;
+	}
+	#primary-menu .sub-menu.toggled {
+		background-color: #EAF1F7;
+		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.toggled #primary-menu {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	margin: 0;
+	padding: 0.5em 0;
+}
+
 @media (min-width: 48em) {
 	.menu-toggle {
 		display: none;
@@ -983,7 +1005,6 @@ a:hover, a:active {
 
 @media screen and (max-width: 48em) {
 	.main-navigation ul ul.toggled {
-		border: 3px solid green;
 		position: initial;
 		float: none;
 		display: block;
@@ -1250,11 +1271,10 @@ a:hover, a:active {
 }
 
 .header-sticky .fa {
-	color: #EAF1F7 !important;
+	color: #EAF1F7;
 }
 
 .header-sticky .main-navigation ul.sub-menu {
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	background-color: #385f7e;
 	opacity: 0.9;
 }
@@ -1262,6 +1282,12 @@ a:hover, a:active {
 .header-sticky .main-navigation ul.sub-menu a:hover {
 	background-color: #EAF1F7;
 	color: #385f7e;
+}
+
+@media (min-width: 48em) {
+	.header-sticky .main-navigation ul.sub-menu {
+		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	}
 }
 
 .header-sticky .site-branding .custom-logo-link {

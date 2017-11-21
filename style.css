@@ -70,6 +70,7 @@ p {
 /**
   * Site Widths
   */
+/** Heading size mixins */
 /*
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -448,7 +449,8 @@ body.archive .post .entry-header .entry-title,
 
 h3,
 .h3,
-h2#main-content {
+h2#main-content,
+.page .entry-header .entry-title {
 	font-size: 1.777em;
 	font-weight: normal;
 }
@@ -1579,6 +1581,12 @@ h2#main-content + p {
 	color: white;
 	line-height: 1.25;
 	margin: 0;
+}
+
+@media (min-width: 48em) {
+	.page .entry-header .entry-title {
+		font-size: 3.157em;
+	}
 }
 
 /**

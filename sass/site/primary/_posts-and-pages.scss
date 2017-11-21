@@ -33,8 +33,13 @@
         color: white; 
         line-height: $line-height-header;
         margin: 0;
-        //@include heading-2;
+        @extend .h3;
     }  
+    @media #{$tablet__breakpoint} {
+        .entry-title {
+            @include heading-1;
+        }
+    }
 }
 
 /**

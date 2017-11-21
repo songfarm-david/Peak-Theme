@@ -3,6 +3,7 @@
   * Ex: 1200px / 16px = 75em
   */
 
+$mobile-only__breakpoint: "(max-width: 768px)";
 $tablet__breakpoint: "(min-width: 48em)";
 $desktop__breakpoint: "(min-width: 75em)";
 $lg-desktop__breakpoint: "(min-width: 118.75em)";

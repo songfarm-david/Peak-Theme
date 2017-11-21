@@ -102,7 +102,7 @@
 }
 
 #primary-menu {
-    @media (max-width: 768px) {
+    @media #{$mobile-only__breakpoint} {
         background-color: white;
         
         a,

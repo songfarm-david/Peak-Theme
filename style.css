@@ -1574,7 +1574,7 @@ h2#main-content + p {
 .page .entry-header {
 	background-color: #385f7e;
 	background: linear-gradient(to right, #385f7e, #213647);
-	padding: 0.5em 0 0.75em;
+	padding: 0.5em 0;
 }
 
 .page .entry-header .entry-title {
@@ -1584,6 +1584,9 @@ h2#main-content + p {
 }
 
 @media (min-width: 48em) {
+	.page .entry-header {
+		padding: 0.5em 0 0.75em;
+	}
 	.page .entry-header .entry-title {
 		font-size: 3.157em;
 	}
@@ -1634,6 +1637,10 @@ body.page .site-content h2, body.page .site-content h3 {
 /** 
   * PAGE styles 
   */
+body.page {
+	/** remove top margin on page content on mobile devices */
+}
+
 body.page .entry-header > div,
 body.page .entry-content,
 body.page .entry-footer {
@@ -1667,7 +1674,13 @@ body.page .entry-footer {
 }
 
 body.page .entry-content {
-	margin-top: 1em;
+	margin-top: 0;
+}
+
+@media (min-width: 48em) {
+	body.page .entry-content {
+		margin-top: 1em;
+	}
 }
 
 /**

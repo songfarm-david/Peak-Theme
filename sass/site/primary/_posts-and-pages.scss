@@ -28,7 +28,7 @@
 .page .entry-header {
     background-color: $hero-color;
     @include linear-gradient;
-    padding: 0.5em 0 0.75em;
+    padding: 0.5em 0;
     .entry-title {
         color: white; 
         line-height: $line-height-header;
@@ -36,6 +36,7 @@
         @extend .h3;
     }  
     @media #{$tablet__breakpoint} {
+        padding: 0.5em 0 0.75em;
         .entry-title {
             @include heading-1;
         }
@@ -106,9 +107,14 @@ body.page {
             @include lg-desktop_width;            
         }
 
-    }   
+    } 
+    
+    /** remove top margin on page content on mobile devices */
     .entry-content {
-        margin-top: 1em;
+        margin-top: 0;
+        @media #{$tablet__breakpoint} {
+            margin-top: 1em;
+        }
     }
     
 }

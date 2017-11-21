@@ -28,27 +28,25 @@
 
 	<footer id="colophon" class="site-footer">
             
-            <div>
-                <span id="copyright">&copy; <?php echo date('Y'); ?> Peak Websites</span>
+            <div id="copyright">
+                <span >&copy; <?php echo date('Y'); ?> Peak Websites</span>
             </div>
             
-            <nav>
-                <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'social-media',
-                        'menu_id'        => 'social-media-menu',
-                    ) );
-                ?>
-            </nav>
+            <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'social-media',
+                    'container'      => 'nav',
+                    'container_id'   => 'social-media-menu',
+                ) );
+            ?>
             
-            <nav>
-                <?php
-                    wp_nav_menu( array(
-                        'theme_location' => 'legal',
-                        'menu_id'        => 'legal-menu',
-                    ) );
-                ?>
-            </nav>
+            <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'legal',
+                    'container'      => 'nav',
+                    'container_id'   => 'legal-menu'
+                ) );
+            ?>
            
             
 <!--            <div class="site-info">

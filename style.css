@@ -68,6 +68,26 @@ p {
 ## Helper Mixins
 --------------------------------------------------------------*/
 /**
+ * entry meta typography
+ */
+.entry-meta-type, body.blog .post .entry-meta .byline,
+body.blog .post .entry-meta .posted-on,
+body.single .post .entry-meta .byline,
+body.single .post .entry-meta .posted-on,
+body.archive .post .entry-meta .byline,
+body.archive .post .entry-meta .posted-on, body.blog .post .entry-footer .cat-links,
+body.blog .post .entry-footer .comments-link,
+body.single .post .entry-footer .cat-links,
+body.single .post .entry-footer .comments-link,
+body.archive .post .entry-footer .cat-links,
+body.archive .post .entry-footer .comments-link {
+	font-family: "Raleway", sans-serif;
+	display: inline;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+/**
   * Site Widths
   */
 /** Heading size mixins */
@@ -475,6 +495,19 @@ h6,
 h6,
 small,
 .font-small,
+.entry-meta-type,
+body.blog .post .entry-meta .byline,
+body.blog .post .entry-meta .posted-on,
+body.single .post .entry-meta .byline,
+body.single .post .entry-meta .posted-on,
+body.archive .post .entry-meta .byline,
+body.archive .post .entry-meta .posted-on,
+body.blog .post .entry-footer .cat-links,
+body.blog .post .entry-footer .comments-link,
+body.single .post .entry-footer .cat-links,
+body.single .post .entry-footer .comments-link,
+body.archive .post .entry-footer .cat-links,
+body.archive .post .entry-footer .comments-link,
 body.single .comments-area .comment-body .comment-content > .comment-metadata,
 .wp-caption {
 	font-size: 0.75em;
@@ -1743,16 +1776,6 @@ body.blog .post .entry-header .entry-title > a:hover,
 body.single .post .entry-header .entry-title > a:hover,
 body.archive .post .entry-header .entry-title > a:hover {
 	text-decoration: underline;
-}
-
-body.blog .post .entry-meta h6,
-body.blog .post .entry-footer h6,
-body.single .post .entry-meta h6,
-body.single .post .entry-footer h6,
-body.archive .post .entry-meta h6,
-body.archive .post .entry-footer h6 {
-	display: inline;
-	font-weight: lighter;
 }
 
 body.blog .post .entry-meta,

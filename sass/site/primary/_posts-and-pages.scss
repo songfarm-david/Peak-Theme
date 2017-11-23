@@ -165,15 +165,18 @@ body.archive {
                 }
             }
         }
-        .entry-meta,
-        .entry-footer {
-            h6 {
-                display: inline;
-                font-weight: lighter;
-            }
-        }
         .entry-meta {
             padding: 0;
+            .byline,
+            .posted-on {
+                @extend .entry-meta-type;
+            }
+        }
+        .entry-footer {
+            .cat-links,
+            .comments-link {
+                @extend .entry-meta-type;
+            }
         }
         figure.author-avatar {
             margin: 0 0 0.5em;

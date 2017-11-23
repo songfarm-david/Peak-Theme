@@ -39,7 +39,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
                 /* add avatar image - NOTE: not currently dynamic */
                 $avatar = '<figure class="author-avatar"><img src="https://peakwebsites.ca/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
 
-		echo $avatar . ' <h6 class="byline"> ' . $byline . '</h6> <h6 class="posted-on">' . $posted_on . '</h6>'; // WPCS: XSS OK.
+		echo $avatar . ' <span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
@@ -55,19 +55,19 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'peak-theme' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<h6 class="cat-links">' . esc_html__( 'Posted in %1$s', 'peak-theme' ) . '</h6>&nbsp;', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'peak-theme' ) . '</span>&nbsp;', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'peak-theme' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<h6 class="tags-links">' . esc_html__( 'Tagged %1$s', 'peak-theme' ) . '</h6>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'peak-theme' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<h6 class="comments-link">';
+			echo '<span class="comments-link">';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
@@ -82,7 +82,7 @@ if ( ! function_exists( 'peak_theme_entry_footer' ) ) :
 					get_the_title()
 				)
 			);
-			echo '</h6>';
+			echo '</span>';
 		}
 
 		edit_post_link(

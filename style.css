@@ -1812,6 +1812,21 @@ body.archive .post .more-link {
 	margin-bottom: 1em;
 }
 
+body.blog h3,
+body.single h3,
+body.archive h3 {
+	font-weight: bold;
+}
+
+body.blog h5,
+body.blog h6,
+body.single h5,
+body.single h6,
+body.archive h5,
+body.archive h6 {
+	color: #385f7e;
+}
+
 body.blog .site-content,
 body.single .site-content,
 body.archive .site-content {

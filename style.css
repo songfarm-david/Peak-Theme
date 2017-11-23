@@ -1229,11 +1229,11 @@ a:hover, a:active {
 /**
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
-h2 {
+h2, p {
 	position: relative;
 }
 
-h2 span[class="anchored-header-target"] {
+h2 span[class="anchored-header-target"], p span[class="anchored-header-target"] {
 	display: block;
 	position: absolute;
 	top: -81px;
@@ -1242,9 +1242,16 @@ h2 span[class="anchored-header-target"] {
 	border-width: 0;
 }
 
-h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus {
+h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus, p span[class="anchored-header-target"]:active, p span[class="anchored-header-target"]:focus {
 	outline: none;
 	border-width: 0;
+}
+
+/**
+ * Hide featured thumbnail on blog index for post: SEO in 2018
+ */
+.blog .post-2106 .entry-header > a img {
+	display: none;
 }
 
 /*--------------------------------------------------------------

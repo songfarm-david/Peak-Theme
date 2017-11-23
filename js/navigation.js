@@ -10,43 +10,66 @@
 
 	function initMainNavigation( container ) {
 
-		// Add button that toggles dropdown menu child items
-		var dropdownButton = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( $( '<i />', { 'class': 'fa fa-angle-down', 'aria-hidden': 'true' }) )
-			.append( $( '<span />', { 'class': 'screen-reader-text', text: peakScreenReaderText.expand }) );
+            // Add button that toggles dropdown menu child items
+            var dropdownButton = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
+                .append( $( '<i />', { 'class': 'fa fa-angle-down', 'aria-hidden': 'true' }) )
+                .append( $( '<span />', { 'class': 'screen-reader-text', text: peakScreenReaderText.expand }) );
                
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownButton );
+            container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownButton );
 
-		// Set the active submenu dropdown toggle button initial state.
-		container.find( '.current-menu-ancestor > button' )
-			.addClass( 'toggled' )
-			.attr( 'aria-expanded', 'true' )
-			.find( '.screen-reader-text' )
-			.text( peakScreenReaderText.collapse );
+            // Set the active submenu dropdown toggle button initial state.
+            container.find( '.current-menu-ancestor > button' )
+                .addClass( 'toggled' )
+                .attr( 'aria-expanded', 'true' )
+                .find( '.screen-reader-text' )
+                .text( peakScreenReaderText.collapse );
 		// Set the active submenu initial state.
 		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled' );
+                
+                function toggleDropdown() {
+                    var dropdown = $( '.dropdown-toggle' ),
+                        screenReaderSpan = dropdown.find( '.screen-reader-text' ),
+                        toggleArrow = dropdown.find( '.fa' );
+                    
+                    dropdown.next( '.children, .sub-menu' ).toggleClass( 'toggled' );
+                    
+                    if ( toggleArrow.hasClass( 'fa-angle-down') ) {
+                        toggleArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
+                    } else {
+                        toggleArrow.removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
+                    }
+                    
+                    dropdown.attr( 'aria-expanded', dropdown.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+
+                    screenReaderSpan.text( screenReaderSpan.text() === peakScreenReaderText.expand ? peakScreenReaderText.collapse : peakScreenReaderText.expand );
+                }
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
-			var _this = $( this ),
-				screenReaderSpan = _this.find( '.screen-reader-text' ),
-                                toggleArrow = _this.find( '.fa' );
+                    e.stopPropagation();
+                    e.preventDefault();
+                    
+                    var _this = $( this ),
+                        screenReaderSpan = _this.find( '.screen-reader-text' ),
+                        toggleArrow = _this.find( '.fa' );
+                    
+                    _this.toggleClass( 'toggled' );
+                    _this.next( '.children, .sub-menu' ).toggleClass( 'toggled' );
 
-			e.preventDefault();
-			_this.toggleClass( 'toggled' );
-			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled' );
-                        
-                        if ( toggleArrow.hasClass( 'fa-angle-down') ) {
-                            toggleArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
+                    if ( toggleArrow.hasClass( 'fa-angle-down') ) {
+                        toggleArrow.removeClass( 'fa-angle-down' ).addClass( 'fa-angle-up' );
+                    } else {
+                        toggleArrow.removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
+                    }
 
-                        } else {
-                            toggleArrow.removeClass( 'fa-angle-up' ).addClass( 'fa-angle-down' );
-                        }
-                         
+                    _this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 
-			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-
-			screenReaderSpan.text( screenReaderSpan.text() === peakScreenReaderText.expand ? peakScreenReaderText.collapse : peakScreenReaderText.expand );
+                    screenReaderSpan.text( screenReaderSpan.text() === peakScreenReaderText.expand ? peakScreenReaderText.collapse : peakScreenReaderText.expand );
 		});
+                
+                container.find( '.menu-item-has-children').click( function( e ) {
+                    e.preventDefault();
+                    toggleDropdown();
+                });
 	}
 
 	initMainNavigation( $( '.main-navigation' ) );

@@ -42,16 +42,22 @@
                 if (target) {
                     $(this).click(function (event) {
                         event.preventDefault();
-                        
-                        // if desktop viewport
                         var scrollToPosition;
-                  
-                        if ( $(window).width() > 1200 ) {
-                            scrollToPosition = $(target).offset().top - 140;
-                        } else if ( $(window).width() > 768 ) {
-                            scrollToPosition = $(target).offset().top - 100;
+
+                        // if is home page
+                        if ( $('body').hasClass('single') ) {
+                            scrollToPosition = $(target).offset().top;
                         } else {
-                            scrollToPosition = $(target).offset().top - 145;
+                            // if is desktop viewport
+                            if ( $(window).width() > 1200 ) {
+                                scrollToPosition = $(target).offset().top - 140;
+                            } 
+                            // if is tablet viewport
+                            else if ( $(window).width() > 768 ) {
+                                scrollToPosition = $(target).offset().top - 100;
+                            } else {
+                                scrollToPosition = $(target).offset().top - 145;
+                            }
                         }
                         
                         $('html, body').animate({scrollTop: scrollToPosition}, 1250, function () {

@@ -18,6 +18,13 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
+        <!-- Dynamically load meta descriptions (excerpt) for posts and pages, 
+        display siteinfo on home page.-->
+        <?php if (is_single() || is_page() ) : if (have_posts() ) : while (have_posts() ) : the_post(); ?>
+        <meta name="description" content="<?php echo get_the_excerpt();?>">
+        <?php endwhile; endif; elseif (is_home() ): ?>
+        <meta name="description" content="<?php bloginfo('description'); ?>">
+        <?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>

@@ -46,7 +46,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
 	/*    line-height: $first_modular;
     margin-top: $first_modular + em;
     margin-bottom: ($first_modular  / 2) + em;*/
@@ -1810,6 +1812,12 @@ body.archive .post .more-link {
 	font-style: italic;
 	display: inline-block;
 	margin-bottom: 1em;
+}
+
+body.blog .post img[class*="wp-image-"],
+body.single .post img[class*="wp-image-"],
+body.archive .post img[class*="wp-image-"] {
+	border: 4px solid rgba(0, 0, 0, 0.2);
 }
 
 body.blog h3,

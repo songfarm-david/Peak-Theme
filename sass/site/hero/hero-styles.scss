@@ -92,7 +92,7 @@ h2#main-content {
     }
     > div {
         transform: skewY(-2deg);
-        backface-visibility: hidden;
+        //backface-visibility: hidden;
         padding: 1em 1em 7em;
         margin-top: 3em;
         @include border(2px, transparent);

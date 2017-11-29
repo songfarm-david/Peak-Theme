@@ -178,6 +178,24 @@ function peak_theme_scripts() {
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+        
+        // load Faebook pixel
+        wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js' );
+        
+        /**
+         * Load tracking data on select pages
+         */
+        if ( is_page( 'search-engine-optimization' ) || is_page( 'website-development-design') ) {
+            wp_add_inline_script('facebook-pixel', "fbq('track', 'ViewContent');" );
+        }
+        
+        /**
+         * Track leads on contact page
+         */
+        if ( is_page( 'contact-us' ) ) {
+            wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
+        }
+        
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
 
@@ -225,3 +243,34 @@ function register_social_menu( $items, $args ) {
 }
 add_filter('wp_nav_menu_items', 'register_social_menu', 10, 2);
 
+/**
+ * @summary        filters an enqueued script tag and adds a noscript element after it
+ * 
+ * @description    filters an enqueued script tag (identified by the $handle variable) and
+ *                 adds a noscript element after it. If there is also an inline script enqueued
+ *                 after $handled, adds the noscript element after it.
+ * 
+ * @access    public
+ * @param     string    $tag       The tag string sent by `script_loader_tag` filter on WP_Scripts::do_item
+ * @param     string    $handle    The script handle as sent by `script_loader_tag` filter on WP_Scripts::do_item
+ * @param     string    $src       The script src as sent by `script_loader_tag` filter on WP_Scripts::do_item
+ * @return    string    $tag       The filter $tag variable with the noscript element
+ */
+function append_noscript( $tag, $handle, $src ){
+    // as this filter will run for every enqueued script
+    // we need to check if the handle is equals the script
+    // we want to filter. If yes, than adds the noscript element
+    if ( 'facebook-pixel' === $handle ){
+        $noscript = '<noscript>';
+        // you could get the inner content from other function
+        $noscript .= '<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=186154185273672&ev=PageView&noscript=1" />';
+        $noscript .= '</noscript>';
+        $tag = $tag . $noscript;
+    }
+        
+    return $tag;
+}
+// adds the append_noscript function to the script_loader_tag filters
+// it must use 3 as the last parameter to make $tag, $handle, $src available
+// to the filter function
+add_filter('script_loader_tag', 'append_noscript', 10, 3);

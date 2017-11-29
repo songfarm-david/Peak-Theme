@@ -21,7 +21,7 @@
                 if ( 'post' === get_post_type() ) : 
                     
                     /* post thumbnail */
-                    if ( has_post_thumbnail() && ! is_single( '2106' ) ) : 
+                    if ( has_post_thumbnail() ) : 
                         echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
                         the_post_thumbnail();
                         echo '</a>';

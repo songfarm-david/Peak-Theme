@@ -1250,7 +1250,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 /**
  * Hide featured thumbnail on blog index for post: SEO in 2018
  */
-.blog .post-2106 .entry-header > a img {
+.blog,
+.single {
+	/* post SEO in 2018 trends */
+}
+
+.blog .post-2106 .entry-header > a img,
+.single .post-2106 .entry-header > a img {
 	display: none;
 }
 
@@ -1527,8 +1533,6 @@ h2#main-content + p {
 #blog-about-peak > div {
 	-webkit-transform: skewY(-2deg);
 	        transform: skewY(-2deg);
-	-webkit-backface-visibility: hidden;
-	        backface-visibility: hidden;
 	padding: 1em 1em 7em;
 	margin-top: 3em;
 	border: 2px solid transparent;
@@ -1860,8 +1864,16 @@ body.archive .site-content {
 body.blog #secondary,
 body.single #secondary,
 body.archive #secondary {
-	display: none;
+	padding-top: 1.65em;
 	background-color: #EAF1F7;
+	width: 100%;
+	/* hide redundant widgets in mobile mode */
+}
+
+body.blog #secondary .widget_custom_html,
+body.single #secondary .widget_custom_html,
+body.archive #secondary .widget_custom_html {
+	display: none;
 }
 
 @media (min-width: 75em) {
@@ -1873,6 +1885,11 @@ body.archive #secondary {
 		-webkit-box-flex: 0;
 		    -ms-flex: 0 0 33%;
 		        flex: 0 0 33%;
+	}
+	body.blog #secondary .widget_custom_html,
+	body.single #secondary .widget_custom_html,
+	body.archive #secondary .widget_custom_html {
+		display: block;
 	}
 }
 

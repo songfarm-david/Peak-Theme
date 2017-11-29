@@ -21,6 +21,12 @@ h2, p {
 /**
  * Hide featured thumbnail on blog index for post: SEO in 2018
  */
-.blog .post-2106 .entry-header > a img {
-    display: none;
+.blog,
+.single {
+    
+    /* post SEO in 2018 trends */
+    .post-2106 .entry-header > a img {
+        display: none;
+    }
+    
 }

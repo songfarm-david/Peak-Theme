@@ -239,13 +239,23 @@ body.archive {
     
     #secondary {
         
-        display: none;
+        //display: none;
+        padding-top: 1.65em;
         background-color: $color-light;
+        width: 100%;
+        /* hide redundant widgets in mobile mode */
+        .widget_custom_html {
+            display: none;
+        }
         
         @media #{$desktop__breakpoint} {     
             display: block;
             padding-top: 1.65em;
             flex: 0 0 33%;
+            
+            .widget_custom_html {
+                display: block;
+            }
         }
         
     }

@@ -149,9 +149,29 @@ function peak_theme_widgets_init() {
 add_action( 'widgets_init', 'peak_theme_widgets_init' );
 
 /**
+ * Custom function to add async attribute to scripts
+ * https://matthewhorne.me/defer-async-wordpress-scripts/
+ */
+function add_async_attribute($tag, $handle) {
+   // add script handles to the array below
+   $scripts_to_async = array('google-analytics-prescript', 'google-analytics', 'peak-fonts', 'font-awesome', 'jquery-migrate', 'jquery', 'facebook-pixel');
+   
+   foreach($scripts_to_async as $async_script) {
+      if ($async_script === $handle) {
+         return str_replace('type=\'text/javascript\'', 'type=\'text/javascript\' async="async"', $tag);
+      }
+   }
+   return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
+
+/**
  * Enqueue scripts and styles.
  */
 function peak_theme_scripts() {
+//        wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
+    
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
         
         // google analytics
@@ -274,3 +294,21 @@ function append_noscript( $tag, $handle, $src ){
 // it must use 3 as the last parameter to make $tag, $handle, $src available
 // to the filter function
 add_filter('script_loader_tag', 'append_noscript', 10, 3);
+
+/**
+ * Add meta property og:image to head (for single posts)
+ */
+function add_meta_prop_og_image() {
+    global $post;
+    $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'large');
+    $output = '<meta property="og:image" content="' .  $post_thumbnail[0] . '" />';
+    echo $output;
+}
+add_action('wp_head', 'add_meta_prop_og_image');
+
+function modify_post_thumbnail_html( $html ) {
+//    var_dump(func_get_args());
+    
+    return preg_replace( '/(width|height)="\d*"/', '', $html );
+}
+add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html' );

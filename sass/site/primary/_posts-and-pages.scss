@@ -158,15 +158,24 @@ body.archive {
         margin-bottom: 1.5em;    
         padding: 0 1em 1em;
         
-        .entry-header .entry-title {
-            margin: 0.5em 0;
-            //line-height: $line-height-header;
-            @extend .h2;
-            //@include border;
-            > a {
-                text-decoration: none;
-                &:hover {
-                    text-decoration: underline;
+        .entry-header {
+            
+            // make featured image attachment full width and responsive
+            img[class*="attachment-"] {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            .entry-title {
+                margin: 0.5em 0;
+                //line-height: $line-height-header;
+                @extend .h2;
+                //@include border;
+                > a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }

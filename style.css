@@ -1257,7 +1257,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 
 .blog .post-2106 .entry-header > a img,
 .single .post-2106 .entry-header > a img {
-	display: none;
+	/*display: none;*/
 }
 
 /*--------------------------------------------------------------
@@ -1753,6 +1753,14 @@ body.archive .post {
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	margin-bottom: 1.5em;
 	padding: 0 1em 1em;
+}
+
+body.blog .post .entry-header img[class*="attachment-"],
+body.single .post .entry-header img[class*="attachment-"],
+body.archive .post .entry-header img[class*="attachment-"] {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
 }
 
 body.blog .post .entry-header .entry-title,

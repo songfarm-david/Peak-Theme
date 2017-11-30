@@ -299,6 +299,9 @@ add_filter('script_loader_tag', 'append_noscript', 10, 3);
  * Add meta property og:image to head (for single posts)
  */
 function add_meta_prop_og_image() {
+    if( !is_single() ) {
+        return;
+    }
     global $post;
     $post_thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID),'large');
     $output = '<meta property="og:image" content="' .  $post_thumbnail[0] . '" />';

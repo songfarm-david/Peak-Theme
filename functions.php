@@ -309,9 +309,16 @@ function add_meta_prop_og_image() {
 }
 add_action('wp_head', 'add_meta_prop_og_image');
 
+/**
+ * Remove featured image default width & height, now to be styled externally via CSS stylesheet
+ */
 function modify_post_thumbnail_html( $html ) {
-//    var_dump(func_get_args());
     
     return preg_replace( '/(width|height)="\d*"/', '', $html );
 }
 add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html' );
+
+/**
+ * Add support for 'excerpt' on Pages
+ */
+add_post_type_support( 'page', 'excerpt' );

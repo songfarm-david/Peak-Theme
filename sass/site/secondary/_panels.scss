@@ -1,0 +1,15 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7-Dec-2017, 10:05:34 PM
+    Author     : David
+*/
+
+.panel-container:nth-child(even) {
+    background-color: $panel-color; 
+    padding: 0.1em 0 2em 0;
+}
+

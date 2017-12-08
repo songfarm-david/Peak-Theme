@@ -1,5 +1,5 @@
 /*!
-Theme Name: Peak Theme
+Theme Name: Peak Themessss
 Theme URI: http://underscores.me/
 Author: David Gaskin
 Author URI: https://peakwebsites.ca
@@ -2466,6 +2466,23 @@ ul.social-media-menu li a {
 	list-style: disc inside;
 	line-height: 1.25;
 	margin-bottom: 0.75em;
+}
+
+/*--------------------------------------------------------------
+## Panels
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7-Dec-2017, 10:05:34 PM
+    Author     : David
+*/
+.panel-container:nth-child(even) {
+	background-color: #F2F7F2;
+	padding: 0.1em 0 2em 0;
 }
 
 /*--------------------------------------------------------------

@@ -69,7 +69,43 @@
             /**
              * If homepage/front page, include hero banner
              */
-            include( get_template_directory() . '/inc/hero/landing-banner.php' );
+//            include( get_template_directory() . '/inc/hero/landing-banner.php' );
+            
+            $recent = new WP_Query( "page_id=1895" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <section id="hero-banner">
+                    <div class="hero-headline-container fadeInUp">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </section>
+                        
+                <?php endwhile;
         
         endif; ?>
         

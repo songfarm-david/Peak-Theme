@@ -14,27 +14,104 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
 
-			<?php
-			while ( have_posts() ) : the_post();
-                                
-				get_template_part( 'template-parts/content', 'page' );
+            <?php
+            while ( have_posts() ) : the_post();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+                get_template_part( 'template-parts/content', 'page' );
 
-			endwhile; // End of the loop.
-			?>
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                endif;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+            endwhile; // End of the loop.
+            ?>
+
+            <!--Insert select pages-->
+            <?php if( is_front_page() ) :
+
+                // id for web-design-panel
+                $recent = new WP_Query( "page_id=2222" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <article class="panel-container">
+                    <div class="entry-content panel-content">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </article>
+                        
+                <?php endwhile;
+
+                // id for SEO-panel
+                $recent = new WP_Query( "page_id=2227" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <article class="panel-container">
+                    <div class="entry-content panel-content">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </article>
+            
+                <?php endwhile;
+
+            endif; // if is_front_page()
+            ?>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
-//if ( ! is_front_page() ) {
-//   get_sidebar(); 
-//}
 get_footer();

@@ -1460,6 +1460,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #385f7e;
 	margin: 0;
 	line-height: 1.25;
+	font-weight: bolder;
 }
 
 #hero-banner .hero-headline-container .hero-headline > span {

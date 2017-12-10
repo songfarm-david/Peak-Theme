@@ -154,7 +154,7 @@ add_action( 'widgets_init', 'peak_theme_widgets_init' );
  */
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
-   $scripts_to_async = array('google-analytics-prescript', 'google-analytics', 'peak-fonts', 'font-awesome', 'jquery-migrate', 'jquery', 'facebook-pixel');
+   $scripts_to_async = array( 'google-analytics-prescript', 'google-analytics', 'peak-fonts', 'font-awesome', 'jquery-migrate' );
    
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
@@ -200,7 +200,7 @@ function peak_theme_scripts() {
 	}
         
         // load Faebook pixel
-        wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js' );
+        wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
         
         /**
          * Load tracking data on select pages
@@ -322,3 +322,32 @@ add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html' );
  * Add support for 'excerpt' on Pages
  */
 add_post_type_support( 'page', 'excerpt' );
+
+/**
+ * Deregister stylesheet
+ */
+function my_deregister_styles() {
+  wp_deregister_style('social_warfare');
+}
+add_action('wp_print_styles', 'my_deregister_styles', 100);
+
+add_action( 'wp_footer', function () { ?>
+
+    <noscript id="deferred-styles">
+    <link rel="stylesheet" type="text/css" href="<?php echo plugins_url() . '/social-warfare/css/style.min.css'; ?>"/>
+    </noscript>
+    <script>
+      var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+      };
+      var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+          webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    </script>
+
+<?php } );

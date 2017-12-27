@@ -43,6 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 /* theme colors */
 /* hero color variations */
+/* orange footer coolor */
 h1,
 h2,
 h3,
@@ -1991,6 +1992,53 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	padding-left: 0.25em;
 	border-left: 3px solid #385f7e;
 	margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+## Portfolio
+--------------------------------------------------------------*/
+/** Portfolio styles
+*/
+.row {
+	margin: 0.5em 1em;
+	margin: 1em auto 0;
+	/* Clear floats after rows*/
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.row .content {
+	background-color: white;
+	padding: .5em 0;
+}
+
+.row .content > img {
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.row .column {
+	float: left;
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+@media (min-width: 48em) {
+	.row .column {
+		width: 50%;
+	}
+}
+
+@media (min-width: 75em) {
+	.row {
+		/*        max-width: 85%;
+        .column {
+            width: 25%;
+        }*/
+	}
 }
 
 /*--------------------------------------------------------------

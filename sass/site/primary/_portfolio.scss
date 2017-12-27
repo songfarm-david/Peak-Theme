@@ -1,0 +1,41 @@
+/** Portfolio styles
+*/
+
+.row {
+    margin: 0.5em 1em;
+    margin: 1em auto 0;
+    
+    /* Clear floats after rows*/
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .content {
+        background-color: white;
+        padding: .5em 0;
+        > img {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+    
+    .column {
+        float: left;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    @media #{$tablet__breakpoint} {
+        .column {
+            width: 50%;
+        }
+    }
+    @media #{$desktop__breakpoint} {
+/*        max-width: 85%;
+        .column {
+            width: 25%;
+        }*/
+    }
+}
+
+

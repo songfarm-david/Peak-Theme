@@ -481,6 +481,7 @@ h2#main-content,
 h4,
 .h4,
 #blog-about-peak h3,
+#portfolio-container .item > h3,
 .widget .widget-title {
 	font-size: 1.333em;
 }
@@ -1999,46 +2000,88 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 --------------------------------------------------------------*/
 /** Portfolio styles
 */
-.row {
-	margin: 0.5em 1em;
-	margin: 1em auto 0;
-	/* Clear floats after rows*/
-}
-
-.row:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.row .content {
-	background-color: white;
-	padding: .5em 0;
-}
-
-.row .content > img {
-	border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.row .column {
-	float: left;
-	width: 100%;
-	margin-bottom: 2em;
+/*.row {
+    margin: 0.5em 1em;
+    margin: 1em auto 0;
+    
+     Clear floats after rows
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .content {
+        background-color: white;
+        padding: .5em 0;
+        > img {
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+    }
+    
+    .column {
+        float: left;
+        width: 100%;
+        margin-bottom: 2em;
+    }
+    @media (min-width: 48em) {
+        .column {
+            width: 50%;
+        }
+    }
+    @media (min-width: 75em) {
+        max-width: 85%;
+        .column {
+            width: 25%;
+        }
+    }
+}*/
+#portfolio-container {
+	margin-top: 2em;
+	-webkit-column-count: 1;
+	        column-count: 1;
 }
 
 @media (min-width: 48em) {
-	.row .column {
-		width: 50%;
+	#portfolio-container {
+		-webkit-column-count: 2;
+		        column-count: 2;
 	}
 }
 
-@media (min-width: 75em) {
-	.row {
-		/*        max-width: 85%;
-        .column {
-            width: 25%;
+#portfolio-container .item {
+	padding-bottom: 2em;
+	margin-bottom: 1em;
+	-webkit-column-break-inside: avoid;
+	        break-inside: avoid;
+	background-color: #EAF1F7;
+	overflow: hidden;
+	/*        &:hover > img {
+            -webkit-transform: scale(1.3);
         }*/
-	}
+}
+
+#portfolio-container .item > h3 {
+	margin: 0.5em 0 0;
+}
+
+#portfolio-container .item > h3 + p {
+	margin-top: 0.5em;
+}
+
+#portfolio-container .item img {
+	border: 1px solid #ccc;
+	opacity: 1;
+	transition: .3s ease-in-out;
+}
+
+#portfolio-container .item img:hover {
+	opacity: .5;
+	cursor: pointer;
+}
+
+#portfolio-container .item h3, #portfolio-container .item p {
+	padding: 0 0.5em;
 }
 
 /*--------------------------------------------------------------

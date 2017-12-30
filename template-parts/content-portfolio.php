@@ -98,7 +98,7 @@
                 </li>
                 <li id="your-website" class="item large">
                     <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">Your Next Project</a>
+                    <a href="" class="hover-button">Your Website Here</a>
                 </li>
             </ul>
             

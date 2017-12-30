@@ -481,7 +481,6 @@ h2#main-content,
 h4,
 .h4,
 #blog-about-peak h3,
-#portfolio-container .item > h3,
 .widget .widget-title {
 	font-size: 1.333em;
 }
@@ -1998,90 +1997,143 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 /*--------------------------------------------------------------
 ## Portfolio
 --------------------------------------------------------------*/
-/** Portfolio styles
-*/
-/*.row {
-    margin: 0.5em 1em;
-    margin: 1em auto 0;
-    
-     Clear floats after rows
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    .content {
-        background-color: white;
-        padding: .5em 0;
-        > img {
-            border: 1px solid rgba(0, 0, 0, 0.2);
-        }
-    }
-    
-    .column {
-        float: left;
-        width: 100%;
-        margin-bottom: 2em;
-    }
+/** Portfolio styles */
+/*#portfolio-container {
+    margin-top: 2em;
+    column-count: 1;
     @media (min-width: 48em) {
-        .column {
-            width: 50%;
-        }
+        column-count: 2;
     }
-    @media (min-width: 75em) {
-        max-width: 85%;
-        .column {
-            width: 25%;
+    @media (min-width: 118.75em) {
+        //column-count: 3;
+    }
+    
+    .item {
+        //@include border;
+        padding-bottom: 2em;
+        margin-bottom: 1em;
+        break-inside: avoid;
+        background-color: $color-light;
+        overflow: hidden;
+        .item-inner {
+            padding: 0 0.5em;
+        }
+        h4 {
+            margin-top: 0.5em;
+            font-weight: lighter;
+            & + p {
+                margin-top: 0.5em;
+            }
+        }
+        img {
+            border: 1px solid #ccc;
+            opacity: 1;
+            transition: .3s ease-in-out;
+            &:hover {
+                opacity: .5;
+                cursor: pointer;
+            }
         }
     }
 }*/
-#portfolio-container {
-	margin-top: 2em;
-	-webkit-column-count: 1;
-	        column-count: 1;
+#portfolio-grid ul {
+	padding: 0;
+	list-style: none;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-flow: row wrap;
+	        flex-flow: row wrap;
+	-webkit-box-align: stretch;
+	    -ms-flex-align: stretch;
+	        align-items: stretch;
 }
 
-@media (min-width: 48em) {
-	#portfolio-container {
-		-webkit-column-count: 2;
-		        column-count: 2;
-	}
-}
-
-#portfolio-container .item {
-	padding-bottom: 2em;
-	margin-bottom: 1em;
-	-webkit-column-break-inside: avoid;
-	        break-inside: avoid;
-	background-color: #EAF1F7;
+#portfolio-grid ul li {
 	overflow: hidden;
-	/*        &:hover > img {
-            -webkit-transform: scale(1.3);
-        }*/
+	position: relative;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 100%;
+	        flex: 1 0 100%;
 }
 
-#portfolio-container .item > h3 {
-	margin: 0.5em 0 0;
-}
-
-#portfolio-container .item > h3 + p {
-	margin-top: 0.5em;
-}
-
-#portfolio-container .item img {
-	border: 1px solid #ccc;
+#portfolio-grid ul li a.image-hover {
+	display: block;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
 	opacity: 1;
 	transition: .3s ease-in-out;
 }
 
-#portfolio-container .item img:hover {
+#portfolio-grid ul li:hover a.image-hover {
 	opacity: .5;
 	cursor: pointer;
 }
 
-#portfolio-container .item h3, #portfolio-container .item p {
-	padding: 0 0.5em;
+#portfolio-grid ul li .hover-button {
+	display: block;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	padding: 0.25em 0.75em;
+	opacity: 0;
+	transition: .3s ease-in-out;
+	font-size: 1.25em;
+	box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+#portfolio-grid ul li:hover .hover-button {
+	opacity: 1;
+}
+
+#portfolio-grid ul li.item {
+	min-height: 300px;
+}
+
+@media (min-width: 48em) {
+	#portfolio-grid ul li {
+		-ms-flex-preferred-size: 50%;
+		    flex-basis: 50%;
+	}
+}
+
+@media (min-width: 75em) {
+	#portfolio-grid ul li {
+		-ms-flex-preferred-size: 25%;
+		    flex-basis: 25%;
+	}
+	#portfolio-grid ul li.large {
+		min-height: 600px;
+	}
+	#portfolio-grid ul li .hover-button {
+		font-size: 1em;
+	}
+}
+
+#portfolio-grid li#songfarm > a.image-hover {
+	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png");
+}
+
+#portfolio-grid li#canoa > a.image-hover {
+	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png");
+}
+
+#portfolio-grid li#hollis > a.image-hover {
+	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png");
+}
+
+#portfolio-grid li#cirs > a.image-hover {
+	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png");
+}
+
+#portfolio-grid li#coastal > a.image-hover {
+	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png");
 }
 
 /*--------------------------------------------------------------
@@ -2572,9 +2624,13 @@ and open the template in the editor.
     Created on : 7-Dec-2017, 10:05:34 PM
     Author     : David
 */
-.panel-container:nth-child(even) {
+.panel-container:nth-child(even):not(.portfolio) {
 	background-color: #F2F7F2;
 	padding: 0.1em 0 2em 0;
+}
+
+.panel-container.portfolio {
+	border-top: 1px solid #ccc;
 }
 
 /*--------------------------------------------------------------

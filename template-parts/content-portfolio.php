@@ -34,7 +34,7 @@
 			) );
 		?>
             
-            <!-- Portfolio Gallery Grid -->
+<!--             Portfolio Gallery Grid 
             <div id="portfolio-container">
                 <div class="item">
                     <a href="http://songfarm.ca/" rel="nofollow" target="_blank"><?php echo wp_get_attachment_image( '2290', 'full', $icon = 'false', array( 'class' => 'img-responsive') ); ?></a>
@@ -66,9 +66,43 @@
                     <p></p>
                     <p><a href="https://coastalchiro.ca/" rel="nofollow" target="_blank">Visit site</a></p>
                 </div>
-            </div><!-- #portfolio-container -->
+            </div> #portfolio-container -->
+
             
+
 	</div><!-- .entry-content -->
+        
+        <!--Portfolio image panels-->
+        <article id="portfolio-grid">
+            <h2>Portfolio</h2>
+            <ul>
+                <li id="songfarm" class="item small">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">View Project</a>
+                </li>
+                <li id="canoa" class="item small">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">View Project</a>
+                </li>
+                <li id="hollis" class="item small">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">View Project</a>
+                </li>
+                <li id="cirs" class="item small">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">View Project</a>
+                </li>
+                <li id="coastal" class="item large">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">View Project</a>
+                </li>
+                <li id="your-website" class="item large">
+                    <a href="" class="image-hover"></a>
+                    <a href="" class="hover-button">Your Next Project</a>
+                </li>
+            </ul>
+            
+        </article>
 
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">

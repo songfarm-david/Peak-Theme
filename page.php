@@ -34,7 +34,7 @@ get_header(); ?>
             <?php if( is_front_page() ) :
 
                 // id for web-design-panel
-                $recent = new WP_Query( "page_id=2222" ); 
+                $recent = new WP_Query( "page_id=2286" ); 
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 
@@ -71,7 +71,7 @@ get_header(); ?>
                 <?php endwhile;
 
                 // id for SEO-panel
-                $recent = new WP_Query( "page_id=2227" ); 
+                $recent = new WP_Query( "page_id=2284" ); 
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 
@@ -109,6 +109,50 @@ get_header(); ?>
 
             endif; // if is_front_page()
             ?>
+            
+            <!-- if is web development page 
+                insert portfolio page 
+            -->
+            <?php if( is_page( '1741' ) ) :
+                
+                // ID for Portfolio
+                $recent = new WP_Query( "page_id=2308" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <article class="panel-container portfolio">
+                    <div class="entry-content panel-content">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </article>
+                        
+                <?php endwhile;
+                
+            endif; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

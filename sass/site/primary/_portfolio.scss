@@ -41,6 +41,10 @@
 
 #portfolio-grid {
     //@include border;
+    margin-top: 5em;
+    > h2 {
+        display: none;
+    }
     
     ul {
         padding: 0;
@@ -98,7 +102,7 @@
         ul li {
             flex-basis: 25%;
             &.large {
-                min-height: 600px;
+                min-height: 650px;
             }
             .hover-button {
                 font-size: 1em;

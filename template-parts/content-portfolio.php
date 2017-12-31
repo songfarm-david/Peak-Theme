@@ -18,21 +18,19 @@
                 <div>
                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 </div>
-                    
-                
             </header><!-- .entry-header -->
         
         <?php endif; ?>
 
 	<div class="entry-content">
-		<?php
-			the_content();
+            <?php
+                the_content();
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'peak-theme' ),
-				'after'  => '</div>',
-			) );
-		?>
+                wp_link_pages( array(
+                    'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'peak-theme' ),
+                    'after'  => '</div>',
+                ) );
+            ?>
             
 <!--             Portfolio Gallery Grid 
             <div id="portfolio-container">
@@ -68,42 +66,8 @@
                 </div>
             </div> #portfolio-container -->
 
-            
-
 	</div><!-- .entry-content -->
         
-        <!--Portfolio image panels-->
-        <article id="portfolio-grid">
-            <h2>Portfolio</h2>
-            <ul>
-                <li id="songfarm" class="item small">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">View Project</a>
-                </li>
-                <li id="canoa" class="item small">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">View Project</a>
-                </li>
-                <li id="hollis" class="item small">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">View Project</a>
-                </li>
-                <li id="cirs" class="item small">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">View Project</a>
-                </li>
-                <li id="coastal" class="item large">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">View Project</a>
-                </li>
-                <li id="your-website" class="item large">
-                    <a href="" class="image-hover"></a>
-                    <a href="" class="hover-button">Your Website Here</a>
-                </li>
-            </ul>
-            
-        </article>
-
 	<?php if ( get_edit_post_link() ) : ?>
 		<footer class="entry-footer">
 			<?php
@@ -126,8 +90,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
-                
-            
-                
-                
+                           
 </article><!-- #post-<?php the_ID(); ?> -->

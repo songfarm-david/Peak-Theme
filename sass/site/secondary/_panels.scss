@@ -14,6 +14,8 @@ and open the template in the editor.
     
 }
 .panel-container.portfolio {
-    border-top: 1px solid #ccc;
+    //border-top: 1px solid #ccc;
+    
+    background-color: $panel-color;
 }
 

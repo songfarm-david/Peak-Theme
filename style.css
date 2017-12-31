@@ -2102,6 +2102,14 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
         }
     }
 }*/
+#portfolio-grid {
+	margin-top: 5em;
+}
+
+#portfolio-grid > h2 {
+	display: none;
+}
+
 #portfolio-grid ul {
 	padding: 0;
 	list-style: none;
@@ -2175,7 +2183,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 		    flex-basis: 25%;
 	}
 	#portfolio-grid ul li.large {
-		min-height: 600px;
+		min-height: 650px;
 	}
 	#portfolio-grid ul li .hover-button {
 		font-size: 1em;
@@ -2700,7 +2708,7 @@ and open the template in the editor.
 }
 
 .panel-container.portfolio {
-	border-top: 1px solid #ccc;
+	background-color: #F2F7F2;
 }
 
 /*--------------------------------------------------------------

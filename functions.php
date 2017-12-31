@@ -351,3 +351,39 @@ add_action( 'wp_footer', function () { ?>
     </script>
 
 <?php } );
+
+/**
+ * Exclude category (or multiple) from Blog posts page
+ * 
+ * To exclude more than 1 category, separate category IDs with commas
+ */
+function exclude_category_from_blogroll( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+        $query->set( 'cat', '-199' );
+    }
+}
+add_action( 'pre_get_posts', 'exclude_category_from_blogroll' );
+
+/**
+ * Exclude category from RSS feed
+ */
+function exclude_category_from_RSS($query) {
+    if ( $query->is_feed ) {
+        $query->set('cat', '-199');
+    }
+return $query;
+}
+add_filter('pre_get_posts', 'exclude_category_from_RSS');
+
+/**
+ * Prevents specified categories from displaying in the Recent Posts Widget.
+ * Also sets posts number to show
+*/
+function exclude_posts_from_recentPostWidget_by_cat() {
+    $exclude = array( 
+        'cat' => '-199', 
+        'posts_per_page' => 5 
+    );
+    return $exclude;
+}
+add_filter('widget_posts_args','exclude_posts_from_recentPostWidget_by_cat');

@@ -1994,6 +1994,72 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	margin-top: 0;
 }
 
+/**
+ * Portfolio item styles
+ */
+body.single.post-template-single-portfolio-item {
+	/* styles for the main image */
+}
+
+@media (min-width: 75em) {
+	body.single.post-template-single-portfolio-item .site-content {
+		max-width: 90%;
+	}
+	body.single.post-template-single-portfolio-item .site-content .website-img-full {
+		max-width: 67%;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.single.post-template-single-portfolio-item .site-content {
+		max-width: 80%;
+	}
+	body.single.post-template-single-portfolio-item .site-content .website-img-full {
+		max-width: 60%;
+	}
+}
+
+body.single.post-template-single-portfolio-item #primary {
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+}
+
+body.single.post-template-single-portfolio-item img.website-img-full {
+	margin-bottom: 1em;
+	border: 0px solid #fff !important;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.single.post-template-single-portfolio-item .entry-footer {
+	border-top: 1px solid #ccc;
+	padding-top: 1em;
+}
+
+body.single.post-template-single-portfolio-item .entry-footer > .navigation.post-navigation {
+	margin: 0;
+}
+
+body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-next a:after {
+	content: "\f054";
+	font-family: 'FontAwesome';
+	display: inline-block;
+	color: inherit;
+	padding-left: 0.5em;
+}
+
+body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-previous a:before {
+	content: "\f053";
+	font-family: 'FontAwesome';
+	display: inline-block;
+	color: inherit;
+	padding-right: 0.5em;
+}
+
+body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
+	display: inline-block;
+	padding: 0.65em;
+}
+
 /*--------------------------------------------------------------
 ## Portfolio
 --------------------------------------------------------------*/

@@ -1,0 +1,129 @@
+/** Portfolio styles */
+
+/*#portfolio-container {
+    margin-top: 2em;
+    column-count: 1;
+    @media #{$tablet__breakpoint} {
+        column-count: 2;
+    }
+    @media #{$lg-desktop__breakpoint} {
+        //column-count: 3;
+    }
+    
+    .item {
+        //@include border;
+        padding-bottom: 2em;
+        margin-bottom: 1em;
+        break-inside: avoid;
+        background-color: $color-light;
+        overflow: hidden;
+        .item-inner {
+            padding: 0 0.5em;
+        }
+        h4 {
+            margin-top: 0.5em;
+            font-weight: lighter;
+            & + p {
+                margin-top: 0.5em;
+            }
+        }
+        img {
+            border: 1px solid #ccc;
+            opacity: 1;
+            transition: .3s ease-in-out;
+            &:hover {
+                opacity: .5;
+                cursor: pointer;
+            }
+        }
+    }
+}*/
+
+#portfolio-grid {
+    //@include border;
+    
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        li {
+            overflow: hidden;
+            position: relative;
+            flex: 1 0 100%;
+            a.image-hover {
+                display: block;
+                height: 100%;
+                width: 100%;
+                background-size: cover;
+                opacity: 1;
+                transition: .3s ease-in-out;
+            }
+            &:hover a.image-hover {
+                opacity: .5;
+                cursor: pointer;
+            }
+            // 'View Project' button
+            .hover-button {
+                display: block;
+                background-color: white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 0.25em 0.75em;
+                opacity: 0;
+                transition: .3s ease-in-out;
+                font-size: 1.25em;
+                box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.2);
+            }
+            &:hover .hover-button {
+                opacity: 1;
+            }
+            
+            &.item {
+               min-height: 300px; 
+            }
+        }
+    }
+    
+    @media #{$tablet__breakpoint} {
+        ul li {
+            flex-basis: 50%;
+        }
+    }
+    
+    @media #{$desktop__breakpoint} {
+        ul li {
+            flex-basis: 25%;
+            &.large {
+                min-height: 600px;
+            }
+            .hover-button {
+                font-size: 1em;
+            }
+        }
+    }
+    
+    
+    li#songfarm > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png');
+    }
+    li#canoa > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png');
+    }
+    li#hollis > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png');
+    }
+    li#cirs > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png');
+    }
+    li#coastal > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png');
+    }
+    li#your-website > a.image-hover {
+        background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg');
+    }
+    
+}

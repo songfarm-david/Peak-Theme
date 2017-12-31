@@ -135,7 +135,7 @@ function peak_theme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-        
+
         register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'peak' ),
 		'id'            => 'footer-1',
@@ -155,7 +155,7 @@ add_action( 'widgets_init', 'peak_theme_widgets_init' );
 function add_async_attribute($tag, $handle) {
    // add script handles to the array below
    $scripts_to_async = array( 'google-analytics-prescript', 'google-analytics', 'peak-fonts', 'font-awesome', 'jquery-migrate' );
-   
+
    foreach($scripts_to_async as $async_script) {
       if ($async_script === $handle) {
          return str_replace('type=\'text/javascript\'', 'type=\'text/javascript\' async="async"', $tag);
@@ -171,51 +171,51 @@ add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
  */
 function peak_theme_scripts() {
 //        wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
-    
+
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
-        
+
         // google analytics
         wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
         wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );
 
 	wp_enqueue_script( 'peak-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
-        wp_localize_script('peak-navigation', 'peakScreenReaderText', array( 'expand' => __( 'Expand child menu', 'peak'), 
-                    'collapse' => __('Collapse child menu', 'peak') 
+        wp_localize_script('peak-navigation', 'peakScreenReaderText', array( 'expand' => __( 'Expand child menu', 'peak'),
+                    'collapse' => __('Collapse child menu', 'peak')
             )
         );
 
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-        
+
 	// load Google fonts
         wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
-        
+
         // load Font Awesome CDN
         wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
-        
+
         // load custom javascript
         wp_enqueue_script('custom-functions', get_template_directory_uri() . '/js/custom-functions.js', array( 'jquery' ), '', true );
-        
+
         if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-        
+
         // load Faebook pixel
-        wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
-        
+        //wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
+
         /**
          * Load tracking data on select pages
          */
-        if ( is_page( 'search-engine-optimization' ) || is_page( 'website-development-design') ) {
-            wp_add_inline_script('facebook-pixel', "fbq('track', 'ViewContent');" );
-        }
-        
+        // if ( is_page( 'search-engine-optimization' ) || is_page( 'website-development-design') ) {
+        //     wp_add_inline_script('facebook-pixel', "fbq('track', 'ViewContent');" );
+        // }
+
         /**
          * Track leads on contact page
          */
-        if ( is_page( 'contact-us' ) ) {
-            wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
-        }
-        
+        // if ( is_page( 'contact-us' ) ) {
+        //     wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
+        // }
+
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
 
@@ -265,11 +265,11 @@ add_filter('wp_nav_menu_items', 'register_social_menu', 10, 2);
 
 /**
  * @summary        filters an enqueued script tag and adds a noscript element after it
- * 
+ *
  * @description    filters an enqueued script tag (identified by the $handle variable) and
  *                 adds a noscript element after it. If there is also an inline script enqueued
  *                 after $handled, adds the noscript element after it.
- * 
+ *
  * @access    public
  * @param     string    $tag       The tag string sent by `script_loader_tag` filter on WP_Scripts::do_item
  * @param     string    $handle    The script handle as sent by `script_loader_tag` filter on WP_Scripts::do_item
@@ -287,7 +287,7 @@ function append_noscript( $tag, $handle, $src ){
         $noscript .= '</noscript>';
         $tag = $tag . $noscript;
     }
-        
+
     return $tag;
 }
 // adds the append_noscript function to the script_loader_tag filters
@@ -313,7 +313,7 @@ add_action('wp_head', 'add_meta_prop_og_image');
  * Remove featured image default width & height, now to be styled externally via CSS stylesheet
  */
 function modify_post_thumbnail_html( $html ) {
-    
+
     return preg_replace( '/(width|height)="\d*"/', '', $html );
 }
 add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html' );

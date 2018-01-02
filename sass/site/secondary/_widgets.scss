@@ -268,7 +268,7 @@
 .footer-widgets {
     position: relative;
     z-index: 1;
-    margin: 2em 0 0;
+    margin: 0;
     padding: 1em 0;
     background-color: $hero-color;
     @include linear-gradient(to right);

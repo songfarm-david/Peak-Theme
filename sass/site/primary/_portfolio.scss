@@ -1,52 +1,12 @@
 /** Portfolio styles */
 
-/*#portfolio-container {
-    margin-top: 2em;
-    column-count: 1;
-    @media #{$tablet__breakpoint} {
-        column-count: 2;
-    }
-    @media #{$lg-desktop__breakpoint} {
-        //column-count: 3;
-    }
-    
-    .item {
-        //@include border;
-        padding-bottom: 2em;
-        margin-bottom: 1em;
-        break-inside: avoid;
-        background-color: $color-light;
-        overflow: hidden;
-        .item-inner {
-            padding: 0 0.5em;
-        }
-        h4 {
-            margin-top: 0.5em;
-            font-weight: lighter;
-            & + p {
-                margin-top: 0.5em;
-            }
-        }
-        img {
-            border: 1px solid #ccc;
-            opacity: 1;
-            transition: .3s ease-in-out;
-            &:hover {
-                opacity: .5;
-                cursor: pointer;
-            }
-        }
-    }
-}*/
-
 #portfolio-grid {
-    //@include border;
-    margin-top: 5em;
     > h2 {
         display: none;
     }
     
     ul {
+        margin: 0;
         padding: 0;
         list-style: none;
         display: flex;

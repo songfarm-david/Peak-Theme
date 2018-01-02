@@ -1574,7 +1574,7 @@ h2#main-content + p {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -1645,6 +1645,7 @@ body:not(.home) .site-content {
   * Regulate top padding on HOME page
   */
 body.home .site-content {
+	background: linear-gradient(#edebed 0%, white 90px, white 60%);
 	padding-top: 0;
 }
 
@@ -2064,53 +2065,12 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 ## Portfolio
 --------------------------------------------------------------*/
 /** Portfolio styles */
-/*#portfolio-container {
-    margin-top: 2em;
-    column-count: 1;
-    @media (min-width: 48em) {
-        column-count: 2;
-    }
-    @media (min-width: 118.75em) {
-        //column-count: 3;
-    }
-    
-    .item {
-        //@include border;
-        padding-bottom: 2em;
-        margin-bottom: 1em;
-        break-inside: avoid;
-        background-color: $color-light;
-        overflow: hidden;
-        .item-inner {
-            padding: 0 0.5em;
-        }
-        h4 {
-            margin-top: 0.5em;
-            font-weight: lighter;
-            & + p {
-                margin-top: 0.5em;
-            }
-        }
-        img {
-            border: 1px solid #ccc;
-            opacity: 1;
-            transition: .3s ease-in-out;
-            &:hover {
-                opacity: .5;
-                cursor: pointer;
-            }
-        }
-    }
-}*/
-#portfolio-grid {
-	margin-top: 5em;
-}
-
 #portfolio-grid > h2 {
 	display: none;
 }
 
 #portfolio-grid ul {
+	margin: 0;
 	padding: 0;
 	list-style: none;
 	display: -webkit-box;
@@ -2586,7 +2546,7 @@ and open the template in the editor.
 .footer-widgets {
 	position: relative;
 	z-index: 1;
-	margin: 2em 0 0;
+	margin: 0;
 	padding: 1em 0;
 	background-color: #385f7e;
 	background: linear-gradient(to right, #385f7e, #213647);

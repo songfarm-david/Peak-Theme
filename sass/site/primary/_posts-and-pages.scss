@@ -3,7 +3,7 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -69,7 +69,8 @@ body:not(.home) .site-content {
   * Regulate top padding on HOME page
   */
 body.home .site-content {
-    
+    background: linear-gradient(rgb(237, 235, 237) 0%, rgb(255, 255, 255) 90px, rgb(255, 255, 255) 60%);
+
     padding-top: 0;
     
     @media #{$tablet__breakpoint} {

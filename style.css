@@ -1644,25 +1644,43 @@ body:not(.home) .site-content {
 /**
   * Regulate top padding on HOME page
   */
-body.home .site-content {
-	background: linear-gradient(#edebed 0%, white 90px, white 60%);
-	padding-top: 0;
+/*body.home .site-content {
+    
+
+    padding-top: 0;
+    
+    @media (min-width: 48em) {
+        //padding: 1em 0 0.5em;
+    }
+    
+    @media (min-width: 75em) {
+        //padding: 2em 0 1em;
+    }
+    
+}*/
+body.page .site-content {
+	/* add bottom padding on main page sections */
 }
 
-@media (min-width: 48em) {
-	body.home .site-content {
-		padding: 1em 0 0.5em;
-	}
+body.page .site-content p#main-content {
+	margin-top: 1em;
+}
+
+body.page .site-content h2, body.page .site-content h3,
+body.page .site-content p#main-content {
+	font-weight: normal;
 }
 
 @media (min-width: 75em) {
-	body.home .site-content {
-		padding: 2em 0 1em;
+	body.page .site-content h2, body.page .site-content h3,
+	body.page .site-content p#main-content {
+		margin-top: 1.5em;
 	}
 }
 
-body.page .site-content h2, body.page .site-content h3 {
-	font-weight: normal;
+body.page .site-content article.page,
+body.page .site-content article.panel-container {
+	padding-bottom: 2.5em;
 }
 
 /** 
@@ -1706,12 +1724,6 @@ body.page .entry-footer {
 
 body.page .entry-content {
 	margin-top: 0;
-}
-
-@media (min-width: 48em) {
-	body.page .entry-content {
-		margin-top: 1em;
-	}
 }
 
 /**

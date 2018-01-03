@@ -68,24 +68,39 @@ body:not(.home) .site-content {
 /**
   * Regulate top padding on HOME page
   */
-body.home .site-content {
-    background: linear-gradient(rgb(237, 235, 237) 0%, rgb(255, 255, 255) 90px, rgb(255, 255, 255) 60%);
+/*body.home .site-content {
+    
 
     padding-top: 0;
     
     @media #{$tablet__breakpoint} {
-        padding: 1em 0 0.5em;
+        //padding: 1em 0 0.5em;
     }
     
     @media #{$desktop__breakpoint} {
-        padding: 2em 0 1em;
+        //padding: 2em 0 1em;
     }
     
-}
+}*/
 
 body.page .site-content {
-    h2, h3 {
+    
+    p#main-content {
+        margin-top: 1em;
+    }
+    
+    h2, h3,
+    p#main-content {
         font-weight: normal;
+        @media #{$desktop__breakpoint} {
+            margin-top: 1.5em;
+        }
+    }
+    /* add bottom padding on main page sections */
+    article.page,
+    article.panel-container {
+        padding-bottom: 2.5em;
+        //background: linear-gradient(to right, $color-light 0%, rgb(255, 255, 255) 10%, $color-light 90%);
     }
 }
 
@@ -119,7 +134,7 @@ body.page {
     .entry-content {
         margin-top: 0;
         @media #{$tablet__breakpoint} {
-            margin-top: 1em;
+            //margin-top: 1em;
         }
     }
     

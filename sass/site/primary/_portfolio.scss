@@ -9,7 +9,7 @@
         padding: 0;
         list-style: none;
         display: flex;
-        flex-flow: row wrap;
+        flex-wrap: wrap;
         align-items: stretch;
         li {
             overflow: hidden;
@@ -46,22 +46,27 @@
             }
             
             &.item {
-               min-height: 300px; 
+               height: 300px; 
+               height: 16.667em;
             }
         }
     }
     
     @media #{$tablet__breakpoint} {
         ul li {
-            flex-basis: 50%;
+            flex: 1 0 50%;
         }
     }
     
     @media #{$desktop__breakpoint} {
         ul li {
-            flex-basis: 25%;
+            flex: 1 0 25%;
             &.large {
-                min-height: 650px;
+                height: 650px;
+                height: 36em;
+                -webkit-flex-basis: 50%; /* Safari 6.1+ */
+                flex-basis: 50%;
+                flex: 1 0 50%;
             }
             .hover-button {
                 font-size: 1em;

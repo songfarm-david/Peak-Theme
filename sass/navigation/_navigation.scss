@@ -98,8 +98,9 @@
 .main-navigation.toggled ul {
 	display: block;
         background-color: transparent;
-        
         margin-right: 3px;
+        margin-left: auto;
+        width: 3.6em;
         border-width: 0;
         > i {
             font-size: 2em;

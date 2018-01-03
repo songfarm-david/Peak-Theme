@@ -894,6 +894,8 @@ display: block;
 	display: block;
 	background-color: transparent;
 	margin-right: 3px;
+	margin-left: auto;
+	width: 3.6em;
 	border-width: 0;
 }
 
@@ -2088,10 +2090,8 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
-	-webkit-box-orient: horizontal;
-	-webkit-box-direction: normal;
-	    -ms-flex-flow: row wrap;
-	        flex-flow: row wrap;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	-webkit-box-align: stretch;
 	    -ms-flex-align: stretch;
 	        align-items: stretch;
@@ -2139,23 +2139,33 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 }
 
 #portfolio-grid ul li.item {
-	min-height: 300px;
+	height: 300px;
+	height: 16.667em;
 }
 
 @media (min-width: 48em) {
 	#portfolio-grid ul li {
-		-ms-flex-preferred-size: 50%;
-		    flex-basis: 50%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 50%;
+		        flex: 1 0 50%;
 	}
 }
 
 @media (min-width: 75em) {
 	#portfolio-grid ul li {
-		-ms-flex-preferred-size: 25%;
-		    flex-basis: 25%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 25%;
+		        flex: 1 0 25%;
 	}
 	#portfolio-grid ul li.large {
-		min-height: 650px;
+		height: 650px;
+		height: 36em;
+		/* Safari 6.1+ */
+		-ms-flex-preferred-size: 50%;
+		    flex-basis: 50%;
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 50%;
+		        flex: 1 0 50%;
 	}
 	#portfolio-grid ul li .hover-button {
 		font-size: 1em;

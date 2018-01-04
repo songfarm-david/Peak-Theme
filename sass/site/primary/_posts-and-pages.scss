@@ -53,7 +53,9 @@
   */
 body:not(.home) .site-content {
     
-    padding-top: 0;
+    /* because masthead is set to position: absolute 
+    we have to give site-content top padding */
+    padding-top: 5em;
     
     @media #{$tablet__breakpoint} {
         padding-top: 5em;

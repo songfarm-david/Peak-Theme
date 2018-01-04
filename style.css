@@ -409,7 +409,7 @@ textarea {
         }*/
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	body,
 	button,
 	input,
@@ -823,64 +823,18 @@ display: block;
   */
 .main-navigation {
 	width: 100%;
+	background-color: transparent;
+	/* general ul styles */
+	/* global nav links styles */
+	/* #primary-menu */
+	/* .main-navigation.toggled */
+	/* button.menu-toggle */
 }
 
 .main-navigation ul {
-	display: none;
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-}
-
-.main-navigation ul ul {
-	box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.2);
-	float: left;
-	position: absolute;
-	top: 100%;
-	left: -999em;
-	z-index: 99999;
-}
-
-.main-navigation ul ul ul {
-	left: -999em;
-	top: 0;
-}
-
-.main-navigation ul ul li:hover > ul,
-.main-navigation ul ul li.focus > ul {
-	left: 100%;
-}
-
-.main-navigation ul ul a {
-	width: 200px;
-}
-
-@media (min-width: 48em) {
-	.main-navigation ul .sub-menu {
-		background-color: rgba(255, 255, 255, 0.85);
-	}
-	.main-navigation ul li:hover > ul,
-	.main-navigation ul li.focus > ul {
-		left: auto;
-	}
-}
-
-@media (min-width: 75em) {
-	.main-navigation ul .sub-menu {
-		background-color: rgba(255, 255, 255, 0.35);
-	}
-}
-
-.main-navigation li {
-	float: none;
-	position: relative;
-}
-
-.main-navigation li a {
-	padding: 0.5em 1.5em;
-	font-weight: 400;
-	text-align: center;
-	white-space: nowrap;
 }
 
 .main-navigation a {
@@ -888,9 +842,93 @@ display: block;
 	text-decoration: none;
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
+.main-navigation .menu {
+	display: none;
+	/* hide until toggle class is added */
+	background-color: #ffffff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	z-index: 1002;
+	top: 100%;
+}
+
+.main-navigation .menu li {
+	float: none;
+	position: relative;
+}
+
+.main-navigation .menu li a {
+	padding: 0.5em 1.5em;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.main-navigation .menu a,
+.main-navigation .menu .fa {
+	color: #385f7e;
+	line-height: 2;
+}
+
+.main-navigation .menu .menu-item-has-children > a {
+	padding-right: 1.65em;
+}
+
+.main-navigation .menu .menu-item-has-children > button {
+	position: absolute;
+	top: 3px;
+	right: 6px;
+	line-height: inherit;
+	background-color: transparent;
+	border: none;
+	font-size: 125%;
+	padding: 0 0.5em;
+}
+
+.main-navigation .menu .menu-item-has-children > button > .fa {
+	color: #385f7e;
+}
+
+.main-navigation .menu .sub-menu {
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation .menu .sub-menu > li,
+.main-navigation .menu .sub-menu li a {
+	width: 100%;
+}
+
+.main-navigation .menu .sub-menu li:hover > ul,
+.main-navigation .menu .sub-menu li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation .menu .sub-menu.toggled {
+	background-color: #EAF1F7;
+	position: initial;
+	float: none;
+	display: block;
+	z-index: initial;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.main-navigation.toggled .menu {
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	margin: 0;
+	padding: 0.5em 0;
+	width: 100%;
+	/* fixes width issue on mobile nav menu */
+	display: block;
+}
+
+.main-navigation .menu-toggle {
 	display: block;
 	background-color: transparent;
 	margin-right: 3px;
@@ -899,36 +937,74 @@ display: block;
 	border-width: 0;
 }
 
-.menu-toggle > i,
-.main-navigation.toggled ul > i {
+.main-navigation .menu-toggle > i {
 	font-size: 2em;
+	color: #385f7e;
 }
 
-@media (max-width: 768px) {
-	#primary-menu {
-		background-color: white;
+@media (min-width: 49em) {
+	.main-navigation {
+		/* .main-navigation */
+		/* hide hamburger menu on tablet */
 	}
-	#primary-menu a,
-	#primary-menu .fa {
-		color: #385f7e;
-		line-height: 2;
+	.main-navigation ul.menu {
+		background-color: transparent;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: end;
+		    -ms-flex-pack: end;
+		        justify-content: flex-end;
+		position: relative;
+		left: auto;
+		right: auto;
+		top: auto;
+		z-index: initial;
 	}
-	#primary-menu .sub-menu.toggled {
-		background-color: #EAF1F7;
-		box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	.main-navigation ul.menu .menu-item-has-children > button {
+		padding-top: 3px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+		right: 0;
 	}
-}
-
-.toggled #primary-menu {
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
-	margin: 0;
-	padding: 0.5em 0;
-}
-
-@media (min-width: 48em) {
-	.menu-toggle {
+	.main-navigation ul.menu li:hover > ul,
+	.main-navigation ul.menu li.focus > ul {
+		left: auto;
+	}
+	.main-navigation ul.menu .sub-menu {
+		float: none;
+		display: block;
+		z-index: initial;
+	}
+	.main-navigation ul.menu .sub-menu li a {
+		text-align: left;
+	}
+	.main-navigation ul.menu .sub-menu.toggled {
+		position: absolute;
+	}
+	.main-navigation ul.menu .sub-menu,
+	.main-navigation ul.menu .sub-menu.toggled {
+		background-color: rgba(255, 255, 255, 0.85);
+		box-shadow: -2px 4px 5px rgba(0, 0, 0, 0.2);
+		/* allows for clickable sub-menu toggle */
+		left: -999em;
+	}
+	.main-navigation .menu-toggle {
 		display: none;
+	}
+	.main-navigation.toggled .menu {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		box-shadow: none;
+	}
+}
+
+@media (min-width: 75em) {
+	.main-navigation ul.menu .sub-menu,
+	.main-navigation ul.menu .sub-menu.toggled {
+		background-color: rgba(255, 255, 255, 0.35);
 	}
 }
 
@@ -975,91 +1051,13 @@ a:hover, a:active {
 	outline: 0;
 }
 
-.main-navigation {
-	-webkit-box-flex: 0;
-	    -ms-flex: 0;
-	        flex: 0;
+.header-sticky .main-navigation:not(.toggled) a, .header-sticky .main-navigation:not(.toggled) .fa,
+.header-sticky .main-navigation:not(.toggled) a + .dropdown-toggle > i.fa {
+	color: white;
 }
 
-.main-navigation .menu {
-	position: absolute;
-	left: 0;
-	right: 0;
-	z-index: 1002;
-	top: 100%;
-}
-
-@media (min-width: 48em) {
-	.main-navigation .menu {
-		position: relative;
-		left: auto;
-		right: auto;
-		top: auto;
-		z-index: initial;
-	}
-	.main-navigation .menu .sub-menu li a {
-		text-align: left;
-	}
-}
-
-.main-navigation .menu .sub-menu > li,
-.main-navigation .menu .sub-menu a {
-	width: 100%;
-}
-
-.main-navigation .menu-item-has-children > a {
-	padding-right: 1.65em;
-}
-
-.main-navigation .menu-item-has-children > button {
-	position: absolute;
-	top: 3px;
-	right: 6px;
-	line-height: inherit;
-	background-color: transparent;
-	border: none;
-	font-size: 125%;
-	padding: 0 0.5em;
-}
-
-.main-navigation .menu-item-has-children > button > .fa {
-	color: #385f7e;
-}
-
-@media (min-width: 48em) {
-	.main-navigation .menu-item-has-children > button {
-		padding-top: 3px;
-		top: 50%;
-		-webkit-transform: translateY(-50%);
-		        transform: translateY(-50%);
-		right: 0;
-	}
-}
-
-.main-navigation ul {
-	/**
-    * from mobile up until tablet breakpoint
-    * when toggled, turn off display and position properties on menu ul
-    */
-	/**
-    * from tablet breakpoint and on, make sure main ul is display block
-    */
-}
-
-@media screen and (max-width: 48em) {
-	.main-navigation ul ul.toggled {
-		position: initial;
-		float: none;
-		display: block;
-		width: 100%;
-		z-index: initial;
-	}
-}
-
-@media (min-width: 48em) {
-	.main-navigation ul {
-		display: block;
-	}
+.header-sticky .main-navigation:not(.toggled) .main-navigation.toggled a + .dropdown-toggle > i.fa {
+	color: white;
 }
 
 /**
@@ -1077,6 +1075,43 @@ a:hover, a:active {
         }
         
     }
+}*/
+/*** Old styles **/
+/* Small menu. */
+/*.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+        background-color: transparent;
+        margin-right: 3px;
+        margin-left: auto;
+        width: 3.6em;
+        border-width: 0;
+        > i {
+            font-size: 2em;
+        }
+}*/
+/*#primary-menu {
+    @media (max-width: 768px) {
+        background-color: transparent;
+        //@include border(2px, green);
+        a,
+        .fa {
+            color: $hero-color; 
+            line-height: 2;
+            //border-bottom: 1px solid $color-light;
+        }
+        .sub-menu.toggled {
+            background-color: $color-light;
+            @include box-shadow-inset;
+        }
+    }
+}*/
+/*.toggled #primary-menu {
+    box-shadow: inset 0 1px 2px $color-dark;
+    @include box-shadow-dual;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;  fixes width issue on mobile nav menu 
 }*/
 /*--------------------------------------------------------------
 # Accessibility
@@ -1194,7 +1229,7 @@ a:hover, a:active {
 }*/
 /*#content {
     
-    @media (min-width: 48em) {       
+    @media (min-width: 49em) {       
         @include tablet_width;
         margin: 0 auto;
         display: flex;
@@ -1269,7 +1304,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 .site-header {
 	padding: 0 0.15em;
 	background-color: transparent;
-	position: relative;
+	position: absolute;
 	left: 0;
 	right: 0;
 	z-index: 1001;
@@ -1281,7 +1316,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	        justify-content: space-between;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.site-header {
 		position: absolute;
 	}
@@ -1300,8 +1335,14 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #EAF1F7;
 }
 
-.header-sticky .fa {
+.header-sticky .main-navigation .menu-toggle > i.fa {
 	color: #EAF1F7;
+}
+
+.header-sticky .main-navigation .menu a:hover,
+.header-sticky .main-navigation .menu a:hover + button > i.fa {
+	background-color: #EAF1F7;
+	color: #385f7e;
 }
 
 .header-sticky .main-navigation ul.sub-menu {
@@ -1314,7 +1355,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #385f7e;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.header-sticky .main-navigation ul.sub-menu {
 		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	}
@@ -1357,11 +1398,11 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	margin-left: 3px;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.site-branding {
 		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 33%;
-		        flex: 1 0 33%;
+		    -ms-flex: 1 0 auto;
+		        flex: 1 0 auto;
 	}
 }
 
@@ -1379,7 +1420,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	/* NOTE: revisit max-width property of Logo */
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.site-branding .custom-logo-link {
 		max-width: 2em;
 	}
@@ -1395,17 +1436,6 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	vertical-align: middle;
 }
 
-@media (min-width: 48em) {
-	.main-navigation .menu {
-		display: -webkit-box;
-		display: -ms-flexbox;
-		display: flex;
-		-webkit-box-pack: end;
-		    -ms-flex-pack: end;
-		        justify-content: flex-end;
-	}
-}
-
 .site-title,
 .site-description {
 	margin: 0;
@@ -1419,6 +1449,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 
 .site-title a {
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 .site-description {
@@ -1450,7 +1481,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	height: auto;
 	min-height: 26.666em;
 	text-align: center;
-	padding: 1em 0.5em 2em;
+	padding: 5em 0.5em 2em;
 	height: 100vh;
 }
 
@@ -1474,7 +1505,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	margin-top: 1.5em;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	#hero-banner .hero-headline-container {
 		margin: 5.5em auto 0;
 		max-width: 34em;
@@ -1498,6 +1529,12 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 		max-width: 41.5em;
 		font-size: 27.5px;
 		font-size: 1.71875rem;
+	}
+}
+
+@media (min-width: 75em) {
+	#hero-banner {
+		padding-top: 3.5em;
 	}
 }
 
@@ -1542,7 +1579,7 @@ h2#main-content + p {
 	border: 2px solid transparent;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	#blog-about-peak > div {
 		width: 60%;
 	}
@@ -1615,7 +1652,7 @@ h2#main-content + p {
 	margin: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.page .entry-header {
 		padding: 0.5em 0 0.75em;
 	}
@@ -1628,10 +1665,12 @@ h2#main-content + p {
   * Regulate top padding on PAGES
   */
 body:not(.home) .site-content {
-	padding-top: 0;
+	/* because masthead is set to position: absolute 
+    we have to give site-content top padding */
+	padding-top: 5em;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	body:not(.home) .site-content {
 		padding-top: 5em;
 	}
@@ -1651,7 +1690,7 @@ body:not(.home) .site-content {
 
     padding-top: 0;
     
-    @media (min-width: 48em) {
+    @media (min-width: 49em) {
         //padding: 1em 0 0.5em;
     }
     
@@ -1698,7 +1737,7 @@ body.page .entry-footer {
 	padding: 0 1em;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	body.page .entry-header > div,
 	body.page .entry-content,
 	body.page .entry-footer {
@@ -1731,7 +1770,7 @@ body.page .entry-content {
 /**
   * Set content width for Blog index and Single blog posts
   */
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	body.blog .site-content,
 	body.single .site-content {
 		margin: 0 auto;
@@ -1963,7 +2002,7 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	font-style: italic;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	body.single .comments-area {
 		padding: 0 0;
 	}
@@ -1977,7 +2016,7 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	margin: 0 auto;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.error404 .site-content,
 	.archive .site-content {
 		max-width: 40em;
@@ -2143,7 +2182,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	height: 16.667em;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	#portfolio-grid ul li {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 0 50%;
@@ -2297,7 +2336,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.site-footer {
 		-ms-flex-pack: distribute;
 		    justify-content: space-around;
@@ -2597,7 +2636,7 @@ and open the template in the editor.
 	padding: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 49em) {
 	.footer-widgets {
 		padding: 2em 1em;
 		display: -webkit-box;

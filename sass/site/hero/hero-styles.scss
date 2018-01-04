@@ -12,7 +12,7 @@
     height: auto;
     min-height: 26.666em;
     text-align: center;
-    padding: 1em 0.5em 2em;
+    padding: 5em 0.5em 2em;
     height: 100vh;
     .hero-headline-container {
         text-align: center;
@@ -56,6 +56,10 @@
             max-width: 41.5em;
             @include font-size(1.375);
         }
+    }
+    
+    @media #{$desktop__breakpoint} {
+        padding-top: 3.5em;
     }
 }
 

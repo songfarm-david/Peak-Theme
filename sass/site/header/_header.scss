@@ -1,25 +1,19 @@
 
 
 .site-header {
-
     padding: 0 0.15em;
     background-color: transparent;
-    
-    position: relative;
+    position: absolute;
     left: 0;
     right: 0;
-    z-index: 1001;
-    
+    z-index: 1001;   
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;   
     @media #{$tablet__breakpoint} {
         position: absolute;
     }
   
 }
-
-
 
 .header-sticky {
     position: fixed;
@@ -30,8 +24,13 @@
     a {
         color: $color-light;    
     }
-    .fa {
+    .main-navigation .menu-toggle > i.fa {
         color: $color-light;
+    }
+    .main-navigation .menu a:hover,
+    .main-navigation .menu a:hover + button > i.fa {
+        background-color: $color-light;
+        color: $hero-color;
     }
     .main-navigation ul.sub-menu {
         background-color: $hero-color;
@@ -68,15 +67,12 @@
 }
 
 .site-branding {
-
     min-height: 65px;
     display: flex;
     //margin-bottom: 3px; /* detail spacing */
     margin-left: 3px;
-    //flex-basis: 100%;
-
     @media #{$tablet__breakpoint} {
-        flex: 1 0 33%;
+        flex: 1 0 auto;
     }
 
     @media #{$desktop__breakpoint} {
@@ -102,25 +98,9 @@
 
 }
 
-.site-navigation {}
-
-.main-navigation {
-
-    .menu {
-        
-        @media #{$tablet__breakpoint} {
-            display: flex;
-            justify-content: flex-end;
-        }
-        
-    }
-    
-}
-
 .site-title,
 .site-description {
     margin: 0;
-
 }
 
 .site-title {
@@ -131,7 +111,7 @@
     font-weight: 300;
     a {
         text-decoration: none;
-        //white-space: nowrap;
+        white-space: nowrap;
     }
 }
 

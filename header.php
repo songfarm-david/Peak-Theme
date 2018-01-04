@@ -25,6 +25,7 @@
         <?php endwhile; endif; elseif (is_home() ): ?>
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
+
 </head>
 
 <body <?php body_class(); ?>>

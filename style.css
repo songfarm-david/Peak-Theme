@@ -1642,7 +1642,7 @@ h2#main-content + p {
   */
 .page .entry-header {
 	background-color: #385f7e;
-	background: linear-gradient(to right, #385f7e, #213647);
+	background: linear-gradient(95deg, #213647, #385f7e 65%, #b2d6f3 99%);
 	padding: 0.5em 0;
 }
 
@@ -1765,6 +1765,12 @@ body.page .entry-footer {
 
 body.page .entry-content {
 	margin-top: 0;
+}
+
+@media (min-width: 75em) {
+	body.page .entry-content {
+		margin-top: 1em;
+	}
 }
 
 /**

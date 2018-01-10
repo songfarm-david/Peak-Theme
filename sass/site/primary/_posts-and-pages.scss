@@ -32,7 +32,7 @@
   */
 .page .entry-header {
     background-color: $hero-color;
-    @include linear-gradient;
+    @include header-linear-gradient;
     padding: 0.5em 0;
     .entry-title {
         color: white; 
@@ -135,8 +135,8 @@ body.page {
     /** remove top margin on page content on mobile devices */
     .entry-content {
         margin-top: 0;
-        @media #{$tablet__breakpoint} {
-            //margin-top: 1em;
+        @media #{$desktop__breakpoint} {
+            margin-top: 1em;
         }
     }
     

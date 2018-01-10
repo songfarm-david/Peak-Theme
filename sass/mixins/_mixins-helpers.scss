@@ -21,6 +21,10 @@
     background: linear-gradient( $direction, $color-a, $color-b );
 }
 
+@mixin header-linear-gradient( $direction: 95deg, $color-a: $hero-color, $color-b: #213647 ) {
+    background: linear-gradient( $direction, $color-b, $color-a 65%, #b2d6f3 99% );
+}
+
 /**
  * entry meta typography
  */

@@ -117,6 +117,15 @@ get_header(); ?>
                 include( get_template_directory() . '/inc/custom/portfolio-grid.php' );
                 
             endif; ?>
+            
+            <!--If Content Creation page-->
+            <?php if( is_page( '2314' ) ) :
+                
+                // include portfolio grid
+                include( get_template_directory() . '/inc/custom/features-content-creation.php' );
+            
+            endif;     
+            ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

@@ -8,7 +8,8 @@ and open the template in the editor.
     Author     : David
 */
 
-.panel-container:nth-child(even):not(.portfolio) {
+.panel-container:nth-child(even):not(.portfolio),
+.panel-container.panel-color {
     background-color: $panel-color; 
     padding: 0.1em 0 2em 0;
     

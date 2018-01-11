@@ -77,7 +77,8 @@ h2#main-content {
     }
 }
 
-#blog-about-peak {
+#blog-about-peak,
+.hero-call {
     background-color: $hero-green;
     color: $color-light;
     @include linear-gradient(45deg, $hero-green, #17422c);
@@ -87,12 +88,12 @@ h2#main-content {
     border: 1px solid transparent;
     position: relative;
     z-index: 0;
-    > a, h3, a:visited {
+    a, h3, a:visited {
         color: $color-light;
     }
     h3 {
         @extend .h4;
-        font-weight: bold;
+        font-weight: bold !important;
         text-transform: uppercase;
     }
     > div {

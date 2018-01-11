@@ -481,6 +481,7 @@ h2#main-content,
 h4,
 .h4,
 #blog-about-peak h3,
+.hero-call h3,
 .widget .widget-title {
 	font-size: 1.333em;
 }
@@ -1207,54 +1208,63 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-/*.content-area {
-	float: left;
-	margin: 0 (-$size__site-sidebar) 0 0;
-	width: $size__site-main;
-}
-
-.site-main {
-	margin: 0 $size__site-sidebar 0 0;
-}
-
-.site-content .widget-area {
-	float: right;
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-Jan-2018, 2:58:18 PM
+    Author     : David
+*/
+#features-content-creation {
 	overflow: hidden;
-	width: $size__site-sidebar;
+	padding-bottom: 4em;
+	margin-bottom: -3em;
 }
 
-.site-footer {
-	clear: both;
-	width: $size__site-main;
-}*/
-/*#content {
-    
-    @media (min-width: 49em) {       
-        @include tablet_width;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        #primary {
-            //width: 60%;
-            flex: 1 1 60%
-        }
-        #secondary {
-            @include border;
-            //width: 30%;
-        }
-        
-    }
-    
-    @media (min-width: 75em) {       
-        @include desktop_width;
-    }
-    
-    @media (min-width: 118.75em) {     
-        @include lg-desktop_width;            
-    }
-    
-}*/
+#features-content-creation .feature-item-container {
+	-ms-flex-wrap: nowrap;
+	    flex-wrap: nowrap;
+}
+
+#features-content-creation .feature-item-container .feature-item {
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 100%;
+	        flex: 1 0 100%;
+	text-align: center;
+	margin: 1em 0.25em;
+	padding: 0 0.5em;
+}
+
+#features-content-creation .feature-item-container .feature-item h3 {
+	/*@include border(2px, blue);*/
+	margin-top: 0.5em;
+}
+
+#features-content-creation .feature-item-container .feature-item .feature-icon {
+	height: 4.5em;
+	width: auto;
+	margin-top: 1em;
+}
+
+@media (min-width: 49em) {
+	#features-content-creation .feature-item-container {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
+		overflow: hidden;
+	}
+	#features-content-creation .feature-item-container .feature-item {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 0 45%;
+		        flex: 1 0 45%;
+		margin: 1em 0.5em;
+	}
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1549,7 +1559,8 @@ h2#main-content + p {
 	font-weight: bold;
 }
 
-#blog-about-peak {
+#blog-about-peak,
+.hero-call {
 	background-color: #338c5f;
 	color: #EAF1F7;
 	background: linear-gradient(45deg, #338c5f, #17422c);
@@ -1562,16 +1573,21 @@ h2#main-content + p {
 	z-index: 0;
 }
 
-#blog-about-peak > a, #blog-about-peak h3, #blog-about-peak a:visited {
+#blog-about-peak a, #blog-about-peak h3, #blog-about-peak a:visited,
+.hero-call a,
+.hero-call h3,
+.hero-call a:visited {
 	color: #EAF1F7;
 }
 
-#blog-about-peak h3 {
-	font-weight: bold;
+#blog-about-peak h3,
+.hero-call h3 {
+	font-weight: bold !important;
 	text-transform: uppercase;
 }
 
-#blog-about-peak > div {
+#blog-about-peak > div,
+.hero-call > div {
 	-webkit-transform: skewY(-2deg);
 	        transform: skewY(-2deg);
 	padding: 1em 1em 7em;
@@ -1580,13 +1596,15 @@ h2#main-content + p {
 }
 
 @media (min-width: 49em) {
-	#blog-about-peak > div {
+	#blog-about-peak > div,
+	.hero-call > div {
 		width: 60%;
 	}
 }
 
 @media (min-width: 75em) {
-	#blog-about-peak > div {
+	#blog-about-peak > div,
+	.hero-call > div {
 		max-width: 46em;
 		margin-left: 17%;
 		width: 43%;
@@ -1594,14 +1612,16 @@ h2#main-content + p {
 }
 
 @media (min-width: 118.75em) {
-	#blog-about-peak > div {
+	#blog-about-peak > div,
+	.hero-call > div {
 		max-width: 48em;
 		margin-left: 17%;
 		width: 43%;
 	}
 }
 
-#blog-about-peak a:hover {
+#blog-about-peak a:hover,
+.hero-call a:hover {
 	color: #338c5f;
 }
 
@@ -2656,17 +2676,17 @@ and open the template in the editor.
 		    -ms-flex: 1 0 45%;
 		        flex: 1 0 45%;
 	}
+	.footer-widgets .widget:first-of-type {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2 0 auto;
+		        flex: 2 0 auto;
+	}
 }
 
 @media (min-width: 75em) {
 	.footer-widgets {
 		-ms-flex-wrap: nowrap;
 		    flex-wrap: nowrap;
-		-ms-flex-pack: distribute;
-		    justify-content: space-around;
-		-webkit-box-pack: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
 		/* If only one widget is displayed, make it full width. */
 	}
 	.footer-widgets .widget {
@@ -2676,6 +2696,11 @@ and open the template in the editor.
 		-webkit-box-flex: 0;
 		    -ms-flex: 0 1 40%;
 		        flex: 0 1 40%;
+	}
+	.footer-widgets .widget:first-of-type {
+		-webkit-box-flex: 2;
+		    -ms-flex: 2 0 50%;
+		        flex: 2 0 50%;
 	}
 	.footer-widgets .widget:only-of-type {
 		width: 100%;
@@ -2729,7 +2754,8 @@ and open the template in the editor.
     Created on : 7-Dec-2017, 10:05:34 PM
     Author     : David
 */
-.panel-container:nth-child(even):not(.portfolio) {
+.panel-container:nth-child(even):not(.portfolio),
+.panel-container.panel-color {
 	background-color: #F2F7F2;
 	padding: 0.1em 0 2em 0;
 }

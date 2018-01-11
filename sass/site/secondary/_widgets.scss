@@ -305,18 +305,25 @@
             
             //@include border(2px,white);
         }
+        .widget:first-of-type {
+            flex: 2 0 auto;
+            
+        }
     }
 		
     @media #{$desktop__breakpoint} {
             
         flex-wrap: nowrap;
-                justify-content: space-around;
-                justify-content: center;
+        //justify-content: space-around;
+        //justify-content: center;
 
         .widget {
             flex: 1 1 auto;
             flex: 0 1 40%;
             //@include border;
+        }
+        .widget:first-of-type {
+            flex: 2 0 50%;
         }
 
         /* If only one widget is displayed, make it full width. */

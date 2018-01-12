@@ -33,43 +33,6 @@ get_header(); ?>
             <!--Insert select pages-->
             <?php if( is_front_page() ) :
                 
-                // id for SEO-panel
-                $recent = new WP_Query( "page_id=2227" ); 
-
-                while( $recent->have_posts()) : $recent->the_post(); ?>
-                
-                <article class="panel-container">
-                    <div class="entry-content panel-content">
-
-                    <?php the_content();
-
-                        /* Edit link */
-                        if ( get_edit_post_link() ) : ?>
-                            <footer class="panel-footer">
-                                <?php
-                                    edit_post_link(
-                                        sprintf(
-                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
-                                                array(
-                                                    'span' => array(
-                                                        'class' => array(),
-                                                    ),
-                                                )
-                                            ),
-                                        get_the_title()
-                                    ),
-                                    '<span class="edit-link">',
-                                    '</span>'
-                                    );
-                                ?>
-                            </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
-
-                    </div>
-                </article>
-            
-                <?php endwhile;
-
                 // id for web-design-panel
                 $recent = new WP_Query( "page_id=2222" ); 
 
@@ -106,11 +69,85 @@ get_header(); ?>
                 </article>
                         
                 <?php endwhile;
+                
+                // id for SEO-panel
+                $recent = new WP_Query( "page_id=2227" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <article class="panel-container">
+                    <div class="entry-content panel-content">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </article>
+            
+                <?php endwhile;
+                
+                // Content Creation page
+                $recent = new WP_Query( "page_id=2314" ); 
+
+                while( $recent->have_posts()) : $recent->the_post(); ?>
+                
+                <article class="panel-container">
+                    <div class="entry-content panel-content">
+
+                    <?php the_content();
+
+                        /* Edit link */
+                        if ( get_edit_post_link() ) : ?>
+                            <footer class="panel-footer">
+                                <?php
+                                    edit_post_link(
+                                        sprintf(
+                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                array(
+                                                    'span' => array(
+                                                        'class' => array(),
+                                                    ),
+                                                )
+                                            ),
+                                        get_the_title()
+                                    ),
+                                    '<span class="edit-link">',
+                                    '</span>'
+                                    );
+                                ?>
+                            </footer><!-- .entry-footer -->
+                        <?php endif; ?> 
+
+                    </div>
+                </article>
+            
+                <?php endwhile;
 
             endif; // if is_front_page()
             ?>
             
-            <!-- if is web dev page -->
+            <!-- If Web Development & Design -->
             <?php if( is_page( '1741' ) ) :
                 
                 // include portfolio grid
@@ -124,7 +161,8 @@ get_header(); ?>
                 // include portfolio grid
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
             
-            endif;     
+            endif;
+            
             ?>
 
         </main><!-- #main -->

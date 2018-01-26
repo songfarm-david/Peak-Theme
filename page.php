@@ -108,7 +108,7 @@ get_header(); ?>
                 <?php endwhile;
                 
                 // Content Creation page
-                $recent = new WP_Query( "page_id=2314" ); 
+                $recent = new WP_Query( "page_id=2321" ); 
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 

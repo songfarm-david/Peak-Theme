@@ -12,15 +12,11 @@
     background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png');
     background-size: cover;
     overflow: hidden;
-    padding-top: 1px;
-    margin-bottom: -0.1em;
     box-shadow: 0px 4px 25px 0px $hero-color-transparent;
     .cta-heading {
-        //@include border;
         font-weight: bolder;
     }
     .cta-secondary-text {
-        //text-transform: uppercase;
         font-size: 125%;
     }
     .cta-heading,
@@ -32,7 +28,7 @@
     }
     
     @media #{$desktop__breakpoint} {
-        background-size: contain;
+        background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png');
     }
 }
 

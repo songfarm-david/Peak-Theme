@@ -2156,7 +2156,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 }
 
 /*--------------------------------------------------------------
-## Hero styles
+## Hero CTA Banner
 --------------------------------------------------------------*/
 /**
  * Created on : 11-Feb-2018, 9:23:18 PM
@@ -2194,6 +2194,47 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 @media (min-width: 75em) {
 	#page-cta {
 		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
+	}
+}
+
+/*--------------------------------------------------------------
+## Compass
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-Feb-2018, 2:51:34 AM
+    Author     : David
+*/
+#post-1735 {
+	position: relative;
+	/*    background-image: url( 'http://localhost/peak-theme/wp-content/themes/peak-theme/assets/images/compass-grey_2.png' );
+    background-repeat: no-repeat;
+    background-position: -40% -300%;*/
+}
+
+#post-1735 .compass-bg {
+	position: absolute;
+	z-index: -1;
+	bottom: -150px;
+	right: -50%;
+}
+
+@media (min-width: 75em) {
+	#post-1735 .compass-bg {
+		bottom: -300px;
+		right: -70%;
+		width: 1000px;
+		height: auto;
+	}
+}
+
+@media (min-width: 49em) {
+	#post-1735 {
+		/*background-position: 300% -300%;*/
 	}
 }
 

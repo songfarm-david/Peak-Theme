@@ -1,0 +1,38 @@
+/**
+ * Created on : 11-Feb-2018, 9:23:18 PM
+ * Author     : David
+ *
+ * 
+ */
+
+#page-cta {
+    color: $color-light;
+    text-align: center;
+    background-color: $hero-green;
+    background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png');
+    background-size: cover;
+    overflow: hidden;
+    padding-top: 1px;
+    margin-bottom: -0.1em;
+    box-shadow: 0px 4px 25px 0px $hero-color-transparent;
+    .cta-heading {
+        //@include border;
+        font-weight: bolder;
+    }
+    .cta-secondary-text {
+        //text-transform: uppercase;
+        font-size: 125%;
+    }
+    .cta-heading,
+    .cta-secondary-text {
+        text-shadow: 1px 1px 2px #333;
+    }
+    .peak-button {
+        margin-bottom: 3em;
+    }
+    
+    @media #{$desktop__breakpoint} {
+        background-size: contain;
+    }
+}
+

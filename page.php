@@ -148,7 +148,7 @@ get_header(); ?>
             ?>
             
             <!-- If Web Development & Design -->
-            <?php if( is_page( '1741' ) ) :
+            <?php if( is_page( '1741' ) || is_page( '2286' ) ) :
                 
                 // include portfolio grid
                 include( get_template_directory() . '/inc/custom/portfolio-grid.php' );
@@ -156,14 +156,25 @@ get_header(); ?>
             endif; ?>
             
             <!--If Content Creation page-->
-            <?php if( is_page( '2314' ) ) :
+            <?php if( is_page( '2314' ) || is_page( '2465' ) ) :
                 
                 // include portfolio grid
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
             
-            endif;
+            endif; ?>
             
-            ?>
+            <!--Show this on all pages EXCEPT Contact page-->
+            <?php if ( !is_page( '1722' ) ) : ?>
+            
+                <article id="page-cta">
+                    <div>
+                        <h2 class="cta-heading">Ready to take the high road?</h2>
+                        <p class="cta-secondary-text">Let us lead the way towards better website conversion and increased exposure in Search.</p>
+                        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
+                    </div>
+                </article>
+            
+            <?php endif; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

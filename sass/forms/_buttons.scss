@@ -90,6 +90,17 @@ input[type="submit"].peak-button,
     }
 }
 
+.peak-btn-highlight {
+    background-color: transparent;
+    border: 2px solid $color-light;
+    text-transform: uppercase;
+    //font-size: 125%;
+    &:before {
+        background: rgba(155,155,155,.75);
+        background: $hero-orange;
+    }
+}
+
 /*.peak-button-container {
     position: relative;
     &::before {

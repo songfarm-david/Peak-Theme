@@ -746,6 +746,17 @@ input[type="submit"].peak-button:visited,
 	color: #EAF1F7;
 }
 
+.peak-btn-highlight {
+	background-color: transparent;
+	border: 2px solid #EAF1F7;
+	text-transform: uppercase;
+}
+
+.peak-btn-highlight:before {
+	background: rgba(155, 155, 155, 0.75);
+	background: #F75C03;
+}
+
 /*.peak-button-container {
     position: relative;
     &::before {
@@ -2142,6 +2153,50 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-pr
 body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	display: inline-block;
 	padding: 0.65em;
+}
+
+/*--------------------------------------------------------------
+## Hero styles
+--------------------------------------------------------------*/
+/**
+ * Created on : 11-Feb-2018, 9:23:18 PM
+ * Author     : David
+ *
+ * 
+ */
+#page-cta {
+	color: #EAF1F7;
+	text-align: center;
+	background-color: #338c5f;
+	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png");
+	background-size: cover;
+	overflow: hidden;
+	padding-top: 1px;
+	margin-bottom: -0.1em;
+	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
+}
+
+#page-cta .cta-heading {
+	font-weight: bolder;
+}
+
+#page-cta .cta-secondary-text {
+	font-size: 125%;
+}
+
+#page-cta .cta-heading,
+#page-cta .cta-secondary-text {
+	text-shadow: 1px 1px 2px #333;
+}
+
+#page-cta .peak-button {
+	margin-bottom: 3em;
+}
+
+@media (min-width: 75em) {
+	#page-cta {
+		background-size: contain;
+	}
 }
 
 /*--------------------------------------------------------------

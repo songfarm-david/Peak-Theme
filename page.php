@@ -155,15 +155,23 @@ get_header(); ?>
                 
             endif; ?>
             
-            <!--If Content Creation page-->
-            <?php if( is_page( '2314' ) || is_page( '2465' ) ) :
+            <!-- If Content Creation Service page => Include Features section -->
+            <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
                 
-                // include portfolio grid
+                // include content creation features
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
             
             endif; ?>
             
-            <!--Show this on all pages EXCEPT Contact page-->
+            <!--If SEO Services page => Include Features section -->
+            <?php if( is_page( '2227' ) || is_page( '' ) ) :
+                
+                // include content creation features
+                include( get_template_directory() . '/inc/custom/features-SEO.php' );
+            
+            endif; ?>
+            
+            <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
             <?php if ( !is_page( '1722' ) ) : ?>
             
                 <article id="page-cta">

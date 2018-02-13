@@ -1,7 +1,7 @@
 
 <?php include( get_template_directory() . '/assets/icons/content-creation-icons-sprite.svg' );?>
 
-<article id="features-content-creation" class="panel-container panel-color">
+<article id="" class="features-section panel-container panel-color">
     
     <div class="entry-content">
         <h2>Features:</h2>
@@ -66,11 +66,11 @@
   
 </article>
 
-<article class="hero-call">
+<!--This has been replace currently by a site wide CTA-->
+<!--<article class="hero-call">
     <div>
         <h3>Ready to jump-start your online presence?</h3>     
         <p><a href="<?php echo get_permalink('1722'); ?>">Contact us today</a> and let's start generating more leads and driving more engagement online for your business.</p>
     </div>
-    
-</article>
+</article>-->
 

@@ -1,4 +1,6 @@
 
+<?php include( get_template_directory() . '/assets/icons/SEO-features-icons-sprite.svg' );?>
+
 <article class="features-section panel-container panel-color">
     
     <div class="entry-content">
@@ -11,7 +13,7 @@
                 <h4>Customized Strategy</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#car-speedometer" />
+                    <use xlink:href="#idea" />
                 </svg>
                 <p>SEO is not a &rsquo;one-size-fits-all&lsquo; proposition. Each business is unique and has its own set of opportunities and challenges. Our experts approach every new campaign with fresh eyes to determine the best strategy to suit the individual needs of the business.</p>
             </article>
@@ -19,7 +21,7 @@
                 <h4>In-Depth SEO Audits</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#white-sheets" />
+                    <use xlink:href="#tool" />
                 </svg>
                 <p>A comprehensive audit of your website and current optimization level establishes a foundation for an effective SEO campaign, uncovering hidden opportunities and revealing deficiencies that can mean the difference between ranking in the top 3 search results or virtually not ranking at all.</p>
             </article>
@@ -28,7 +30,7 @@
                 <h4>White-Hat Link Building</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#hotel-reception-bell" />
+                    <use xlink:href="#broken-link" />
                 </svg>
                 <p>There is no under-stating the importance of quality backlinks to your website. We work hard to create meaningful link partnerships to the websites and influencers that matter, proactively developing a robust link profile that delivers real results.</p>
             </article>
@@ -36,7 +38,7 @@
                 <h4>Local Search Strategy</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#pair-of-bills" />
+                    <use xlink:href="#map-location" />
                 </svg>
                 <p>At least one-third of web searches today are of a &rdquo;local intent&ldquo;. For local businesses, we develop a robust Local SEO footprint that puts your business on the map and ranking high in local search results.</p>
             </article>
@@ -45,7 +47,7 @@
                 <h4>Content Outreach & Promotion</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#pen" />
+                    <use xlink:href="#megaphone-with-sound-waves" />
                 </svg>
                 <p>It’s not enough to just create great content - you’ve got to get it out there to make a difference in your SEO. Through effective Keyword Research and On-Page SEO, we make sure your hard-won content is being <em>seen</em> and making an impact on your traffic and search rankings.</p>
             </article>
@@ -53,7 +55,7 @@
                 <h4>Regular Reporting</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#locked-padlock" />
+                    <use xlink:href="#business" />
                 </svg>
                 <p>SEO is an ongoing process and to be most effective, one has to track results over time. We record and monitor everything we do and provide regular campaign reports so you can see what’s working and what’s <em>not</em>, allowing you to focus only on the things that matter to your bottom line.</p>
             </article>
@@ -62,7 +64,7 @@
                 <h4>Competitor Analysis</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#locked-padlock" />
+                    <use xlink:href="#magnifying-glass" />
                 </svg>
                 <p>Analyzing your competitors is an important aspect of developing a winning SEO strategy. By looking at the competition, we gain valuable insights into their strengths and weaknesses and uncover opportunities that we incorporate into building-out a more effective campaign strategy for you.</p>
             </article>
@@ -70,7 +72,7 @@
                 <h4>Website Performance Optimization</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#locked-padlock" />
+                    <use xlink:href="#settings" />
                 </svg>
                 <p>Part of what drives success for online business is delivering a positive user experience from any location or device. Our expert developers optimize your web presence for maximum performance and speed so that you provide a winning online experience to customers every time.</p>
             </article>

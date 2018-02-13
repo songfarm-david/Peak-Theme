@@ -22,7 +22,7 @@ and open the template in the editor.
                 display: inline-block;
                 
                 a {
-                   padding: 0 0.25em; 
+                    padding: 0 0.25em; 
                 }
             }
             
@@ -40,11 +40,11 @@ and open the template in the editor.
     #social-media-menu > ul {
         font-size: 125%;
     }
-    #legal-menu {
+/*    #legal-menu {
         li:last-child {
             margin-left: 0.65em;
         }
-    }    
+    }    */
     
     @media #{$mobile-only__breakpoint} {
         justify-content: center;

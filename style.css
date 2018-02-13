@@ -1223,27 +1223,23 @@ a:hover, a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10-Jan-2018, 2:58:18 PM
-    Author     : David
-*/
-#features-content-creation {
+/**
+ * Created on : 10-Jan-2018, 2:58:18 PM
+ * Author     : David
+ *
+ * Styles for Feature sections on service pages
+ */
+.features-section {
 	overflow: hidden;
-	padding-bottom: 4em;
-	margin-bottom: -3em;
+	padding: 4em 0;
 }
 
-#features-content-creation .feature-item-container {
+.features-section .feature-item-container {
 	-ms-flex-wrap: nowrap;
 	    flex-wrap: nowrap;
 }
 
-#features-content-creation .feature-item-container .feature-item {
+.features-section .feature-item-container .feature-item {
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 0 100%;
 	        flex: 1 0 100%;
@@ -1252,19 +1248,18 @@ and open the template in the editor.
 	padding: 0 0.5em;
 }
 
-#features-content-creation .feature-item-container .feature-item h3 {
-	/*@include border(2px, blue);*/
+.features-section .feature-item-container .feature-item h3 {
 	margin-top: 0.5em;
 }
 
-#features-content-creation .feature-item-container .feature-item .feature-icon {
+.features-section .feature-item-container .feature-item .feature-icon {
 	height: 4.5em;
 	width: auto;
 	margin-top: 1em;
 }
 
 @media (min-width: 49em) {
-	#features-content-creation .feature-item-container {
+	.features-section .feature-item-container {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -1272,7 +1267,7 @@ and open the template in the editor.
 		    flex-wrap: wrap;
 		overflow: hidden;
 	}
-	#features-content-creation .feature-item-container .feature-item {
+	.features-section .feature-item-container .feature-item {
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 0 45%;
 		        flex: 1 0 45%;
@@ -1518,7 +1513,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 #hero-banner .hero-headline-container .hero-headline {
 	color: #385f7e;
 	margin: 0;
-	line-height: 1.25;
+	line-height: 1.15;
 	font-weight: bolder;
 }
 
@@ -1526,13 +1521,24 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #338c5f;
 }
 
+#hero-banner .hero-headline-container .hero-byline {
+	color: #444;
+	font-weight: 600;
+	text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
+	margin-top: 0.5em;
+}
+
 #hero-banner .hero-headline-container .peak-button {
-	margin-top: 1.5em;
+	margin: 0;
+}
+
+#hero-banner .hero-headline-container .hero-byline, #hero-banner .hero-headline-container .peak-button {
+	font-size: 125%;
 }
 
 @media (min-width: 49em) {
 	#hero-banner .hero-headline-container {
-		margin: 5.5em auto 0;
+		margin: 3em auto 0;
 		max-width: 34em;
 		font-size: 22.5px;
 		font-size: 1.40625rem;
@@ -1546,6 +1552,12 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 		font-size: 25px;
 		font-size: 1.5625rem;
 		margin-top: 6.5em;
+	}
+	#hero-banner .hero-headline-container .hero-headline {
+		line-height: 1.25;
+	}
+	#hero-banner .hero-headline-container .peak-button {
+		margin-top: 1em;
 	}
 }
 
@@ -2376,6 +2388,11 @@ and open the template in the editor.
 	display: -ms-flexbox;
 	display: flex;
 	padding: 0.5em 0;
+	/*    #legal-menu {
+        li:last-child {
+            margin-left: 0.65em;
+        }
+    }    */
 }
 
 .site-footer nav a {
@@ -2413,10 +2430,6 @@ and open the template in the editor.
 
 .site-footer #social-media-menu > ul {
 	font-size: 125%;
-}
-
-.site-footer #legal-menu li:last-child {
-	margin-left: 0.65em;
 }
 
 @media (max-width: 768px) {

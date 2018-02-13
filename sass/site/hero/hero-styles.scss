@@ -21,22 +21,27 @@
         .hero-headline {
             color: $hero-color;
             margin: 0;
-            line-height: $line-height-header;
+            line-height: 1.15;
             font-weight: bolder;
             >span {
                 color: $hero-green;
             }
         }
         .hero-byline {
-            
+            color: #444;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+            margin-top: 0.5em;
         }
-        
         .peak-button {
-            margin-top: $first-modular + em;
+            margin: 0;
+        }
+        .hero-byline,.peak-button {
+            font-size: 125%;
         }
         
         @media #{$tablet__breakpoint} {
-            margin: 5.5em auto 0;
+            margin: 3em auto 0;
             //padding: 3em 0.5em 2em;
 
             max-width: 34em;
@@ -50,6 +55,12 @@
             max-width: 38em;
             @include font-size(1.250);
             margin-top: 6.5em;
+            .hero-headline {
+                line-height: $line-height-header;
+            }
+            .peak-button {
+                margin-top: 1em;
+            }
         }
         
         @media #{$lg-desktop__breakpoint} {

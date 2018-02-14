@@ -34,7 +34,8 @@ get_header(); ?>
             <?php if( is_front_page() ) :
                 
                 // id for web-design-panel
-                $recent = new WP_Query( "page_id=2222" ); 
+                //local: $recent = new WP_Query( "page_id=2222" ); 
+                $recent = new WP_Query( "page_id=2286" );
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 
@@ -71,7 +72,8 @@ get_header(); ?>
                 <?php endwhile;
                 
                 // id for SEO-panel
-                $recent = new WP_Query( "page_id=2227" ); 
+                //local: $recent = new WP_Query( "page_id=2227" );
+                $recent = new WP_Query( "page_id=2284" );
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 
@@ -108,7 +110,8 @@ get_header(); ?>
                 <?php endwhile;
                 
                 // Content Creation page
-                $recent = new WP_Query( "page_id=2321" ); 
+                //local: $recent = new WP_Query( "page_id=2321" ); 
+                $recent = new WP_Query( "page_id=2465" );
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 
@@ -148,7 +151,7 @@ get_header(); ?>
             ?>
             
             <!-- If Web Development & Design -->
-            <?php if( is_page( '1741' ) || is_page( '2286' ) ) :
+            <?php if( is_page( '1741' ) ) :
                 
                 // include portfolio grid
                 include( get_template_directory() . '/inc/custom/portfolio-grid.php' );
@@ -156,7 +159,7 @@ get_header(); ?>
             endif; ?>
             
             <!-- If Content Creation Service page => Include Features section -->
-            <?php if( is_page( '2314' ) ) :
+            <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
                 
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
@@ -176,8 +179,19 @@ get_header(); ?>
             
                 <article id="page-cta">
                     <div>
+                        <?php if ( is_page( '1741' ) ) : ?>
+                        <h2 class="cta-heading">Ready for a website that works?</h2>
+                        <p class="cta-secondary-text">Let's build you a website that works for your business.</p>
+                        <?php elseif ( is_page( '1743' ) ) : ?>
+                        <h2 class="cta-heading">Ready to put your business on the map?</h2>
+                        <p class="cta-secondary-text">Let us help you to get the kinds of search results you're looking for.</p>
+                        <?php elseif ( is_page( '2376' ) ) : ?>
+                        <h2 class="cta-heading">Ready for targeted traffic to your site?</h2>
+                        <p class="cta-secondary-text">Let us help you to generate more of the traffic you actually want.</p>
+                        <?php else : ?>
                         <h2 class="cta-heading">Ready to take the high road?</h2>
                         <p class="cta-secondary-text">Let us lead the way towards better website conversion and increased exposure in Search.</p>
+                        <?php endif; ?>
                         <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
                     </div>
                 </article>

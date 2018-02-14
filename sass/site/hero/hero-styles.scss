@@ -22,21 +22,25 @@
             color: $hero-color;
             margin: 0;
             line-height: 1.15;
-            font-weight: bolder;
+            font-weight: 900;
+            //text-transform: uppercase;
             >span {
                 color: $hero-green;
+                font-style: italic;
             }
         }
         .hero-byline {
-            color: #444;
+            color: #787878;
             font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+            text-shadow: -2px 0px 3px white;
             margin-top: 0.5em;
         }
         .peak-button {
             margin: 0;
         }
-        .hero-byline,.peak-button {
+        .hero-byline,
+        //.peak-button 
+        {
             font-size: 125%;
         }
         

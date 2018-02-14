@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Feb-2018, 11:08:45 PM
+    Author     : David
+*/
+
+.color-panel {
+    display: none;
+    @media #{$tablet__breakpoint} {
+        display: block;
+        min-height: 225px;
+        background-color: $hero-color-transparent;
+        /* max-width: 1199px */
+    }
+    @media #{$desktop__breakpoint} {
+        @include border;
+        min-height: 338px;
+        /* max-width: 1899px */
+    }
+    @media #{$lg-desktop__breakpoint} {
+        @include border(4px, green);
+        min-height: 506px;
+    }
+}

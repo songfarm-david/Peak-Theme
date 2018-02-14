@@ -98,6 +98,14 @@ input[type="submit"].peak-button,
     &:before {
         background: rgba(155,155,155,.75);
         background: $hero-orange;
+        background: $hero-purple;
+        
+    }
+}
+
+peak-btn-highlight-light {
+    &:hover {
+        color: white;
     }
 }
 

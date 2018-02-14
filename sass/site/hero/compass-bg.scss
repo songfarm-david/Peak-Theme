@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-Feb-2018, 2:51:34 AM
+    Author     : David
+*/
+
+#post-1735 {
+    position: relative;
+    .compass-bg {
+        position: absolute;
+        z-index: -1;
+        bottom: -150px;
+        right: -50%;
+    }
+    
+    @media #{$desktop__breakpoint} {
+        .compass-bg {
+            //@include border(2px, blue);
+            bottom: -300px;
+            right: -70%;
+            width: 1000px;
+            height: auto;
+        }
+    }
+    
+/*    background-image: url( 'http://localhost/peak-theme/wp-content/themes/peak-theme/assets/images/compass-grey_2.png' );
+    background-repeat: no-repeat;
+    background-position: -40% -300%;*/
+    @media #{$tablet__breakpoint} {
+        //@include border;
+            /*background-position: 300% -300%;*/
+
+    }
+}

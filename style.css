@@ -756,6 +756,7 @@ input[type="submit"].peak-button:visited,
 .peak-btn-highlight:before {
 	background: rgba(155, 155, 155, 0.75);
 	background: #F75C03;
+	background: #835EA8;
 }
 
 peak-btn-highlight-light:hover {

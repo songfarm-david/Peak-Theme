@@ -10,19 +10,24 @@ and open the template in the editor.
 
 .color-panel {
     display: none;
+    overflow: hidden;
     @media #{$tablet__breakpoint} {
         display: block;
         min-height: 225px;
         background-color: $hero-color-transparent;
-        /* max-width: 1199px */
+        /* max-width: 784-1199px */
+        >img {
+            width: 100%;
+            vertical-align: bottom;
+        }
     }
     @media #{$desktop__breakpoint} {
-        @include border;
+        //@include border;
         min-height: 338px;
         /* max-width: 1899px */
     }
     @media #{$lg-desktop__breakpoint} {
-        @include border(4px, green);
-        min-height: 506px;
+        //@include border(4px, green);
+        height: 506px;
     }
 }

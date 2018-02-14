@@ -101,6 +101,12 @@ input[type="submit"].peak-button,
     }
 }
 
+peak-btn-highlight-light {
+    &:hover {
+        color: white;
+    }
+}
+
 /*.peak-button-container {
     position: relative;
     &::before {

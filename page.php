@@ -156,7 +156,7 @@ get_header(); ?>
             endif; ?>
             
             <!-- If Content Creation Service page => Include Features section -->
-            <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
+            <?php if( is_page( '2314' ) ) :
                 
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
@@ -164,7 +164,7 @@ get_header(); ?>
             endif; ?>
             
             <!--If SEO Services page => Include Features section -->
-            <?php if( is_page( '2227' ) || is_page( '' ) ) :
+            <?php if( is_page( '1743' ) ) :
                 
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-SEO.php' );

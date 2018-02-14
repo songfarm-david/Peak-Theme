@@ -480,8 +480,9 @@ h2#main-content,
 
 h4,
 .h4,
-#blog-about-peak h3,
-.hero-call h3,
+#blog-about-peak .service-container h3,
+.hero-call .service-container h3,
+.hero-section .service-container h3,
 .widget .widget-title {
 	font-size: 1.333em;
 }
@@ -755,6 +756,10 @@ input[type="submit"].peak-button:visited,
 .peak-btn-highlight:before {
 	background: rgba(155, 155, 155, 0.75);
 	background: #F75C03;
+}
+
+peak-btn-highlight-light:hover {
+	color: white;
 }
 
 /*.peak-button-container {
@@ -1275,6 +1280,10 @@ a:hover, a:active {
 	}
 }
 
+#SEO-features-section {
+	padding-bottom: 6em;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -1587,68 +1596,100 @@ h2#main-content + p {
 }
 
 #blog-about-peak,
-.hero-call {
+.hero-call,
+.hero-section {
 	background-color: #338c5f;
 	color: #EAF1F7;
 	background: linear-gradient(45deg, #338c5f, #17422c);
-	margin-top: 2em;
-	margin-bottom: -4em;
+	margin-top: -2em;
+	margin-bottom: -2em;
 	-webkit-transform: skewY(2deg);
 	        transform: skewY(2deg);
 	border: 1px solid transparent;
 	position: relative;
 	z-index: 0;
+	padding: 2em 1em 6em;
+	/* correct global skew of element */
 }
 
 #blog-about-peak a, #blog-about-peak h3, #blog-about-peak a:visited,
 .hero-call a,
 .hero-call h3,
-.hero-call a:visited {
+.hero-call a:visited,
+.hero-section a,
+.hero-section h3,
+.hero-section a:visited {
 	color: #EAF1F7;
 }
 
-#blog-about-peak h3,
-.hero-call h3 {
-	font-weight: bold !important;
-	text-transform: uppercase;
-}
-
-#blog-about-peak > div,
-.hero-call > div {
+#blog-about-peak div,
+.hero-call div,
+.hero-section div {
 	-webkit-transform: skewY(-2deg);
 	        transform: skewY(-2deg);
-	padding: 1em 1em 7em;
-	margin-top: 3em;
-	border: 2px solid transparent;
+}
+
+#blog-about-peak .intro-container,
+.hero-call .intro-container,
+.hero-section .intro-container {
+	margin-top: 2em;
+}
+
+#blog-about-peak .intro-container > p,
+.hero-call .intro-container > p,
+.hero-section .intro-container > p {
+	font-size: 125%;
+	margin-bottom: 2em;
+}
+
+@media (min-width: 75em) {
+	#blog-about-peak .intro-container,
+	#blog-about-peak .service-container,
+	.hero-call .intro-container,
+	.hero-call .service-container,
+	.hero-section .intro-container,
+	.hero-section .service-container {
+		margin-left: 17%;
+	}
+}
+
+#blog-about-peak .service-container h3,
+.hero-call .service-container h3,
+.hero-section .service-container h3 {
+	font-weight: bold !important;
+	text-transform: uppercase;
+	text-decoration: underline;
 }
 
 @media (min-width: 49em) {
-	#blog-about-peak > div,
-	.hero-call > div {
+	#blog-about-peak .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
 		width: 60%;
 	}
 }
 
 @media (min-width: 75em) {
-	#blog-about-peak > div,
-	.hero-call > div {
+	#blog-about-peak .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
 		max-width: 46em;
-		margin-left: 17%;
 		width: 43%;
 	}
 }
 
 @media (min-width: 118.75em) {
-	#blog-about-peak > div,
-	.hero-call > div {
+	#blog-about-peak .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
 		max-width: 48em;
-		margin-left: 17%;
 		width: 43%;
 	}
 }
 
-#blog-about-peak a:hover,
-.hero-call a:hover {
+#blog-about-peak a:hover:not(.peak-button),
+.hero-call a:hover:not(.peak-button),
+.hero-section a:hover:not(.peak-button) {
 	color: #338c5f;
 }
 
@@ -2184,6 +2225,8 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	background-size: cover;
 	overflow: hidden;
 	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
+	position: relative;
+	z-index: 10;
 }
 
 #page-cta .cta-heading {

@@ -89,46 +89,62 @@ h2#main-content {
 }
 
 #blog-about-peak,
-.hero-call {
+.hero-call,
+.hero-section {
     background-color: $hero-green;
     color: $color-light;
     @include linear-gradient(45deg, $hero-green, #17422c);
-    margin-top: 2em;
-    margin-bottom: -4em;
+    margin-top: -2em;
+    margin-bottom: -2em;
     transform: skewY(2deg);
     border: 1px solid transparent;
     position: relative;
     z-index: 0;
+    padding: 2em 1em 6em;
+    //padding-bottom: 7em;
     a, h3, a:visited {
         color: $color-light;
     }
-    h3 {
-        @extend .h4;
-        font-weight: bold !important;
-        text-transform: uppercase;
-    }
-    > div {
+    /* correct global skew of element */
+    div {
         transform: skewY(-2deg);
-        //backface-visibility: hidden;
-        padding: 1em 1em 7em;
-        margin-top: 3em;
-        @include border(2px, transparent);
+    }
+    .intro-container {
+       margin-top: 2em;
+        >p {
+            font-size: 125%;
+            margin-bottom: 2em;
+        } 
+    }
+    .intro-container,
+    .service-container {
+        @media #{$desktop__breakpoint} {
+            margin-left: 17%;
+
+        }
+    }
+    .service-container {
+        h3 {
+            @extend .h4;
+            font-weight: bold !important;
+            text-transform: uppercase;
+            text-decoration: underline;
+        }
         @media #{$tablet__breakpoint} {
             width: 60%;
         }
         @media #{$desktop__breakpoint} {
             max-width: 46em;
-            //@include border(2px, blue);
-            margin-left: 17%;
             width: 43%;
         }
         @media #{$lg-desktop__breakpoint} {
             max-width: 48em;
-            margin-left: 17%;
             width: 43%;
-        }
+        }    
     }
-    a:hover {
+        
+    
+    a:hover:not(.peak-button) {
         color: $hero-green;
     }
 }

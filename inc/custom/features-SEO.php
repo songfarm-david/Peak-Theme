@@ -1,7 +1,7 @@
 
 <?php include( get_template_directory() . '/assets/icons/SEO-features-icons-sprite.svg' );?>
 
-<article class="features-section panel-container panel-color">
+<article id="SEO-features-section" class="features-section panel-container panel-color">
     
     <div class="entry-content">
         <h2>SEO Features:</h2>
@@ -78,17 +78,39 @@
             </article>
             
         </div>
-        
-        
     </div>
   
 </article>
 
 <!--This has been replace currently by a site wide CTA-->
-<!--<article class="hero-call">
-    <div>
-        <h3>Ready to jump-start your online presence?</h3>     
-        <p><a href="<?php echo get_permalink('1722'); ?>">Contact us today</a> and let's start generating more leads and driving more engagement online for your business.</p>
+<article class="hero-section">
+    <div class="intro-container">
+        <h2>SEO Services:</h2>     
+        <p>Choose the SEO Service best suited to your current needs:</p>
     </div>
-</article>-->
+    <div class="service-container">
+        <h3>SEO Blast</h3>
+        <p>For businesses that want a complete 360&deg; check-up of all aspects on their web presence but aren’t ready for a commitment to long-term SEO campaign, we offer our SEO Blast, a one-off service that involves taking stock of every aspect of your online presence and making small, strategic tweaks to better put you on track towards your goals. You can think of it as a B12 shot-in-the-arm for your SEO.</p>
+        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Get it now</a>
+    </div>
+    <div class="service-container">
+        <h3>SEO Consulting</h3>
+        <p>We offer one-time or regular SEO consulting for businesses or individuals that want help in creating and developing an SEO strategy of their own. We can help to guide your decisions and ensure that you are taking positive steps forward towards reaching your SEO goals.</p>
+        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Get it now</a>
+    </div>
+    <div class="service-container">
+        <h3>Content Creation</h3>
+        <p>Content is at the heart of ranking in Search Engines and is the vehicle for the keywords that people are searching for. However, creating content is demanding and not all businesses are positioned to allow for this increased demand.</p>
+        <p>Peak Websites understands the importance of quality content, creating a network of professional writers that are able to produce informative and value-driven content in any niche.</p>
+        <p>Combined with our in-depth keyword research and On-Page optimization, we make it easier than ever to produce web pages that will rank.</p>
+        <a href="<?php echo get_permalink( '2376' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Learn more about Content Creation</a>
+    </div>
+    <div class="service-container">
+        <h3>Strategic SEO Campaign</h3>
+        <p>For businesses that want to see a noticeable impact on their exposure and visibility in search engines as well as increases in targeted, organic traffic to their website, we offer our <strong>Strategic SEO Campaign</strong>.
+        <p>This is a comprehensive and ongoing effort directed at fulfilling specific online business goals for your particular needs and objectives.</p>
+        <p>We work with you to understand and determine the necessary actions, now and in the future, to secure the kind of placement your business would like to see.</p>
+        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Get it now</a>
+    </div>
+</article>
 

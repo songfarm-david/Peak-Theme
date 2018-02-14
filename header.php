@@ -110,4 +110,8 @@
         
         endif; ?>
         
+        <div class="color-panel">
+            
+        </div>
+        
 	<div id="content" class="site-content">

@@ -1643,34 +1643,6 @@ h2#main-content + p {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1em auto 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-.post-navigation,
-.comments-area {
-	padding: 0 1em;
-}
-
 /** Custom styles **/
 /**
   * Page Headers Banners 
@@ -1702,18 +1674,12 @@ h2#main-content + p {
 body:not(.home) .site-content {
 	/* because masthead is set to position: absolute 
     we have to give site-content top padding */
-	padding-top: 5em;
+	padding-top: 4em;
 }
 
 @media (min-width: 49em) {
 	body:not(.home) .site-content {
-		padding-top: 5em;
-	}
-}
-
-@media (min-width: 75em) {
-	body:not(.home) .site-content {
-		padding-top: 7.5em;
+		padding-top: 0;
 	}
 }
 
@@ -2153,6 +2119,34 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-pr
 body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	display: inline-block;
 	padding: 0.65em;
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1em auto 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.post-navigation,
+.comments-area {
+	padding: 0 1em;
 }
 
 /*--------------------------------------------------------------

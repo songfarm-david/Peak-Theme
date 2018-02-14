@@ -1,30 +1,4 @@
-.sticky {
-	display: block;
-}
 
-.hentry {
-	margin: 0;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1em auto 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-.post-navigation,
-.comments-area {
-    padding: 0 1em;
-}
 
 /** Custom styles **/
 /**
@@ -55,14 +29,10 @@ body:not(.home) .site-content {
     
     /* because masthead is set to position: absolute 
     we have to give site-content top padding */
-    padding-top: 5em;
+    padding-top: 4em;
     
     @media #{$tablet__breakpoint} {
-        padding-top: 5em;
-    }
-    
-    @media #{$desktop__breakpoint} {
-        padding-top: 7.5em;
+        padding-top: 0;
     }
     
 }
@@ -434,4 +404,32 @@ body.single.post-template-single-portfolio-item {
         }
     }
     
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1em auto 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.post-navigation,
+.comments-area {
+    padding: 0 1em;
 }

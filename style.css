@@ -1495,6 +1495,46 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 /*--------------------------------------------------------------
+## Color Panels
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13-Feb-2018, 11:08:45 PM
+    Author     : David
+*/
+.color-panel {
+	display: none;
+}
+
+@media (min-width: 49em) {
+	.color-panel {
+		display: block;
+		min-height: 225px;
+		background-color: rgba(56, 95, 126, 0.89);
+		/* max-width: 1199px */
+	}
+}
+
+@media (min-width: 75em) {
+	.color-panel {
+		border: 2px solid red;
+		min-height: 338px;
+		/* max-width: 1899px */
+	}
+}
+
+@media (min-width: 118.75em) {
+	.color-panel {
+		border: 4px solid green;
+		min-height: 506px;
+	}
+}
+
+/*--------------------------------------------------------------
 ## Hero styles
 --------------------------------------------------------------*/
 /* 
@@ -1524,17 +1564,18 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #385f7e;
 	margin: 0;
 	line-height: 1.15;
-	font-weight: bolder;
+	font-weight: 900;
 }
 
 #hero-banner .hero-headline-container .hero-headline > span {
 	color: #338c5f;
+	font-style: italic;
 }
 
 #hero-banner .hero-headline-container .hero-byline {
-	color: #444;
+	color: #787878;
 	font-weight: 600;
-	text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
+	text-shadow: -2px 0px 3px white;
 	margin-top: 0.5em;
 }
 
@@ -1542,7 +1583,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	margin: 0;
 }
 
-#hero-banner .hero-headline-container .hero-byline, #hero-banner .hero-headline-container .peak-button {
+#hero-banner .hero-headline-container .hero-byline {
 	font-size: 125%;
 }
 
@@ -1697,34 +1738,6 @@ h2#main-content + p {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-.sticky {
-	display: block;
-}
-
-.hentry {
-	margin: 0;
-}
-
-.updated:not(.published) {
-	display: none;
-}
-
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1em auto 0;
-}
-
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-.post-navigation,
-.comments-area {
-	padding: 0 1em;
-}
-
 /** Custom styles **/
 /**
   * Page Headers Banners 
@@ -1756,18 +1769,12 @@ h2#main-content + p {
 body:not(.home) .site-content {
 	/* because masthead is set to position: absolute 
     we have to give site-content top padding */
-	padding-top: 5em;
+	padding-top: 4em;
 }
 
 @media (min-width: 49em) {
 	body:not(.home) .site-content {
-		padding-top: 5em;
-	}
-}
-
-@media (min-width: 75em) {
-	body:not(.home) .site-content {
-		padding-top: 7.5em;
+		padding-top: 0;
 	}
 }
 
@@ -2207,6 +2214,34 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-pr
 body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	display: inline-block;
 	padding: 0.65em;
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1em auto 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.post-navigation,
+.comments-area {
+	padding: 0 1em;
 }
 
 /*--------------------------------------------------------------

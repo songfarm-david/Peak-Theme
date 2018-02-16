@@ -10,7 +10,7 @@
 
 	function initMainNavigation( container ) {
 
-            // Add button that toggles dropdown menu child items
+            // Create button, append FA icon and screen reader text, put after menu item with children (sub-menu)
             var dropdownButton = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
                 .append( $( '<i />', { 'class': 'fa fa-angle-down', 'aria-hidden': 'true' }) )
                 .append( $( '<span />', { 'class': 'screen-reader-text', text: peakScreenReaderText.expand }) );
@@ -27,10 +27,9 @@
 //		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled' );
                 
                 /**
-                 * Control dropdown arrow direction
+                 * Toggle arrow direction on mobile devices
                  */
                 function flipArrow() {
-                    console.log('toggleArrow fired');
                     var toggleArrow = $( '.dropdown-toggle' ).find( '.fa' );
                     // if mobile device
                     if ( $(window).width() < 768 ) {
@@ -42,12 +41,11 @@
                     }
                 }
                 
-                
+            
                 function toggleDropdown() {
-                    var dropdown = $( '.dropdown-toggle' ),
-                        screenReaderSpan = dropdown.find( '.screen-reader-text' );
+                    console.log('click');
+                    var dropdown = $( '.dropdown-toggle' ), screenReaderSpan = dropdown.find( '.screen-reader-text' );
                         
-                    
                     dropdown.next( '.children, .sub-menu' ).toggleClass( 'toggled' );
                     
                     flipArrow();
@@ -82,10 +80,10 @@
                 /**
                  * Control sub-menu toggle when a-tag is clicked
                  */
-                container.find( '.menu-item-has-children > a').click( function( e ) {
-                    e.preventDefault();
-                    toggleDropdown();
-                });
+//                container.find( '.menu-item-has-children > a').click( function( e ) {
+//                    e.preventDefault();
+//                    toggleDropdown();
+//                });
 	}
 
 	initMainNavigation( $( '.main-navigation' ) );

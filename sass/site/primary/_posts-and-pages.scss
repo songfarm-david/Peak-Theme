@@ -42,11 +42,12 @@ body:not(.home) .site-content {
  *
  * 1722: Contact Page
  * 1718: About Peak
+ * 2409: Blog
  */
-.post-1722, .post-1718 {
+.post-1722, .post-1718, body.blog #content, body.single #content {
     @media #{$tablet__breakpoint} {
         padding-top: 75px;
-        padding-top: 4em;
+        padding-top: 3em;
     }
 }
 

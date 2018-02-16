@@ -1533,7 +1533,7 @@ and open the template in the editor.
 
 @media (min-width: 118.75em) {
 	.color-panel {
-		height: 506px;
+		height: 422px;
 	}
 }
 
@@ -1786,11 +1786,12 @@ body:not(.home) .site-content {
  *
  * 1722: Contact Page
  * 1718: About Peak
+ * 2409: Blog
  */
 @media (min-width: 49em) {
-	.post-1722, .post-1718 {
+	.post-1722, .post-1718, body.blog #content, body.single #content {
 		padding-top: 75px;
-		padding-top: 4em;
+		padding-top: 3em;
 	}
 }
 

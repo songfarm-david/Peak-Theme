@@ -1782,22 +1782,18 @@ body:not(.home) .site-content {
 }
 
 /**
-  * Regulate top padding on HOME page
-  */
-/*body.home .site-content {
-    
+ * Add padding on pages that don't display a color panel
+ *
+ * 1722: Contact Page
+ * 1718: About Peak
+ */
+@media (min-width: 49em) {
+	.post-1722, .post-1718 {
+		padding-top: 75px;
+		padding-top: 4em;
+	}
+}
 
-    padding-top: 0;
-    
-    @media (min-width: 49em) {
-        //padding: 1em 0 0.5em;
-    }
-    
-    @media (min-width: 75em) {
-        //padding: 2em 0 1em;
-    }
-    
-}*/
 body.page .site-content {
 	/* add bottom padding on main page sections */
 }

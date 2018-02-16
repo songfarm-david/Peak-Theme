@@ -38,22 +38,17 @@ body:not(.home) .site-content {
 }
 
 /**
-  * Regulate top padding on HOME page
-  */
-/*body.home .site-content {
-    
-
-    padding-top: 0;
-    
+ * Add padding on pages that don't display a color panel
+ *
+ * 1722: Contact Page
+ * 1718: About Peak
+ */
+.post-1722, .post-1718 {
     @media #{$tablet__breakpoint} {
-        //padding: 1em 0 0.5em;
+        padding-top: 75px;
+        padding-top: 4em;
     }
-    
-    @media #{$desktop__breakpoint} {
-        //padding: 2em 0 1em;
-    }
-    
-}*/
+}
 
 body.page .site-content {
     

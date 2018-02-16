@@ -110,7 +110,7 @@
         
         endif; ?>
         
-        <!--If not Front Page or not Service page-->
+        <!--If is one of the three service pages -->
         <?php if ( is_page( array( 1741, 1743, 2314 ) ) ) : ?>
             
             <div class="color-panel">

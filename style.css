@@ -472,7 +472,7 @@ body.archive .post .entry-header .entry-title,
 
 h3,
 .h3,
-h2#main-content,
+#main-content,
 .page .entry-header .entry-title {
 	font-size: 1.777em;
 	font-weight: normal;
@@ -1629,11 +1629,15 @@ and open the template in the editor.
 	}
 }
 
-h2#main-content:focus {
+#main-content {
+	margin-top: 1em;
+}
+
+#main-content:focus {
 	outline: none;
 }
 
-h2#main-content + p {
+#main-content + p {
 	font-style: italic;
 	font-family: "Raleway", sans-serif;
 	margin-top: 1.5em;
@@ -1767,11 +1771,12 @@ h2#main-content + p {
 }
 
 /**
-  * Regulate top padding on PAGES
+  * Regulate top padding on PAGES not Home
   */
 body:not(.home) .site-content {
-	/* because masthead is set to position: absolute 
+	/*     because masthead is set to position: absolute 
     we have to give site-content top padding */
+<<<<<<< HEAD
 	padding-top: 4em;
 }
 
@@ -1806,22 +1811,19 @@ body.page .site-content p#main-content {
 body.page .site-content h2, body.page .site-content h3,
 body.page .site-content p#main-content {
 	font-weight: normal;
+=======
+	padding-top: 3.6em;
+>>>>>>> siteContent-topPad
 }
 
 @media (min-width: 75em) {
-	body.page .site-content h2, body.page .site-content h3,
-	body.page .site-content p#main-content {
-		margin-top: 1.5em;
+	body:not(.home) .site-content {
+		padding-top: 3.1em;
 	}
 }
 
-body.page .site-content article.page,
-body.page .site-content article.panel-container {
-	padding-bottom: 2.5em;
-}
-
 /** 
-  * PAGE styles 
+  * general PAGE styles 
   */
 body.page {
 	/** remove top margin on page content on mobile devices */
@@ -1861,12 +1863,7 @@ body.page .entry-footer {
 
 body.page .entry-content {
 	margin-top: 0;
-}
-
-@media (min-width: 75em) {
-	body.page .entry-content {
-		margin-top: 1em;
-	}
+	padding-bottom: 2em;
 }
 
 /**
@@ -2110,6 +2107,18 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	}
 }
 
+@media (min-width: 49em) {
+	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
+		padding-top: 3.5em;
+	}
+}
+
+@media (min-width: 49em) {
+	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
+		padding-top: 3em;
+	}
+}
+
 /**
  * Extraneous pages
  */
@@ -2285,6 +2294,164 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 @media (min-width: 75em) {
 	#page-cta {
 		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
+	}
+}
+
+/*--------------------------------------------------------------
+## Services home page
+--------------------------------------------------------------*/
+/**
+ * Service Landing Page
+ */
+#post-2341,
+#post-2517 {
+	height: 100vh;
+	background-color: #EAF1F7;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/sm-screen-80.jpg);
+	background-size: cover;
+}
+
+#post-2341 .services-headline,
+#post-2517 .services-headline {
+	margin: 0;
+	font-size: 250%;
+	color: #385f7e;
+	padding-top: 1em;
+	text-transform: capitalize;
+}
+
+#post-2341 .services-headline > span,
+#post-2517 .services-headline > span {
+	color: #338c5f;
+	font-style: italic;
+}
+
+#post-2341 .services-byline,
+#post-2517 .services-byline {
+	font-size: 125%;
+	color: #787878;
+	font-weight: 600;
+	text-shadow: -2px 0px 3px white;
+}
+
+@-webkit-keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+@keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+#post-2341 .services-byline + p > a > i,
+#post-2517 .services-byline + p > a > i {
+	font-size: 3.7em;
+	-webkit-animation: float 1s ease-in-out infinite both;
+	        animation: float 1s ease-in-out infinite both;
+}
+
+@media (min-width: 49em) {
+	#post-2341,
+	#post-2517 {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
+		text-align: center;
+	}
+	#post-2341 .services-headline,
+	#post-2517 .services-headline {
+		padding-top: 2em;
+		font-size: 3.157em;
+		/* corrects font back to initial size */
+	}
+}
+
+@media (min-width: 75em) {
+	#post-2341,
+	#post-2517 {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
+	}
+	#post-2341 .services-headline,
+	#post-2517 .services-headline {
+		padding-top: 3em;
+	}
+}
+
+/**
+ * Services Landing page Service Panels
+ *
+ * first page id is local environment
+ * second id is production 
+ */
+.page-id-2341,
+.page-id-2517 {
+	text-align: center;
+	/* align odd service to the right */
+}
+
+.page-id-2341 .panel-container,
+.page-id-2517 .panel-container {
+	border-top: 1px solid #ddd;
+}
+
+.page-id-2341 .panel-container.orange,
+.page-id-2517 .panel-container.orange {
+	background-color: #f7f5f2;
+}
+
+.page-id-2341 .panel-container.purple,
+.page-id-2517 .panel-container.purple {
+	background-color: #f7f2f7;
+}
+
+.page-id-2341 .service-image,
+.page-id-2517 .service-image {
+	max-width: 60%;
+}
+
+@media (min-width: 49em) {
+	.page-id-2341,
+	.page-id-2517 {
+		text-align: left;
+	}
+	.page-id-2341 .panel-container,
+	.page-id-2517 .panel-container {
+		padding: 1em 0;
+	}
+	.page-id-2341 .panel-container:nth-child(odd),
+	.page-id-2517 .panel-container:nth-child(odd) {
+		text-align: right;
+	}
+	.page-id-2341 .panel-container:nth-child(odd) .service-image,
+	.page-id-2517 .panel-container:nth-child(odd) .service-image {
+		float: left;
+	}
+	.page-id-2341 .service-image,
+	.page-id-2517 .service-image {
+		float: right;
+		width: 44%;
+		margin: 0;
+	}
+}
+
+@media (min-width: 75em) {
+	.page-id-2341 .panel-container,
+	.page-id-2517 .panel-container {
+		padding-bottom: 3.5em;
+		clear: both;
 	}
 }
 
@@ -2947,7 +3114,6 @@ and open the template in the editor.
 .panel-container:nth-child(even):not(.portfolio),
 .panel-container.panel-color {
 	background-color: #F2F7F2;
-	padding: 0.1em 0 2em 0;
 }
 
 .panel-container.portfolio {

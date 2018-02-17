@@ -11,7 +11,8 @@ and open the template in the editor.
 .panel-container:nth-child(even):not(.portfolio),
 .panel-container.panel-color {
     background-color: $panel-color; 
-    padding: 0.1em 0 2em 0;
+    //padding-top: 1px;
+    //padding: 0.1em 0 2em 0;
     
 }
 .panel-container.portfolio {
@@ -19,4 +20,6 @@ and open the template in the editor.
     
     background-color: $panel-color;
 }
+
+
 

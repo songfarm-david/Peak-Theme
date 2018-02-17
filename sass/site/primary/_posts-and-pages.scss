@@ -23,57 +23,23 @@
 }
 
 /**
-  * Regulate top padding on PAGES
+  * Regulate top padding on PAGES not Home
   */
 body:not(.home) .site-content {
     
-    /* because masthead is set to position: absolute 
+/*     because masthead is set to position: absolute 
     we have to give site-content top padding */
-    padding-top: 4em;
-    
-    @media #{$tablet__breakpoint} {
-        padding-top: 0;
-    }
-    
-}
 
-/**
- * Add padding on pages that don't display a color panel
- *
- * 1722: Contact Page
- * 1718: About Peak
- * 2409: Blog
- */
-.post-1722, .post-1718, body.blog #content, body.single #content {
-    @media #{$tablet__breakpoint} {
-        padding-top: 75px;
-        padding-top: 3em;
+    padding-top: 3.6em;
+    
+    @media #{$desktop__breakpoint} {
+        padding-top: 3.1em;
     }
 }
 
-body.page .site-content {
-    
-    p#main-content {
-        margin-top: 1em;
-    }
-    
-    h2, h3,
-    p#main-content {
-        font-weight: normal;
-        @media #{$desktop__breakpoint} {
-            margin-top: 1.5em;
-        }
-    }
-    /* add bottom padding on main page sections */
-    article.page,
-    article.panel-container {
-        padding-bottom: 2.5em;
-        //background: linear-gradient(to right, $color-light 0%, rgb(255, 255, 255) 10%, $color-light 90%);
-    }
-}
 
 /** 
-  * PAGE styles 
+  * general PAGE styles 
   */
 body.page {
     
@@ -101,8 +67,10 @@ body.page {
     /** remove top margin on page content on mobile devices */
     .entry-content {
         margin-top: 0;
+        padding-bottom: 2em;
+
         @media #{$desktop__breakpoint} {
-            margin-top: 1em;
+            //margin-top: 1em;
         }
     }
     
@@ -317,6 +285,22 @@ body.single {
     }
     
     
+}
+
+.page-id-1718, .page-id-1722, .blog {
+    
+    @media #{$tablet__breakpoint} {
+        .site-content {
+           padding-top: 3.5em;
+       }    
+    }
+    
+    @media #{$tablet__breakpoint} {
+        .site-content {
+           padding-top: 3em;
+       }    
+    }
+   
 }
 
 /**

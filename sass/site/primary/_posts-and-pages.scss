@@ -96,51 +96,6 @@ body.page {
 }
 
 /**
- * Service Landing Page
- */
-#post-2341 {
-    height: 100vh;
-    background-color: $color-light;
-    background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/sm-screen-80-min.jpg);
-    background-size: cover;
-    .services-headline {
-        margin: 0;
-        font-size: 250%;
-        color: $hero-color;
-        padding-top: 1em;
-        text-transform: capitalize;
-        >span {
-            color: $hero-green;
-            font-style: italic;
-        }
-    }
-    .services-byline {
-        font-size: 125%;
-        color: #787878;
-        font-weight: 600;
-        text-shadow: -2px 0px 3px white;
-    }
-    
-    @media #{$tablet__breakpoint} {
-        background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/md-screen-80-min.jpg);
-        
-        text-align: center;
-        .services-headline {
-            padding-top: 2em; 
-            font-size: 3.157em; /* corrects font back to initial size */
-        }
-    }
-    
-    @media #{$desktop__breakpoint} {
-        background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/lg-screen-80-min.jpg);
-        
-        .services-headline {
-            padding-top: 3em;
-        }
-    }
-}
-
-/**
   * Set content width for Blog index and Single blog posts
   */
 body.blog,

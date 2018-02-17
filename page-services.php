@@ -1,13 +1,5 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Peak_Theme
  */
@@ -23,17 +15,20 @@ get_header(); ?>
                 get_template_part( 'template-parts/content', 'services' );
 
                 // If comments are open or we have at least one comment, load up the comment template.
-                if ( comments_open() || get_comments_number() ) :
-                        comments_template();
-                endif;
+//                if ( comments_open() || get_comments_number() ) :
+//                        comments_template();
+//                endif;
 
             endwhile; // End of the loop.
             ?>
 
             <?php 
-            
-                $recent = new WP_Query( "page_id=2349" );
-
+                /**
+                 * Call Services sections
+                 */
+                //localhost $recent = new WP_Query( "page_id=2349" );
+                $recent = new WP_Query( "page_id=2520" );
+                
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
                 <article id="content-section" class="panel-container">
@@ -68,7 +63,8 @@ get_header(); ?>
                         
                 <?php endwhile; 
                 
-                $recent = new WP_Query( "page_id=2351" );
+                //$recent = new WP_Query( "page_id=2351" );
+                $recent = new WP_Query( "page_id=2527" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
@@ -104,7 +100,8 @@ get_header(); ?>
                         
                 <?php endwhile;
                 
-                $recent = new WP_Query( "page_id=2353" );
+                //$recent = new WP_Query( "page_id=2353" );
+                $recent = new WP_Query( "page_id=2529" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
@@ -141,7 +138,13 @@ get_header(); ?>
                 <?php endwhile; ?>
                         
             <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
-            <?php if ( !is_page( '1722' ) ) : ?>
+            <?php 
+            /**
+             * Include Call-to-Action banner
+             */
+            
+            /** if NOT Contact Page */
+            if ( !is_page( '1722' ) ) : ?>
             
                 <article id="page-cta">
                     <div>

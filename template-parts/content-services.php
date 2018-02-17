@@ -1,15 +1,14 @@
 <?php
 /**
- * Template part for displaying page content in page.php
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Template part for displaying Service Page content
  *
  * @package Peak_Theme
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    
+        <!--Removed entry header content-->
     
 	<div class="entry-content">
 		<?php

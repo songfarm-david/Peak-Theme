@@ -41,6 +41,16 @@ body:not(.home):not(.page-id-2341) .site-content {
     }
 }
 
+/** 
+ * Hide overflow in main content area site-wide 
+ */
+.page {
+    .content-area {
+        overflow: hidden;
+    }    
+}
+    
+
 
 /** 
   * general PAGE styles 

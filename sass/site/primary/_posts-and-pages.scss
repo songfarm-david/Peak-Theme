@@ -23,26 +23,25 @@
 }
 
 /**
-  * Regulate top padding on PAGES
+  * Regulate top padding on PAGES not Home
   */
-/*body:not(.home) .site-content {
+body:not(.home) .site-content {
     
-     because masthead is set to position: absolute 
-    we have to give site-content top padding 
-    //padding-top: 4em;
+/*     because masthead is set to position: absolute 
+    we have to give site-content top padding */
+    padding-top: 3.6em;
     
-    @media #{$tablet__breakpoint} {
-        padding-top: 3.5em;
+    @media #{$desktop__breakpoint} {
+        padding-top: 3.1em;
     }
     
-}*/
+}
 
 
 /** 
   * general PAGE styles 
   */
 body.page {
-    
     
     .entry-header > div,
     .entry-content,

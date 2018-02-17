@@ -69,9 +69,7 @@
         <?php if ( is_front_page() ) : 
             /**
              * If homepage/front page, include hero banner
-             */
-//            include( get_template_directory() . '/inc/hero/landing-banner.php' );
-            
+             */            
             $recent = new WP_Query( "page_id=1895" ); 
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
@@ -110,36 +108,6 @@
         
         endif; ?>
         
-        <!--If is one of the three service pages -->
-        <?php if ( is_page( array( 1741, 1743, 2314 ) ) ) : ?>
-            
-            <div class="color-panel">
-                <!--If Web Development page -->
-                <?php if ( is_page( '1741' ) ) : ?>
-                <img src="green_1200.png" alt="" 
-                     srcset="<?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/green-1200-min.png"; ?> 1200w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/green-1800-min.png"; ?> 1800w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/green-2400-min.png"; ?> 2400w"
-                             sizes="100vw">
-                <?php endif; ?>
-                <!--If SEO page -->
-                <?php if ( is_page( '1743' ) ) : ?>
-                <img src="green_1200.png" alt="" 
-                     srcset="<?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/purple-1200-min.png"; ?> 1200w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/purple-1800-min.png"; ?> 1800w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/purple-2400-min.png"; ?> 2400w"
-                             sizes="100vw">
-                <?php endif; ?>
-                <!--If Content Creation page -->
-                <?php if ( is_page( '2314' ) || is_page( '2376' ) ) : ?>
-                <img src="green_1200.png" alt="" 
-                     srcset="<?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/orange-1200-min.png"; ?> 1200w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/orange-1800-min.png"; ?> 1800w,
-                             <?php echo get_template_directory_uri() . "/assets/backgrounds/color-panels/orange-2400-min.png"; ?> 2400w"
-                             sizes="100vw">
-                <?php endif; ?>
-            </div>
         
-        <?php endif; ?>
         
 	<div id="content" class="site-content">

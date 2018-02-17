@@ -1771,19 +1771,20 @@ and open the template in the editor.
 }
 
 /**
-  * Regulate top padding on PAGES
+  * Regulate top padding on PAGES not Home
   */
-/*body:not(.home) .site-content {
-    
-     because masthead is set to position: absolute 
-    we have to give site-content top padding 
-    //padding-top: 4em;
-    
-    @media (min-width: 49em) {
-        padding-top: 3.5em;
-    }
-    
-}*/
+body:not(.home) .site-content {
+	/*     because masthead is set to position: absolute 
+    we have to give site-content top padding */
+	padding-top: 3.6em;
+}
+
+@media (min-width: 75em) {
+	body:not(.home) .site-content {
+		padding-top: 3.1em;
+	}
+}
+
 /** 
   * general PAGE styles 
   */

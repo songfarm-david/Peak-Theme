@@ -472,7 +472,7 @@ body.archive .post .entry-header .entry-title,
 
 h3,
 .h3,
-h2#main-content,
+#main-content,
 .page .entry-header .entry-title {
 	font-size: 1.777em;
 	font-weight: normal;
@@ -1533,7 +1533,7 @@ and open the template in the editor.
 
 @media (min-width: 118.75em) {
 	.color-panel {
-		height: 506px;
+		height: 422px;
 	}
 }
 
@@ -1629,11 +1629,15 @@ and open the template in the editor.
 	}
 }
 
-h2#main-content:focus {
+#main-content {
+	margin-top: 1em;
+}
+
+#main-content:focus {
 	outline: none;
 }
 
-h2#main-content + p {
+#main-content + p {
 	font-style: italic;
 	font-family: "Raleway", sans-serif;
 	margin-top: 1.5em;
@@ -1769,45 +1773,19 @@ h2#main-content + p {
 /**
   * Regulate top padding on PAGES
   */
-body:not(.home) .site-content {
-	/* because masthead is set to position: absolute 
-    we have to give site-content top padding */
-	padding-top: 4em;
-}
-
-@media (min-width: 49em) {
-	body:not(.home) .site-content {
-		padding-top: 0;
-	}
-}
-
-.page {
-	/* add bottom padding on main page sections */
-}
-
-.page p#main-content {
-	margin-top: 1em;
-}
-
-.page h2, .page h3,
-.page p#main-content {
-	font-weight: normal;
-}
-
-@media (min-width: 75em) {
-	.page h2, .page h3,
-	.page p#main-content {
-		margin-top: 1.5em;
-	}
-}
-
-.page .page,
-.page .panel-container {
-	padding-bottom: 2.5em;
-}
-
+/*body:not(.home) .site-content {
+    
+     because masthead is set to position: absolute 
+    we have to give site-content top padding 
+    //padding-top: 4em;
+    
+    @media (min-width: 49em) {
+        padding-top: 3.5em;
+    }
+    
+}*/
 /** 
-  * PAGE styles 
+  * general PAGE styles 
   */
 body.page {
 	/** remove top margin on page content on mobile devices */
@@ -1847,6 +1825,7 @@ body.page .entry-footer {
 
 body.page .entry-content {
 	margin-top: 0;
+	padding-bottom: 2em;
 }
 
 /**
@@ -2087,6 +2066,18 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 @media (min-width: 49em) {
 	body.single .comments-area {
 		padding: 0 0;
+	}
+}
+
+@media (min-width: 49em) {
+	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
+		padding-top: 3.5em;
+	}
+}
+
+@media (min-width: 49em) {
+	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
+		padding-top: 3em;
 	}
 }
 

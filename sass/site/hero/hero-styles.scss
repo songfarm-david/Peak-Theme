@@ -78,8 +78,9 @@
     }
 }
 
-h2#main-content {
+#main-content {
     @extend .h3;
+    margin-top: 1em;
     &:focus {
         outline: none;   
     }

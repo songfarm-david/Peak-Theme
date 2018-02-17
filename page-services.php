@@ -36,7 +36,7 @@ get_header(); ?>
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
-                <article class="panel-container">
+                <article id="content-section" class="panel-container">
                     <div class="entry-content panel-content">
 
                     <?php the_content();
@@ -72,7 +72,7 @@ get_header(); ?>
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
-                <article class="panel-container">
+                <article class="panel-container orange">
                     <div class="entry-content panel-content">
 
                     <?php the_content();
@@ -108,7 +108,7 @@ get_header(); ?>
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
-                <article class="panel-container">
+                <article class="panel-container purple">
                     <div class="entry-content panel-content">
 
                     <?php the_content();

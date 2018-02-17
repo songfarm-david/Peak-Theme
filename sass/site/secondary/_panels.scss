@@ -11,12 +11,72 @@ and open the template in the editor.
 .panel-container:nth-child(even):not(.portfolio),
 .panel-container.panel-color {
     background-color: $panel-color; 
-    padding: 0.1em 0 2em 0;
+    //padding-top: 1px;
+    //padding: 0.1em 0 2em 0;
     
 }
 .panel-container.portfolio {
     //border-top: 1px solid #ccc;
     
     background-color: $panel-color;
+}
+
+/**
+ * Services Landing page Service Panels
+ */
+.page-id-2341  {
+    
+    text-align: center;
+    
+    .panel-container {
+        border-top: 1px solid #ddd;
+        
+        &.orange {
+            background-color: #f7f5f2;
+        }
+        
+        &.purple {
+            background-color: #f7f2f7;
+        }
+    }
+    
+    .service-image {
+        max-width: 60%;
+    }
+    
+    /* align odd service to the right */
+    @media #{$tablet__breakpoint} {
+        
+        text-align: left;
+        
+        .panel-container {
+            padding: 1em 0;
+        }
+        
+        .panel-container:nth-child(odd) {
+            text-align: right;
+            
+            .service-image {
+                float: left;
+            }
+        }
+        
+        .service-image {
+            float: right;
+            width: 44%;
+            margin: 0;
+
+        }
+        
+    }
+    
+    @media #{$desktop__breakpoint} {
+        .panel-container {
+            padding-bottom: 3.5em;
+            clear: both;
+        }
+    }
+    
+    
 }
 

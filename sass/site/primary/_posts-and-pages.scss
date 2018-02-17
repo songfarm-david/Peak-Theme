@@ -37,25 +37,8 @@ body:not(.home) .site-content {
     
 }
 
-/**
-  * Regulate top padding on HOME page
-  */
-/*body.home .site-content {
-    
 
-    padding-top: 0;
-    
-    @media #{$tablet__breakpoint} {
-        //padding: 1em 0 0.5em;
-    }
-    
-    @media #{$desktop__breakpoint} {
-        //padding: 2em 0 1em;
-    }
-    
-}*/
-
-body.page .site-content {
+.page {
     
     p#main-content {
         margin-top: 1em;
@@ -69,8 +52,8 @@ body.page .site-content {
         }
     }
     /* add bottom padding on main page sections */
-    article.page,
-    article.panel-container {
+    .page,
+    .panel-container {
         padding-bottom: 2.5em;
         //background: linear-gradient(to right, $color-light 0%, rgb(255, 255, 255) 10%, $color-light 90%);
     }
@@ -106,10 +89,55 @@ body.page {
     .entry-content {
         margin-top: 0;
         @media #{$desktop__breakpoint} {
-            margin-top: 1em;
+            //margin-top: 1em;
         }
     }
     
+}
+
+/**
+ * Service Landing Page
+ */
+#post-2341 {
+    height: 100vh;
+    background-color: $color-light;
+    background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/sm-screen-80-min.jpg);
+    background-size: cover;
+    .services-headline {
+        margin: 0;
+        font-size: 250%;
+        color: $hero-color;
+        padding-top: 1em;
+        text-transform: capitalize;
+        >span {
+            color: $hero-green;
+            font-style: italic;
+        }
+    }
+    .services-byline {
+        font-size: 125%;
+        color: #787878;
+        font-weight: 600;
+        text-shadow: -2px 0px 3px white;
+    }
+    
+    @media #{$tablet__breakpoint} {
+        background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/md-screen-80-min.jpg);
+        
+        text-align: center;
+        .services-headline {
+            padding-top: 2em; 
+            font-size: 3.157em; /* corrects font back to initial size */
+        }
+    }
+    
+    @media #{$desktop__breakpoint} {
+        background-image: url(http://localhost/peak-theme/wp-content/uploads/2018/02/lg-screen-80-min.jpg);
+        
+        .services-headline {
+            padding-top: 3em;
+        }
+    }
 }
 
 /**

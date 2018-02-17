@@ -26,6 +26,22 @@
         text-shadow: -2px 0px 3px white;
     }
     
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0);
+        },
+        50% {
+            transform: translateY(30px);        }
+        }
+    
+    .services-byline + p > a > i {
+        font-size: 3.7em;
+        animation: float 1s ease-in-out infinite both;
+        @media #{$tablet__breakpoint} {
+            
+        }
+    }
+    
     @media #{$tablet__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
         

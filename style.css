@@ -2305,6 +2305,37 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	text-shadow: -2px 0px 3px white;
 }
 
+@-webkit-keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+@keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+#post-2341 .services-byline + p > a > i,
+#post-2517 .services-byline + p > a > i {
+	font-size: 3.7em;
+	-webkit-animation: float 1s ease-in-out infinite both;
+	        animation: float 1s ease-in-out infinite both;
+}
+
 @media (min-width: 49em) {
 	#post-2341,
 	#post-2517 {

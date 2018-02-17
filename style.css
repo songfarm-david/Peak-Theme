@@ -1773,51 +1773,20 @@ and open the template in the editor.
 /**
   * Regulate top padding on PAGES not Home
   */
-body:not(.home) .site-content {
+body:not(.home):not(.page-id-2341) .site-content {
 	/*     because masthead is set to position: absolute 
     we have to give site-content top padding */
-<<<<<<< HEAD
-	padding-top: 4em;
-}
-
-@media (min-width: 49em) {
-	body:not(.home) .site-content {
-		padding-top: 0;
-	}
-}
-
-/**
- * Add padding on pages that don't display a color panel
- *
- * 1722: Contact Page
- * 1718: About Peak
- * 2409: Blog
- */
-@media (min-width: 49em) {
-	.post-1722, .post-1718, body.blog #content, body.single #content {
-		padding-top: 75px;
-		padding-top: 3em;
-	}
-}
-
-body.page .site-content {
-	/* add bottom padding on main page sections */
-}
-
-body.page .site-content p#main-content {
-	margin-top: 1em;
-}
-
-body.page .site-content h2, body.page .site-content h3,
-body.page .site-content p#main-content {
-	font-weight: normal;
-=======
 	padding-top: 3.6em;
->>>>>>> siteContent-topPad
+}
+
+@media (min-width: 49em) {
+	body:not(.home):not(.page-id-2341) .site-content {
+		padding-top: 3.4em;
+	}
 }
 
 @media (min-width: 75em) {
-	body:not(.home) .site-content {
+	body:not(.home):not(.page-id-2341) .site-content {
 		padding-top: 3.1em;
 	}
 }
@@ -1870,23 +1839,24 @@ body.page .entry-content {
   * Set content width for Blog index and Single blog posts
   */
 @media (min-width: 49em) {
-	body.blog .site-content,
-	body.single .site-content {
+	body.blog #content.site-content,
+	body.single #content.site-content {
 		margin: 0 auto;
+		padding-top: 5.4em;
 		max-width: 40em;
 	}
 }
 
 @media (min-width: 75em) {
-	body.blog .site-content,
-	body.single .site-content {
+	body.blog #content.site-content,
+	body.single #content.site-content {
 		max-width: 44em;
 	}
 }
 
 @media (min-width: 118.75em) {
-	body.blog .site-content,
-	body.single .site-content {
+	body.blog #content.site-content,
+	body.single #content.site-content {
 		max-width: 48em;
 		max-width: 46em;
 	}
@@ -2104,18 +2074,6 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 @media (min-width: 49em) {
 	body.single .comments-area {
 		padding: 0 0;
-	}
-}
-
-@media (min-width: 49em) {
-	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
-		padding-top: 3.5em;
-	}
-}
-
-@media (min-width: 49em) {
-	.page-id-1718 .site-content, .page-id-1722 .site-content, .blog .site-content {
-		padding-top: 3em;
 	}
 }
 

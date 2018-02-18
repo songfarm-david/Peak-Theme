@@ -1702,6 +1702,12 @@ and open the template in the editor.
 	}
 }
 
+#blog-about-peak .service-container,
+.hero-call .service-container,
+.hero-section .service-container {
+	padding-bottom: 2em;
+}
+
 #blog-about-peak .service-container h3,
 .hero-call .service-container h3,
 .hero-section .service-container h3 {

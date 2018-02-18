@@ -82,7 +82,7 @@
   
 </article>
 
-<!--This has been replace currently by a site wide CTA-->
+<!--SEO Services In-Detail-->
 <article class="hero-section">
     <div class="intro-container">
         <h2>SEO Services:</h2>     
@@ -103,7 +103,7 @@
         <p>Content is at the heart of ranking in Search Engines and is the vehicle for the keywords that people are searching for. However, creating content is demanding and not all businesses are positioned to allow for this increased demand.</p>
         <p>Peak Websites understands the importance of quality content, creating a network of professional writers that are able to produce informative and value-driven content in any niche.</p>
         <p>Combined with our in-depth keyword research and On-Page optimization, we make it easier than ever to produce web pages that will rank.</p>
-        <a href="<?php echo get_permalink( '2376' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Learn more about Content Creation</a>
+        <a href="<?php echo get_permalink( '2376' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Learn about Content Creation</a>
     </div>
     <div class="service-container">
         <h3>Strategic SEO Campaign</h3>

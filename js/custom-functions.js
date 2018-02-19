@@ -54,10 +54,8 @@
                             } 
                             // if is tablet viewport
                             else if ( $(window).width() > 768 ) {
-                                console.log('middle');
                                 scrollToPosition = $(target).offset().top;
                             } else {
-                                console.log('smallest');
                                 scrollToPosition = $(target).offset().top;
                             }
                         }

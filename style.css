@@ -2427,6 +2427,62 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 }
 
 /*--------------------------------------------------------------
+## Services Sections
+--------------------------------------------------------------*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-Feb-2018, 3:56:07 PM
+    Author     : David
+*/
+#maintenance-how-works {
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	margin: 2em 0;
+}
+
+#maintenance-how-works .step-container {
+	box-shadow: -1px -1px 8px 1px rgba(0, 0, 0, 0.25);
+	display: block;
+	width: 100%;
+	background-color: #F2F7F2;
+	margin-bottom: 1em;
+	padding: 1em;
+}
+
+#maintenance-how-works .step-container:last-child {
+	margin-bottom: 0;
+}
+
+#maintenance-how-works .step-container > img {
+	display: block;
+	margin: auto;
+	margin-bottom: 1em;
+}
+
+#maintenance-how-works .step-container > p {
+	font-weight: bold;
+	font-size: 90%;
+}
+
+@media (min-width: 49em) {
+	#maintenance-how-works {
+		-ms-flex-wrap: nowrap;
+		    flex-wrap: nowrap;
+	}
+	#maintenance-how-works .step-container {
+		margin: 0 0.5em;
+	}
+}
+
+/*--------------------------------------------------------------
 ## Compass
 --------------------------------------------------------------*/
 /*

@@ -10,9 +10,9 @@
     background-size: cover;
     .services-headline {
         margin: 0;
-        font-size: 250%;
+        font-size: 200%;
         color: $hero-color;
-        padding-top: 1em;
+        padding-top: 2.5em;
         text-transform: capitalize;
         >span {
             color: $hero-green;
@@ -20,7 +20,7 @@
         }
     }
     .services-byline {
-        font-size: 125%;
+        font-size: 100%;
         color: #787878;
         font-weight: 600;
         text-shadow: -2px 0px 3px white;
@@ -50,6 +50,9 @@
             padding-top: 2em; 
             font-size: 3.157em; /* corrects font back to initial size */
         }
+        .services-byline {
+            font-size: 125%;
+        }
     }
     
     @media #{$desktop__breakpoint} {
@@ -74,6 +77,10 @@
     
     .panel-container {
         border-top: 1px solid #ddd;
+        padding-top: 3.1em;
+        h2 {
+            margin-top: 0.5em;
+        }
         
         &.orange {
             background-color: #f7f5f2;
@@ -94,7 +101,7 @@
         text-align: left;
         
         .panel-container {
-            padding: 1em 0;
+            //padding: 1em 0;
         }
         
         .panel-container:nth-child(odd) {

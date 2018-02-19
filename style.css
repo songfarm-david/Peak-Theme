@@ -1777,22 +1777,23 @@ and open the template in the editor.
 }
 
 /**
-  * Regulate top padding on PAGES not Home
-  */
-body:not(.home):not(.page-id-2517) .site-content {
+ * Regulate top padding on PAGES not Home
+ * (second page ID is localhost)
+ */
+body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
 	/*     because masthead is set to position: absolute 
     we have to give site-content top padding */
 	padding-top: 3.6em;
 }
 
 @media (min-width: 49em) {
-	body:not(.home):not(.page-id-2517) .site-content {
+	body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
 		padding-top: 3.4em;
 	}
 }
 
 @media (min-width: 75em) {
-	body:not(.home):not(.page-id-2517) .site-content {
+	body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
 		padding-top: 3.1em;
 	}
 }
@@ -2285,9 +2286,9 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 #post-2341 .services-headline,
 #post-2517 .services-headline {
 	margin: 0;
-	font-size: 250%;
+	font-size: 200%;
 	color: #385f7e;
-	padding-top: 1em;
+	padding-top: 2.5em;
 	text-transform: capitalize;
 }
 
@@ -2299,7 +2300,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 
 #post-2341 .services-byline,
 #post-2517 .services-byline {
-	font-size: 125%;
+	font-size: 100%;
 	color: #787878;
 	font-weight: 600;
 	text-shadow: -2px 0px 3px white;
@@ -2348,6 +2349,10 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 		font-size: 3.157em;
 		/* corrects font back to initial size */
 	}
+	#post-2341 .services-byline,
+	#post-2517 .services-byline {
+		font-size: 125%;
+	}
 }
 
 @media (min-width: 75em) {
@@ -2376,6 +2381,12 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 .page-id-2341 .panel-container,
 .page-id-2517 .panel-container {
 	border-top: 1px solid #ddd;
+	padding-top: 3.1em;
+}
+
+.page-id-2341 .panel-container h2,
+.page-id-2517 .panel-container h2 {
+	margin-top: 0.5em;
 }
 
 .page-id-2341 .panel-container.orange,
@@ -2397,10 +2408,6 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	.page-id-2341,
 	.page-id-2517 {
 		text-align: left;
-	}
-	.page-id-2341 .panel-container,
-	.page-id-2517 .panel-container {
-		padding: 1em 0;
 	}
 	.page-id-2341 .panel-container:nth-child(odd),
 	.page-id-2517 .panel-container:nth-child(odd) {

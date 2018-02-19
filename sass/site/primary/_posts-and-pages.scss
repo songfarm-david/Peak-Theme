@@ -23,9 +23,10 @@
 }
 
 /**
-  * Regulate top padding on PAGES not Home
-  */
-body:not(.home):not(.page-id-2517) .site-content {
+ * Regulate top padding on PAGES not Home
+ * (second page ID is localhost)
+ */
+body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
     
 /*     because masthead is set to position: absolute 
     we have to give site-content top padding */

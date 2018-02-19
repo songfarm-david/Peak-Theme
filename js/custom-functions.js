@@ -50,13 +50,15 @@
                         } else {
                             // if is desktop viewport
                             if ( $(window).width() > 1200 ) {
-                                scrollToPosition = $(target).offset().top - 26;
+                                scrollToPosition = $(target).offset().top;
                             } 
                             // if is tablet viewport
                             else if ( $(window).width() > 768 ) {
-                                scrollToPosition = $(target).offset().top - 36;
+                                console.log('middle');
+                                scrollToPosition = $(target).offset().top;
                             } else {
-                                scrollToPosition = $(target).offset().top - 36;
+                                console.log('smallest');
+                                scrollToPosition = $(target).offset().top;
                             }
                         }
                         

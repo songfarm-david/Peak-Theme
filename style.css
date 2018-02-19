@@ -2502,17 +2502,28 @@ and open the template in the editor.
     Author     : David
 */
 #post-1735 {
+	padding: 2.5em 0;
+}
+
+#post-1735 > .entry-content {
 	position: relative;
-	/*    background-image: url( 'http://localhost/peak-theme/wp-content/themes/peak-theme/assets/images/compass-grey_2.png' );
-    background-repeat: no-repeat;
-    background-position: -40% -300%;*/
+}
+
+#post-1735 p {
+	position: static;
 }
 
 #post-1735 .compass-bg {
 	position: absolute;
 	z-index: -1;
-	bottom: -150px;
+	top: 0;
 	right: -50%;
+}
+
+@media (min-width: 49em) {
+	#post-1735 .compass-bg {
+		right: -80%;
+	}
 }
 
 @media (min-width: 75em) {
@@ -2521,12 +2532,6 @@ and open the template in the editor.
 		right: -70%;
 		width: 1000px;
 		height: auto;
-	}
-}
-
-@media (min-width: 49em) {
-	#post-1735 {
-		/*background-position: 300% -300%;*/
 	}
 }
 
@@ -2758,6 +2763,10 @@ and open the template in the editor.
 		-ms-flex-pack: distribute;
 		    justify-content: space-around;
 	}
+}
+
+.footer-widgets {
+	text-align: left;
 }
 
 /*--------------------------------------------------------------

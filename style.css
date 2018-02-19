@@ -1779,20 +1779,20 @@ and open the template in the editor.
 /**
   * Regulate top padding on PAGES not Home
   */
-body:not(.home):not(.page-id-2341) .site-content {
+body:not(.home):not(.page-id-2517) .site-content {
 	/*     because masthead is set to position: absolute 
     we have to give site-content top padding */
 	padding-top: 3.6em;
 }
 
 @media (min-width: 49em) {
-	body:not(.home):not(.page-id-2341) .site-content {
+	body:not(.home):not(.page-id-2517) .site-content {
 		padding-top: 3.4em;
 	}
 }
 
 @media (min-width: 75em) {
-	body:not(.home):not(.page-id-2341) .site-content {
+	body:not(.home):not(.page-id-2517) .site-content {
 		padding-top: 3.1em;
 	}
 }

@@ -1,4 +1,4 @@
-/* 
+/*
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
@@ -39,25 +39,25 @@
             margin: 0;
         }
         .hero-byline,
-        //.peak-button 
+        //.peak-button
         {
             font-size: 125%;
         }
-        
+
         @media #{$tablet__breakpoint} {
             margin: 3em auto 0;
             //padding: 3em 0.5em 2em;
 
             max-width: 34em;
 
-            @include font-size(1.125);
+            //@include font-size(1.125);
 
         }
-        
+
         @media #{$desktop__breakpoint} {
             text-align: left;
             max-width: 38em;
-            @include font-size(1.250);
+            //@include font-size(1.250);
             margin-top: 6.5em;
             .hero-headline {
                 line-height: $line-height-header;
@@ -66,13 +66,13 @@
                 margin-top: 1em;
             }
         }
-        
+
         @media #{$lg-desktop__breakpoint} {
             max-width: 41.5em;
-            @include font-size(1.375);
+            //@include font-size(1.375);
         }
     }
-    
+
     @media #{$desktop__breakpoint} {
         padding-top: 3.5em;
     }
@@ -82,9 +82,9 @@
     @extend .h3;
     margin-top: 1em;
     &:focus {
-        outline: none;   
+        outline: none;
     }
-    
+
     & + p {
         font-style: italic;
         font-family: $font__header;
@@ -119,7 +119,7 @@
         >p {
             font-size: 125%;
             margin-bottom: 2em;
-        } 
+        }
     }
     .intro-container,
     .service-container {
@@ -129,7 +129,7 @@
         }
     }
     .service-container {
-        
+
         //@include border(4px);
         padding-bottom: 2em;
         h3 {
@@ -148,10 +148,10 @@
         @media #{$lg-desktop__breakpoint} {
             max-width: 48em;
             width: 43%;
-        }    
+        }
     }
-        
-    
+
+
     a:hover:not(.peak-button) {
         color: $hero-green;
     }

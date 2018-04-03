@@ -2,7 +2,7 @@
  * Created on : 11-Feb-2018, 9:23:18 PM
  * Author     : David
  *
- * 
+ *
  */
 
 #page-cta {
@@ -15,6 +15,7 @@
     box-shadow: 0px 4px 25px 0px $hero-color-transparent;
     position: relative;
     z-index: 10;
+    padding: 1em 0.5em;
     .cta-heading {
         font-weight: bolder;
     }
@@ -28,9 +29,8 @@
     .peak-button {
         margin-bottom: 3em;
     }
-    
+
     @media #{$desktop__breakpoint} {
         background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png');
     }
 }
-

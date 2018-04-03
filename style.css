@@ -398,8 +398,8 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: "Titillium Web", sans-serif;
-	font-size: 18px;
-	font-size: 1.125rem;
+	font-size: 20px;
+	font-size: 1rem;
 	line-height: 1.5;
 	/* Media Breakpoints for Responsive Typography */
 	/*        h2,
@@ -416,8 +416,8 @@ textarea {
 	select,
 	optgroup,
 	textarea {
-		font-size: 20px;
-		font-size: 1.25rem;
+		font-size: 23px;
+		font-size: 1.15rem;
 	}
 }
 
@@ -428,8 +428,8 @@ textarea {
 	select,
 	optgroup,
 	textarea {
-		font-size: 22.5px;
-		font-size: 1.40625rem;
+		font-size: 26px;
+		font-size: 1.3rem;
 	}
 }
 
@@ -440,12 +440,17 @@ textarea {
 	select,
 	optgroup,
 	textarea {
-		font-size: 25px;
-		font-size: 1.5625rem;
+		font-size: 29px;
+		font-size: 1.45rem;
 	}
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	clear: both;
 	font-family: "Raleway", sans-serif;
 	line-height: 1.25;
@@ -461,19 +466,42 @@ h1,
 	font-size: 3.157em;
 }
 
+@media (min-width: 49em) {
+	h1,
+	.h1 {
+		font-size: 3.157em;
+	}
+}
+
 h2,
 .h2,
+.page .entry-header .entry-title,
 body.blog .post .entry-header .entry-title,
 body.single .post .entry-header .entry-title,
 body.archive .post .entry-header .entry-title,
-.archive .page-title {
+.archive .page-title,
+#post-2341 .services-headline,
+#post-2517 .services-headline {
 	font-size: 2.369em;
+}
+
+@media (min-width: 49em) {
+	h2,
+	.h2,
+	.page .entry-header .entry-title,
+	body.blog .post .entry-header .entry-title,
+	body.single .post .entry-header .entry-title,
+	body.archive .post .entry-header .entry-title,
+	.archive .page-title,
+	#post-2341 .services-headline,
+	#post-2517 .services-headline {
+		font-size: 2.369em;
+	}
 }
 
 h3,
 .h3,
-#main-content,
-.page .entry-header .entry-title {
+#main-content {
 	font-size: 1.777em;
 	font-weight: normal;
 }
@@ -538,7 +566,7 @@ pre {
 	background: #eee;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 18.75px;
-	font-size: 1.17188rem;
+	font-size: 0.9375rem;
 	line-height: 1.6;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -550,7 +578,7 @@ pre {
 code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	font-size: 18.75px;
-	font-size: 1.17188rem;
+	font-size: 0.9375rem;
 }
 
 abbr, acronym {
@@ -646,7 +674,7 @@ input[type="submit"] {
 	background: #e6e6e6;
 	color: rgba(0, 0, 0, 0.8);
 	font-size: 15px;
-	font-size: 0.9375rem;
+	font-size: 0.75rem;
 	line-height: 1;
 	padding: .6em 1em .4em;
 }
@@ -1157,7 +1185,7 @@ a:hover, a:active {
 	color: #21759b;
 	display: block;
 	font-size: 17.5px;
-	font-size: 1.09375rem;
+	font-size: 0.875rem;
 	font-weight: bold;
 	height: auto;
 	left: 5px;
@@ -1403,7 +1431,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 /**
-  * (flex) center vertically header/branding content 
+  * (flex) center vertically header/branding content
   */
 .custom-logo-link,
 .site-branding-text-container,
@@ -1475,11 +1503,18 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	font-size: 1.777em;
 	line-height: normal;
 	font-weight: 300;
+	display: none;
 }
 
 .site-title a {
 	text-decoration: none;
 	white-space: nowrap;
+}
+
+@media (min-width: 49em) {
+	.site-title {
+		display: block;
+	}
 }
 
 .site-description {
@@ -1540,7 +1575,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Hero styles
 --------------------------------------------------------------*/
-/* 
+/*
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
@@ -1594,8 +1629,6 @@ and open the template in the editor.
 	#hero-banner .hero-headline-container {
 		margin: 3em auto 0;
 		max-width: 34em;
-		font-size: 22.5px;
-		font-size: 1.40625rem;
 	}
 }
 
@@ -1603,8 +1636,6 @@ and open the template in the editor.
 	#hero-banner .hero-headline-container {
 		text-align: left;
 		max-width: 38em;
-		font-size: 25px;
-		font-size: 1.5625rem;
 		margin-top: 6.5em;
 	}
 	#hero-banner .hero-headline-container .hero-headline {
@@ -1618,8 +1649,6 @@ and open the template in the editor.
 @media (min-width: 118.75em) {
 	#hero-banner .hero-headline-container {
 		max-width: 41.5em;
-		font-size: 27.5px;
-		font-size: 1.71875rem;
 	}
 }
 
@@ -1756,26 +1785,88 @@ and open the template in the editor.
   * Page Headers Banners 
   */
 .page .entry-header {
-	background-color: #385f7e;
-	background: linear-gradient(95deg, #213647, #385f7e 65%, #b2d6f3 99%);
-	padding: 0.5em 0;
+	background-color: #EAF1F7;
+	text-align: center;
+	padding: 1em 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
 }
 
 .page .entry-header .entry-title {
-	color: white;
+	color: #385f7e;
+	font-weight: bold;
 	line-height: 1.25;
 	margin: 0;
 }
 
 @media (min-width: 49em) {
 	.page .entry-header {
-		padding: 0.5em 0 0.75em;
+		padding: 1.5em 0;
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
 	}
 	.page .entry-header .entry-title {
 		font-size: 3.157em;
 	}
 }
 
+@media (min-width: 49em) and (min-width: 49em) {
+	.page .entry-header .entry-title {
+		font-size: 3.157em;
+	}
+}
+
+@media (min-width: 75em) {
+	.page .entry-header {
+		padding: 2.5em 0;
+		margin-bottom: 1em;
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
+	}
+}
+
+/** 
+ * Web Maintenance, Content Creation, Contact 
+ * (first line is local, second line is prod)
+ */
+.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
+}
+
+@media (min-width: 49em) {
+	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
+	}
+}
+
+@media (min-width: 75em) {
+	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
+	}
+}
+
+/** SEO, About Peak */
+.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
+}
+
+@media (min-width: 49em) {
+	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
+	}
+}
+
+@media (min-width: 75em) {
+	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
+	}
+}
+
+/**
+ * Divide pages by page-id and apply different background colors by page
+ */
 /**
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
@@ -2232,7 +2323,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
  * Created on : 11-Feb-2018, 9:23:18 PM
  * Author     : David
  *
- * 
+ *
  */
 #page-cta {
 	color: #EAF1F7;
@@ -2244,6 +2335,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
 	position: relative;
 	z-index: 10;
+	padding: 1em 0.5em;
 }
 
 #page-cta .cta-heading {
@@ -2286,7 +2378,6 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 #post-2341 .services-headline,
 #post-2517 .services-headline {
 	margin: 0;
-	font-size: 200%;
 	color: #385f7e;
 	padding-top: 2.5em;
 	text-transform: capitalize;
@@ -2311,7 +2402,6 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 		-webkit-transform: translateY(0);
 		        transform: translateY(0);
 	}
-	
 	50% {
 		-webkit-transform: translateY(30px);
 		        transform: translateY(30px);
@@ -2323,7 +2413,6 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 		-webkit-transform: translateY(0);
 		        transform: translateY(0);
 	}
-	
 	50% {
 		-webkit-transform: translateY(30px);
 		        transform: translateY(30px);
@@ -2370,7 +2459,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
  * Services Landing page Service Panels
  *
  * first page id is local environment
- * second id is production 
+ * second id is production
  */
 .page-id-2341,
 .page-id-2517 {
@@ -2387,6 +2476,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 .page-id-2341 .panel-container h2,
 .page-id-2517 .panel-container h2 {
 	margin-top: 0.5em;
+	color: #385f7e;
 }
 
 .page-id-2341 .panel-container.orange,
@@ -2841,7 +2931,7 @@ and open the template in the editor.
 	margin-top: 0;
 	margin-bottom: .5em;
 	font-weight: bold;
-	color: #213647;
+	color: #385f7e;
 }
 
 /* Archive and Categories widgets */

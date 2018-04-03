@@ -1,8 +1,16 @@
+//@import 'modularscale';
+// $modularscale: (
+//   base: 1em,
+//   ratio: 1.333
+// );
+
 // Rem output with px fallback
 @mixin font-size($sizeValue: 1) {
 	font-size: ($sizeValue * 20) * 1px;
-	font-size: $sizeValue * 1.25rem;
+	font-size: $sizeValue * 1rem;
 }
+
+
 
 // Center block
 @mixin center-block {

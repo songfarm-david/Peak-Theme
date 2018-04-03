@@ -2,81 +2,138 @@
 
 /** Custom styles **/
 /**
-  * Page Headers Banners 
+  * Page Headers Banners
   */
 .page .entry-header {
-    background-color: $hero-color;
-    @include header-linear-gradient;
-    padding: 0.5em 0;
+    background-color: $color-light;
+    //@include header-linear-gradient;
+    text-align: center;
+    padding: 1em 0;
+    background-size: cover;
+    background-repeat: no-repeat;
     .entry-title {
-        color: white; 
+        color: $hero-color;
+        font-weight: bold;
         line-height: $line-height-header;
         margin: 0;
-        @extend .h3;
-    }  
+        @extend .h2;
+    }
+
+    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
+
     @media #{$tablet__breakpoint} {
-        padding: 0.5em 0 0.75em;
+        padding: 1.5em 0;
         .entry-title {
             @include heading-1;
         }
+
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
+
+    }
+    @media #{$desktop__breakpoint} {
+        padding: 2.5em 0;
+        margin-bottom: 1em;
+
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
+
     }
 }
+
+/**
+ * Web Maintenance, Content Creation, Contact
+ * (first line is local, second line is prod)
+ */
+.page-id-2410, .page-id-2314, .page-id-1722,
+.page-id-2541, .page-id-2376 {
+
+    .entry-header {
+       background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
+       @media #{$tablet__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
+       }
+       @media #{$desktop__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
+       }
+    }
+
+}
+
+
+/** SEO, About Peak */
+.page-id-1743, .page-id-1718 {
+
+    .entry-header {
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
+        @media #{$tablet__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
+        }
+        @media #{$desktop__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
+        }
+    }
+
+}
+/**
+ * Divide pages by page-id and apply different background colors by page
+ */
+
+
 
 /**
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
  */
 body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
-    
-/*     because masthead is set to position: absolute 
+
+/*     because masthead is set to position: absolute
     we have to give site-content top padding */
 
     padding-top: 3.6em;
-    
+
     @media #{$tablet__breakpoint} {
         padding-top: 3.4em;
     }
-    
+
     @media #{$desktop__breakpoint} {
         padding-top: 3.1em;
     }
 }
 
-/** 
- * Hide overflow in main content area site-wide 
+/**
+ * Hide overflow in main content area site-wide
  */
 .page {
     .content-area {
         overflow: hidden;
-    }    
+    }
 }
-    
-/** 
-  * general PAGE styles 
+
+/**
+  * general PAGE styles
   */
 body.page {
-    
+
     .entry-header > div,
     .entry-content,
     .entry-footer {
 
         padding: 0 1em;
 
-        @media #{$tablet__breakpoint} {     
+        @media #{$tablet__breakpoint} {
             margin: 0 auto;
             @include tablet_width;
         }
 
-        @media #{$desktop__breakpoint} {       
+        @media #{$desktop__breakpoint} {
             @include desktop_width;
         }
 
-        @media #{$lg-desktop__breakpoint} {     
-            @include lg-desktop_width;            
+        @media #{$lg-desktop__breakpoint} {
+            @include lg-desktop_width;
         }
 
-    } 
-    
+    }
+
     /** remove top margin on page content on mobile devices */
     .entry-content {
         margin-top: 0;
@@ -86,7 +143,7 @@ body.page {
             //margin-top: 1em;
         }
     }
-    
+
 }
 
 /**
@@ -95,37 +152,37 @@ body.page {
 body.blog,
 body.single {
     #content.site-content {
-        @media #{$tablet__breakpoint} {     
+        @media #{$tablet__breakpoint} {
             margin: 0 auto;
             padding-top: 5.4em;
             @include tablet_width;
         }
-        @media #{$desktop__breakpoint} {       
+        @media #{$desktop__breakpoint} {
             @include desktop_width;
         }
-        @media #{$lg-desktop__breakpoint} {     
-            @include lg-desktop_width;            
+        @media #{$lg-desktop__breakpoint} {
+            @include lg-desktop_width;
         }
     }
 }
 
 /**
-  * POST styles 
+  * POST styles
   */
 body.blog,
 body.single,
 body.archive {
-    
+
     /* article post styles */
     .post {
-        
+
         @include box-shadow;
         @include border(1px, $color-dark );
-        margin-bottom: 1.5em;    
+        margin-bottom: 1.5em;
         padding: 0 1em 1em;
-        
+
         .entry-header {
-            
+
             // make featured image attachment full width and responsive
             img[class*="attachment-"] {
                 width: 100%;
@@ -164,7 +221,7 @@ body.archive {
             > img {
                 vertical-align: middle;
             }
-        }    
+        }
         .entry-content {
             margin-top: 0;
         }
@@ -173,15 +230,15 @@ body.archive {
             font-style: italic;
             display: inline-block;
             margin-bottom: 1em;
-            
+
         }
 
         img[class*="wp-image-"] {
             @include border(4px, $color-dark);
             //padding: 0.25em;
         }
-    }  
-    
+    }
+
     // headings
     h3 {
         font-weight: bold;
@@ -190,30 +247,30 @@ body.archive {
     h6 {
         color: $hero-color;
     }
-    
+
     .site-content {
-        
+
         display: flex;
         flex-wrap: wrap;
 
-        @media #{$desktop__breakpoint} {       
+        @media #{$desktop__breakpoint} {
             @include desktop_width;
             flex-wrap: nowrap;
             justify-content: space-between;
         }
 
     }
-    
+
     #primary {
-        
+
         @media #{$desktop__breakpoint} {
             flex: 0 0 63%;
         }
-        
+
     }
-    
+
     #secondary {
-        
+
         //display: none;
         padding-top: 1.65em;
         background-color: $color-light;
@@ -222,17 +279,17 @@ body.archive {
         .widget_custom_html {
             display: none;
         }
-        
-        @media #{$desktop__breakpoint} {     
+
+        @media #{$desktop__breakpoint} {
             display: block;
             padding-top: 1.65em;
             flex: 0 0 33%;
-            
+
             .widget_custom_html {
                 display: block;
             }
         }
-        
+
     }
 }
 
@@ -240,7 +297,7 @@ body.archive {
   * Single Blog posts
   */
 body.single {
-    
+
     .entry-header .entry-title,
     h2,
     h3,
@@ -248,21 +305,21 @@ body.single {
         color: $hero-color;
     }
     .entry-header .entry-title {
-        line-height: $line-height-header;   
+        line-height: $line-height-header;
     }
-    
+
     figure, figcaption {
         //display: none;
         width: auto !important;
     }
-    
+
     .post .entry-footer {
         .cat-links {
             margin: 1.5em 0 0;
             display: inline-block;
         }
     }
-    
+
     .comments-area {
         padding: 0 1em;
         margin-top: 1em;
@@ -292,13 +349,13 @@ body.single {
                 @extend .font-small;
             }
         }
-        
+
         @media #{$tablet__breakpoint} {
             padding: 0 0;
         }
     }
-    
-    
+
+
 }
 
 /**
@@ -327,7 +384,7 @@ body.single {
  * Portfolio item styles
  */
 body.single.post-template-single-portfolio-item {
-    
+
     .site-content {
         @media #{$desktop__breakpoint} {
             max-width: 90%;
@@ -346,14 +403,14 @@ body.single.post-template-single-portfolio-item {
         //@include border;
         flex-basis: 100%;
     }
-    
+
     /* styles for the main image */
     img.website-img-full {
         margin-bottom: 1em;
         border: 0px solid #fff !important;
         @include box-shadow;
     }
-    
+
     .entry-footer {
         border-top: 1px solid #ccc;
         padding-top: 1em;
@@ -381,7 +438,7 @@ body.single.post-template-single-portfolio-item {
             }
         }
     }
-    
+
 }
 
 .sticky {

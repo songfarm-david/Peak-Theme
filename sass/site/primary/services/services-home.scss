@@ -10,7 +10,8 @@
     background-size: cover;
     .services-headline {
         margin: 0;
-        font-size: 200%;
+        //font-size: 1.777em;
+        @extend .h2;
         color: $hero-color;
         padding-top: 2.5em;
         text-transform: capitalize;
@@ -25,39 +26,41 @@
         font-weight: 600;
         text-shadow: -2px 0px 3px white;
     }
-    
+
     @keyframes float {
         0%, 100% {
             transform: translateY(0);
-        },
-        50% {
-            transform: translateY(30px);        }
         }
-    
+        50% {
+            transform: translateY(30px);
+         }
+     }
+
     .services-byline + p > a > i {
         font-size: 3.7em;
         animation: float 1s ease-in-out infinite both;
         @media #{$tablet__breakpoint} {
-            
+
         }
     }
-    
+
     @media #{$tablet__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
-        
         text-align: center;
         .services-headline {
-            padding-top: 2em; 
-            font-size: 3.157em; /* corrects font back to initial size */
+            padding-top: 2em;
+            @extend .h1;
+            //font-size: 3.157em; /* corrects font back to initial size */
+
         }
         .services-byline {
             font-size: 125%;
         }
     }
-    
+
     @media #{$desktop__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
-        
+
         .services-headline {
             padding-top: 3em;
         }
@@ -68,65 +71,66 @@
  * Services Landing page Service Panels
  *
  * first page id is local environment
- * second id is production 
+ * second id is production
  */
 .page-id-2341,
 .page-id-2517 {
-    
+
     text-align: center;
-    
+
     .panel-container {
         border-top: 1px solid #ddd;
         padding-top: 3.1em;
         h2 {
             margin-top: 0.5em;
+            color: $hero-color;
         }
-        
+
         &.orange {
             background-color: #f7f5f2;
         }
-        
+
         &.purple {
             background-color: #f7f2f7;
         }
     }
-    
+
     .service-image {
         max-width: 60%;
     }
-    
+
     /* align odd service to the right */
     @media #{$tablet__breakpoint} {
-        
+
         text-align: left;
-        
+
         .panel-container {
             //padding: 1em 0;
         }
-        
+
         .panel-container:nth-child(odd) {
             text-align: right;
-            
+
             .service-image {
                 float: left;
             }
         }
-        
+
         .service-image {
             float: right;
             width: 44%;
             margin: 0;
 
         }
-        
+
     }
-    
+
     @media #{$desktop__breakpoint} {
         .panel-container {
             padding-bottom: 3.5em;
             clear: both;
         }
     }
-    
-    
+
+
 }

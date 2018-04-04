@@ -88,7 +88,8 @@ body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
 /*     because masthead is set to position: absolute
     we have to give site-content top padding */
 
-    padding-top: 3.6em;
+    // updated Apr. 2, 2018
+    padding-top: 3.61em;
 
     @media #{$tablet__breakpoint} {
         padding-top: 3.4em;

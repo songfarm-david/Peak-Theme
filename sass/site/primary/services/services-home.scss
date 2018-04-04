@@ -11,7 +11,8 @@
     .services-headline {
         margin: 0;
         //font-size: 1.777em;
-        @extend .h2;
+        //@extend .h2;
+        font-size: 2.369em; // taken from typography/headings h2
         color: $hero-color;
         padding-top: 2.5em;
         text-transform: capitalize;
@@ -21,7 +22,7 @@
         }
     }
     .services-byline {
-        font-size: 100%;
+        font-size: 110%;
         color: #787878;
         font-weight: 600;
         text-shadow: -2px 0px 3px white;
@@ -49,7 +50,8 @@
         text-align: center;
         .services-headline {
             padding-top: 2em;
-            @extend .h1;
+            //@extend .h1;
+            font-size: 3.157em;
             //font-size: 3.157em; /* corrects font back to initial size */
 
         }

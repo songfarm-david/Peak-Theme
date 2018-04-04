@@ -398,8 +398,8 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: "Titillium Web", sans-serif;
-	font-size: 20px;
-	font-size: 1rem;
+	font-size: 22px;
+	font-size: 1.1rem;
 	line-height: 1.5;
 	/* Media Breakpoints for Responsive Typography */
 	/*        h2,
@@ -479,9 +479,7 @@ h2,
 body.blog .post .entry-header .entry-title,
 body.single .post .entry-header .entry-title,
 body.archive .post .entry-header .entry-title,
-.archive .page-title,
-#post-2341 .services-headline,
-#post-2517 .services-headline {
+.archive .page-title {
 	font-size: 2.369em;
 }
 
@@ -492,9 +490,7 @@ body.archive .post .entry-header .entry-title,
 	body.blog .post .entry-header .entry-title,
 	body.single .post .entry-header .entry-title,
 	body.archive .post .entry-header .entry-title,
-	.archive .page-title,
-	#post-2341 .services-headline,
-	#post-2517 .services-headline {
+	.archive .page-title {
 		font-size: 2.369em;
 	}
 }
@@ -1782,7 +1778,7 @@ and open the template in the editor.
 --------------------------------------------------------------*/
 /** Custom styles **/
 /**
-  * Page Headers Banners 
+  * Page Headers Banners
   */
 .page .entry-header {
 	background-color: #EAF1F7;
@@ -1824,8 +1820,8 @@ and open the template in the editor.
 	}
 }
 
-/** 
- * Web Maintenance, Content Creation, Contact 
+/**
+ * Web Maintenance, Content Creation, Contact
  * (first line is local, second line is prod)
  */
 .page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
@@ -1872,9 +1868,9 @@ and open the template in the editor.
  * (second page ID is localhost)
  */
 body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
-	/*     because masthead is set to position: absolute 
+	/*     because masthead is set to position: absolute
     we have to give site-content top padding */
-	padding-top: 3.6em;
+	padding-top: 3.61em;
 }
 
 @media (min-width: 49em) {
@@ -1889,15 +1885,15 @@ body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
 	}
 }
 
-/** 
- * Hide overflow in main content area site-wide 
+/**
+ * Hide overflow in main content area site-wide
  */
 .page .content-area {
 	overflow: hidden;
 }
 
-/** 
-  * general PAGE styles 
+/**
+  * general PAGE styles
   */
 body.page {
 	/** remove top margin on page content on mobile devices */
@@ -1968,7 +1964,7 @@ body.page .entry-content {
 }
 
 /**
-  * POST styles 
+  * POST styles
   */
 body.blog,
 body.single,
@@ -2378,6 +2374,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 #post-2341 .services-headline,
 #post-2517 .services-headline {
 	margin: 0;
+	font-size: 2.369em;
 	color: #385f7e;
 	padding-top: 2.5em;
 	text-transform: capitalize;
@@ -2391,7 +2388,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 
 #post-2341 .services-byline,
 #post-2517 .services-byline {
-	font-size: 100%;
+	font-size: 110%;
 	color: #787878;
 	font-weight: 600;
 	text-shadow: -2px 0px 3px white;
@@ -2436,7 +2433,6 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	#post-2517 .services-headline {
 		padding-top: 2em;
 		font-size: 3.157em;
-		/* corrects font back to initial size */
 	}
 	#post-2341 .services-byline,
 	#post-2517 .services-byline {

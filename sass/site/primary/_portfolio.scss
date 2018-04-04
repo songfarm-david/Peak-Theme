@@ -1,31 +1,35 @@
 /** Portfolio styles */
 
 #portfolio-grid {
-    > h2 {
-        display: none;
-    }
+
     ul {
         margin: 0;
         padding: 0;
         list-style: none;
         display: flex;
         flex-wrap: wrap;
-        align-items: stretch;
         li {
-            overflow: hidden;
             position: relative;
             flex: 1 0 100%;
+            min-height: 200px;
+            margin: 1em 0;
+            cursor: pointer;
             a.image-hover {
                 display: block;
                 height: 100%;
                 width: 100%;
                 background-size: cover;
+                background-repeat: no-repeat;
                 opacity: 1;
+                border-radius: 3px;
                 transition: .3s ease-in-out;
+                box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
             }
             &:hover a.image-hover {
-                opacity: .5;
+                opacity: .75;
                 cursor: pointer;
+                box-shadow: 0px 30px 60px 0px rgba(0,0,0,0.2);
+                transform: translateY(-5px);
             }
             // 'View Project' button
             .hover-button {
@@ -37,7 +41,7 @@
                 transform: translate(-50%, -50%);
                 padding: 0.25em 0.75em;
                 opacity: 0;
-                transition: .3s ease-in-out;
+                transition: .65s ease-in-out;
                 font-size: 1.25em;
                 box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.2);
             }
@@ -45,29 +49,38 @@
                 opacity: 1;
             }
             
-            &.item {
-               height: 300px; 
-               height: 16.667em;
-            }
+/*            &.item {
+                min-height: 9em;
+            }*/
         }
     }
     
     @media #{$tablet__breakpoint} {
         ul li {
-            flex: 1 0 50%;
+            flex: 0 0 50%;
+            justify-content: space-between;
+            padding: 1em;
+            min-height: 300px;
+            &:nth-child(odd) {
+                padding-left: 0;
+            }
+            &:nth-child(even) {
+                padding-right: 0;
+            }
         }
     }
     
     @media #{$desktop__breakpoint} {
         ul li {
-            flex: 1 0 25%;
-            &.large {
+            flex: 1 0 50%;
+            min-height: 396px;
+/*            &.large {
                 height: 650px;
                 height: 36em;
-                -webkit-flex-basis: 50%; /* Safari 6.1+ */
+                -webkit-flex-basis: 50%;  Safari 6.1+ 
                 flex-basis: 50%;
                 flex: 1 0 50%;
-            }
+            }*/
             .hover-button {
                 font-size: 1em;
             }

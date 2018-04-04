@@ -2625,10 +2625,6 @@ and open the template in the editor.
 ## Portfolio
 --------------------------------------------------------------*/
 /** Portfolio styles */
-#portfolio-grid > h2 {
-	display: none;
-}
-
 #portfolio-grid ul {
 	margin: 0;
 	padding: 0;
@@ -2638,17 +2634,19 @@ and open the template in the editor.
 	display: flex;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
-	-webkit-box-align: stretch;
-	    -ms-flex-align: stretch;
-	        align-items: stretch;
 }
 
 #portfolio-grid ul li {
-	overflow: hidden;
 	position: relative;
 	-webkit-box-flex: 1;
 	    -ms-flex: 1 0 100%;
 	        flex: 1 0 100%;
+	min-height: 200px;
+	margin: 1em 0;
+	cursor: pointer;
+	/*            &.item {
+                min-height: 9em;
+            }*/
 }
 
 #portfolio-grid ul li a.image-hover {
@@ -2656,13 +2654,19 @@ and open the template in the editor.
 	height: 100%;
 	width: 100%;
 	background-size: cover;
+	background-repeat: no-repeat;
 	opacity: 1;
+	border-radius: 3px;
 	transition: .3s ease-in-out;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
 #portfolio-grid ul li:hover a.image-hover {
-	opacity: .5;
+	opacity: .75;
 	cursor: pointer;
+	box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.2);
+	-webkit-transform: translateY(-5px);
+	        transform: translateY(-5px);
 }
 
 #portfolio-grid ul li .hover-button {
@@ -2675,7 +2679,7 @@ and open the template in the editor.
 	        transform: translate(-50%, -50%);
 	padding: 0.25em 0.75em;
 	opacity: 0;
-	transition: .3s ease-in-out;
+	transition: .65s ease-in-out;
 	font-size: 1.25em;
 	box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.2);
 }
@@ -2684,34 +2688,38 @@ and open the template in the editor.
 	opacity: 1;
 }
 
-#portfolio-grid ul li.item {
-	height: 300px;
-	height: 16.667em;
-}
-
 @media (min-width: 49em) {
 	#portfolio-grid ul li {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 50%;
-		        flex: 1 0 50%;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 0 50%;
+		        flex: 0 0 50%;
+		-webkit-box-pack: justify;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		padding: 1em;
+		min-height: 300px;
+	}
+	#portfolio-grid ul li:nth-child(odd) {
+		padding-left: 0;
+	}
+	#portfolio-grid ul li:nth-child(even) {
+		padding-right: 0;
 	}
 }
 
 @media (min-width: 75em) {
 	#portfolio-grid ul li {
 		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 25%;
-		        flex: 1 0 25%;
-	}
-	#portfolio-grid ul li.large {
-		height: 650px;
-		height: 36em;
-		/* Safari 6.1+ */
-		-ms-flex-preferred-size: 50%;
-		    flex-basis: 50%;
-		-webkit-box-flex: 1;
 		    -ms-flex: 1 0 50%;
 		        flex: 1 0 50%;
+		min-height: 396px;
+		/*            &.large {
+                height: 650px;
+                height: 36em;
+                -webkit-flex-basis: 50%;  Safari 6.1+ 
+                flex-basis: 50%;
+                flex: 1 0 50%;
+            }*/
 	}
 	#portfolio-grid ul li .hover-button {
 		font-size: 1em;

@@ -177,6 +177,9 @@ function peak_theme_scripts() {
         $custom_css = ".post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_one, .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_three, body > div.nc_wrapper.floatBottom { display: none !important; }";
         wp_add_inline_style( 'peak-style', $custom_css);
 
+        //test loader script
+        wp_enqueue_script('loader-script-custom', get_template_directory_uri() . '/js/loader-script.js', '', '', true);
+        
         // google analytics
         wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
         wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );

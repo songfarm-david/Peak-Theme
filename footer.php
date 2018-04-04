@@ -20,8 +20,7 @@
             if ( is_single() || is_home() ) {
                 include( get_template_directory() . '/inc/custom/blog-about-peak.php' );
             }
-        ?>
-        
+        ?>        
         
         <!-- Display Footer widgets-->
         <?php get_sidebar( 'footer' ); ?>

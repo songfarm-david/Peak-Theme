@@ -16,6 +16,7 @@
     height: 100vh;
     .hero-headline-container {
         text-align: center;
+        opacity: 0;
         //margin-top: 1em;
         font-family: $font__header;
         .hero-headline {
@@ -23,6 +24,7 @@
             margin: 0;
             line-height: 1.15;
             font-weight: 900;
+            font-size: 2.369em;
             //text-transform: uppercase;
             >span {
                 color: $hero-green;
@@ -46,12 +48,10 @@
 
         @media #{$tablet__breakpoint} {
             margin: 3em auto 0;
-            //padding: 3em 0.5em 2em;
-
             max-width: 34em;
-
-            //@include font-size(1.125);
-
+            .hero-headline {
+                font-size: 3.157em;
+            }
         }
 
         @media #{$desktop__breakpoint} {

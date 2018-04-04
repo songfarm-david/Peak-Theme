@@ -1,3 +1,23 @@
+/**
+ * Body animation and class for onpage load fadein
+ */
+@keyframes fadeIn {
+    from {
+            opacity: 0;
+    }
+    to {
+            opacity: 1;
+    }
+}
+body {
+    opacity: 0;
+    animation: fadeIn 1.35s;
+}
+body.fadeIn {
+    opacity: 1;
+}
+
+
 
 /**
  * Add padding to anchored bookmarks to account for fixed header + some margin
@@ -30,3 +50,17 @@ h2, p {
     }
     
 }
+
+
+/* If homepage or service homepage, preload images */
+#preload-container {
+    display: none;
+}
+    
+/*.page-id-1735, 
+.page-id-2517 {
+    #preload-container {
+        display: none;
+    }
+}*/
+

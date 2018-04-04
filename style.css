@@ -103,23 +103,6 @@ and open the template in the editor.
     Created on : 10-Nov-2017, 12:44:13 AM
     Author     : David
 */
-@-webkit-keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
 /**
   * Grow on hover
   */
@@ -1319,6 +1302,36 @@ a:hover, a:active {
 ## Global styles
 --------------------------------------------------------------*/
 /**
+ * Body animation and class for onpage load fadein
+ */
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+body {
+	opacity: 0;
+	-webkit-animation: fadeIn 1.35s;
+	        animation: fadeIn 1.35s;
+}
+
+body.fadeIn {
+	opacity: 1;
+}
+
+/**
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
 h2, p {
@@ -1352,6 +1365,17 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	/*display: none;*/
 }
 
+/* If homepage or service homepage, preload images */
+#preload-container {
+	display: none;
+}
+
+/*.page-id-1735, 
+.page-id-2517 {
+    #preload-container {
+        display: none;
+    }
+}*/
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -1591,6 +1615,7 @@ and open the template in the editor.
 
 #hero-banner .hero-headline-container {
 	text-align: center;
+	opacity: 0;
 	font-family: "Raleway", sans-serif;
 }
 
@@ -1599,6 +1624,7 @@ and open the template in the editor.
 	margin: 0;
 	line-height: 1.15;
 	font-weight: 900;
+	font-size: 2.369em;
 }
 
 #hero-banner .hero-headline-container .hero-headline > span {
@@ -1625,6 +1651,9 @@ and open the template in the editor.
 	#hero-banner .hero-headline-container {
 		margin: 3em auto 0;
 		max-width: 34em;
+	}
+	#hero-banner .hero-headline-container .hero-headline {
+		font-size: 3.157em;
 	}
 }
 
@@ -2376,7 +2405,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	margin: 0;
 	font-size: 2.369em;
 	color: #385f7e;
-	padding-top: 2.5em;
+	padding-top: 2.115em;
 	text-transform: capitalize;
 }
 

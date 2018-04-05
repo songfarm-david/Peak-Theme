@@ -75,11 +75,10 @@
  * first page id is local environment
  * second id is production
  */
+
 .page-id-2341,
 .page-id-2517 {
-
     text-align: center;
-
     .panel-container {
         border-top: 1px solid #ddd;
         padding-top: 3.1em;
@@ -87,7 +86,6 @@
             margin-top: 0.5em;
             color: $hero-color;
         }
-
         &.orange {
             background-color: #f7f5f2;
         }

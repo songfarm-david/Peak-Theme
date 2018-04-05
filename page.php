@@ -38,6 +38,13 @@ get_header(); ?>
                 
             endif; ?>
             
+            <!--If Website Maintenance Page-->
+            <?php if( is_page( '2410' ) || is_page( '2541' ) ) :
+                
+                include( get_template_directory() . '/inc/custom/website-maintenance-panel.php' );
+                
+            endif; ?>
+            
             <!-- If Content Creation Service page => Include Features section -->
             <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
                 

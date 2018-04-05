@@ -54,6 +54,7 @@ h6 {
     margin-top: $first_modular + em;
     margin-bottom: ($first_modular  / 2) + em;*/
 	margin-bottom: 0.5rem;
+	color: #385f7e;
 }
 
 p {
@@ -1292,6 +1293,15 @@ a:hover, a:active {
 	padding-bottom: 6em;
 }
 
+#SEO-features-section h4 {
+	color: #404040;
+	font-weight: normal;
+}
+
+#SEO-features-section + .hero-section h2 {
+	color: #EAF1F7;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -2365,6 +2375,7 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 
 #page-cta .cta-heading {
 	font-weight: bolder;
+	color: #EAF1F7;
 }
 
 #page-cta .cta-secondary-text {
@@ -2560,6 +2571,10 @@ and open the template in the editor.
     Created on : 18-Feb-2018, 3:56:07 PM
     Author     : David
 */
+#maintenance-steps h2 + p {
+	font-weight: bold;
+}
+
 #maintenance-how-works {
 	text-align: center;
 	display: -webkit-box;
@@ -2574,7 +2589,7 @@ and open the template in the editor.
 	box-shadow: -1px -1px 8px 1px rgba(0, 0, 0, 0.25);
 	display: block;
 	width: 100%;
-	background-color: #F2F7F2;
+	background-color: white;
 	margin-bottom: 1em;
 	padding: 1em;
 }
@@ -2587,6 +2602,7 @@ and open the template in the editor.
 	display: block;
 	margin: auto;
 	margin-bottom: 1em;
+	height: 6em;
 }
 
 #maintenance-how-works .step-container > p {

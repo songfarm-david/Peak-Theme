@@ -1,7 +1,8 @@
 <?php
 /**
- *
  * @package Peak_Theme
+ * 
+ * This custom page is for the 'Services Home' a.k.a the Services Landing Page
  */
 
 get_header(); ?>

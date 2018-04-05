@@ -8,7 +8,6 @@
 .features-section {
     overflow: hidden;
     padding: 4em 0;
-    
     .feature-item-container {
         flex-wrap: nowrap;
         
@@ -45,7 +44,7 @@
     
 }
 
-#SEO-features-section {
+.features-section {
     h4 {
         color: $color__text-main;
         font-weight: normal;

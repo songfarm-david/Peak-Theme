@@ -1,5 +1,5 @@
 
-<?php include( get_template_directory() . '/assets/icons/content-creation-icons-sprite.svg' );?>
+<?php include( get_template_directory() . '/assets/icons/content-icons/contentSprite.svg' );?>
 
 <article id="" class="features-section panel-container panel-color">
     
@@ -12,7 +12,7 @@
                 <h4>Quick Turn-Around</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#car-speedometer" />
+                    <use xlink:href="#speed" />
                 </svg>
                 <p>Most work is delivered within a few days. For more involved content, we aim to deliver within 10 days.</p>
             </article>
@@ -20,7 +20,7 @@
                 <h4>Variety of Content Types</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#white-sheets" />
+                    <use xlink:href="#files" />
                 </svg>
                 <p>Choose from various content types including videos, blog articles, infographics, e-books, and more.</p>
             </article>
@@ -29,7 +29,7 @@
                 <h4>Automated Service for Completely Hands-Off</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#hotel-reception-bell" />
+                    <use xlink:href="#bell" />
                 </svg>
                 <p>For a completely hands-off approach, we'll create a content strategy for you and execute it in line with your goals and vision.</p>
             </article>
@@ -37,7 +37,7 @@
                 <h4>Only Pay for What You Approve</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#pair-of-bills" />
+                    <use xlink:href="#pay" />
                 </svg>
                 <p>If you don't like the piece of content we've provided, we'll go back to the drawing board until we've got something you do like!</p>
             </article>
@@ -46,7 +46,7 @@
                 <h4>Edits Are Always Free</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#pen" />
+                    <use xlink:href="#edit" />
                 </svg>
                 <p>Need an edit or two before you can approve of a piece of content? No problem. Edits are always on the house.</p>
             </article>
@@ -54,7 +54,7 @@
                 <h4>100% Ownership of Content</h4>
                 <!--image here-->
                 <svg class="feature-icon">
-                    <use xlink:href="#locked-padlock" />
+                    <use xlink:href="#lock" />
                 </svg>
                 <p>Any content you approve becomes yours to do with as you please including taking all the credit!</p>
             </article>

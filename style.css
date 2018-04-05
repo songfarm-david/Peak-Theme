@@ -1289,16 +1289,16 @@ a:hover, a:active {
 	}
 }
 
-#SEO-features-section {
+.features-section {
 	padding-bottom: 6em;
 }
 
-#SEO-features-section h4 {
+.features-section h4 {
 	color: #404040;
 	font-weight: normal;
 }
 
-#SEO-features-section + .hero-section h2 {
+.features-section + .hero-section h2 {
 	color: #EAF1F7;
 }
 

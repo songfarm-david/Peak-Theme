@@ -1,4 +1,4 @@
-<section id="maintenance-steps" class="panel-container purple">
+<section id="maintenance-steps" class="features-section panel-container purple">
     <div class="entry-content">
         <h2>Monthly Website Maintenance Packages</h2>
         <p data-id="wow">Here's how Website Maintenance Packages work in 3-steps:</p>

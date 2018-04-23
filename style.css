@@ -124,6 +124,7 @@ and open the template in the editor.
 	transform: scale(1.5);
 }
 
+/* animation of hero text on homepage */
 @-webkit-keyframes fadeInUp {
 	0% {
 		-webkit-transform: translateY(2rem);
@@ -136,7 +137,6 @@ and open the template in the editor.
 		opacity: 1;
 	}
 }
-
 @keyframes fadeInUp {
 	0% {
 		-webkit-transform: translateY(2rem);
@@ -151,8 +151,8 @@ and open the template in the editor.
 }
 
 .fadeInUp {
-	-webkit-animation: fadeInUp 1.5s .23s ease-out forwards;
-	        animation: fadeInUp 1.5s .23s ease-out forwards;
+	-webkit-animation: fadeInUp .85s ease-out forwards;
+	        animation: fadeInUp .85s ease-out forwards;
 	-webkit-animation-fill-mode: both;
 	        animation-fill-mode: both;
 }
@@ -2606,7 +2606,6 @@ and open the template in the editor.
 }
 
 #maintenance-how-works .step-container > p {
-	font-weight: bold;
 	font-size: 90%;
 }
 

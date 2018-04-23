@@ -31,18 +31,18 @@ and open the template in the editor.
     }
 }
 
-
+/* animation of hero text on homepage */
 @keyframes fadeInUp {
     0% {
-            transform: translateY(2rem);
-            opacity: 0;
+        transform: translateY(2rem);
+        opacity: 0;
     }
     100% {
-            transform: translateY(0);
-            opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 .fadeInUp {
-animation: fadeInUp 1.5s .23s ease-out forwards;
-animation-fill-mode: both;
+    animation: fadeInUp .85s ease-out forwards;
+    animation-fill-mode: both;
 }

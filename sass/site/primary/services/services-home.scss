@@ -13,19 +13,19 @@
         //font-size: 1.777em;
         //@extend .h2;
         font-size: 2.369em; // taken from typography/headings h2
-        color: $hero-color;
+        /*color: $hero-color;*/
         padding-top: 2.115em;
-        text-transform: capitalize;
-        >span {
+        /*text-transform: capitalize;*/
+/*        >span {
             color: $hero-green;
             font-style: italic;
-        }
+        }*/
     }
     .services-byline {
         font-size: 110%;
-        color: #787878;
-        font-weight: 600;
-        text-shadow: -2px 0px 3px white;
+/*        color: #787878;*/
+        /*font-weight: 600;*/
+/*        text-shadow: -2px 0px 3px white;*/
     }
 
     @keyframes float {

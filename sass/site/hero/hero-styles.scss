@@ -2,6 +2,20 @@
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
+.hero-headline {
+    text-transform: capitalize;
+    color: $hero-color;
+    text-shadow: -4px 0px 7px #c4d7e5;
+    >span {
+        color: $hero-green;
+        font-style: italic;
+    }
+}
+.hero-byline {
+    color: #615d59;
+    text-shadow: -1px -1px 0px #615d59;
+}
+
 #hero-banner {
     position: relative;
     background-color: #ccc;
@@ -20,21 +34,22 @@
         //margin-top: 1em;
         font-family: $font__header;
         .hero-headline {
-            color: $hero-color;
             margin: 0;
             line-height: 1.15;
             font-weight: 900;
             font-size: 2.369em;
-            //text-transform: uppercase;
-            >span {
+            /*text-transform: capitalize;*/
+/*            text-shadow: -4px 0px 7px #c4d7e5;*/
+/*            >span {
                 color: $hero-green;
                 font-style: italic;
-            }
+            }*/
         }
         .hero-byline {
-            color: #787878;
-            font-weight: 600;
-            text-shadow: -2px 0px 3px white;
+            /*color: #615d59;*/
+            /*font-weight: lighter;*/
+            /*text-shadow: -2px 0px 3px white;*/
+            /*text-shadow: -1px -1px 0px #615d59;*/
             margin-top: 0.5em;
         }
         .peak-button {
@@ -43,7 +58,8 @@
         .hero-byline,
         //.peak-button
         {
-            font-size: 125%;
+            /*font-size: 125%;*/
+            font-size: 136%;
         }
 
         @media #{$tablet__breakpoint} {
@@ -51,6 +67,7 @@
             max-width: 34em;
             .hero-headline {
                 font-size: 3.157em;
+                font-size: 350%;
             }
         }
 

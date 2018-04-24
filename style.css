@@ -1609,6 +1609,22 @@ and open the template in the editor.
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
+.hero-headline {
+	text-transform: capitalize;
+	color: #385f7e;
+	text-shadow: -4px 0px 7px #c4d7e5;
+}
+
+.hero-headline > span {
+	color: #338c5f;
+	font-style: italic;
+}
+
+.hero-byline {
+	color: #615d59;
+	text-shadow: -1px -1px 0px #615d59;
+}
+
 #hero-banner {
 	position: relative;
 	background-color: #ccc;
@@ -1630,22 +1646,23 @@ and open the template in the editor.
 }
 
 #hero-banner .hero-headline-container .hero-headline {
-	color: #385f7e;
 	margin: 0;
 	line-height: 1.15;
 	font-weight: 900;
 	font-size: 2.369em;
-}
-
-#hero-banner .hero-headline-container .hero-headline > span {
-	color: #338c5f;
-	font-style: italic;
+	/*text-transform: capitalize;*/
+	/*            text-shadow: -4px 0px 7px #c4d7e5;*/
+	/*            >span {
+                color: $hero-green;
+                font-style: italic;
+            }*/
 }
 
 #hero-banner .hero-headline-container .hero-byline {
-	color: #787878;
-	font-weight: 600;
-	text-shadow: -2px 0px 3px white;
+	/*color: #615d59;*/
+	/*font-weight: lighter;*/
+	/*text-shadow: -2px 0px 3px white;*/
+	/*text-shadow: -1px -1px 0px #615d59;*/
 	margin-top: 0.5em;
 }
 
@@ -1654,7 +1671,8 @@ and open the template in the editor.
 }
 
 #hero-banner .hero-headline-container .hero-byline {
-	font-size: 125%;
+	/*font-size: 125%;*/
+	font-size: 136%;
 }
 
 @media (min-width: 49em) {
@@ -1664,6 +1682,7 @@ and open the template in the editor.
 	}
 	#hero-banner .hero-headline-container .hero-headline {
 		font-size: 3.157em;
+		font-size: 350%;
 	}
 }
 
@@ -2415,23 +2434,21 @@ body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 #post-2517 .services-headline {
 	margin: 0;
 	font-size: 2.369em;
-	color: #385f7e;
+	/*color: $hero-color;*/
 	padding-top: 2.115em;
-	text-transform: capitalize;
-}
-
-#post-2341 .services-headline > span,
-#post-2517 .services-headline > span {
-	color: #338c5f;
-	font-style: italic;
+	/*text-transform: capitalize;*/
+	/*        >span {
+            color: $hero-green;
+            font-style: italic;
+        }*/
 }
 
 #post-2341 .services-byline,
 #post-2517 .services-byline {
 	font-size: 110%;
-	color: #787878;
-	font-weight: 600;
-	text-shadow: -2px 0px 3px white;
+	/*        color: #787878;*/
+	/*font-weight: 600;*/
+	/*        text-shadow: -2px 0px 3px white;*/
 }
 
 @-webkit-keyframes float {

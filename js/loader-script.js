@@ -1,5 +1,7 @@
 /* 
- * On DOM loaded
+ * This script dynamically adds class to hero DOM elements to allow animation
+ * 
+ * It also quietly loads "large" banner images  used on subsequent pages
  */
 document.addEventListener('DOMContentLoaded', function() {
     var headlineContainer;

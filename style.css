@@ -2716,6 +2716,10 @@ and open the template in the editor.
 	width: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: top;
+	background-origin: content-box;
+	min-height: 100%;
+	min-width: 100%;
 	opacity: 1;
 	border-radius: 3px;
 	transition: .3s ease-in-out;

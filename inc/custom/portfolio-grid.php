@@ -5,31 +5,20 @@
        <p>Below are a few examples of the websites we've built. Click on an image to learn more about the details behind the project.</p>
         <ul>
             <li id="hollis" class="item small">
-                <a href="<?php echo get_permalink( '2344' ); ?>" class="image-hover"></a>
-<!--                <a href="<?php echo get_permalink( '2344' ); ?>" class="hover-button">View Project</a>-->
+                <a href="<?php echo get_permalink( '2344' ); ?>" class="image-hover"><img src="https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png" width="100%">
+                </a>
             </li>
             <li id="coastal" class="item small">
-                <a href="<?php echo get_permalink( '2340' ); ?>" class="image-hover"></a>
-<!--                <a href="<?php echo get_permalink( '2340' ); ?>" class="hover-button">View Project</a>-->
+                <a href="<?php echo get_permalink( '2340' ); ?>" class="image-hover"><img src="https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png" width="100%">
+                </a>
             </li>
             <li id="songfarm" class="item small">
-                <a href="<?php echo get_permalink( '2333' ); ?>" class="image-hover"></a>
-<!--                <a href="<?php echo get_permalink( '2333' ); ?>" class="hover-button">View Project</a>-->
+                <a href="<?php echo get_permalink( '2333' ); ?>" class="image-hover"><img src="https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png" width="100%"></a>
             </li>
             <li id="cirs" class="item small">
-                <a href="<?php echo get_permalink( '2351' ); ?>" class="image-hover"></a>
-<!--                <a href="<?php echo get_permalink( '2351' ); ?>" class="hover-button">View Project</a>-->
+                <a href="<?php echo get_permalink( '2351' ); ?>" class="image-hover"><img src="https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png" width="100%"></a>
             </li>
-            
-    <!--        <li id="canoa" class="item large">
-                <a href="<?php echo get_permalink( '2356' ); ?>" class="image-hover"></a>
-                <a href="<?php echo get_permalink( '2356' ); ?>" class="hover-button">View Project</a>
-            </li>
-            <li id="your-website" class="item large">
-                <a href="<?php echo get_permalink( '1722' ); ?>" class="image-hover"></a>
-                <a href="<?php echo get_permalink( '1722' ); ?>" class="hover-button">Your Website Here</a>
-            </li>-->
-        </ul> 
+        </ul>
     </div>
     
 </article>

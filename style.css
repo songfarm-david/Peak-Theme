@@ -992,11 +992,10 @@ display: block;
 		z-index: initial;
 	}
 	.main-navigation ul.menu .menu-item-has-children > button {
-		padding-top: 3px;
 		top: 50%;
 		-webkit-transform: translateY(-50%);
 		        transform: translateY(-50%);
-		right: 0;
+		right: -10px;
 	}
 	.main-navigation ul.menu li:hover > ul,
 	.main-navigation ul.menu li.focus > ul {
@@ -1035,6 +1034,9 @@ display: block;
 	.main-navigation ul.menu .sub-menu,
 	.main-navigation ul.menu .sub-menu.toggled {
 		background-color: rgba(255, 255, 255, 0.35);
+	}
+	.main-navigation ul.menu .menu-item-has-children > button {
+		right: -6px;
 	}
 }
 

@@ -1,7 +1,7 @@
 <!--Portfolio image panels-->
 <article id="portfolio-grid" class="panel-container panel-color">
     <div class="entry-content">
-       <h2>Project Examples:</h2>
+       <h3>Project Examples:</h3>
        <p>Below are a few examples of the websites we've built. Click on an image to learn more about the details behind the project.</p>
         <ul>
             <li id="hollis" class="item small">

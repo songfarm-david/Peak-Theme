@@ -2686,133 +2686,83 @@ and open the template in the editor.
 ## Portfolio
 --------------------------------------------------------------*/
 /** Portfolio styles */
+/*#songfarm > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png');
+}
+#hollis > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png');
+}
+#cirs > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png');
+}
+#coastal > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png');
+}*/
+/*    li#canoa > a.image-hover {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png');
+}*/
+/*    li#your-website > a.image-hover {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg');
+}*/
 #portfolio-grid ul {
-	margin: 0;
+	margin: 1em 0 0;
 	padding: 0;
 	list-style: none;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	    flex-wrap: wrap;
 }
 
 #portfolio-grid ul li {
-	position: relative;
-	-webkit-box-flex: 1;
-	    -ms-flex: 1 0 100%;
-	        flex: 1 0 100%;
-	min-height: 200px;
-	margin: 1em 0;
 	cursor: pointer;
-	/*            &.item {
-                min-height: 9em;
-            }*/
+	float: none;
+	margin-bottom: 1em;
 }
 
-#portfolio-grid ul li a.image-hover {
+#portfolio-grid ul li > a {
 	display: block;
-	height: 100%;
-	width: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top;
-	background-origin: content-box;
-	min-height: 100%;
-	min-width: 100%;
-	opacity: 1;
-	border-radius: 3px;
-	transition: .3s ease-in-out;
 	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: .3s ease-in-out;
 }
 
-#portfolio-grid ul li:hover a.image-hover {
-	opacity: .75;
-	cursor: pointer;
+#portfolio-grid ul li > a:hover {
 	box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.2);
 	-webkit-transform: translateY(-5px);
 	        transform: translateY(-5px);
 }
 
-#portfolio-grid ul li .hover-button {
-	display: block;
-	background-color: white;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
-	padding: 0.25em 0.75em;
-	opacity: 0;
-	transition: .65s ease-in-out;
-	font-size: 1.25em;
-	box-shadow: 3px 2px 3px 2px rgba(0, 0, 0, 0.2);
+#portfolio-grid ul li > a > img {
+	width: 100%;
+	height: auto;
+	opacity: 1;
+	border-radius: 3px;
+	transition: .3s ease-in-out;
 }
 
-#portfolio-grid ul li:hover .hover-button {
-	opacity: 1;
+#portfolio-grid ul li > a > img:hover {
+	opacity: .75;
+	cursor: pointer;
 }
 
 @media (min-width: 49em) {
 	#portfolio-grid ul li {
-		-webkit-box-flex: 0;
-		    -ms-flex: 0 0 50%;
-		        flex: 0 0 50%;
-		-webkit-box-pack: justify;
-		    -ms-flex-pack: justify;
-		        justify-content: space-between;
-		padding: 1em;
-		min-height: 300px;
+		float: left;
+		width: 48%;
+		padding: 0 2%;
 	}
-	#portfolio-grid ul li:nth-child(odd) {
-		padding-left: 0;
+	#portfolio-grid ul li > a {
+		max-height: 250px;
 	}
-	#portfolio-grid ul li:nth-child(even) {
-		padding-right: 0;
+	#portfolio-grid ul:after {
+		content: "";
+		clear: both;
+		display: table;
+		padding-top: 56.25%;
 	}
 }
 
 @media (min-width: 75em) {
-	#portfolio-grid ul li {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 50%;
-		        flex: 1 0 50%;
-		min-height: 396px;
-		/*            &.large {
-                height: 650px;
-                height: 36em;
-                -webkit-flex-basis: 50%;  Safari 6.1+ 
-                flex-basis: 50%;
-                flex: 1 0 50%;
-            }*/
+	#portfolio-grid ul li a {
+		max-height: 313px;
 	}
-	#portfolio-grid ul li .hover-button {
-		font-size: 1em;
-	}
-}
-
-#portfolio-grid li#songfarm > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png");
-}
-
-#portfolio-grid li#canoa > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png");
-}
-
-#portfolio-grid li#hollis > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png");
-}
-
-#portfolio-grid li#cirs > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png");
-}
-
-#portfolio-grid li#coastal > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png");
-}
-
-#portfolio-grid li#your-website > a.image-hover {
-	background-image: url("https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg");
 }
 
 /*--------------------------------------------------------------

@@ -2906,6 +2906,8 @@ and open the template in the editor.
 .widget ol {
 	padding: .7em 0 0;
 	margin-bottom: 0;
+	padding-top: 0;
+	margin-top: 0;
 }
 
 .widget ul li,
@@ -2954,6 +2956,10 @@ and open the template in the editor.
 	margin-bottom: .5em;
 	font-weight: bold;
 	color: #385f7e;
+}
+
+#nav_menu-2 .menu-footer-container .menu {
+	margin-top: -5px;
 }
 
 /* Archive and Categories widgets */
@@ -3017,6 +3023,7 @@ and open the template in the editor.
 	margin-left: 0;
 	padding: 0;
 	list-style-type: initial;
+	margin-top: 0;
 }
 
 /* RSS widget */
@@ -3167,6 +3174,8 @@ and open the template in the editor.
 .footer-widgets .widget.widget_recent_entries ul > li {
 	display: list-item;
 	list-style: disc inside;
+	line-height: 1.5;
+	margin-bottom: 0.35em;
 }
 
 .footer-widgets a {

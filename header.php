@@ -25,6 +25,8 @@
         <?php endwhile; endif; elseif (is_home() ): ?>
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
+        
+        <?php if ( is_single() ) echo '<link rel="canonical" href="https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website" />'; ?>
 
 </head>
 
@@ -70,8 +72,8 @@
             /**
              * Insert Hero Section if IS Front Page
              */
-            $recent = new WP_Query( "page_id=1895" ); 
-            //$recent = new WP_Query( "page_id=2282" );           
+            //$recent = new WP_Query( "page_id=1895" ); 
+            $recent = new WP_Query( "page_id=2282" );           
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 

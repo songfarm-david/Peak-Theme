@@ -57,10 +57,10 @@ h2, p {
     display: none;
 }
     
-/*.page-id-1735, 
-.page-id-2517 {
-    #preload-container {
-        display: none;
-    }
-}*/
+/* style header disclaimer on guest posts */
+.guest-post {
+    font-weight: bold;
+    font-style: italic;
+    font-family: $font__header;
+}
 

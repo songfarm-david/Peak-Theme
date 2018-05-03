@@ -1383,12 +1383,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	display: none;
 }
 
-/*.page-id-1735, 
-.page-id-2517 {
-    #preload-container {
-        display: none;
-    }
-}*/
+/* style header disclaimer on guest posts */
+.guest-post {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Raleway", sans-serif;
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/

@@ -26,7 +26,7 @@
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
         
-        <?php if ( is_single() ) echo '<link rel="canonical" href="https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website" />'; ?>
+        <?php //if ( is_single() ) echo '<link rel="canonical" href="https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website" />'; ?>
 
 </head>
 

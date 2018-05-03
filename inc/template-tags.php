@@ -38,8 +38,13 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
                 
                 /* add avatar image - NOTE: not currently dynamic */
                 $avatar = '<figure class="author-avatar"><img src="https://peakwebsites.ca/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
-
-		echo $avatar . ' <span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+                
+                // NOTE: if Guest Post category
+                if ( in_category(201) ) {
+                    echo '<p class="guest-post">The following is a guest post. Learn about <a href="' . get_permalink(2624) . '" title="contribute to the blog">contributing to the blog</a>.</p>';
+                } else {
+                    echo $avatar . ' <span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+                }
 
 	}
 endif;

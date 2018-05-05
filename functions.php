@@ -399,3 +399,14 @@ function exclude_posts_from_recentPostWidget_by_cat() {
     return $exclude;
 }
 add_filter('widget_posts_args','exclude_posts_from_recentPostWidget_by_cat');
+
+/**
+ * Manually override Canonical URL for specific Posts
+ */
+function override_canonical( $canonical_url, $post ) {
+    if ($post->ID == 197) {
+        $canonical_url = 'https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website';
+    }
+    return $canonical_url;
+}
+add_filter( 'get_canonical_url', 'override_canonical', 10, 2 );

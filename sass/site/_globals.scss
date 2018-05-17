@@ -1,6 +1,33 @@
 /**
+ * Site-wide width contraint Mixins
+ */
+@mixin tablet_width() {
+    max-width: 50rem;
+}
+
+// desktop width
+@mixin desktop_width() {
+    /*max-width: 52em;*/
+}
+
+// lg-desktop width
+@mixin lg-desktop_width() {
+    max-width: 48em;
+}
+
+
+/**
  * Body animation and class for onpage load fadein
  */
+body {
+    opacity: 0;
+    animation: fadeIn 1.35s;
+}
+
+body.fadeIn {
+    opacity: 1;
+}
+
 @keyframes fadeIn {
     from {
             opacity: 0;
@@ -9,14 +36,6 @@
             opacity: 1;
     }
 }
-body {
-    opacity: 0;
-    animation: fadeIn 1.35s;
-}
-body.fadeIn {
-    opacity: 1;
-}
-
 
 
 /**
@@ -51,7 +70,6 @@ h2, p {
     
 }
 
-
 /* If homepage or service homepage, preload images */
 #preload-container {
     display: none;
@@ -61,6 +79,6 @@ h2, p {
 .guest-post {
     font-weight: bold;
     font-style: italic;
-    font-family: $font__header;
+    font-family: $text_font;
 }
 

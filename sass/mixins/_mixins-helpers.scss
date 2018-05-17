@@ -29,7 +29,7 @@
  * entry meta typography
  */
 .entry-meta-type {
-    font-family: $font__header;
+    font-family: $text_font;
     @extend .font-small;
     display: inline;
     font-weight: 100;
@@ -40,20 +40,7 @@
   * Site Widths
   */
 // tablet width
-@mixin tablet_width() {
-    max-width: 40em;
-}
 
-// desktop width
-@mixin desktop_width() {
-    max-width: 44em;
-}
-
-// lg-desktop width
-@mixin lg-desktop_width() {
-    max-width: 48em;
-    max-width: 46em;
-}
 
 // add all media queries at once
 @mixin constrain-widths {
@@ -74,7 +61,3 @@
     padding: 0 1em;
 }
 
-/** Heading size mixins */
-@mixin heading-1 {
-    //@extend .h1;
-}

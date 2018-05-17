@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+            
+            <!-- NOTE: author intro-->
+            <div class="entry-meta">
+                <?php peak_theme_posted_on(); ?>
+            </div><!-- .entry-meta -->
+            
             <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -27,9 +33,7 @@
                         echo '</a>';
                     endif; ?>
                 
-                    <div class="entry-meta">
-                            <?php peak_theme_posted_on(); ?>
-                    </div><!-- .entry-meta -->
+                    
                 
                 <?php endif; ?>
                 

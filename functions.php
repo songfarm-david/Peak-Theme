@@ -193,7 +193,10 @@ function peak_theme_scripts() {
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// load Google fonts
-        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
+//        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
+        
+    wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,600,700,800,900');
+        
 
         // load Font Awesome CDN
         wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );

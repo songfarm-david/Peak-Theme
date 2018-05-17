@@ -32,7 +32,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 
 		$byline = sprintf(
 			/* translators: %s: post author. */
-			esc_html_x( 'by %s', 'post author', 'peak-theme' ),
+			esc_html_x( '%s', 'post author', 'peak-theme' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
                 

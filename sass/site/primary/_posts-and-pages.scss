@@ -77,8 +77,6 @@
  * Divide pages by page-id and apply different background colors by page
  */
 
-
-
 /**
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
@@ -139,10 +137,6 @@ body.page {
     .entry-content {
         margin-top: 0;
         padding-bottom: 2em;
-
-        @media #{$desktop__breakpoint} {
-            //margin-top: 1em;
-        }
     }
 
 }
@@ -150,9 +144,10 @@ body.page {
 /**
   * Set content width for Blog index and Single blog posts
   */
+// NOTE: the width containers should be more global/apply to more global sections
 body.blog,
 body.single {
-    #content.site-content {
+    .site-content {
         @media #{$tablet__breakpoint} {
             margin: 0 auto;
             padding-top: 5.4em;
@@ -177,8 +172,8 @@ body.archive {
     /* article post styles */
     .post {
 
-        @include box-shadow;
-        @include border(1px, $color-dark );
+        /*@include box-shadow;*/
+        /*@include border(1px, $color-dark );*/
         margin-bottom: 1.5em;
         padding: 0 1em 1em;
 
@@ -191,9 +186,8 @@ body.archive {
                 max-width: 100%;
             }
             .entry-title {
-                margin: 0.5em 0;
                 //line-height: $line-height-header;
-                @extend .h2;
+                /*@extend .h2;*/
                 //@include border;
                 > a {
                     text-decoration: none;
@@ -234,39 +228,36 @@ body.archive {
 
         }
 
-        img[class*="wp-image-"] {
-            @include border(4px, $color-dark);
-            //padding: 0.25em;
-        }
+        
     }
 
     // headings
-    h3 {
+/*    h3 {
         font-weight: bold;
     }
     h5,
     h6 {
         color: $hero-color;
-    }
+    }*/
 
     .site-content {
 
-        display: flex;
-        flex-wrap: wrap;
+/*        display: flex;
+        flex-wrap: wrap;*/
 
-        @media #{$desktop__breakpoint} {
+/*        @media #{$desktop__breakpoint} {
             @include desktop_width;
             flex-wrap: nowrap;
             justify-content: space-between;
-        }
+        }*/
 
     }
 
     #primary {
 
-        @media #{$desktop__breakpoint} {
+/*        @media #{$desktop__breakpoint} {
             flex: 0 0 63%;
-        }
+        }*/
 
     }
 
@@ -284,7 +275,7 @@ body.archive {
         @media #{$desktop__breakpoint} {
             display: block;
             padding-top: 1.65em;
-            flex: 0 0 33%;
+            /*flex: 0 0 33%;*/
 
             .widget_custom_html {
                 display: block;
@@ -299,15 +290,13 @@ body.archive {
   */
 body.single {
 
-    .entry-header .entry-title,
+/*    .entry-header .entry-title,
     h2,
     h3,
     h4 {
         color: $hero-color;
-    }
-    .entry-header .entry-title {
-        line-height: $line-height-header;
-    }
+    }*/
+    
 
     figure, figcaption {
         //display: none;
@@ -356,8 +345,16 @@ body.single {
         }
     }
 
-
+    /* note: could add quote styles here, etc..
 }
+
+/* Updated blog styles: May 17th, 2018 */
+    body.blog {
+        .site-content {
+            box-shadow: none;
+        }
+    }
+
 
 /**
  * Extraneous pages
@@ -381,9 +378,13 @@ body.single {
     }
 }
 
+
+
+
 /**
  * Portfolio item styles
  */
+/** NOTE: these should go into their own folder*/
 body.single.post-template-single-portfolio-item {
 
     .site-content {
@@ -467,5 +468,10 @@ body.single.post-template-single-portfolio-item {
 
 .post-navigation,
 .comments-area {
+    
     padding: 0 1em;
 }
+
+}
+
+

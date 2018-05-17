@@ -1,5 +1,5 @@
 /*!
-Theme Name: Peak Themessss
+Theme Name: Peak Themes
 Theme URI: http://underscores.me/
 Author: David Gaskin
 Author URI: https://peakwebsites.ca
@@ -23,6 +23,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# NOTE: this legend is not accurate!
+
 # Normalize
 # Typography
 # Elements
@@ -41,7 +43,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Media
 	## Captions
 	## Galleries
+--------------------------------------------------------------
+# Fonts
 --------------------------------------------------------------*/
+@import "typography/fonts";
+
+/*--------------------------------------------------------------*/
 @import "variables-site/variables-site";
 @import "mixins/mixins-master";
 
@@ -54,6 +61,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
+
+
 
 /*--------------------------------------------------------------
 # Elements
@@ -96,14 +105,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "site/site";
 
 /*--------------------------------------------------------------
-# Widgets
+# Blog
 --------------------------------------------------------------*/
-//@import "site/secondary/widgets";
+@import "blog/blog-styles";
 
-/*--------------------------------------------------------------
-# Hero Styles
---------------------------------------------------------------*/
-//@import "site/hero/hero-styles";
 
 /*--------------------------------------------------------------
 # Infinite scroll

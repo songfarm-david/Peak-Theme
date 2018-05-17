@@ -3,7 +3,7 @@
         //@include border(1px,white);
 	margin: 0 0 1em;
 	padding: 0 0 1em;
-	font-family: $font__main;
+	font-family: $titillium_web;
 
 	ul,
 	ol {
@@ -46,7 +46,7 @@
             width: 100%;
             height: 2.5em;
             padding: 10px;
-            //font-family: $font__main;
+            //font-family: $titillium_web;
             border: 1px solid #ccc;
 	}
 
@@ -167,7 +167,7 @@
 
 .rssSummary {
 	padding: .5em 0;
-	//font-family: $font__header;
+	//font-family: $text_font;
 	font-size: .8em;
     line-height: 1.4em;
 }

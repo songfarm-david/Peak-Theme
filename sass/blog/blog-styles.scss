@@ -1,0 +1,48 @@
+/**
+ * Created May 16, 2018
+ *
+ * Styles for the blog!
+ */
+body.blog,
+body.single {
+    
+    font-family: $text_font;
+    
+    main {
+        
+        header {
+            
+/*            h1, h2, h3, h4, h5, h6 {
+                @include header-font;
+            }*/
+            
+            .entry-title {
+                @include heading-main;
+                
+            }
+        }
+        
+        .byline {
+            @include heading-byline;
+            margin-top: 0;
+        }
+        
+        article.post {
+            padding-top: 1.75rem;
+        }
+        
+        /* Blog images */
+        p > img[class*="wp-image-"] {
+            /*NOTE: replace this with a nice gradient or box-shadow*/
+            @include border(4px, $color-dark);
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+    }
+}
+
+
+

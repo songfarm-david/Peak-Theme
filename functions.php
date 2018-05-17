@@ -165,7 +165,6 @@ function add_async_attribute($tag, $handle) {
 }
 add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
 
-
 /**
  * Enqueue scripts and styles.
  */
@@ -227,11 +226,6 @@ function peak_theme_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
-
-// bottom panel - 
-// 
-// .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_one,
-// .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_three
 
 /**
  * Implement the Custom Header feature.
@@ -413,3 +407,28 @@ function override_canonical( $canonical_url, $post ) {
     return $canonical_url;
 }
 add_filter( 'get_canonical_url', 'override_canonical', 10, 2 );
+
+/**
+ * Add 
+ */
+function add_to_author_profile( $contactMethods ) {
+  $contactMethods['twitter'] = 'Twitter Profile';
+  $contactMethods['linkedIn'] = 'LinkedIn Profile';
+  $contactMethods['googlePlus'] = 'Google+ Profile';
+  $contactMethods['facebook'] = 'Facebook Profile';
+
+  return $contactMethods;
+}
+add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
+
+function remove_RSS_by_id() {
+  global $post;
+  
+  /* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
+  if ($post->ID == 2659) {
+    remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+    remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+    remove_action( 'wp_head', 'rsd_link' );
+  }
+}
+add_action('wp_head', 'remove_RSS_by_id', 0, 1);

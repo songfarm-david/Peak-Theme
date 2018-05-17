@@ -12,17 +12,33 @@ body.single {
         
         header {
             
-/*            h1, h2, h3, h4, h5, h6 {
-                @include header-font;
-            }*/
-            
             .entry-title {
                 @include heading-main;
-                
+            }
+            
+            .entry-meta {
+                border: 1px solid black;
+                overflow: hidden;
+                padding: 0.25rem;
+                figure.author-avatar {
+                    float: left;
+                    margin: 0 0.25rem 0 0;
+                    display: inline-block;
+                    > img {
+                        vertical-align: middle;
+                    }
+                }
+                > div {
+                    float: left;
+                    .byline,
+                    .posted-on {
+                        display: block;
+                    }
+                }
             }
         }
         
-        .byline {
+        .entry-content .byline {
             @include heading-byline;
             margin-top: 0;
         }

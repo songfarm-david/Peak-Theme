@@ -1,19 +1,60 @@
 /**
- * Site-wide width contraint Mixins
+  * Note: em values are calculated by desired content width and dividing by global px value
+  * Ex: 1200px / 16px = 75em
+  */
+
+$mobile-only__breakpoint: "(max-width: 768px)";
+/*$mobile-only__breakpoint: "(max-width: 16rem)";*/
+$tablet__breakpoint: "(min-width: 54rem)";
+/*$desktop__breakpoint: "(min-width: 75rem)";*/
+$desktop__breakpoint: "(min-width: 90rem)";
+$lg-desktop__breakpoint: "(min-width: 118.75em)";
+
+/**
+ * Site-wide Width contraints
  */
 @mixin tablet_width() {
-    max-width: 50rem;
+    max-width: 48rem;
 }
 
 // desktop width
 @mixin desktop_width() {
-    /*max-width: 52em;*/
+    max-width: 51rem;
 }
 
 // lg-desktop width
 @mixin lg-desktop_width() {
-    max-width: 48em;
+    max-width: 54rem;
 }
+
+/**
+ * Global Containers 
+ */
+.site-content {
+    
+    margin: 0 auto;
+
+    @media #{$tablet__breakpoint} {
+        
+        @include tablet_width;
+        padding-top: 5.4em;
+        
+    }
+    @media #{$desktop__breakpoint} {
+            
+        @include desktop_width;
+        
+    }
+    @media #{$lg-desktop__breakpoint} {
+        border: 3px solid red;
+
+        @include lg-desktop_width;
+    }
+}
+
+
+
+
 
 
 /**

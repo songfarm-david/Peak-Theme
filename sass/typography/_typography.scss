@@ -14,10 +14,9 @@ html {
         font-size: 110%;
     }
     @media #{$desktop__breakpoint} {
-        font-size: 120%;
+        font-size: 115%;
     }
 }
-
 
 $modularscale: (
     base: $base_font_size,
@@ -131,7 +130,13 @@ h3,
     }
 }
 
-
+.blog {
+    .entry-meta {
+        font-family: $text_font;
+        font-weight: lighter;
+        font-size: ms(1);
+    }
+}
 
 @import "headings";
 

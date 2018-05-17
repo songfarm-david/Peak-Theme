@@ -81,7 +81,8 @@
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
  */
-body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
+body:not(.home):not(.blog):not(.single)
+:not(.page-id-2517):not(.page-id-2341) .site-content {
 
 /*     because masthead is set to position: absolute
     we have to give site-content top padding */
@@ -142,27 +143,6 @@ body.page {
 }
 
 /**
-  * Set content width for Blog index and Single blog posts
-  */
-// NOTE: the width containers should be more global/apply to more global sections
-body.blog,
-body.single {
-    .site-content {
-        @media #{$tablet__breakpoint} {
-            margin: 0 auto;
-            padding-top: 5.4em;
-            @include tablet_width;
-        }
-        @media #{$desktop__breakpoint} {
-            @include desktop_width;
-        }
-        @media #{$lg-desktop__breakpoint} {
-            @include lg-desktop_width;
-        }
-    }
-}
-
-/**
   * POST styles
   */
 body.blog,
@@ -197,26 +177,26 @@ body.archive {
                 }
             }
         }
-        .entry-meta {
+/*        .entry-meta {
             padding: 0;
             .byline,
             .posted-on {
                 @extend .entry-meta-type;
             }
-        }
+        }*/
         .entry-footer {
             .cat-links,
             .comments-link {
                 @extend .entry-meta-type;
             }
         }
-        figure.author-avatar {
+/*        figure.author-avatar {
             margin: 0 0 0.5em;
             display: inline-block;
             > img {
                 vertical-align: middle;
             }
-        }
+        }*/
         .entry-content {
             margin-top: 0;
         }

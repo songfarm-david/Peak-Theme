@@ -8,6 +8,13 @@ body.single {
     
     font-family: $text_font;
     
+    .site-content {
+        
+        @extend .entry-content;
+        padding-top: 10.83em;
+        
+    }
+    
     main {
         
         header {
@@ -21,14 +28,13 @@ body.single {
             
             .entry-meta {
                   
-                font-family: $titillium-web;
+                font-family: $titillium_web;
                 font-weight: 400;
                 @extend .small_text;
                 
                 width: auto;
                 position: absolute;
                 top: -7em;
-                /*overflow: hidden;*/
                 padding: 0.25rem 16% 0.25rem 0;
                 margin-bottom: 1em;
                 
@@ -47,16 +53,8 @@ body.single {
                     }
                 }
                 
-                > div {
-                    
-                    /*display: inline;*/
-                    
-                    > .author-vcard {
-                        
-/*                        display: inline-table;*/
-                        
-                    }
-                    
+                > .author-vcard {
+                                                            
                     .author {
                     
                         font-weight: 600;
@@ -65,21 +63,18 @@ body.single {
                     
                     .author-bio,
                     .times {
+                        
                         display: block;
                         color: slategrey;
+                        
                     }
 
                     .author-bio {
 
                         line-height: 1.2;
                         letter-spacing: 0.025em;
-                            /*$secondary_grey*/
 
-                    }    
-                    
-/*                    .times {
-                        font-weight: 300;
-                    }*/
+                    } 
 
                     .social-links {
 
@@ -99,24 +94,6 @@ body.single {
                     
                 }
                                      
-                
-                      
-                
-/*                > div {
-                    .author {
-                        
-                        > span, > a {
-                            line-height: 1;
-                            
-                        }
-                        
-                    }
-                    float: left;
-                    .byline,
-                    .posted-on {
-                        display: block;
-                    }
-                }*/
             }
         }
         
@@ -125,18 +102,26 @@ body.single {
             margin-top: 0;
         }
         
-        article.post {
-            padding-top: 1.75rem;
-        }
-        
         /* Blog images */
         p > img[class*="wp-image-"] {
-            /*NOTE: replace this with a nice gradient or box-shadow*/
+            /*TODO: replace this with a nice gradient or box-shadow*/
             @include border(4px, $color-dark);
             max-width: 100%;
             height: auto;
             margin: 0 auto;
             text-align: center;
+        }
+        
+        
+        
+    }
+    
+    .comments-area {
+        
+        margin-bottom: 8.83em;
+        
+        input[type="submit"] {
+            @extend .peak-button;
         }
         
     }

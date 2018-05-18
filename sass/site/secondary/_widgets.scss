@@ -1,5 +1,5 @@
 .widget {
-    
+
     width: 100%;
     margin: 0 1em 1em;
     padding-top: 1em;
@@ -33,15 +33,15 @@
             }
     }
 
-    a {
-
-        text-decoration: none;
-
-        &:hover,
-        &:focus {
-                /*border-bottom: $color__link-hover;*/
-        }
-    }
+    // a {
+    //
+    //     text-decoration: none;
+    //
+    //     &:hover,
+    //     &:focus {
+    //             /*border-bottom: $color__link-hover;*/
+    //     }
+    // }
 
     /* Make sure select elements fit in widgets. */
     select {
@@ -112,7 +112,7 @@
 		display: block;
 		padding: 1em 0;
 		text-decoration: none;
-		border-bottom: 1px dashed hsl(0, 0%, 50%);
+		border-bottom: 1px dashed $color-light;
 
 		&:hover,
 		&:focus {
@@ -284,7 +284,7 @@
 
 /* Footer widget styles */
 .footer-widgets {
-    
+
     /*position: relative;*/
     /*z-index: 1;*/
 /*    margin: 0;
@@ -301,7 +301,7 @@
 
         *
           * Show list items on 'Recent Posts' and other specific list-type footer widgets
-          
+
         &.widget_recent_entries ul > li {
             display: list-item;
             list-style: disc inside;
@@ -310,10 +310,10 @@
         }
     }*/
 
-    a {
-        color: inherit;
-        padding: 0;
-    }
+    // a {
+    //     color: inherit;
+    //     padding: 0;
+    // }
 
 /*    @media #{$tablet__breakpoint} {
         padding: 2em 1em;
@@ -345,7 +345,7 @@
             flex: 2 0 50%;
         }
 
-         If only one widget is displayed, make it full width. 
+         If only one widget is displayed, make it full width.
         .widget:only-of-type {
                 width: 100%;
         }
@@ -386,7 +386,7 @@
         ul > li {
             display: list-item;
             list-style: disc inside;
-            line-height: $line-height-header;
+            line-height: $second_line_height;
             margin-bottom: 0.75em;
         }
     }

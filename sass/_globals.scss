@@ -1,108 +1,164 @@
-/**
-  * Note: em values are calculated by desired content width and dividing by global px value
-  * Ex: 1200px / 16px = 75em
-  */
+
 
 
 /**
- * These are helpers / Site-wide Width contraints
- */
-@mixin tablet_width() {
-    max-width: $tablet-width;
-}
-
-// desktop width
-@mixin desktop_width() {
-    max-width: $desktop-width;
-}
-
-// lg-desktop width
-@mixin lg-desktop_width() {
-    max-width: $lg-desktop-width;
-}
-
-/**
- * Global Containers 
+ * Global Container Widths
  */
 .entry-content {
-    
+
     margin: 0 auto;
-    padding-top: 8.83em;
 
     @media #{$tablet__breakpoint} {
-        
+
         @include tablet_width;
-        /*padding-top: 8em;*/
-        
+
     }
+
     @media #{$desktop__breakpoint} {
-            
+
         @include desktop_width;
-        
+
     }
+
     @media #{$lg-desktop__breakpoint} {
-        border: 3px solid red;
 
         @include lg-desktop_width;
+
     }
+
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
 }
 
 /**
  * Body animation and class for onpage load fadein
  */
 body {
-    
+
     opacity: 0;
     animation: fadeIn 1.35s;
-    
+
     &.fadeIn {
-        
+
         opacity: 1;
-        
+
     }
-    
+
 }
 
-/* NOTE: keyframes should go into an animation file */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+hr {
+
+  background-color: $hero-color;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+
 }
 
-/* NOTE: this will be global link styles */
-/* NOTE: go to 'elements' styles and grab those for global class */
+/**
+/// Site Wide Links
+*/
 a {
-	
+
     color: $hero-color;
 
 	&:visited {
-		/*color: $color__link-visited;*/
+
+		color: $hero-green;
+
 	}
-        
+
 	&:hover,
 	&:focus,
 	&:active {
-            
+
 		color: $hero-green;
-                
+
 	}
-        
+
 	&:focus {
-		outline: thin dotted;
+
+		outline: thin dotted $hero-green;
+
 	}
+
 	&:hover,
 	&:active {
+
 		outline: 0;
+
 	}
+
 }
 
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+  display: table-column;
+}
 
 /**
- * NOTE: Add this to a 'hotfix' helper file that will load later
+/// Lists
+*/
+ul, ol {
+
+	//margin: 0 0 1.5em 3em;
+
+}
+
+ul {
+
+	list-style: disc;
+
+}
+
+ol {
+
+	list-style: decimal;
+
+}
+
+li > ul,
+li > ol {
+
+	margin-bottom: 0;
+	margin-left: 1.5em;
+
+}
+
+dt {
+
+	font-weight: bold;
+
+}
+
+dd {
+
+	margin: 0 1.5em 1.5em;
+
+}
+
+table {
+
+	margin: 0 0 1.5em;
+	width: 100%;
+
+}
+
+/**
+ * TODO: Add this to a 'hotfix' helper file that will load later
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
 h2, p {
@@ -116,9 +172,9 @@ h2, p {
         border-width: 0;
         &:active, &:focus {
             outline: none;
-            border-width: 0;    
+            border-width: 0;
         }
-    }   
+    }
 }
 
 /**
@@ -126,23 +182,22 @@ h2, p {
  */
 .blog,
 .single {
-    
+
     /* post SEO in 2018 trends */
     .post-2106 .entry-header > a img {
         /*display: none;*/
     }
-    
+
 }
 
 /* If homepage or service homepage, preload images */
 #preload-container {
     display: none;
 }
-    
+
 /* style header disclaimer on guest posts */
 .guest-post {
     font-weight: bold;
     font-style: italic;
     font-family: $text_font;
 }
-

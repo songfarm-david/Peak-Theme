@@ -4,11 +4,8 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package Peak_Theme
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -18,14 +15,15 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
-        <!-- Dynamically load meta descriptions (excerpt) for posts and pages, 
+
+        <!-- Dynamically load meta descriptions (excerpt) for posts and pages,
         display siteinfo on home page.-->
         <?php if (is_single() || is_page() ) : if (have_posts() ) : while (have_posts() ) : the_post(); ?>
         <meta name="description" content="<?php echo get_the_excerpt();?>">
         <?php endwhile; endif; elseif (is_home() ): ?>
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
-        
+
         <?php //if ( is_single() ) echo '<link rel="canonical" href="https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website" />'; ?>
 
 </head>
@@ -68,47 +66,12 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-        <?php if ( is_front_page() ) : 
-            /**
-             * Insert Hero Section if IS Front Page
-             */
-            $recent = new WP_Query( "page_id=1895" ); 
-//            $recent = new WP_Query( "page_id=2282" );           
+        <?php if ( is_front_page() ) :
 
-                while( $recent->have_posts()) : $recent->the_post(); ?>
-                
-                <section id="hero-banner">
-                    <div class="hero-headline-container">
+						// NOTE: Include landing banner
+						include( get_template_directory() . '/inc/custom/landing-banner.php' );
 
-                    <?php the_content();
 
-                        /* Edit link */
-                        if ( get_edit_post_link() ) : ?>
-                            <footer class="panel-footer">
-                                <?php
-                                    edit_post_link(
-                                        sprintf(
-                                            wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
-                                                array(
-                                                    'span' => array(
-                                                        'class' => array(),
-                                                    ),
-                                                )
-                                            ),
-                                        get_the_title()
-                                    ),
-                                    '<span class="edit-link">',
-                                    '</span>'
-                                    );
-                                ?>
-                            </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
-
-                    </div>
-                </section>
-                        
-                <?php endwhile;
-        
         endif; ?>
-        
+
 	<div id="content" class="site-content">

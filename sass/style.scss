@@ -23,32 +23,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# NOTE: this legend is not accurate!
+# TODO: fill in TOC
 
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------
 # Normalize & Global Vars
 --------------------------------------------------------------*/
 @import "normalize";
-@import "variables-site/variables-site";
-@import "site-variables";
+// @import "variables-site/variables-site";
+// @import "site-variables";
+@import "variables/variables-master";
 
 /*--------------------------------------------------------------
 # Fonts & Typographic Styles
@@ -60,8 +43,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Helpers
 --------------------------------------------------------------*/
 @import "mixins/mixins-master";
+@import "helper/helper-master";
 
-/*--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Global Elements
+--------------------------------------------------------------*/
 @import 'globals';
 
 /*--------------------------------------------------------------
@@ -78,9 +64,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Hero (Theme) Styles
 --------------------------------------------------------------*/
-@import 'hero/page-banner';
-
-
+@import "hero/landing-page";
+@import "hero/banner-page";
+@import "hero/banner-about";
+@import "hero/buttons";
 
 /*--------------------------------------------------------------
 # Elements
@@ -88,6 +75,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "elements/elements";
 @import "forms/forms";
 @import "footer/footer";
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -125,6 +113,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Media
+# Framework Styles (pre-included)
 --------------------------------------------------------------*/
-@import "media/media";
+@import "wp-framework/framework-master";

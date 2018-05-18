@@ -1,42 +1,48 @@
 
 
-/** Custom styles **/
 /**
   * Page Headers Banners
   */
 .page .entry-header {
-    background-color: $color-light;
-    //@include header-linear-gradient;
+
     text-align: center;
     padding: 1em 0;
+    background-color: $color-light;
+    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
     background-size: cover;
     background-repeat: no-repeat;
+
     .entry-title {
+
         color: $hero-color;
         font-weight: bold;
-        line-height: $line-height-header;
+        line-height: $base_line_height;
         margin: 0;
         @extend .h2;
-    }
 
-    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
+    }
 
     @media #{$tablet__breakpoint} {
-        padding: 1.5em 0;
-        .entry-title {
-            @include heading-1;
-        }
 
+        padding: 1.5em 0;
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
 
+        .entry-title {
+
+            @include heading-1;
+
+        }
+
     }
+
     @media #{$desktop__breakpoint} {
+
         padding: 2.5em 0;
         margin-bottom: 1em;
-
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
 
     }
+
 }
 
 /**
@@ -73,43 +79,27 @@
     }
 
 }
-/**
- * Divide pages by page-id and apply different background colors by page
- */
-
-/**
- * Regulate top padding on PAGES not Home
- * (second page ID is localhost)
- */
-/*body:not(.home):not(.blog):not(.single)
-:not(.page-id-2517):not(.page-id-2341) .site-content {
-
-     because masthead is set to position: absolute
-    we have to give site-content top padding 
-
-    // updated Apr. 2, 2018
-    padding-top: 3.61em;
-
-    @media #{$tablet__breakpoint} {
-        padding-top: 3.4em;
-    }
-
-    @media #{$desktop__breakpoint} {
-        padding-top: 3.1em;
-    }
-}*/
-
-
 
 /**
   * general PAGE styles
   */
 .page {
-    
-    .content-area {
-        
-        overflow: hidden;
-        
+
+    .content-area { overflow: hidden; }
+
+    // NOTE: This rule applies a page top padding to account for absolute-position site header
+    .site-content {
+
+        padding-top: 5.03em;
+
+        @media #{$tablet__breakpoint} {
+            padding-top: 3.28em;
+        }
+
+        @media #{$desktop__breakpoint} {
+            padding-top: 3.12em;
+        }
+
     }
 
     .entry-header > div,
@@ -137,28 +127,13 @@
     .entry-content {
         margin-top: 0;
         padding-bottom: 2em;
-        
+
         > p:first-child {
             margin-top: 1.5em;
         }
     }
-    
-    .site-content {
 
-/*     because masthead is set to position: absolute
-    we have to give site-content top padding */
 
-        // updated Apr. 2, 2018
-        padding-top: 3.61em;
-
-        @media #{$tablet__breakpoint} {
-            padding-top: 3.4em;
-        }
-
-        @media #{$desktop__breakpoint} {
-            padding-top: 3.59em;
-        }
-    }
 
 }
 
@@ -186,7 +161,7 @@ body.archive {
                 max-width: 100%;
             }
             .entry-title {
-                //line-height: $line-height-header;
+                //line-height: $base_line_height;
                 /*@extend .h2;*/
                 //@include border;
                 > a {
@@ -228,7 +203,7 @@ body.archive {
 
         }
 
-        
+
     }
 
     // headings
@@ -296,7 +271,7 @@ body.single {
     h4 {
         color: $hero-color;
     }*/
-    
+
 
     figure, figcaption {
         //display: none;
@@ -468,10 +443,8 @@ body.single.post-template-single-portfolio-item {
 
 .post-navigation,
 .comments-area {
-    
+
     padding: 0 1em;
 }
 
 }
-
-

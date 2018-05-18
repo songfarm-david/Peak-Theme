@@ -22,26 +22,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# NOTE: this legend is not accurate!
+# TODO: fill in TOC
 
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------
 # Normalize & Global Vars
 --------------------------------------------------------------*/
@@ -256,37 +238,9 @@ th {
 	padding: 0;
 }
 
-/* theme colors */
-/* hero color variations */
-/* orange footer coolor */
-/*$color__background-body: #fff;
-$color__background-screen: #f1f1f1;
-$color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
-$color__background-pre: #eee;
-$color__background-ins: #fff9c0;*/
-/*$color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: $hero-color;
-$color__link-visited: $hero-color;
-$color__link-hover: $hero-green;
-$color__text-main: #404040;*/
-/*$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;*/
-/*@import "breakpoints";*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 18-May-2018, 12:07:36 AM
-    Author     : David
-*/
+/*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Breakpoints
 --------------------------------------------------------------*/
@@ -301,75 +255,30 @@ and open the template in the editor.
  * Applies the max boldness to Titillium Font
  */
 /*@import '../../bower_components/modular-scale/modularscale';*/
-html {
+html,
+body {
 	font-size: 100%;
+	color: #444;
+	font-family: "Titillium Web", sans-serif;
+	line-height: 1.4;
 }
 
 @media (min-width: 54rem) {
-	html {
+	html,
+	body {
 		font-size: 110%;
 	}
 }
 
 @media (min-width: 90rem) {
-	html {
+	html,
+	body {
 		font-size: 115%;
 	}
 }
 
-body,
-button,
-input,
-select,
-optgroup,
-textarea {
-	/*	color: $color__text-main;*/
-	font-family: "Titillium Web", sans-serif;
-	/*	@include font-size(1.1);*/
-	line-height: 1.4;
-	/* Media Breakpoints for Responsive Typography */
-	/*        h2,
-        h3,
-        h4 {
-            color: $hero-dark;
-        }*/
-}
-
-@media (min-width: 54rem) {
-	body,
-	button,
-	input,
-	select,
-	optgroup,
-	textarea {
-		/*@include font-size(1.15);*/
-	}
-}
-
-@media (min-width: 90rem) {
-	body,
-	button,
-	input,
-	select,
-	optgroup,
-	textarea {
-		/*@include font-size(1.3);*/
-	}
-}
-
-@media (min-width: 118.75em) {
-	body,
-	button,
-	input,
-	select,
-	optgroup,
-	textarea {
-		/*@include font-size(1.45);*/
-	}
-}
-
 p {
-	font-size: 1.19rem;
+	font-size: 1.2rem;
 	line-height: 1.4;
 	font-weight: 300;
 }
@@ -386,7 +295,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1,
 .h1 {
-	font-size: 2.3324rem;
+	font-size: 3.2928rem;
 }
 
 h2,
@@ -394,25 +303,39 @@ h2,
 .page .entry-header .entry-title,
 body.single .archive .page-title,
 h3,
-.h3,
-#main-content {
-	font-size: 1.666rem;
+.h3 {
+	font-size: 2.352rem;
 	font-weight: 600;
 	margin: 1.5em 0 0;
 }
 
 h3,
-.h3,
-#main-content {
+.h3 {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.44rem;
 	font-weight: 400;
 	margin-top: 1.66em;
 }
 
+h4,
+.h4,
+.about-banner .service-container h3,
+.hero-call .service-container h3,
+.hero-section .service-container h3,
+.widget .widget-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
 .small_text, body.blog main header .entry-meta,
 body.single main header .entry-meta {
 	font-size: 83.33333%;
+}
+
+.quote {
+	font-style: italic;
+	font-size: 1.44rem;
+	font-weight: 400;
 }
 
 /* site header & navigation */
@@ -422,12 +345,12 @@ body.single main header .entry-meta {
 }
 
 .site-header .main-navigation {
-	font-size: 1.19rem;
+	font-size: 1.68rem;
 	font-weight: 300;
 }
 
 .site-header .site-title {
-	font-size: 1.666rem;
+	font-size: 2.352rem;
 }
 
 .site-header .site-title + .site-description {
@@ -437,7 +360,22 @@ body.single main header .entry-meta {
 .blog .entry-meta {
 	font-family: "Roboto", sans-serif;
 	font-weight: lighter;
-	font-size: 1.19rem;
+	font-size: 1.68rem;
+}
+
+/* hero font styles */
+.hero .banner-page-text {
+	line-height: 1.2;
+}
+
+.hero .banner-page-text.banner-heading {
+	font-size: 3.2928rem;
+	font-weight: 700;
+}
+
+.hero .banner-page-text.banner-secondary-text {
+	font-size: 1.68rem;
+	font-weight: 400;
 }
 
 /*h1,
@@ -461,17 +399,18 @@ body.single main header .entry-meta {
    // @include font-size(3.728);
 }*/
 /*h3,*/
-
-.h3,
-#main-content {
+.h3 {
 	font-size: 1.777em;
 	font-weight: normal;
 }
 
 /*h4,*/
-.h4, #blog-about-peak .service-container h3,
+
+.h4,
+.about-banner .service-container h3,
 .hero-call .service-container h3,
-.hero-section .service-container h3, .widget .widget-title {
+.hero-section .service-container h3,
+.widget .widget-title {
 	font-size: 1.333em;
 }
 
@@ -618,40 +557,50 @@ and open the template in the editor.
 	animation-fill-mode: both;
 }
 
-/*--------------------------------------------------------------*/
 /**
-  * Note: em values are calculated by desired content width and dividing by global px value
-  * Ex: 1200px / 16px = 75em
-  */
-/**
- * These are helpers / Site-wide Width contraints
+ * Site-wide Width contraints
  */
+/*--------------------------------------------------------------
+# Global Elements
+--------------------------------------------------------------*/
 /**
- * Global Containers 
+ * Global Container Widths
  */
-.entry-content {
+.entry-content, body.blog .site-content,
+body.single .site-content {
 	margin: 0 auto;
-	padding-top: 8.83em;
 }
 
 @media (min-width: 54rem) {
-	.entry-content {
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 48em;
-		/*padding-top: 8em;*/
 	}
 }
 
 @media (min-width: 90rem) {
-	.entry-content {
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 51em;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.entry-content {
-		border: 3px solid red;
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 54em;
 	}
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
 }
 
 /**
@@ -666,24 +615,22 @@ body.fadeIn {
 	opacity: 1;
 }
 
-/* NOTE: keyframes should go into an animation file */
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+hr {
+	background-color: #385f7e;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
 }
 
-/* NOTE: this will be global link styles */
-/* NOTE: go to 'elements' styles and grab those for global class */
+/**
+/// Site Wide Links
+*/
 a {
 	color: #385f7e;
 }
 
 a:visited {
-	/*color: $color__link-visited;*/
+	color: #338c5f;
 }
 
 a:hover, a:focus, a:active {
@@ -691,15 +638,58 @@ a:hover, a:focus, a:active {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: thin dotted #338c5f;
 }
 
 a:hover, a:active {
 	outline: 0;
 }
 
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	display: table-column;
+}
+
 /**
- * NOTE: Add this to a 'hotfix' helper file that will load later
+/// Lists
+*/
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/**
+ * TODO: Add this to a 'hotfix' helper file that will load later
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
 h2, p {
@@ -849,12 +839,12 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	float: none;
 	display: block;
 	z-index: initial;
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 2px #444;
 }
 
 .main-navigation.toggled .menu {
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px 2px #444;
+	box-shadow: 2px 4px 5px #444, inset 0 1px 2px #444;
 	margin: 0;
 	padding: 0.5em 0;
 	width: 100%;
@@ -940,7 +930,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 4.5em;
 	overflow: hidden;
 }
 
@@ -1025,23 +1015,22 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 /*--------------------------------------------------------------
 # Pages
 --------------------------------------------------------------*/
-/** Custom styles **/
 /**
   * Page Headers Banners
   */
 .page .entry-header {
-	background-color: #EAF1F7;
 	text-align: center;
 	padding: 1em 0;
+	background-color: #EAF1F7;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
 }
 
 .page .entry-header .entry-title {
 	color: #385f7e;
 	font-weight: bold;
-	line-height: 1.25;
+	line-height: 1.4;
 	margin: 0;
 }
 
@@ -1110,30 +1099,6 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 /**
- * Divide pages by page-id and apply different background colors by page
- */
-/**
- * Regulate top padding on PAGES not Home
- * (second page ID is localhost)
- */
-/*body:not(.home):not(.blog):not(.single)
-:not(.page-id-2517):not(.page-id-2341) .site-content {
-
-     because masthead is set to position: absolute
-    we have to give site-content top padding 
-
-    // updated Apr. 2, 2018
-    padding-top: 3.61em;
-
-    @media (min-width: 54rem) {
-        padding-top: 3.4em;
-    }
-
-    @media (min-width: 90rem) {
-        padding-top: 3.1em;
-    }
-}*/
-/**
   * general PAGE styles
   */
 .page {
@@ -1144,8 +1109,28 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	overflow: hidden;
 }
 
+.page .site-content {
+	padding-top: 5.03em;
+}
+
+@media (min-width: 54rem) {
+	.page .site-content {
+		padding-top: 3.28em;
+	}
+}
+
+@media (min-width: 90rem) {
+	.page .site-content {
+		padding-top: 3.12em;
+	}
+}
+
 .page .entry-header > div,
 .page .entry-content,
+.page body.blog .site-content,
+body.blog .page .site-content,
+.page body.single .site-content,
+body.single .page .site-content,
 .page .entry-footer {
 	padding: 0 1em;
 }
@@ -1153,6 +1138,10 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 @media (min-width: 54rem) {
 	.page .entry-header > div,
 	.page .entry-content,
+	.page body.blog .site-content,
+	body.blog .page .site-content,
+	.page body.single .site-content,
+	body.single .page .site-content,
 	.page .entry-footer {
 		margin: 0 auto;
 		max-width: 48em;
@@ -1162,6 +1151,10 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 @media (min-width: 90rem) {
 	.page .entry-header > div,
 	.page .entry-content,
+	.page body.blog .site-content,
+	body.blog .page .site-content,
+	.page body.single .site-content,
+	body.single .page .site-content,
 	.page .entry-footer {
 		max-width: 51em;
 	}
@@ -1170,36 +1163,27 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 @media (min-width: 118.75em) {
 	.page .entry-header > div,
 	.page .entry-content,
+	.page body.blog .site-content,
+	body.blog .page .site-content,
+	.page body.single .site-content,
+	body.single .page .site-content,
 	.page .entry-footer {
 		max-width: 54em;
 	}
 }
 
-.page .entry-content {
+
+.page .entry-content,
+.page body.blog .site-content,
+body.blog .page .site-content,
+.page body.single .site-content,
+body.single .page .site-content {
 	margin-top: 0;
 	padding-bottom: 2em;
 }
 
-.page .entry-content > p:first-child {
+.page .entry-content > p:first-child, .page body.blog .site-content > p:first-child, body.blog .page .site-content > p:first-child, .page body.single .site-content > p:first-child, body.single .page .site-content > p:first-child {
 	margin-top: 1.5em;
-}
-
-.page .site-content {
-	/*     because masthead is set to position: absolute
-    we have to give site-content top padding */
-	padding-top: 3.61em;
-}
-
-@media (min-width: 54rem) {
-	.page .site-content {
-		padding-top: 3.4em;
-	}
-}
-
-@media (min-width: 90rem) {
-	.page .site-content {
-		padding-top: 3.59em;
-	}
 }
 
 /**
@@ -1267,9 +1251,14 @@ body.archive .post .entry-header .entry-title > a:hover {
 	text-decoration: underline;
 }
 
-body.blog .post .entry-content,
+body.blog .post .entry-content, body.blog .post .site-content,
 body.single .post .entry-content,
-body.archive .post .entry-content {
+body.single .post .site-content,
+body.archive .post .entry-content,
+body.archive .post body.blog .site-content,
+body.blog body.archive .post .site-content,
+body.archive .post body.single .site-content,
+body.single body.archive .post .site-content {
 	margin-top: 0;
 }
 
@@ -1461,7 +1450,7 @@ body.single body.single.post-template-single-portfolio-item #primary {
 body.single body.single.post-template-single-portfolio-item img.website-img-full {
 	margin-bottom: 1em;
 	border: 0px solid #fff !important;
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 4px 5px #444;
 }
 
 body.single body.single.post-template-single-portfolio-item .entry-footer {
@@ -1508,6 +1497,7 @@ body.single .updated:not(.published) {
 
 body.single .page-content,
 body.single .entry-content,
+body.single .site-content,
 body.single .entry-summary {
 	margin: 1em auto 0;
 }
@@ -1604,126 +1594,337 @@ body.single .comments-area {
 /*--------------------------------------------------------------
 # Hero (Theme) Styles
 --------------------------------------------------------------*/
+.hero-banner {
+	color: #385f7e;
+	background-color: #EAF1F7;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-banner .hero-headline {
+	font-family: "Titillium Web", sans-serif;
+	font-size: 3.2928rem;
+	font-weight: 700;
+	color: #385f7e;
+	text-transform: capitalize;
+	text-shadow: -1px 1px 3px #F2F7F2;
+}
+
+.hero-banner .hero-headline > span {
+	color: #338c5f;
+	font-style: italic;
+}
+
+.hero-banner .hero-byline {
+	font-family: "Roboto", sans-serif;
+	font-size: 1.44rem;
+	color: #213647;
+	text-transform: capitalize;
+	text-shadow: -1px -1px 0px #213647;
+}
+
 /**
  * Page-Banner suitable for pages
  */
-#page-cta {
-	color: #EAF1F7;
-	text-align: center;
+#banner-page {
 	background-color: #338c5f;
-	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png");
+	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/banner-background-min.png");
 	background-size: cover;
+	color: #EAF1F7;
 	overflow: hidden;
 	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
 	position: relative;
 	z-index: 10;
-	padding: 1.5em 1em 1em;
+	text-align: center;
+	padding: 1.5em 1em;
+	padding: 2.25em 1em;
 }
 
-#page-cta .cta-heading,
-#page-cta .cta-secondary-text {
+#banner-page .banner-heading,
+#banner-page .banner-secondary-text {
 	margin-left: auto;
 	margin-right: auto;
 	text-shadow: 1px 1px 2px #333;
 }
 
-#page-cta .cta-heading {
-	font-weight: bolder;
+#banner-page .banner-heading {
 	color: #EAF1F7;
-	/*        @extend .h1;*/
-	font-size: 3.26536rem;
-	margin-top: 1em;
-}
-
-#page-cta .cta-secondary-text {
-	font-size: 125%;
-	font-size: 1.666rem;
-	font-weight: 400;
-	/*text-transform: uppercase;*/
-}
-
-#page-cta .peak-button {
-	margin-bottom: 3em;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 @media (min-width: 54rem) {
-	#page-cta {
-		padding: 2.25em 3.375em 1em;
+	#banner-page {
+		padding: 2.25em 3.375em;
 	}
 }
 
 @media (min-width: 90rem) {
-	#page-cta {
+	#banner-page {
 		padding-left: 5.063em;
 		padding-right: 5.063em;
-		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
+		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/banner-background-lg-min.png");
 	}
-	#page-cta .cta-heading,
-	#page-cta .cta-secondary-text {
+	#banner-page .banner-heading,
+	#banner-page .banner-secondary-text {
 		max-width: 51em;
 	}
 }
 
+.about-banner,
+.hero-call,
+.hero-section {
+	color: #EAF1F7;
+	background-color: #338c5f;
+	background: linear-gradient(45deg, #338c5f, #17422c);
+	margin: -2em 0;
+	padding: 2.25em 1em 5.063em;
+	transform: skewY(2deg);
+	/*    border: 1px solid transparent;*/
+	position: relative;
+	z-index: -1;
+	/* correct global skew of element */
+}
+
+@media (min-width: 54rem) {
+	.about-banner > div,
+	.hero-call > div,
+	.hero-section > div {
+		margin: auto auto auto 2.25em;
+		width: 48em;
+	}
+}
+
+@media (min-width: 90rem) {
+	.about-banner > div,
+	.hero-call > div,
+	.hero-section > div {
+		margin: auto auto auto 2.25em;
+		width: 51em;
+	}
+}
+
+.about-banner a, .about-banner h3, .about-banner a:visited,
+.hero-call a,
+.hero-call h3,
+.hero-call a:visited,
+.hero-section a,
+.hero-section h3,
+.hero-section a:visited {
+	color: #EAF1F7;
+}
+
+.about-banner div,
+.hero-call div,
+.hero-section div {
+	transform: skewY(-2deg);
+}
+
+.about-banner .intro-container,
+.hero-call .intro-container,
+.hero-section .intro-container {
+	/*       margin-top: 2em;*/
+}
+
+.about-banner .intro-container > p,
+.hero-call .intro-container > p,
+.hero-section .intro-container > p {
+	/*            font-size: 125%;
+            margin-bottom: 2em;*/
+}
+
+@media (min-width: 90rem) {
+	.about-banner .intro-container,
+	.about-banner .service-container,
+	.hero-call .intro-container,
+	.hero-call .service-container,
+	.hero-section .intro-container,
+	.hero-section .service-container {
+		margin-left: 17%;
+	}
+}
+
+.about-banner .service-container,
+.hero-call .service-container,
+.hero-section .service-container {
+	/*padding-bottom: 2em;*/
+}
+
+.about-banner .service-container h3,
+.hero-call .service-container h3,
+.hero-section .service-container h3 {
+	/*            font-weight: bold !important;
+            text-transform: uppercase;
+            text-decoration: underline;*/
+}
+
+@media (min-width: 54rem) {
+	.about-banner .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
+		width: 60%;
+	}
+}
+
+@media (min-width: 90rem) {
+	.about-banner .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
+		max-width: 46em;
+		width: 43%;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.about-banner .service-container,
+	.hero-call .service-container,
+	.hero-section .service-container {
+		max-width: 48em;
+		width: 43%;
+	}
+}
+
+.about-banner a:hover:not(.peak-button),
+.hero-call a:hover:not(.peak-button),
+.hero-section a:hover:not(.peak-button) {
+	color: #338c5f;
+}
+
+button[type="submit"].peak-button,
+input[type="submit"].peak-button,
+body.blog .comments-area input[type="submit"],
+body.single .comments-area input[type="submit"], .peak-button, body.blog .comments-area input[type="submit"],
+body.single .comments-area input[type="submit"] {
+	position: relative;
+	text-transform: capitalize;
+	clear: both;
+	background-color: #338c5f;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #EAF1F7;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.2rem;
+	font-weight: normal;
+	min-height: 1em;
+	line-height: 1em;
+	margin: 1em 0;
+	padding: 0.75em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+	vertical-align: middle;
+	transform: perspective(1px) translateZ(0);
+	transition-property: color;
+	transition-duration: 0.3s;
+}
+
+button[type="submit"].peak-button::before,
+input[type="submit"].peak-button::before,
+body.blog .comments-area input[type="submit"]::before,
+body.single .comments-area input[type="submit"]::before,
+.peak-button::before,
+body.blog .comments-area input[type="submit"]::before,
+body.single .comments-area input[type="submit"]::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2098D1;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+button[type="submit"].peak-button:hover, button[type="submit"].peak-button:focus,
+input[type="submit"].peak-button:hover,
+body.blog .comments-area input[type="submit"]:hover,
+body.single .comments-area input[type="submit"]:hover,
+input[type="submit"].peak-button:focus,
+body.blog .comments-area input[type="submit"]:focus,
+body.single .comments-area input[type="submit"]:focus,
+.peak-button:hover,
+body.blog .comments-area input:hover[type="submit"],
+body.single .comments-area input:hover[type="submit"],
+.peak-button:focus,
+body.blog .comments-area input:focus[type="submit"],
+body.single .comments-area input:focus[type="submit"] {
+	color: white;
+}
+
+button[type="submit"].peak-button:hover:before, button[type="submit"].peak-button:focus:before, button[type="submit"].peak-button:active:before,
+input[type="submit"].peak-button:hover:before,
+body.blog .comments-area input[type="submit"]:hover:before,
+body.single .comments-area input[type="submit"]:hover:before,
+input[type="submit"].peak-button:focus:before,
+body.blog .comments-area input[type="submit"]:focus:before,
+body.single .comments-area input[type="submit"]:focus:before,
+input[type="submit"].peak-button:active:before,
+body.blog .comments-area input[type="submit"]:active:before,
+body.single .comments-area input[type="submit"]:active:before,
+.peak-button:hover:before,
+body.blog .comments-area input[type="submit"]:hover:before,
+body.single .comments-area input[type="submit"]:hover:before,
+.peak-button:focus:before,
+body.blog .comments-area input[type="submit"]:focus:before,
+body.single .comments-area input[type="submit"]:focus:before,
+.peak-button:active:before,
+body.blog .comments-area input[type="submit"]:active:before,
+body.single .comments-area input[type="submit"]:active:before {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+button[type="submit"].peak-button:visited,
+input[type="submit"].peak-button:visited,
+body.blog .comments-area input[type="submit"]:visited,
+body.single .comments-area input[type="submit"]:visited,
+.peak-button:visited,
+body.blog .comments-area input:visited[type="submit"],
+body.single .comments-area input:visited[type="submit"] {
+	color: #EAF1F7;
+}
+
+.peak-btn-highlight {
+	background-color: transparent;
+	border: 2px solid #EAF1F7;
+	text-transform: uppercase;
+}
+
+.peak-btn-highlight:before {
+	background: rgba(155, 155, 155, 0.75);
+	background: #F75C03;
+	background: #835EA8;
+}
+
+peak-btn-highlight-light:hover {
+	color: white;
+}
+
+/*.peak-button-container {
+    position: relative;
+    &::before {
+
+    }
+}*/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-hr {
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
-}
-
-figure {
-	margin: 1em 0;
-	/* Extra wide images within figure tags don't overflow the content area. */
-	display: table-column;
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
 button,
 input[type="button"],
 input[type="reset"],
@@ -1755,109 +1956,6 @@ input[type="submit"]:focus {
 	/*border-color: $color__border-button-focus;*/
 }
 
-button[type="submit"].peak-button,
-input[type="submit"].peak-button,
-.peak-button {
-	clear: both;
-	background-color: #338c5f;
-	border: 0 none;
-	border-radius: 4px;
-	transition: all 0.23s ease-in-out 0s;
-	color: #EAF1F7;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	font-weight: normal;
-	min-height: 1em;
-	line-height: 1em;
-	margin: 1em 0;
-	padding: 0.75em 1.25em;
-	text-align: center;
-	text-decoration: none;
-	vertical-align: top;
-	white-space: nowrap;
-	width: auto;
-	vertical-align: middle;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-	position: relative;
-	-webkit-transition-property: color;
-	transition-property: color;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-}
-
-button[type="submit"].peak-button::before,
-input[type="submit"].peak-button::before,
-.peak-button::before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: #2098D1;
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-webkit-transform-origin: 50%;
-	transform-origin: 50%;
-	-webkit-transition-property: transform;
-	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-
-button[type="submit"].peak-button:hover, button[type="submit"].peak-button:focus,
-input[type="submit"].peak-button:hover,
-input[type="submit"].peak-button:focus,
-.peak-button:hover,
-.peak-button:focus {
-	color: white;
-}
-
-button[type="submit"].peak-button:hover:before, button[type="submit"].peak-button:focus:before, button[type="submit"].peak-button:active:before,
-input[type="submit"].peak-button:hover:before,
-input[type="submit"].peak-button:focus:before,
-input[type="submit"].peak-button:active:before,
-.peak-button:hover:before,
-.peak-button:focus:before,
-.peak-button:active:before {
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
-}
-
-button[type="submit"].peak-button:visited,
-input[type="submit"].peak-button:visited,
-.peak-button:visited {
-	color: #EAF1F7;
-}
-
-.peak-btn-highlight {
-	background-color: transparent;
-	border: 2px solid #EAF1F7;
-	text-transform: uppercase;
-}
-
-.peak-btn-highlight:before {
-	background: rgba(155, 155, 155, 0.75);
-	background: #F75C03;
-	background: #835EA8;
-}
-
-peak-btn-highlight-light:hover {
-	color: white;
-}
-
-/*.peak-button-container {
-    position: relative;
-    &::before {
-        
-    }
-}*/
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1942,7 +2040,7 @@ display: block;
 	.footer-widgets {
 		display: flex;
 		flex-wrap: wrap;
-		padding: 2.25em 3.375em 1em;
+		padding: 2.25em 3.375em;
 	}
 	.footer-widgets .widget {
 		width: auto;
@@ -2117,7 +2215,11 @@ display: block;
 .clear:before,
 .clear:after,
 .entry-content:before,
+body.blog .site-content:before,
+body.single .site-content:before,
 .entry-content:after,
+body.blog .site-content:after,
+body.single .site-content:after,
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
@@ -2133,6 +2235,8 @@ display: block;
 
 .clear:after,
 .entry-content:after,
+body.blog .site-content:after,
+body.single .site-content:after,
 .comment-content:after,
 .site-header:after,
 .site-content:after,
@@ -2210,38 +2314,43 @@ display: block;
 ## Global styles
 --------------------------------------------------------------*/
 /**
-  * Note: em values are calculated by desired content width and dividing by global px value
-  * Ex: 1200px / 16px = 75em
-  */
-/**
- * These are helpers / Site-wide Width contraints
+ * Global Container Widths
  */
-/**
- * Global Containers 
- */
-.entry-content {
+.entry-content, body.blog .site-content,
+body.single .site-content {
 	margin: 0 auto;
-	padding-top: 8.83em;
 }
 
 @media (min-width: 54rem) {
-	.entry-content {
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 48em;
-		/*padding-top: 8em;*/
 	}
 }
 
 @media (min-width: 90rem) {
-	.entry-content {
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 51em;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.entry-content {
-		border: 3px solid red;
+	.entry-content, body.blog .site-content,
+	body.single .site-content {
 		max-width: 54em;
 	}
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
 }
 
 /**
@@ -2256,24 +2365,22 @@ body.fadeIn {
 	opacity: 1;
 }
 
-/* NOTE: keyframes should go into an animation file */
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+hr {
+	background-color: #385f7e;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
 }
 
-/* NOTE: this will be global link styles */
-/* NOTE: go to 'elements' styles and grab those for global class */
+/**
+/// Site Wide Links
+*/
 a {
 	color: #385f7e;
 }
 
 a:visited {
-	/*color: $color__link-visited;*/
+	color: #338c5f;
 }
 
 a:hover, a:focus, a:active {
@@ -2281,15 +2388,58 @@ a:hover, a:focus, a:active {
 }
 
 a:focus {
-	outline: thin dotted;
+	outline: thin dotted #338c5f;
 }
 
 a:hover, a:active {
 	outline: 0;
 }
 
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	display: table-column;
+}
+
 /**
- * NOTE: Add this to a 'hotfix' helper file that will load later
+/// Lists
+*/
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/**
+ * TODO: Add this to a 'hotfix' helper file that will load later
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
 h2, p {
@@ -2539,29 +2689,8 @@ and open the template in the editor.
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
-.hero-headline {
-	text-transform: capitalize;
-	color: #385f7e;
-	text-shadow: -4px 0px 7px #c4d7e5;
-}
-
-.hero-headline > span {
-	color: #338c5f;
-	font-style: italic;
-}
-
-.hero-byline {
-	color: #615d59;
-	text-shadow: -1px -1px 0px #615d59;
-}
-
 #hero-banner {
 	position: relative;
-	background-color: #ccc;
-	background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
-	background-position: center 0%;
-	background-repeat: no-repeat;
-	background-size: cover;
 	height: auto;
 	min-height: 26.666em;
 	text-align: center;
@@ -2569,40 +2698,11 @@ and open the template in the editor.
 	height: 100vh;
 }
 
-#hero-banner .hero-headline-container {
-	text-align: center;
-	opacity: 0;
-	font-family: "Roboto", sans-serif;
-}
-
-#hero-banner .hero-headline-container .hero-headline {
-	margin: 0;
-	line-height: 1.15;
-	font-weight: 900;
-	font-size: 2.369em;
-	/*text-transform: capitalize;*/
-	/*            text-shadow: -4px 0px 7px #c4d7e5;*/
-	/*            >span {
-                color: $hero-green;
-                font-style: italic;
-            }*/
-}
-
 #hero-banner .hero-headline-container .hero-byline {
 	/*color: #615d59;*/
 	/*font-weight: lighter;*/
 	/*text-shadow: -2px 0px 3px white;*/
 	/*text-shadow: -1px -1px 0px #615d59;*/
-	margin-top: 0.5em;
-}
-
-#hero-banner .hero-headline-container .peak-button {
-	margin: 0;
-}
-
-#hero-banner .hero-headline-container .hero-byline {
-	/*font-size: 125%;*/
-	font-size: 136%;
 }
 
 @media (min-width: 54rem) {
@@ -2623,16 +2723,11 @@ and open the template in the editor.
 		margin-top: 6.5em;
 	}
 	#hero-banner .hero-headline-container .hero-headline {
-		line-height: 1.25;
+		line-height: 1.4;
 	}
-	#hero-banner .hero-headline-container .peak-button {
+	#hero-banner .hero-headline-container .peak-button, #hero-banner .hero-headline-container body.blog .comments-area input[type="submit"], body.blog .comments-area #hero-banner .hero-headline-container input[type="submit"],
+	#hero-banner .hero-headline-container body.single .comments-area input[type="submit"], body.single .comments-area #hero-banner .hero-headline-container input[type="submit"] {
 		margin-top: 1em;
-	}
-}
-
-@media (min-width: 118.75em) {
-	#hero-banner .hero-headline-container {
-		max-width: 41.5em;
 	}
 }
 
@@ -2640,123 +2735,6 @@ and open the template in the editor.
 	#hero-banner {
 		padding-top: 3.5em;
 	}
-}
-
-#main-content {
-	margin-top: 1em;
-}
-
-#main-content:focus {
-	outline: none;
-}
-
-#main-content + p {
-	font-style: italic;
-	font-family: "Roboto", sans-serif;
-	margin-top: 1.5em;
-	font-weight: bold;
-}
-
-#blog-about-peak,
-.hero-call,
-.hero-section {
-	background-color: #338c5f;
-	color: #EAF1F7;
-	background: linear-gradient(45deg, #338c5f, #17422c);
-	margin-top: -2em;
-	margin-bottom: -2em;
-	transform: skewY(2deg);
-	border: 1px solid transparent;
-	position: relative;
-	z-index: 0;
-	padding: 2em 1em 6em;
-	/* correct global skew of element */
-}
-
-#blog-about-peak a, #blog-about-peak h3, #blog-about-peak a:visited,
-.hero-call a,
-.hero-call h3,
-.hero-call a:visited,
-.hero-section a,
-.hero-section h3,
-.hero-section a:visited {
-	color: #EAF1F7;
-}
-
-#blog-about-peak div,
-.hero-call div,
-.hero-section div {
-	transform: skewY(-2deg);
-}
-
-#blog-about-peak .intro-container,
-.hero-call .intro-container,
-.hero-section .intro-container {
-	margin-top: 2em;
-}
-
-#blog-about-peak .intro-container > p,
-.hero-call .intro-container > p,
-.hero-section .intro-container > p {
-	font-size: 125%;
-	margin-bottom: 2em;
-}
-
-@media (min-width: 90rem) {
-	#blog-about-peak .intro-container,
-	#blog-about-peak .service-container,
-	.hero-call .intro-container,
-	.hero-call .service-container,
-	.hero-section .intro-container,
-	.hero-section .service-container {
-		margin-left: 17%;
-	}
-}
-
-#blog-about-peak .service-container,
-.hero-call .service-container,
-.hero-section .service-container {
-	padding-bottom: 2em;
-}
-
-#blog-about-peak .service-container h3,
-.hero-call .service-container h3,
-.hero-section .service-container h3 {
-	font-weight: bold !important;
-	text-transform: uppercase;
-	text-decoration: underline;
-}
-
-@media (min-width: 54rem) {
-	#blog-about-peak .service-container,
-	.hero-call .service-container,
-	.hero-section .service-container {
-		width: 60%;
-	}
-}
-
-@media (min-width: 90rem) {
-	#blog-about-peak .service-container,
-	.hero-call .service-container,
-	.hero-section .service-container {
-		max-width: 46em;
-		width: 43%;
-	}
-}
-
-@media (min-width: 118.75em) {
-	#blog-about-peak .service-container,
-	.hero-call .service-container,
-	.hero-section .service-container {
-		max-width: 48em;
-		width: 43%;
-	}
-}
-
-#blog-about-peak a:hover:not(.peak-button),
-.hero-call a:hover:not(.peak-button),
-.hero-section a:hover:not(.peak-button) {
-	color: #338c5f;
 }
 
 /*--------------------------------------------------------------
@@ -2771,8 +2749,6 @@ and open the template in the editor.
  * Author     : David
  *
  *
- 
-
 #page-cta {
     color: $color-light;
     text-align: center;
@@ -3021,7 +2997,8 @@ and open the template in the editor.
 	padding: 2.5em 0;
 }
 
-#post-1735 > .entry-content {
+#post-1735 > .entry-content, body.blog #post-1735 > .site-content,
+body.single #post-1735 > .site-content {
 	position: relative;
 }
 
@@ -3109,14 +3086,6 @@ and open the template in the editor.
 	}
 }
 
-.widget a {
-	text-decoration: none;
-}
-
-.widget a:hover, .widget a:focus {
-	/*border-bottom: $color__link-hover;*/
-}
-
 .widget select {
 	width: 100%;
 	height: 2.5em;
@@ -3175,7 +3144,7 @@ and open the template in the editor.
 	display: block;
 	padding: 1em 0;
 	text-decoration: none;
-	border-bottom: 1px dashed gray;
+	border-bottom: 1px dashed #EAF1F7;
 }
 
 .widget_pages a:hover, .widget_pages a:focus,
@@ -3352,7 +3321,7 @@ and open the template in the editor.
 
         *
           * Show list items on 'Recent Posts' and other specific list-type footer widgets
-          
+
         &.widget_recent_entries ul > li {
             display: list-item;
             list-style: disc inside;
@@ -3390,7 +3359,7 @@ and open the template in the editor.
             flex: 2 0 50%;
         }
 
-         If only one widget is displayed, make it full width. 
+         If only one widget is displayed, make it full width.
         .widget:only-of-type {
                 width: 100%;
         }
@@ -3401,11 +3370,6 @@ and open the template in the editor.
 
 
     }*/
-}
-
-.footer-widgets a {
-	color: inherit;
-	padding: 0;
 }
 
 /* connect with us menu */
@@ -3435,7 +3399,7 @@ ul.social-media-menu li a {
 #secondary.widget-area .widget_recent_entries ul > li {
 	display: list-item;
 	list-style: disc inside;
-	line-height: 1.25;
+	line-height: 1.2;
 	margin-bottom: 0.75em;
 }
 
@@ -3473,6 +3437,11 @@ body.single {
 	font-family: "Roboto", sans-serif;
 }
 
+body.blog .site-content,
+body.single .site-content {
+	padding-top: 10.83em;
+}
+
 body.blog main,
 body.single main {
 	/* Blog images */
@@ -3485,7 +3454,7 @@ body.single main header {
 
 body.blog main header .entry-title,
 body.single main header .entry-title {
-	font-size: 2.3324rem;
+	font-size: 3.2928rem;
 	font-weight: 600;
 	line-height: 1.2;
 	margin: 1.5rem 0 1rem;
@@ -3498,25 +3467,9 @@ body.single main header .entry-meta {
 	width: auto;
 	position: absolute;
 	top: -7em;
-	/*overflow: hidden;*/
 	padding: 0.25rem 16% 0.25rem 0;
 	margin-bottom: 1em;
 	/* TAG: Img */
-	/*                > div {
-                    .author {
-                        
-                        > span, > a {
-                            line-height: 1;
-                            
-                        }
-                        
-                    }
-                    float: left;
-                    .byline,
-                    .posted-on {
-                        display: block;
-                    }
-                }*/
 }
 
 body.blog main header .entry-meta figure.author-avatar,
@@ -3532,55 +3485,42 @@ body.single main header .entry-meta figure.author-avatar > img {
 	vertical-align: middle;
 }
 
-body.blog main header .entry-meta > div,
-body.single main header .entry-meta > div {
-	/*display: inline;*/
-	/*                    .times {
-                        font-weight: 300;
-                    }*/
-}
-
-body.blog main header .entry-meta > div > .author-vcard,
-body.single main header .entry-meta > div > .author-vcard {
-	/*                        display: inline-table;*/
-}
-
-body.blog main header .entry-meta > div .author,
-body.single main header .entry-meta > div .author {
+body.blog main header .entry-meta > .author-vcard .author,
+body.single main header .entry-meta > .author-vcard .author {
 	font-weight: 600;
 }
 
-body.blog main header .entry-meta > div .author-bio,
-body.blog main header .entry-meta > div .times,
-body.single main header .entry-meta > div .author-bio,
-body.single main header .entry-meta > div .times {
+body.blog main header .entry-meta > .author-vcard .author-bio,
+body.blog main header .entry-meta > .author-vcard .times,
+body.single main header .entry-meta > .author-vcard .author-bio,
+body.single main header .entry-meta > .author-vcard .times {
 	display: block;
 	color: slategrey;
 }
 
-body.blog main header .entry-meta > div .author-bio,
-body.single main header .entry-meta > div .author-bio {
+body.blog main header .entry-meta > .author-vcard .author-bio,
+body.single main header .entry-meta > .author-vcard .author-bio {
 	line-height: 1.2;
 	letter-spacing: 0.025em;
-	/*$secondary_grey*/
 }
 
-body.blog main header .entry-meta > div .social-links,
-body.single main header .entry-meta > div .social-links {
+body.blog main header .entry-meta > .author-vcard .social-links,
+body.single main header .entry-meta > .author-vcard .social-links {
 	font-size: 156%;
 	line-height: 1;
 	padding-left: 0.5rem;
 }
 
-body.blog main header .entry-meta > div .social-links .social-link,
-body.single main header .entry-meta > div .social-links .social-link {
+body.blog main header .entry-meta > .author-vcard .social-links .social-link,
+body.single main header .entry-meta > .author-vcard .social-links .social-link {
 	margin: 0 0.1rem 0 0;
 	padding: 0.25rem;
 	vertical-align: top;
 }
 
-body.blog main .entry-content .byline,
-body.single main .entry-content .byline {
+body.blog main .entry-content .byline, body.blog main .site-content .byline,
+body.single main .entry-content .byline,
+body.single main .site-content .byline {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.728rem;
 	line-height: 1.4;
@@ -3588,19 +3528,19 @@ body.single main .entry-content .byline {
 	margin-top: 0;
 }
 
-body.blog main article.post,
-body.single main article.post {
-	padding-top: 1.75rem;
-}
-
 body.blog main p > img[class*="wp-image-"],
 body.single main p > img[class*="wp-image-"] {
-	/*NOTE: replace this with a nice gradient or box-shadow*/
-	border: 4px solid rgba(0, 0, 0, 0.2);
+	/*TODO: replace this with a nice gradient or box-shadow*/
+	border: 4px solid #444;
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
 	text-align: center;
+}
+
+body.blog .comments-area,
+body.single .comments-area {
+	margin-bottom: 8.83em;
 }
 
 /*--------------------------------------------------------------
@@ -3619,10 +3559,12 @@ body.single main p > img[class*="wp-image-"] {
 }
 
 /*--------------------------------------------------------------
-# Media
+# Framework Styles (pre-included)
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
+body.blog .site-content .wp-smiley,
+body.single .site-content .wp-smiley,
 .comment-content .wp-smiley {
 	border: none;
 	margin-bottom: 0;
@@ -3637,7 +3579,6 @@ object {
 	max-width: 100%;
 }
 
-/* Make sure logo link wraps around logo image. */
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
@@ -3662,10 +3603,17 @@ object {
 }
 
 /*--------------------------------------------------------------
+## Columns
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
+}
+
+.gallery-caption {
+	display: block;
 }
 
 .gallery-item {
@@ -3705,10 +3653,6 @@ object {
 
 .gallery-columns-9 .gallery-item {
 	max-width: 11.11%;
-}
-
-.gallery-caption {
-	display: block;
 }
 
 /*# sourceMappingURL=../peak-theme/sass/maps/style.css.map */

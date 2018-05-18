@@ -22,15 +22,21 @@ get_header(); ?>
             endwhile; // End of the loop.
             ?>
 
-            <?php 
+            <?php
                 /**
                  * Call Services sections
                  */
-                //localhost $recent = new WP_Query( "page_id=2349" );
-                $recent = new WP_Query( "page_id=2520" );
-                
+                //localhost
+                // $recent = new WP_Query( "page_id=2349" );
+                // $recent = new WP_Query( "page_id=2520" );
+
+                // TODO: Write a way to accept both args
+                $recent = ( new WP_Query( "page_id=2349" ) ) ?
+                  new WP_Query( "page_id=2349" ) :
+                  new WP_Query( "page_id=2520" );
+
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+
                 <article id="content-section" class="panel-container">
                     <div class="entry-content panel-content">
 
@@ -56,18 +62,18 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
-                <?php endwhile; 
-                
-                //$recent = new WP_Query( "page_id=2351" );
-                $recent = new WP_Query( "page_id=2527" );
+
+                <?php endwhile;
+
+                $recent = new WP_Query( "page_id=2351" );
+                // $recent = new WP_Query( "page_id=2527" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+
                 <article class="panel-container orange">
                     <div class="entry-content panel-content">
 
@@ -93,18 +99,18 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
+
                 <?php endwhile;
-                
-                //$recent = new WP_Query( "page_id=2353" );
-                $recent = new WP_Query( "page_id=2529" );
+
+                $recent = new WP_Query( "page_id=2353" );
+                // $recent = new WP_Query( "page_id=2529" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+
                 <article class="panel-container purple">
                     <div class="entry-content panel-content">
 
@@ -130,22 +136,22 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
+
                 <?php endwhile; ?>
-                        
+
             <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
-            <?php 
+            <?php
             /**
              * Include Call-to-Action banner
              */
-            
+
             /** if NOT Contact Page */
             if ( !is_page( '1722' ) ) : ?>
-            
+
                 <article id="page-cta">
                     <div>
                         <?php if ( is_page( '1741' ) ) : ?>
@@ -164,7 +170,7 @@ get_header(); ?>
                         <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
                     </div>
                 </article>
-            
+
             <?php endif; ?>
 
         </main><!-- #main -->

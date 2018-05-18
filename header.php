@@ -72,8 +72,8 @@
             /**
              * Insert Hero Section if IS Front Page
              */
-            //$recent = new WP_Query( "page_id=1895" ); 
-            $recent = new WP_Query( "page_id=2282" );           
+            $recent = new WP_Query( "page_id=1895" ); 
+//            $recent = new WP_Query( "page_id=2282" );           
 
                 while( $recent->have_posts()) : $recent->the_post(); ?>
                 

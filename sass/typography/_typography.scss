@@ -33,10 +33,10 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
+/*	color: $color__text-main;*/
 	font-family: $titillium_web;
 /*	@include font-size(1.1);*/
-	line-height: $line-height;
+	line-height: $base_line_height;
 
         /* Media Breakpoints for Responsive Typography */
         @media #{$tablet__breakpoint} {
@@ -64,14 +64,16 @@ p {
     font-weight: 300;
 }
 
+
+
 ul,
 ol {
     font-size: ms(1 , $thread: second);
-
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $titillium_web;
+    color: $hero-color;
 }
 
 h1,
@@ -85,7 +87,7 @@ h3,
 .h3 {
     font-size: ms(2);
     font-weight: 600;
-    margin: 1.5rem 0 0;
+    margin: 1.5em 0 0;
 }
 
 h3,
@@ -93,6 +95,11 @@ h3,
     font-family: $text_font;
     font-size: ms(2 , $thread: second);
     font-weight: 400;
+    margin-top: 1.66em;
+}
+
+.small_text {
+    font-size: (100 / $second_scale) + 0%; 
 }
 
 @mixin heading-main() {

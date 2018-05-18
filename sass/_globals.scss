@@ -33,11 +33,12 @@ $lg-desktop__breakpoint: "(min-width: 118.75em)";
 .site-content {
     
     margin: 0 auto;
+    padding-top: 8.83em;
 
     @media #{$tablet__breakpoint} {
         
         @include tablet_width;
-        padding-top: 5.4em;
+        /*padding-top: 8em;*/
         
     }
     @media #{$desktop__breakpoint} {

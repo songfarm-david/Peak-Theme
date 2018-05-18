@@ -11,20 +11,20 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-            
-            <!-- NOTE: author intro-->
-            <div class="entry-meta">
-                <?php peak_theme_posted_on(); ?>
-            </div><!-- .entry-meta -->
-            
-            <?php
+             
+      <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+		endif; ?>
+        
+        <!-- NOTE: author intro-->
+            <div class="entry-meta">
+                <?php peak_theme_posted_on(); ?>
+            </div><!-- .entry-meta -->
                 
-                if ( 'post' === get_post_type() ) : 
+             <?php if ( 'post' === get_post_type() ) : 
                     
                     /* post thumbnail */
                     if ( has_post_thumbnail() ) : 

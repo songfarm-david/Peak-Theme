@@ -49,46 +49,122 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /**
  * Applies the max boldness to Titillium Font
  */
-/*--------------------------------------------------------------*/
-/* theme colors */
-/* hero color variations */
-/* orange footer coolor */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	/*    line-height: $first_modular;
-    margin-top: $first_modular + em;
-    margin-bottom: ($first_modular  / 2) + em;*/
-	margin-bottom: 0.5rem;
-	color: #385f7e;
-}
-
-p {
-	line-height: 1.5;
-	margin-top: 1.5rem;
-	margin-bottom: 0.75rem;
-	line-height: 1.5;
-}
-
 /**
   * Note: em values are calculated by desired content width and dividing by global px value
   * Ex: 1200px / 16px = 75em
   */
+/*$mobile-only__breakpoint: "(max-width: 16rem)";*/
+/*$desktop__breakpoint: "(min-width: 75rem)";*/
+/**
+ * Site-wide Width contraints
+ */
+/**
+ * Global Containers 
+ */
+.site-content {
+	margin: 0 auto;
+	padding-top: 8.83em;
+}
+
+@media (min-width: 54rem) {
+	.site-content {
+		max-width: 48rem;
+		/*padding-top: 8em;*/
+	}
+}
+
+@media (min-width: 90rem) {
+	.site-content {
+		max-width: 51rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.site-content {
+		border: 3px solid red;
+		max-width: 54rem;
+	}
+}
+
+/**
+ * Body animation and class for onpage load fadein
+ */
+body {
+	opacity: 0;
+	animation: fadeIn 1.35s;
+}
+
+body.fadeIn {
+	opacity: 1;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/**
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+	position: relative;
+}
+
+h2 span[class="anchored-header-target"], p span[class="anchored-header-target"] {
+	display: block;
+	position: absolute;
+	top: -81px;
+	padding-bottom: 81px;
+	outline: none;
+	border-width: 0;
+}
+
+h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus, p span[class="anchored-header-target"]:active, p span[class="anchored-header-target"]:focus {
+	outline: none;
+	border-width: 0;
+}
+
+/**
+ * Hide featured thumbnail on blog index for post: SEO in 2018
+ */
+.blog,
+.single {
+	/* post SEO in 2018 trends */
+}
+
+.blog .post-2106 .entry-header > a img,
+.single .post-2106 .entry-header > a img {
+	/*display: none;*/
+}
+
+/* If homepage or service homepage, preload images */
+#preload-container {
+	display: none;
+}
+
+/* style header disclaimer on guest posts */
+.guest-post {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Roboto", sans-serif;
+}
+
+/*--------------------------------------------------------------*/
+/* theme colors */
+/* hero color variations */
+/* orange footer coolor */
+/*@import "breakpoints";*/
 /*--------------------------------------------------------------
 ## Helper Mixins
 --------------------------------------------------------------*/
 /**
  * entry meta typography
  */
-.entry-meta-type, body.blog .post .entry-meta .byline,
-body.blog .post .entry-meta .posted-on,
-body.single .post .entry-meta .byline,
-body.single .post .entry-meta .posted-on,
-body.archive .post .entry-meta .byline,
-body.archive .post .entry-meta .posted-on, body.blog .post .entry-footer .cat-links,
+.entry-meta-type, body.blog .post .entry-footer .cat-links,
 body.blog .post .entry-footer .comments-link,
 body.single .post .entry-footer .cat-links,
 body.single .post .entry-footer .comments-link,
@@ -96,7 +172,7 @@ body.archive .post .entry-footer .cat-links,
 body.archive .post .entry-footer .comments-link {
 	font-family: "Roboto", sans-serif;
 	display: inline;
-	font-weight: 100;
+	/*font-weight: 100;*/
 	text-transform: uppercase;
 }
 
@@ -371,15 +447,15 @@ html {
 	font-size: 100%;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	html {
 		font-size: 110%;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	html {
-		font-size: 120%;
+		font-size: 115%;
 	}
 }
 
@@ -389,7 +465,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	/*	color: $color__text-main;*/
 	font-family: "Titillium Web", sans-serif;
 	/*	@include font-size(1.1);*/
 	line-height: 1.5;
@@ -401,7 +477,7 @@ textarea {
         }*/
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	body,
 	button,
 	input,
@@ -412,7 +488,7 @@ textarea {
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	body,
 	button,
 	input,
@@ -445,13 +521,9 @@ ol {
 	font-size: 1.2rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
 	font-family: "Titillium Web", sans-serif;
+	color: #385f7e;
 }
 
 h1,
@@ -468,7 +540,7 @@ h3,
 #main-content {
 	font-size: 1.9125rem;
 	font-weight: 600;
-	margin: 1.5rem 0 0;
+	margin: 1.5em 0 0;
 }
 
 h3,
@@ -477,6 +549,12 @@ h3,
 	font-family: "Roboto", sans-serif;
 	font-size: 1.44rem;
 	font-weight: 400;
+	margin-top: 1.66em;
+}
+
+.small_text, body.blog main header .entry-meta,
+body.single main header .entry-meta {
+	font-size: 83.33333%;
 }
 
 /* site header & navigation */
@@ -498,11 +576,17 @@ h3,
 	line-height: 1;
 }
 
+.blog .entry-meta {
+	font-family: "Roboto", sans-serif;
+	font-weight: lighter;
+	font-size: 1.275rem;
+}
+
 /*h1,
 .h1 {
     // @include font-size(3.157);
     font-size: 3.157em;
-    @media (min-width: 49em) {
+    @media (min-width: 54rem) {
       font-size: 3.157em;
 
       
@@ -512,7 +596,7 @@ h3,
 /*h2,
 .h2 {
    font-size: 2.369em;
-    @media (min-width: 49em) {
+    @media (min-width: 54rem) {
       font-size: 2.369em;
 
     }
@@ -547,12 +631,6 @@ h6,
 small,
 .font-small,
 .entry-meta-type,
-body.blog .post .entry-meta .byline,
-body.blog .post .entry-meta .posted-on,
-body.single .post .entry-meta .byline,
-body.single .post .entry-meta .posted-on,
-body.archive .post .entry-meta .byline,
-body.archive .post .entry-meta .posted-on,
 body.blog .post .entry-footer .cat-links,
 body.blog .post .entry-footer .comments-link,
 body.single .post .entry-footer .cat-links,
@@ -580,18 +658,17 @@ address {
 	margin: 0 0 1.5em;
 }
 
-pre {
-	background: #eee;
-	font-family: "Courier 10 Pitch", Courier, monospace;
-	/*@include font-size(0.9375);*/
-	line-height: 1.6;
+/*pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	@include font-size(0.9375);
+	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	white-space: initial;
-}
-
+        white-space: initial;
+}*/
 code, kbd, tt, var {
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 	/*@include font-size(0.9375);*/
@@ -1010,7 +1087,7 @@ display: block;
 	color: #385f7e;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.main-navigation {
 		/* .main-navigation */
 		/* hide hamburger menu on tablet */
@@ -1061,7 +1138,7 @@ display: block;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.main-navigation ul.menu .sub-menu,
 	.main-navigation ul.menu .sub-menu.toggled {
 		background-color: rgba(255, 255, 255, 0.35);
@@ -1301,7 +1378,7 @@ a:hover, a:active {
 	margin-top: 1em;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.features-section .feature-item-container {
 		display: flex;
 		flex-wrap: wrap;
@@ -1336,8 +1413,42 @@ a:hover, a:active {
 ## Global styles
 --------------------------------------------------------------*/
 /**
- * Site-wide width contraint Mixins
+  * Note: em values are calculated by desired content width and dividing by global px value
+  * Ex: 1200px / 16px = 75em
+  */
+/*$mobile-only__breakpoint: "(max-width: 16rem)";*/
+/*$desktop__breakpoint: "(min-width: 75rem)";*/
+/**
+ * Site-wide Width contraints
  */
+/**
+ * Global Containers 
+ */
+.site-content {
+	margin: 0 auto;
+	padding-top: 8.83em;
+}
+
+@media (min-width: 54rem) {
+	.site-content {
+		max-width: 48rem;
+		/*padding-top: 8em;*/
+	}
+}
+
+@media (min-width: 90rem) {
+	.site-content {
+		max-width: 51rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.site-content {
+		border: 3px solid red;
+		max-width: 54rem;
+	}
+}
+
 /**
  * Body animation and class for onpage load fadein
  */
@@ -1419,7 +1530,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	justify-content: space-between;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.site-header {
 		position: absolute;
 	}
@@ -1457,7 +1568,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	color: #385f7e;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.header-sticky .main-navigation ul.sub-menu {
 		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	}
@@ -1489,13 +1600,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	margin-left: 3px;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.site-branding {
 		flex: 1 0 auto;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.site-branding {
 		flex-basis: 45%;
 	}
@@ -1508,13 +1619,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	/* NOTE: revisit max-width property of Logo */
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.site-branding .custom-logo-link {
 		max-width: 2em;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.site-branding .custom-logo-link {
 		max-width: 3em;
 	}
@@ -1541,7 +1652,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	white-space: nowrap;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.site-title {
 		display: block;
 	}
@@ -1576,7 +1687,7 @@ and open the template in the editor.
 	overflow: hidden;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.color-panel {
 		display: block;
 		min-height: 225px;
@@ -1589,7 +1700,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.color-panel {
 		min-height: 338px;
 		/* max-width: 1899px */
@@ -1675,7 +1786,7 @@ and open the template in the editor.
 	font-size: 136%;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#hero-banner .hero-headline-container {
 		margin: 3em auto 0;
 		max-width: 34em;
@@ -1686,7 +1797,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#hero-banner .hero-headline-container {
 		text-align: left;
 		max-width: 38em;
@@ -1706,7 +1817,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#hero-banner {
 		padding-top: 3.5em;
 	}
@@ -1772,7 +1883,7 @@ and open the template in the editor.
 	margin-bottom: 2em;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#blog-about-peak .intro-container,
 	#blog-about-peak .service-container,
 	.hero-call .intro-container,
@@ -1797,7 +1908,7 @@ and open the template in the editor.
 	text-decoration: underline;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#blog-about-peak .service-container,
 	.hero-call .service-container,
 	.hero-section .service-container {
@@ -1805,7 +1916,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#blog-about-peak .service-container,
 	.hero-call .service-container,
 	.hero-section .service-container {
@@ -1852,7 +1963,7 @@ and open the template in the editor.
 	margin: 0;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.page .entry-header {
 		padding: 1.5em 0;
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
@@ -1862,13 +1973,13 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 49em) and (min-width: 49em) {
+@media (min-width: 54rem) and (min-width: 54rem) {
 	.page .entry-header .entry-title {
 		font-size: 3.157em;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.page .entry-header {
 		padding: 2.5em 0;
 		margin-bottom: 1em;
@@ -1885,14 +1996,14 @@ and open the template in the editor.
 	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
 	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
 	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
@@ -1904,13 +2015,13 @@ and open the template in the editor.
 	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
 	}
@@ -1923,20 +2034,20 @@ and open the template in the editor.
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
  */
-body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
+body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
 	/*     because masthead is set to position: absolute
     we have to give site-content top padding */
 	padding-top: 3.61em;
 }
 
-@media (min-width: 49em) {
-	body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
+@media (min-width: 54rem) {
+	body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
 		padding-top: 3.4em;
 	}
 }
 
-@media (min-width: 75em) {
-	body:not(.home):not(.page-id-2517):not(.page-id-2341) .site-content {
+@media (min-width: 90rem) {
+	body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
 		padding-top: 3.1em;
 	}
 }
@@ -1961,20 +2072,20 @@ body.page .entry-footer {
 	padding: 0 1em;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	body.page .entry-header > div,
 	body.page .entry-content,
 	body.page .entry-footer {
 		margin: 0 auto;
-		max-width: 50rem;
+		max-width: 48rem;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	body.page .entry-header > div,
 	body.page .entry-content,
 	body.page .entry-footer {
-		/*max-width: 52em;*/
+		max-width: 51rem;
 	}
 }
 
@@ -1982,39 +2093,13 @@ body.page .entry-footer {
 	body.page .entry-header > div,
 	body.page .entry-content,
 	body.page .entry-footer {
-		max-width: 48em;
+		max-width: 54rem;
 	}
 }
 
 body.page .entry-content {
 	margin-top: 0;
 	padding-bottom: 2em;
-}
-
-/**
-  * Set content width for Blog index and Single blog posts
-  */
-@media (min-width: 49em) {
-	body.blog .site-content,
-	body.single .site-content {
-		margin: 0 auto;
-		padding-top: 5.4em;
-		max-width: 50rem;
-	}
-}
-
-@media (min-width: 75em) {
-	body.blog .site-content,
-	body.single .site-content {
-		/*max-width: 52em;*/
-	}
-}
-
-@media (min-width: 118.75em) {
-	body.blog .site-content,
-	body.single .site-content {
-		max-width: 48em;
-	}
 }
 
 /**
@@ -2040,6 +2125,20 @@ body.archive .post {
 	/*@include border(1px, $color-dark );*/
 	margin-bottom: 1.5em;
 	padding: 0 1em 1em;
+	/*        .entry-meta {
+            padding: 0;
+            .byline,
+            .posted-on {
+                @extend .entry-meta-type;
+            }
+        }*/
+	/*        figure.author-avatar {
+            margin: 0 0 0.5em;
+            display: inline-block;
+            > img {
+                vertical-align: middle;
+            }
+        }*/
 }
 
 body.blog .post .entry-header img[class*="attachment-"],
@@ -2068,25 +2167,6 @@ body.archive .post .entry-header .entry-title > a:hover {
 	text-decoration: underline;
 }
 
-body.blog .post .entry-meta,
-body.single .post .entry-meta,
-body.archive .post .entry-meta {
-	padding: 0;
-}
-
-body.blog .post figure.author-avatar,
-body.single .post figure.author-avatar,
-body.archive .post figure.author-avatar {
-	margin: 0 0 0.5em;
-	display: inline-block;
-}
-
-body.blog .post figure.author-avatar > img,
-body.single .post figure.author-avatar > img,
-body.archive .post figure.author-avatar > img {
-	vertical-align: middle;
-}
-
 body.blog .post .entry-content,
 body.single .post .entry-content,
 body.archive .post .entry-content {
@@ -2107,7 +2187,7 @@ body.single .site-content,
 body.archive .site-content {
 	/*        display: flex;
         flex-wrap: wrap;*/
-	/*        @media (min-width: 75em) {
+	/*        @media (min-width: 90rem) {
             @include desktop_width;
             flex-wrap: nowrap;
             justify-content: space-between;
@@ -2117,7 +2197,7 @@ body.archive .site-content {
 body.blog #primary,
 body.single #primary,
 body.archive #primary {
-	/*        @media (min-width: 75em) {
+	/*        @media (min-width: 90rem) {
             flex: 0 0 63%;
         }*/
 }
@@ -2137,7 +2217,7 @@ body.archive #secondary .widget_custom_html {
 	display: none;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	body.blog #secondary,
 	body.single #secondary,
 	body.archive #secondary {
@@ -2209,7 +2289,7 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata {
 	font-style: italic;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	body.single .comments-area {
 		padding: 0 0;
 	}
@@ -2224,24 +2304,24 @@ body.single .archive .site-content {
 	margin: 0 auto;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	body.single .error404 .site-content,
 	body.single .archive .site-content {
-		max-width: 50rem;
+		max-width: 48rem;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	body.single .error404 .site-content,
 	body.single .archive .site-content {
-		/*max-width: 52em;*/
+		max-width: 51rem;
 	}
 }
 
 @media (min-width: 118.75em) {
 	body.single .error404 .site-content,
 	body.single .archive .site-content {
-		max-width: 48em;
+		max-width: 54rem;
 	}
 }
 
@@ -2256,7 +2336,7 @@ body.single body.single.post-template-single-portfolio-item {
 	/* styles for the main image */
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	body.single body.single.post-template-single-portfolio-item .site-content {
 		max-width: 90%;
 	}
@@ -2382,7 +2462,7 @@ body.single .comments-area {
 	margin-bottom: 3em;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#page-cta {
 		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
 	}
@@ -2438,7 +2518,7 @@ body.single .comments-area {
 	animation: float 1s ease-in-out infinite both;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#post-2341,
 	#post-2517 {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
@@ -2455,7 +2535,7 @@ body.single .comments-area {
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#post-2341,
 	#post-2517 {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
@@ -2505,7 +2585,7 @@ body.single .comments-area {
 	max-width: 60%;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.page-id-2341,
 	.page-id-2517 {
 		text-align: left;
@@ -2526,7 +2606,7 @@ body.single .comments-area {
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.page-id-2341 .panel-container,
 	.page-id-2517 .panel-container {
 		padding-bottom: 3.5em;
@@ -2581,7 +2661,7 @@ and open the template in the editor.
 	font-size: 90%;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#maintenance-how-works {
 		flex-wrap: nowrap;
 	}
@@ -2621,13 +2701,13 @@ and open the template in the editor.
 	right: -50%;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#post-1735 .compass-bg {
 		right: -80%;
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#post-1735 .compass-bg {
 		bottom: -300px;
 		right: -70%;
@@ -2695,7 +2775,7 @@ and open the template in the editor.
 	cursor: pointer;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	#portfolio-grid ul li {
 		float: left;
 		width: 48%;
@@ -2712,7 +2792,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	#portfolio-grid ul li a {
 		max-height: 313px;
 	}
@@ -2799,7 +2879,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.site-footer {
 		justify-content: space-around;
 	}
@@ -3069,7 +3149,7 @@ and open the template in the editor.
 	margin-bottom: .75em;
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.widget #mc_embed_signup .mc-field-group input,
 	.widget #mc_embed_signup div.mce_inline_error {
 		width: 96%;
@@ -3111,7 +3191,7 @@ and open the template in the editor.
 	padding: 0;
 }
 
-@media (min-width: 49em) {
+@media (min-width: 54rem) {
 	.footer-widgets {
 		padding: 2em 1em;
 		display: flex;
@@ -3125,7 +3205,7 @@ and open the template in the editor.
 	}
 }
 
-@media (min-width: 75em) {
+@media (min-width: 90rem) {
 	.footer-widgets {
 		flex-wrap: nowrap;
 		/* If only one widget is displayed, make it full width. */
@@ -3217,9 +3297,7 @@ body.single main {
 
 body.blog main header,
 body.single main header {
-	/*            h1, h2, h3, h4, h5, h6 {
-                @include header-font;
-            }*/
+	position: relative;
 }
 
 body.blog main header .entry-title,
@@ -3230,8 +3308,96 @@ body.single main header .entry-title {
 	margin: 1.5rem 0 1rem;
 }
 
-body.blog main .byline,
-body.single main .byline {
+body.blog main header .entry-meta,
+body.single main header .entry-meta {
+	font-family: "Titillium Web", sans-serif;
+	font-weight: 400;
+	width: auto;
+	position: absolute;
+	top: -7em;
+	/*overflow: hidden;*/
+	padding: 0.25rem 16% 0.25rem 0;
+	margin-bottom: 1em;
+	/* TAG: Img */
+	/*                > div {
+                    .author {
+                        
+                        > span, > a {
+                            line-height: 1;
+                            
+                        }
+                        
+                    }
+                    float: left;
+                    .byline,
+                    .posted-on {
+                        display: block;
+                    }
+                }*/
+}
+
+body.blog main header .entry-meta figure.author-avatar,
+body.single main header .entry-meta figure.author-avatar {
+	float: left;
+	margin: 0 0.5rem 0 0;
+	min-height: 4em;
+	line-height: 5;
+}
+
+body.blog main header .entry-meta figure.author-avatar > img,
+body.single main header .entry-meta figure.author-avatar > img {
+	vertical-align: middle;
+}
+
+body.blog main header .entry-meta > div,
+body.single main header .entry-meta > div {
+	/*display: inline;*/
+	/*                    .times {
+                        font-weight: 300;
+                    }*/
+}
+
+body.blog main header .entry-meta > div > .author-vcard,
+body.single main header .entry-meta > div > .author-vcard {
+	/*                        display: inline-table;*/
+}
+
+body.blog main header .entry-meta > div .author,
+body.single main header .entry-meta > div .author {
+	font-weight: 600;
+}
+
+body.blog main header .entry-meta > div .author-bio,
+body.blog main header .entry-meta > div .times,
+body.single main header .entry-meta > div .author-bio,
+body.single main header .entry-meta > div .times {
+	display: block;
+	color: slategrey;
+}
+
+body.blog main header .entry-meta > div .author-bio,
+body.single main header .entry-meta > div .author-bio {
+	line-height: 1.2;
+	letter-spacing: 0.025em;
+	/*$secondary_grey*/
+}
+
+body.blog main header .entry-meta > div .social-links,
+body.single main header .entry-meta > div .social-links {
+	font-size: 156%;
+	line-height: 1;
+	padding-left: 0.5rem;
+}
+
+body.blog main header .entry-meta > div .social-links .social-link,
+body.single main header .entry-meta > div .social-links .social-link {
+	margin: 0 0.1rem 0 0;
+	padding: 0.25rem;
+	vertical-align: top;
+}
+
+body.blog main .entry-content .byline,
+body.single main .entry-content .byline {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.728rem;
 	line-height: 1.5;

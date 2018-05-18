@@ -194,7 +194,7 @@ function peak_theme_scripts() {
 	// load Google fonts
 //        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
         
-    wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,600,700,800,900');
+    wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,400,500,600,700,800,900');
         
 
         // load Font Awesome CDN

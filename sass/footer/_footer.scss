@@ -1,24 +1,98 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 1-Nov-2017, 9:07:18 AM
-    Author     : David
-*/
+/**
+ * Footer styles 
+ */
+
+.footer-widgets {
+    
+    text-align: left;
+    background-color: $hero-color;
+    color: $color-light;
+    margin: 0;
+    padding: 1.5em 1em 1em;
+    
+    @include linear-gradient(to right);
+    
+    a {
+        
+        font-weight: 300;
+        
+    }
+    
+    @media #{$tablet__breakpoint} {
+        
+        display: flex;
+        flex-wrap: wrap;
+        padding: 2.25em 3.375em 1em;
+        
+        .widget {
+
+            width: auto;
+            flex-grow: 1;
+            flex-shrink: 1;
+            padding: 0.5em;
+            
+            &:first-of-type {
+               
+                flex-grow: 2;
+                flex-shrink: 2;
+                
+            }
+            
+        }
+        
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        padding-left: 5.063em;
+        padding-right: 5.063em;
+
+        .widget {
+            
+            flex: 1 0 30em;
+            
+            &:first-of-type {
+
+                flex: 1 0 40em;
+
+            }
+            
+            &:last-of-type {
+            
+                flex-basis: 40em;
+
+            }
+            
+        }
+        
+    }
+    
+}
+
+/**
+ * NOTE: This is the legal footer
+ */
 .site-footer {
+    
     display: flex;
     padding: 0.5em 0;
+    
     nav {
+        
         a {
+            
             text-decoration: none;
+            
         }
+        
         .menu {
+            
             list-style: none;
             padding: 0;
             margin: 0;
+            
             li {
+                
                 display: inline-block;
                 
                 a {
@@ -28,17 +102,24 @@ and open the template in the editor.
             
         }
     }
+    
     > div,
     > nav {
         display: flex;
         align-items: center;
     }
+    
     #copyright,
     #legal-menu > ul {
+        
         font-size: 75%;
+        
     }
+    
     #social-media-menu > ul {
+        
         font-size: 125%;
+        
     }
 /*    #legal-menu {
         li:last-child {
@@ -75,6 +156,3 @@ and open the template in the editor.
     }
 }
 
-.footer-widgets {
-    text-align: left;
-}

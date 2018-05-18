@@ -43,190 +43,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Captions
 	## Galleries
 --------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
-/*$text_font: 'Raleway', sans-serif;*/
-/**
- * Applies the max boldness to Titillium Font
- */
-/**
-  * Note: em values are calculated by desired content width and dividing by global px value
-  * Ex: 1200px / 16px = 75em
-  */
-/*$mobile-only__breakpoint: "(max-width: 16rem)";*/
-/*$desktop__breakpoint: "(min-width: 75rem)";*/
-/**
- * Site-wide Width contraints
- */
-/**
- * Global Containers 
- */
-.site-content {
-	margin: 0 auto;
-	padding-top: 8.83em;
-}
-
-@media (min-width: 54rem) {
-	.site-content {
-		max-width: 48rem;
-		/*padding-top: 8em;*/
-	}
-}
-
-@media (min-width: 90rem) {
-	.site-content {
-		max-width: 51rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	.site-content {
-		border: 3px solid red;
-		max-width: 54rem;
-	}
-}
-
-/**
- * Body animation and class for onpage load fadein
- */
-body {
-	opacity: 0;
-	animation: fadeIn 1.35s;
-}
-
-body.fadeIn {
-	opacity: 1;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-/**
- * Add padding to anchored bookmarks to account for fixed header + some margin
- */
-h2, p {
-	position: relative;
-}
-
-h2 span[class="anchored-header-target"], p span[class="anchored-header-target"] {
-	display: block;
-	position: absolute;
-	top: -81px;
-	padding-bottom: 81px;
-	outline: none;
-	border-width: 0;
-}
-
-h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus, p span[class="anchored-header-target"]:active, p span[class="anchored-header-target"]:focus {
-	outline: none;
-	border-width: 0;
-}
-
-/**
- * Hide featured thumbnail on blog index for post: SEO in 2018
- */
-.blog,
-.single {
-	/* post SEO in 2018 trends */
-}
-
-.blog .post-2106 .entry-header > a img,
-.single .post-2106 .entry-header > a img {
-	/*display: none;*/
-}
-
-/* If homepage or service homepage, preload images */
-#preload-container {
-	display: none;
-}
-
-/* style header disclaimer on guest posts */
-.guest-post {
-	font-weight: bold;
-	font-style: italic;
-	font-family: "Roboto", sans-serif;
-}
-
-/*--------------------------------------------------------------*/
-/* theme colors */
-/* hero color variations */
-/* orange footer coolor */
-/*@import "breakpoints";*/
-/*--------------------------------------------------------------
-## Helper Mixins
---------------------------------------------------------------*/
-/**
- * entry meta typography
- */
-.entry-meta-type, body.blog .post .entry-footer .cat-links,
-body.blog .post .entry-footer .comments-link,
-body.single .post .entry-footer .cat-links,
-body.single .post .entry-footer .comments-link,
-body.archive .post .entry-footer .cat-links,
-body.archive .post .entry-footer .comments-link {
-	font-family: "Roboto", sans-serif;
-	display: inline;
-	/*font-weight: 100;*/
-	text-transform: uppercase;
-}
-
-/**
-  * Site Widths
-  */
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10-Nov-2017, 12:44:13 AM
-    Author     : David
-*/
-/**
-  * Grow on hover
-  */
-/* Grow */
-.grow-animate {
-	display: inline-block;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
-	-webkit-transition-duration: 0.25s;
-	transition-duration: 0.25s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
-}
-
-.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
-	-webkit-transform: scale(1.5);
-	transform: scale(1.5);
-}
-
-/* animation of hero text on homepage */
-@keyframes fadeInUp {
-	0% {
-		transform: translateY(2rem);
-		opacity: 0;
-	}
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-.fadeInUp {
-	animation: fadeInUp .85s ease-out forwards;
-	animation-fill-mode: both;
-}
-
-/*--------------------------------------------------------------
-# Normalize
+# Normalize & Global Vars
 --------------------------------------------------------------*/
 html {
 	font-family: sans-serif;
@@ -439,9 +256,50 @@ th {
 	padding: 0;
 }
 
+/* theme colors */
+/* hero color variations */
+/* orange footer coolor */
+/*$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;*/
+/*$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: $hero-color;
+$color__link-visited: $hero-color;
+$color__link-hover: $hero-green;
+$color__text-main: #404040;*/
+/*$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;*/
+/*@import "breakpoints";*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-May-2018, 12:07:36 AM
+    Author     : David
+*/
 /*--------------------------------------------------------------
-# Typography
+# Breakpoints
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Content Widths by Device
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Fonts & Typographic Styles
+--------------------------------------------------------------*/
+/*$text_font: 'Raleway', sans-serif;*/
+/**
+ * Applies the max boldness to Titillium Font
+ */
 /*@import '../../bower_components/modular-scale/modularscale';*/
 html {
 	font-size: 100%;
@@ -468,7 +326,7 @@ textarea {
 	/*	color: $color__text-main;*/
 	font-family: "Titillium Web", sans-serif;
 	/*	@include font-size(1.1);*/
-	line-height: 1.5;
+	line-height: 1.4;
 	/* Media Breakpoints for Responsive Typography */
 	/*        h2,
         h3,
@@ -511,8 +369,8 @@ textarea {
 }
 
 p {
-	font-size: 1.275rem;
-	line-height: 1.5;
+	font-size: 1.19rem;
+	line-height: 1.4;
 	font-weight: 300;
 }
 
@@ -528,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1,
 .h1 {
-	font-size: 2.86875rem;
+	font-size: 2.3324rem;
 }
 
 h2,
@@ -538,7 +396,7 @@ body.single .archive .page-title,
 h3,
 .h3,
 #main-content {
-	font-size: 1.9125rem;
+	font-size: 1.666rem;
 	font-weight: 600;
 	margin: 1.5em 0 0;
 }
@@ -564,12 +422,12 @@ body.single main header .entry-meta {
 }
 
 .site-header .main-navigation {
-	font-size: 1.275rem;
+	font-size: 1.19rem;
 	font-weight: 300;
 }
 
 .site-header .site-title {
-	font-size: 1.9125rem;
+	font-size: 1.666rem;
 }
 
 .site-header .site-title + .site-description {
@@ -579,7 +437,7 @@ body.single main header .entry-meta {
 .blog .entry-meta {
 	font-family: "Roboto", sans-serif;
 	font-weight: lighter;
-	font-size: 1.275rem;
+	font-size: 1.19rem;
 }
 
 /*h1,
@@ -646,6 +504,8 @@ body.single .comments-area .comment-body .comment-content > .comment-metadata,
 .font-small {
     font-size: 0.563em;
 }*/
+/*
+
 dfn, cite, em, i {
 	font-style: italic;
 }
@@ -658,7 +518,7 @@ address {
 	margin: 0 0 1.5em;
 }
 
-/*pre {
+pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
 	@include font-size(0.9375);
@@ -668,294 +528,223 @@ address {
 	overflow: auto;
 	padding: 1.6em;
         white-space: initial;
-}*/
+}
+
 code, kbd, tt, var {
-	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-	/*@include font-size(0.9375);*/
+	font-family: $font__code;
+	@include font-size(0.9375);
 }
 
 abbr, acronym {
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
 }
 
 mark, ins {
-	background: #fff9c0;
+	background: $color__background-ins;
 	text-decoration: none;
 }
 
 big {
 	font-size: 125%;
-}
-
+}*/
 /*--------------------------------------------------------------
-# Elements
+# Helpers
 --------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-body {
-	background: #fff;
-	/* Fallback for when there is no custom background color defined. */
-}
-
-hr {
-	background-color: #ccc;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
-}
-
-figure {
-	margin: 1em 0;
-	/* Extra wide images within figure tags don't overflow the content area. */
-	display: table-column;
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
 /*--------------------------------------------------------------
-# Forms
+## Helper Mixins
 --------------------------------------------------------------*/
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
-	/*@include font-size(0.75);*/
-	line-height: 1;
-	padding: .6em 1em .4em;
-}
-
-button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
-}
-
-button:active, button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-}
-
-button[type="submit"].peak-button,
-input[type="submit"].peak-button,
-.peak-button {
-	clear: both;
-	background-color: #338c5f;
-	border: 0 none;
-	border-radius: 4px;
-	transition: all 0.23s ease-in-out 0s;
-	color: #EAF1F7;
-	cursor: pointer;
-	display: inline-block;
-	font-size: 1em;
-	font-weight: normal;
-	min-height: 1em;
-	line-height: 1em;
-	margin: 0 5px 10px 0;
-	margin: 1.5rem 0 0;
-	padding: 0.75em 1.25em;
-	text-align: center;
-	text-decoration: none;
-	vertical-align: top;
-	white-space: nowrap;
-	width: auto;
-	vertical-align: middle;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-	position: relative;
-	-webkit-transition-property: color;
-	transition-property: color;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-}
-
-button[type="submit"].peak-button::before,
-input[type="submit"].peak-button::before,
-.peak-button::before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: #2098D1;
-	-webkit-transform: scaleX(0);
-	transform: scaleX(0);
-	-webkit-transform-origin: 50%;
-	transform-origin: 50%;
-	-webkit-transition-property: transform;
-	transition-property: transform;
-	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-
-button[type="submit"].peak-button:hover, button[type="submit"].peak-button:focus,
-input[type="submit"].peak-button:hover,
-input[type="submit"].peak-button:focus,
-.peak-button:hover,
-.peak-button:focus {
-	color: white;
-}
-
-button[type="submit"].peak-button:hover:before, button[type="submit"].peak-button:focus:before, button[type="submit"].peak-button:active:before,
-input[type="submit"].peak-button:hover:before,
-input[type="submit"].peak-button:focus:before,
-input[type="submit"].peak-button:active:before,
-.peak-button:hover:before,
-.peak-button:focus:before,
-.peak-button:active:before {
-	-webkit-transform: scaleX(1);
-	transform: scaleX(1);
-}
-
-button[type="submit"].peak-button:visited,
-input[type="submit"].peak-button:visited,
-.peak-button:visited {
-	color: #EAF1F7;
-}
-
-.peak-btn-highlight {
-	background-color: transparent;
-	border: 2px solid #EAF1F7;
+/**
+ * entry meta typography
+ */
+.entry-meta-type, body.blog .post .entry-footer .cat-links,
+body.blog .post .entry-footer .comments-link,
+body.single .post .entry-footer .cat-links,
+body.single .post .entry-footer .comments-link,
+body.archive .post .entry-footer .cat-links,
+body.archive .post .entry-footer .comments-link {
+	font-family: "Roboto", sans-serif;
+	display: inline;
+	/*font-weight: 100;*/
 	text-transform: uppercase;
 }
 
-.peak-btn-highlight:before {
-	background: rgba(155, 155, 155, 0.75);
-	background: #F75C03;
-	background: #835EA8;
-}
-
-peak-btn-highlight-light:hover {
-	color: white;
-}
-
-/*.peak-button-container {
-    position: relative;
-    &::before {
-        
-    }
-}*/
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	padding: 3px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-select {
-	border: 1px solid #ccc;
-}
-
-textarea {
-	width: 100%;
-}
-
-.wpforms-form input {
-	padding: 8px 0;
-	text-indent: 2%;
-	border-radius: 3px;
-}
-
-.wpforms-form .wpforms-field-label {
-	font-size: 85%;
-}
-
+/**
+  * Site Widths
+  */
 /*
-display: block;
-    width: 100%;
-    
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
 */
+/* 
+    Created on : 10-Nov-2017, 12:44:13 AM
+    Author     : David
+*/
+/**
+  * Grow on hover
+  */
+/* Grow */
+.grow-animate {
+	display: inline-block;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	-webkit-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+}
+
+.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+/* animation of hero text on homepage */
+@keyframes fadeInUp {
+	0% {
+		transform: translateY(2rem);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.fadeInUp {
+	animation: fadeInUp .85s ease-out forwards;
+	animation-fill-mode: both;
+}
+
+/*--------------------------------------------------------------*/
+/**
+  * Note: em values are calculated by desired content width and dividing by global px value
+  * Ex: 1200px / 16px = 75em
+  */
+/**
+ * These are helpers / Site-wide Width contraints
+ */
+/**
+ * Global Containers 
+ */
+.entry-content {
+	margin: 0 auto;
+	padding-top: 8.83em;
+}
+
+@media (min-width: 54rem) {
+	.entry-content {
+		max-width: 48em;
+		/*padding-top: 8em;*/
+	}
+}
+
+@media (min-width: 90rem) {
+	.entry-content {
+		max-width: 51em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.entry-content {
+		border: 3px solid red;
+		max-width: 54em;
+	}
+}
+
+/**
+ * Body animation and class for onpage load fadein
+ */
+body {
+	opacity: 0;
+	animation: fadeIn 1.35s;
+}
+
+body.fadeIn {
+	opacity: 1;
+}
+
+/* NOTE: keyframes should go into an animation file */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* NOTE: this will be global link styles */
+/* NOTE: go to 'elements' styles and grab those for global class */
+a {
+	color: #385f7e;
+}
+
+a:visited {
+	/*color: $color__link-visited;*/
+}
+
+a:hover, a:focus, a:active {
+	color: #338c5f;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/**
+ * NOTE: Add this to a 'hotfix' helper file that will load later
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+	position: relative;
+}
+
+h2 span[class="anchored-header-target"], p span[class="anchored-header-target"] {
+	display: block;
+	position: absolute;
+	top: -81px;
+	padding-bottom: 81px;
+	outline: none;
+	border-width: 0;
+}
+
+h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus, p span[class="anchored-header-target"]:active, p span[class="anchored-header-target"]:focus {
+	outline: none;
+	border-width: 0;
+}
+
+/**
+ * Hide featured thumbnail on blog index for post: SEO in 2018
+ */
+.blog,
+.single {
+	/* post SEO in 2018 trends */
+}
+
+.blog .post-2106 .entry-header > a img,
+.single .post-2106 .entry-header > a img {
+	/*display: none;*/
+}
+
+/* If homepage or service homepage, preload images */
+#preload-container {
+	display: none;
+}
+
+/* style header disclaimer on guest posts */
+.guest-post {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Roboto", sans-serif;
+}
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -1171,26 +960,6 @@ display: block;
 }
 
 /* Links */
-a {
-	color: #385f7e;
-}
-
-a:visited {
-	color: #385f7e;
-}
-
-a:hover, a:focus, a:active {
-	color: #338c5f;
-}
-
-a:focus {
-	outline: thin dotted;
-}
-
-a:hover, a:active {
-	outline: 0;
-}
-
 .header-sticky .main-navigation:not(.toggled) a, .header-sticky .main-navigation:not(.toggled) .fa,
 .header-sticky .main-navigation:not(.toggled) a + .dropdown-toggle > i.fa {
 	color: white;
@@ -1254,6 +1023,1034 @@ a:hover, a:active {
     width: 100%;  fixes width issue on mobile nav menu 
 }*/
 /*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+/** Custom styles **/
+/**
+  * Page Headers Banners
+  */
+.page .entry-header {
+	background-color: #EAF1F7;
+	text-align: center;
+	padding: 1em 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
+}
+
+.page .entry-header .entry-title {
+	color: #385f7e;
+	font-weight: bold;
+	line-height: 1.25;
+	margin: 0;
+}
+
+@media (min-width: 54rem) {
+	.page .entry-header {
+		padding: 1.5em 0;
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
+	}
+	.page .entry-header .entry-title {
+		font-size: 3.157em;
+	}
+}
+
+@media (min-width: 54rem) and (min-width: 54rem) {
+	.page .entry-header .entry-title {
+		font-size: 3.157em;
+	}
+}
+
+@media (min-width: 90rem) {
+	.page .entry-header {
+		padding: 2.5em 0;
+		margin-bottom: 1em;
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
+	}
+}
+
+/**
+ * Web Maintenance, Content Creation, Contact
+ * (first line is local, second line is prod)
+ */
+.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
+}
+
+@media (min-width: 54rem) {
+	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
+	}
+}
+
+@media (min-width: 90rem) {
+	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
+	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
+	}
+}
+
+/** SEO, About Peak */
+.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
+}
+
+@media (min-width: 54rem) {
+	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
+	}
+}
+
+@media (min-width: 90rem) {
+	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
+		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
+	}
+}
+
+/**
+ * Divide pages by page-id and apply different background colors by page
+ */
+/**
+ * Regulate top padding on PAGES not Home
+ * (second page ID is localhost)
+ */
+/*body:not(.home):not(.blog):not(.single)
+:not(.page-id-2517):not(.page-id-2341) .site-content {
+
+     because masthead is set to position: absolute
+    we have to give site-content top padding 
+
+    // updated Apr. 2, 2018
+    padding-top: 3.61em;
+
+    @media (min-width: 54rem) {
+        padding-top: 3.4em;
+    }
+
+    @media (min-width: 90rem) {
+        padding-top: 3.1em;
+    }
+}*/
+/**
+  * general PAGE styles
+  */
+.page {
+	/** remove top margin on page content on mobile devices */
+}
+
+.page .content-area {
+	overflow: hidden;
+}
+
+.page .entry-header > div,
+.page .entry-content,
+.page .entry-footer {
+	padding: 0 1em;
+}
+
+@media (min-width: 54rem) {
+	.page .entry-header > div,
+	.page .entry-content,
+	.page .entry-footer {
+		margin: 0 auto;
+		max-width: 48em;
+	}
+}
+
+@media (min-width: 90rem) {
+	.page .entry-header > div,
+	.page .entry-content,
+	.page .entry-footer {
+		max-width: 51em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.page .entry-header > div,
+	.page .entry-content,
+	.page .entry-footer {
+		max-width: 54em;
+	}
+}
+
+.page .entry-content {
+	margin-top: 0;
+	padding-bottom: 2em;
+}
+
+.page .entry-content > p:first-child {
+	margin-top: 1.5em;
+}
+
+.page .site-content {
+	/*     because masthead is set to position: absolute
+    we have to give site-content top padding */
+	padding-top: 3.61em;
+}
+
+@media (min-width: 54rem) {
+	.page .site-content {
+		padding-top: 3.4em;
+	}
+}
+
+@media (min-width: 90rem) {
+	.page .site-content {
+		padding-top: 3.59em;
+	}
+}
+
+/**
+  * POST styles
+  */
+body.blog,
+body.single,
+body.archive {
+	/* article post styles */
+	/*    h3 {
+        font-weight: bold;
+    }
+    h5,
+    h6 {
+        color: $hero-color;
+    }*/
+}
+
+body.blog .post,
+body.single .post,
+body.archive .post {
+	/*@include box-shadow;*/
+	/*@include border(1px, $color-dark );*/
+	margin-bottom: 1.5em;
+	padding: 0 1em 1em;
+	/*        .entry-meta {
+            padding: 0;
+            .byline,
+            .posted-on {
+                @extend .entry-meta-type;
+            }
+        }*/
+	/*        figure.author-avatar {
+            margin: 0 0 0.5em;
+            display: inline-block;
+            > img {
+                vertical-align: middle;
+            }
+        }*/
+}
+
+body.blog .post .entry-header img[class*="attachment-"],
+body.single .post .entry-header img[class*="attachment-"],
+body.archive .post .entry-header img[class*="attachment-"] {
+	width: 100%;
+	height: auto;
+	max-width: 100%;
+}
+
+body.blog .post .entry-header .entry-title,
+body.single .post .entry-header .entry-title,
+body.archive .post .entry-header .entry-title {
+	/*@extend .h2;*/
+}
+
+body.blog .post .entry-header .entry-title > a,
+body.single .post .entry-header .entry-title > a,
+body.archive .post .entry-header .entry-title > a {
+	text-decoration: none;
+}
+
+body.blog .post .entry-header .entry-title > a:hover,
+body.single .post .entry-header .entry-title > a:hover,
+body.archive .post .entry-header .entry-title > a:hover {
+	text-decoration: underline;
+}
+
+body.blog .post .entry-content,
+body.single .post .entry-content,
+body.archive .post .entry-content {
+	margin-top: 0;
+}
+
+body.blog .post .more-link,
+body.single .post .more-link,
+body.archive .post .more-link {
+	font-weight: bolder;
+	font-style: italic;
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+body.blog .site-content,
+body.single .site-content,
+body.archive .site-content {
+	/*        display: flex;
+        flex-wrap: wrap;*/
+	/*        @media (min-width: 90rem) {
+            @include desktop_width;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }*/
+}
+
+body.blog #primary,
+body.single #primary,
+body.archive #primary {
+	/*        @media (min-width: 90rem) {
+            flex: 0 0 63%;
+        }*/
+}
+
+body.blog #secondary,
+body.single #secondary,
+body.archive #secondary {
+	padding-top: 1.65em;
+	background-color: #EAF1F7;
+	width: 100%;
+	/* hide redundant widgets in mobile mode */
+}
+
+body.blog #secondary .widget_custom_html,
+body.single #secondary .widget_custom_html,
+body.archive #secondary .widget_custom_html {
+	display: none;
+}
+
+@media (min-width: 90rem) {
+	body.blog #secondary,
+	body.single #secondary,
+	body.archive #secondary {
+		display: block;
+		padding-top: 1.65em;
+		/*flex: 0 0 33%;*/
+	}
+	body.blog #secondary .widget_custom_html,
+	body.single #secondary .widget_custom_html,
+	body.archive #secondary .widget_custom_html {
+		display: block;
+	}
+}
+
+/**
+  * Single Blog posts
+  */
+body.single {
+	/*    .entry-header .entry-title,
+    h2,
+    h3,
+    h4 {
+        color: $hero-color;
+    }*/
+	/* note: could add quote styles here, etc..
+}
+
+/* Updated blog styles: May 17th, 2018 */
+	/**
+ * Extraneous pages
+ */
+	/**
+ * Archive page styles
+ */
+	/**
+ * Portfolio item styles
+ */
+	/** NOTE: these should go into their own folder*/
+}
+
+body.single figure, body.single figcaption {
+	width: auto !important;
+}
+
+body.single .post .entry-footer .cat-links {
+	margin: 1.5em 0 0;
+	display: inline-block;
+}
+
+body.single .comments-area {
+	padding: 0 1em;
+	margin-top: 1em;
+}
+
+body.single .comments-area .comment-list {
+	padding: 0;
+	margin-left: 0;
+	list-style: none;
+}
+
+body.single .comments-area .comment-body {
+	margin: 1em 0 1.5em;
+	border-left: 3px solid #EAF1F7;
+	padding: 1em;
+}
+
+body.single .comments-area .comment-body .comment-content > .comment-metadata {
+	margin-top: 0.5em;
+	font-style: italic;
+}
+
+@media (min-width: 54rem) {
+	body.single .comments-area {
+		padding: 0 0;
+	}
+}
+
+body.single body.blog .site-content {
+	box-shadow: none;
+}
+
+body.single .error404 .site-content,
+body.single .archive .site-content {
+	margin: 0 auto;
+}
+
+@media (min-width: 54rem) {
+	body.single .error404 .site-content,
+	body.single .archive .site-content {
+		max-width: 48em;
+	}
+}
+
+@media (min-width: 90rem) {
+	body.single .error404 .site-content,
+	body.single .archive .site-content {
+		max-width: 51em;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.single .error404 .site-content,
+	body.single .archive .site-content {
+		max-width: 54em;
+	}
+}
+
+body.single .archive .page-title {
+	font-weight: normal;
+	padding-left: 0.25em;
+	border-left: 3px solid #385f7e;
+	margin-top: 0;
+}
+
+body.single body.single.post-template-single-portfolio-item {
+	/* styles for the main image */
+}
+
+@media (min-width: 90rem) {
+	body.single body.single.post-template-single-portfolio-item .site-content {
+		max-width: 90%;
+	}
+	body.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
+		max-width: 67%;
+	}
+}
+
+@media (min-width: 118.75em) {
+	body.single body.single.post-template-single-portfolio-item .site-content {
+		max-width: 80%;
+	}
+	body.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
+		max-width: 60%;
+	}
+}
+
+body.single body.single.post-template-single-portfolio-item #primary {
+	flex-basis: 100%;
+}
+
+body.single body.single.post-template-single-portfolio-item img.website-img-full {
+	margin-bottom: 1em;
+	border: 0px solid #fff !important;
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.single body.single.post-template-single-portfolio-item .entry-footer {
+	border-top: 1px solid #ccc;
+	padding-top: 1em;
+}
+
+body.single body.single.post-template-single-portfolio-item .entry-footer > .navigation.post-navigation {
+	margin: 0;
+}
+
+body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-next a:after {
+	content: "\f054";
+	font-family: 'FontAwesome';
+	display: inline-block;
+	color: inherit;
+	padding-left: 0.5em;
+}
+
+body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-previous a:before {
+	content: "\f053";
+	font-family: 'FontAwesome';
+	display: inline-block;
+	color: inherit;
+	padding-right: 0.5em;
+}
+
+body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
+	display: inline-block;
+	padding: 0.65em;
+}
+
+body.single .sticky {
+	display: block;
+}
+
+body.single .hentry {
+	margin: 0;
+}
+
+body.single .updated:not(.published) {
+	display: none;
+}
+
+body.single .page-content,
+body.single .entry-content,
+body.single .entry-summary {
+	margin: 1em auto 0;
+}
+
+body.single .page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+body.single .post-navigation,
+body.single .comments-area {
+	padding: 0 1em;
+}
+
+/** Portfolio styles */
+/*#songfarm > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png');
+}
+#hollis > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png');
+}
+#cirs > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png');
+}
+#coastal > a {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png');
+}*/
+/*    li#canoa > a.image-hover {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png');
+}*/
+/*    li#your-website > a.image-hover {
+    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg');
+}*/
+#portfolio-grid ul {
+	margin: 1em 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+#portfolio-grid ul li {
+	cursor: pointer;
+	float: none;
+	margin-bottom: 1em;
+}
+
+#portfolio-grid ul li > a {
+	display: block;
+	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	transition: .3s ease-in-out;
+}
+
+#portfolio-grid ul li > a:hover {
+	box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px);
+}
+
+#portfolio-grid ul li > a > img {
+	width: 100%;
+	height: auto;
+	opacity: 1;
+	border-radius: 3px;
+	transition: .3s ease-in-out;
+}
+
+#portfolio-grid ul li > a > img:hover {
+	opacity: .75;
+	cursor: pointer;
+}
+
+@media (min-width: 54rem) {
+	#portfolio-grid ul li {
+		float: left;
+		width: 48%;
+		padding: 0 2%;
+	}
+	#portfolio-grid ul li > a {
+		max-height: 250px;
+	}
+	#portfolio-grid ul:after {
+		content: "";
+		clear: both;
+		display: table;
+		/*                padding-top: 56.25%;*/
+	}
+}
+
+@media (min-width: 90rem) {
+	#portfolio-grid ul li a {
+		max-height: 313px;
+	}
+}
+
+/*--------------------------------------------------------------
+# Hero (Theme) Styles
+--------------------------------------------------------------*/
+/**
+ * Page-Banner suitable for pages
+ */
+#page-cta {
+	color: #EAF1F7;
+	text-align: center;
+	background-color: #338c5f;
+	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png");
+	background-size: cover;
+	overflow: hidden;
+	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
+	position: relative;
+	z-index: 10;
+	padding: 1.5em 1em 1em;
+}
+
+#page-cta .cta-heading,
+#page-cta .cta-secondary-text {
+	margin-left: auto;
+	margin-right: auto;
+	text-shadow: 1px 1px 2px #333;
+}
+
+#page-cta .cta-heading {
+	font-weight: bolder;
+	color: #EAF1F7;
+	/*        @extend .h1;*/
+	font-size: 3.26536rem;
+	margin-top: 1em;
+}
+
+#page-cta .cta-secondary-text {
+	font-size: 125%;
+	font-size: 1.666rem;
+	font-weight: 400;
+	/*text-transform: uppercase;*/
+}
+
+#page-cta .peak-button {
+	margin-bottom: 3em;
+}
+
+@media (min-width: 54rem) {
+	#page-cta {
+		padding: 2.25em 3.375em 1em;
+	}
+}
+
+@media (min-width: 90rem) {
+	#page-cta {
+		padding-left: 5.063em;
+		padding-right: 5.063em;
+		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
+	}
+	#page-cta .cta-heading,
+	#page-cta .cta-secondary-text {
+		max-width: 51em;
+	}
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+hr {
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	display: table-column;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	/*border-color: $color__border-button;*/
+	border-radius: 3px;
+	/*background: $color__background-button;*/
+	color: rgba(0, 0, 0, 0.8);
+	/*@include font-size(0.75);*/
+	line-height: 1;
+	padding: .6em 1em .4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	/*border-color: $color__border-button-hover;*/
+}
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	/*border-color: $color__border-button-focus;*/
+}
+
+button[type="submit"].peak-button,
+input[type="submit"].peak-button,
+.peak-button {
+	clear: both;
+	background-color: #338c5f;
+	border: 0 none;
+	border-radius: 4px;
+	transition: all 0.23s ease-in-out 0s;
+	color: #EAF1F7;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: normal;
+	min-height: 1em;
+	line-height: 1em;
+	margin: 1em 0;
+	padding: 0.75em 1.25em;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: top;
+	white-space: nowrap;
+	width: auto;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	position: relative;
+	-webkit-transition-property: color;
+	transition-property: color;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+
+button[type="submit"].peak-button::before,
+input[type="submit"].peak-button::before,
+.peak-button::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #2098D1;
+	-webkit-transform: scaleX(0);
+	transform: scaleX(0);
+	-webkit-transform-origin: 50%;
+	transform-origin: 50%;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+
+button[type="submit"].peak-button:hover, button[type="submit"].peak-button:focus,
+input[type="submit"].peak-button:hover,
+input[type="submit"].peak-button:focus,
+.peak-button:hover,
+.peak-button:focus {
+	color: white;
+}
+
+button[type="submit"].peak-button:hover:before, button[type="submit"].peak-button:focus:before, button[type="submit"].peak-button:active:before,
+input[type="submit"].peak-button:hover:before,
+input[type="submit"].peak-button:focus:before,
+input[type="submit"].peak-button:active:before,
+.peak-button:hover:before,
+.peak-button:focus:before,
+.peak-button:active:before {
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+button[type="submit"].peak-button:visited,
+input[type="submit"].peak-button:visited,
+.peak-button:visited {
+	color: #EAF1F7;
+}
+
+.peak-btn-highlight {
+	background-color: transparent;
+	border: 2px solid #EAF1F7;
+	text-transform: uppercase;
+}
+
+.peak-btn-highlight:before {
+	background: rgba(155, 155, 155, 0.75);
+	background: #F75C03;
+	background: #835EA8;
+}
+
+peak-btn-highlight-light:hover {
+	color: white;
+}
+
+/*.peak-button-container {
+    position: relative;
+    &::before {
+        
+    }
+}*/
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	/*color: $color__text-input;*/
+	border: 1px solid #385f7e;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	/*color: $color__text-input-focus;*/
+}
+
+select {
+	border: 1px solid #333;
+}
+
+textarea {
+	width: 100%;
+}
+
+.wpforms-form input {
+	padding: 8px 0;
+	text-indent: 2%;
+	border-radius: 3px;
+}
+
+.wpforms-form .wpforms-field-label {
+	font-size: 85%;
+}
+
+/*
+display: block;
+    width: 100%;
+    
+*/
+/**
+ * Footer styles 
+ */
+.footer-widgets {
+	text-align: left;
+	background-color: #385f7e;
+	color: #EAF1F7;
+	margin: 0;
+	padding: 1.5em 1em 1em;
+	background: linear-gradient(to right, #385f7e, #213647);
+}
+
+.footer-widgets a {
+	font-weight: 300;
+}
+
+@media (min-width: 54rem) {
+	.footer-widgets {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 2.25em 3.375em 1em;
+	}
+	.footer-widgets .widget {
+		width: auto;
+		flex-grow: 1;
+		flex-shrink: 1;
+		padding: 0.5em;
+	}
+	.footer-widgets .widget:first-of-type {
+		flex-grow: 2;
+		flex-shrink: 2;
+	}
+}
+
+@media (min-width: 90rem) {
+	.footer-widgets {
+		padding-left: 5.063em;
+		padding-right: 5.063em;
+	}
+	.footer-widgets .widget {
+		flex: 1 0 30em;
+	}
+	.footer-widgets .widget:first-of-type {
+		flex: 1 0 40em;
+	}
+	.footer-widgets .widget:last-of-type {
+		flex-basis: 40em;
+	}
+}
+
+/**
+ * NOTE: This is the legal footer
+ */
+.site-footer {
+	display: flex;
+	padding: 0.5em 0;
+	/*    #legal-menu {
+        li:last-child {
+            margin-left: 0.65em;
+        }
+    }    */
+}
+
+.site-footer nav a {
+	text-decoration: none;
+}
+
+.site-footer nav .menu {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.site-footer nav .menu li {
+	display: inline-block;
+}
+
+.site-footer nav .menu li a {
+	padding: 0 0.25em;
+}
+
+.site-footer > div,
+.site-footer > nav {
+	display: flex;
+	align-items: center;
+}
+
+.site-footer #copyright,
+.site-footer #legal-menu > ul {
+	font-size: 75%;
+}
+
+.site-footer #social-media-menu > ul {
+	font-size: 125%;
+}
+
+@media (max-width: 768px) {
+	.site-footer {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.site-footer #social-media-menu {
+		order: 1;
+		flex-basis: 100%;
+		justify-content: center;
+		font-size: 150%;
+	}
+	.site-footer #legal-menu {
+		order: 2;
+		flex-basis: 100%;
+		justify-content: center;
+		margin: 0.5em 0;
+	}
+	.site-footer #legal-menu a {
+		padding: 0.5em;
+	}
+	.site-footer #copyright {
+		order: 3;
+		margin: 0.5em 0;
+	}
+}
+
+@media (min-width: 54rem) {
+	.site-footer {
+		justify-content: space-around;
+	}
+}
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 /* Text meant only for screen readers. */
@@ -1268,11 +2065,11 @@ a:hover, a:active {
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
+	/*background-color: $color__background-screen;*/
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
-	color: #21759b;
+	/*color: $color__text-screen;*/
 	display: block;
 	/*@include font-size(0.875);*/
 	font-weight: bold;
@@ -1395,7 +2192,7 @@ a:hover, a:active {
 }
 
 .features-section h4 {
-	color: #404040;
+	/*        color: $color__text-main;*/
 	font-weight: normal;
 }
 
@@ -1416,36 +2213,34 @@ a:hover, a:active {
   * Note: em values are calculated by desired content width and dividing by global px value
   * Ex: 1200px / 16px = 75em
   */
-/*$mobile-only__breakpoint: "(max-width: 16rem)";*/
-/*$desktop__breakpoint: "(min-width: 75rem)";*/
 /**
- * Site-wide Width contraints
+ * These are helpers / Site-wide Width contraints
  */
 /**
  * Global Containers 
  */
-.site-content {
+.entry-content {
 	margin: 0 auto;
 	padding-top: 8.83em;
 }
 
 @media (min-width: 54rem) {
-	.site-content {
-		max-width: 48rem;
+	.entry-content {
+		max-width: 48em;
 		/*padding-top: 8em;*/
 	}
 }
 
 @media (min-width: 90rem) {
-	.site-content {
-		max-width: 51rem;
+	.entry-content {
+		max-width: 51em;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.site-content {
+	.entry-content {
 		border: 3px solid red;
-		max-width: 54rem;
+		max-width: 54em;
 	}
 }
 
@@ -1461,6 +2256,7 @@ body.fadeIn {
 	opacity: 1;
 }
 
+/* NOTE: keyframes should go into an animation file */
 @keyframes fadeIn {
 	from {
 		opacity: 0;
@@ -1470,7 +2266,30 @@ body.fadeIn {
 	}
 }
 
+/* NOTE: this will be global link styles */
+/* NOTE: go to 'elements' styles and grab those for global class */
+a {
+	color: #385f7e;
+}
+
+a:visited {
+	/*color: $color__link-visited;*/
+}
+
+a:hover, a:focus, a:active {
+	color: #338c5f;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
 /**
+ * NOTE: Add this to a 'hotfix' helper file that will load later
  * Add padding to anchored bookmarks to account for fixed header + some margin
  */
 h2, p {
@@ -1943,485 +2762,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
-/** Custom styles **/
-/**
-  * Page Headers Banners
-  */
-.page .entry-header {
-	background-color: #EAF1F7;
-	text-align: center;
-	padding: 1em 0;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
-}
-
-.page .entry-header .entry-title {
-	color: #385f7e;
-	font-weight: bold;
-	line-height: 1.25;
-	margin: 0;
-}
-
-@media (min-width: 54rem) {
-	.page .entry-header {
-		padding: 1.5em 0;
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
-	}
-	.page .entry-header .entry-title {
-		font-size: 3.157em;
-	}
-}
-
-@media (min-width: 54rem) and (min-width: 54rem) {
-	.page .entry-header .entry-title {
-		font-size: 3.157em;
-	}
-}
-
-@media (min-width: 90rem) {
-	.page .entry-header {
-		padding: 2.5em 0;
-		margin-bottom: 1em;
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
-	}
-}
-
-/**
- * Web Maintenance, Content Creation, Contact
- * (first line is local, second line is prod)
- */
-.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
-.page-id-2541 .entry-header, .page-id-2376 .entry-header {
-	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
-}
-
-@media (min-width: 54rem) {
-	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
-	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
-	}
-}
-
-@media (min-width: 90rem) {
-	.page-id-2410 .entry-header, .page-id-2314 .entry-header, .page-id-1722 .entry-header,
-	.page-id-2541 .entry-header, .page-id-2376 .entry-header {
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
-	}
-}
-
-/** SEO, About Peak */
-.page-id-1743 .entry-header, .page-id-1718 .entry-header {
-	background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
-}
-
-@media (min-width: 54rem) {
-	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
-	}
-}
-
-@media (min-width: 90rem) {
-	.page-id-1743 .entry-header, .page-id-1718 .entry-header {
-		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
-	}
-}
-
-/**
- * Divide pages by page-id and apply different background colors by page
- */
-/**
- * Regulate top padding on PAGES not Home
- * (second page ID is localhost)
- */
-body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
-	/*     because masthead is set to position: absolute
-    we have to give site-content top padding */
-	padding-top: 3.61em;
-}
-
-@media (min-width: 54rem) {
-	body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
-		padding-top: 3.4em;
-	}
-}
-
-@media (min-width: 90rem) {
-	body:not(.home):not(.blog):not(.single) :not(.page-id-2517):not(.page-id-2341) .site-content {
-		padding-top: 3.1em;
-	}
-}
-
-/**
- * Hide overflow in main content area site-wide
- */
-.page .content-area {
-	overflow: hidden;
-}
-
-/**
-  * general PAGE styles
-  */
-body.page {
-	/** remove top margin on page content on mobile devices */
-}
-
-body.page .entry-header > div,
-body.page .entry-content,
-body.page .entry-footer {
-	padding: 0 1em;
-}
-
-@media (min-width: 54rem) {
-	body.page .entry-header > div,
-	body.page .entry-content,
-	body.page .entry-footer {
-		margin: 0 auto;
-		max-width: 48rem;
-	}
-}
-
-@media (min-width: 90rem) {
-	body.page .entry-header > div,
-	body.page .entry-content,
-	body.page .entry-footer {
-		max-width: 51rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	body.page .entry-header > div,
-	body.page .entry-content,
-	body.page .entry-footer {
-		max-width: 54rem;
-	}
-}
-
-body.page .entry-content {
-	margin-top: 0;
-	padding-bottom: 2em;
-}
-
-/**
-  * POST styles
-  */
-body.blog,
-body.single,
-body.archive {
-	/* article post styles */
-	/*    h3 {
-        font-weight: bold;
-    }
-    h5,
-    h6 {
-        color: $hero-color;
-    }*/
-}
-
-body.blog .post,
-body.single .post,
-body.archive .post {
-	/*@include box-shadow;*/
-	/*@include border(1px, $color-dark );*/
-	margin-bottom: 1.5em;
-	padding: 0 1em 1em;
-	/*        .entry-meta {
-            padding: 0;
-            .byline,
-            .posted-on {
-                @extend .entry-meta-type;
-            }
-        }*/
-	/*        figure.author-avatar {
-            margin: 0 0 0.5em;
-            display: inline-block;
-            > img {
-                vertical-align: middle;
-            }
-        }*/
-}
-
-body.blog .post .entry-header img[class*="attachment-"],
-body.single .post .entry-header img[class*="attachment-"],
-body.archive .post .entry-header img[class*="attachment-"] {
-	width: 100%;
-	height: auto;
-	max-width: 100%;
-}
-
-body.blog .post .entry-header .entry-title,
-body.single .post .entry-header .entry-title,
-body.archive .post .entry-header .entry-title {
-	/*@extend .h2;*/
-}
-
-body.blog .post .entry-header .entry-title > a,
-body.single .post .entry-header .entry-title > a,
-body.archive .post .entry-header .entry-title > a {
-	text-decoration: none;
-}
-
-body.blog .post .entry-header .entry-title > a:hover,
-body.single .post .entry-header .entry-title > a:hover,
-body.archive .post .entry-header .entry-title > a:hover {
-	text-decoration: underline;
-}
-
-body.blog .post .entry-content,
-body.single .post .entry-content,
-body.archive .post .entry-content {
-	margin-top: 0;
-}
-
-body.blog .post .more-link,
-body.single .post .more-link,
-body.archive .post .more-link {
-	font-weight: bolder;
-	font-style: italic;
-	display: inline-block;
-	margin-bottom: 1em;
-}
-
-body.blog .site-content,
-body.single .site-content,
-body.archive .site-content {
-	/*        display: flex;
-        flex-wrap: wrap;*/
-	/*        @media (min-width: 90rem) {
-            @include desktop_width;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-        }*/
-}
-
-body.blog #primary,
-body.single #primary,
-body.archive #primary {
-	/*        @media (min-width: 90rem) {
-            flex: 0 0 63%;
-        }*/
-}
-
-body.blog #secondary,
-body.single #secondary,
-body.archive #secondary {
-	padding-top: 1.65em;
-	background-color: #EAF1F7;
-	width: 100%;
-	/* hide redundant widgets in mobile mode */
-}
-
-body.blog #secondary .widget_custom_html,
-body.single #secondary .widget_custom_html,
-body.archive #secondary .widget_custom_html {
-	display: none;
-}
-
-@media (min-width: 90rem) {
-	body.blog #secondary,
-	body.single #secondary,
-	body.archive #secondary {
-		display: block;
-		padding-top: 1.65em;
-		/*flex: 0 0 33%;*/
-	}
-	body.blog #secondary .widget_custom_html,
-	body.single #secondary .widget_custom_html,
-	body.archive #secondary .widget_custom_html {
-		display: block;
-	}
-}
-
-/**
-  * Single Blog posts
-  */
-body.single {
-	/*    .entry-header .entry-title,
-    h2,
-    h3,
-    h4 {
-        color: $hero-color;
-    }*/
-	/* note: could add quote styles here, etc..
-}
-
-/* Updated blog styles: May 17th, 2018 */
-	/**
- * Extraneous pages
- */
-	/**
- * Archive page styles
- */
-	/**
- * Portfolio item styles
- */
-	/** NOTE: these should go into their own folder*/
-}
-
-body.single figure, body.single figcaption {
-	width: auto !important;
-}
-
-body.single .post .entry-footer .cat-links {
-	margin: 1.5em 0 0;
-	display: inline-block;
-}
-
-body.single .comments-area {
-	padding: 0 1em;
-	margin-top: 1em;
-}
-
-body.single .comments-area .comment-list {
-	padding: 0;
-	margin-left: 0;
-	list-style: none;
-}
-
-body.single .comments-area .comment-body {
-	margin: 1em 0 1.5em;
-	border-left: 3px solid #EAF1F7;
-	padding: 1em;
-}
-
-body.single .comments-area .comment-body .comment-content > .comment-metadata {
-	margin-top: 0.5em;
-	font-style: italic;
-}
-
-@media (min-width: 54rem) {
-	body.single .comments-area {
-		padding: 0 0;
-	}
-}
-
-body.single body.blog .site-content {
-	box-shadow: none;
-}
-
-body.single .error404 .site-content,
-body.single .archive .site-content {
-	margin: 0 auto;
-}
-
-@media (min-width: 54rem) {
-	body.single .error404 .site-content,
-	body.single .archive .site-content {
-		max-width: 48rem;
-	}
-}
-
-@media (min-width: 90rem) {
-	body.single .error404 .site-content,
-	body.single .archive .site-content {
-		max-width: 51rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	body.single .error404 .site-content,
-	body.single .archive .site-content {
-		max-width: 54rem;
-	}
-}
-
-body.single .archive .page-title {
-	font-weight: normal;
-	padding-left: 0.25em;
-	border-left: 3px solid #385f7e;
-	margin-top: 0;
-}
-
-body.single body.single.post-template-single-portfolio-item {
-	/* styles for the main image */
-}
-
-@media (min-width: 90rem) {
-	body.single body.single.post-template-single-portfolio-item .site-content {
-		max-width: 90%;
-	}
-	body.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
-		max-width: 67%;
-	}
-}
-
-@media (min-width: 118.75em) {
-	body.single body.single.post-template-single-portfolio-item .site-content {
-		max-width: 80%;
-	}
-	body.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
-		max-width: 60%;
-	}
-}
-
-body.single body.single.post-template-single-portfolio-item #primary {
-	flex-basis: 100%;
-}
-
-body.single body.single.post-template-single-portfolio-item img.website-img-full {
-	margin-bottom: 1em;
-	border: 0px solid #fff !important;
-	box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-}
-
-body.single body.single.post-template-single-portfolio-item .entry-footer {
-	border-top: 1px solid #ccc;
-	padding-top: 1em;
-}
-
-body.single body.single.post-template-single-portfolio-item .entry-footer > .navigation.post-navigation {
-	margin: 0;
-}
-
-body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-next a:after {
-	content: "\f054";
-	font-family: 'FontAwesome';
-	display: inline-block;
-	color: inherit;
-	padding-left: 0.5em;
-}
-
-body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-previous a:before {
-	content: "\f053";
-	font-family: 'FontAwesome';
-	display: inline-block;
-	color: inherit;
-	padding-right: 0.5em;
-}
-
-body.single body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
-	display: inline-block;
-	padding: 0.65em;
-}
-
-body.single .sticky {
-	display: block;
-}
-
-body.single .hentry {
-	margin: 0;
-}
-
-body.single .updated:not(.published) {
-	display: none;
-}
-
-body.single .page-content,
-body.single .entry-content,
-body.single .entry-summary {
-	margin: 1em auto 0;
-}
-
-body.single .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
-}
-
-body.single .post-navigation,
-body.single .comments-area {
-	padding: 0 1em;
-}
-
+/*@import "primary/pages";*/
 /*--------------------------------------------------------------
 ## Hero CTA Banner
 --------------------------------------------------------------*/
@@ -2430,44 +2771,38 @@ body.single .comments-area {
  * Author     : David
  *
  *
- */
+ 
+
 #page-cta {
-	color: #EAF1F7;
-	text-align: center;
-	background-color: #338c5f;
-	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png");
-	background-size: cover;
-	overflow: hidden;
-	box-shadow: 0px 4px 25px 0px rgba(56, 95, 126, 0.89);
-	position: relative;
-	z-index: 10;
-	padding: 1em 0.5em;
-}
+    color: $color-light;
+    text-align: center;
+    background-color: $hero-green;
+    background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png');
+    background-size: cover;
+    overflow: hidden;
+    box-shadow: 0px 4px 25px 0px $hero-color-transparent;
+    position: relative;
+    z-index: 10;
+    padding: 1em 0.5em;
+    .cta-heading {
+        font-weight: bolder;
+        color: $color-light;
+    }
+    .cta-secondary-text {
+        font-size: 125%;
+    }
+    .cta-heading,
+    .cta-secondary-text {
+        text-shadow: 1px 1px 2px #333;
+    }
+    .peak-button {
+        margin-bottom: 3em;
+    }
 
-#page-cta .cta-heading {
-	font-weight: bolder;
-	color: #EAF1F7;
-}
-
-#page-cta .cta-secondary-text {
-	font-size: 125%;
-}
-
-#page-cta .cta-heading,
-#page-cta .cta-secondary-text {
-	text-shadow: 1px 1px 2px #333;
-}
-
-#page-cta .peak-button {
-	margin-bottom: 3em;
-}
-
-@media (min-width: 90rem) {
-	#page-cta {
-		background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png");
-	}
-}
-
+    @media (min-width: 90rem) {
+        background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png');
+    }
+}*/
 /*--------------------------------------------------------------
 ## Services home page
 --------------------------------------------------------------*/
@@ -2627,7 +2962,7 @@ and open the template in the editor.
     Author     : David
 */
 #maintenance-steps h2 + p {
-	font-weight: bold;
+	/*font-weight: bold;*/
 }
 
 #maintenance-how-works {
@@ -2719,176 +3054,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Portfolio
 --------------------------------------------------------------*/
-/** Portfolio styles */
-/*#songfarm > a {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/songfarm-crop-min.png');
-}
-#hollis > a {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/hollis-wealth-crop-min.png');
-}
-#cirs > a {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/cirs-crop-min.png');
-}
-#coastal > a {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/coastal-chiropractic-crop-min.png');
-}*/
-/*    li#canoa > a.image-hover {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/canoa-massage-crop-min.png');
-}*/
-/*    li#your-website > a.image-hover {
-    background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg');
-}*/
-#portfolio-grid ul {
-	margin: 1em 0 0;
-	padding: 0;
-	list-style: none;
-}
-
-#portfolio-grid ul li {
-	cursor: pointer;
-	float: none;
-	margin-bottom: 1em;
-}
-
-#portfolio-grid ul li > a {
-	display: block;
-	box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
-	overflow: hidden;
-	transition: .3s ease-in-out;
-}
-
-#portfolio-grid ul li > a:hover {
-	box-shadow: 0px 30px 60px 0px rgba(0, 0, 0, 0.2);
-	transform: translateY(-5px);
-}
-
-#portfolio-grid ul li > a > img {
-	width: 100%;
-	height: auto;
-	opacity: 1;
-	border-radius: 3px;
-	transition: .3s ease-in-out;
-}
-
-#portfolio-grid ul li > a > img:hover {
-	opacity: .75;
-	cursor: pointer;
-}
-
-@media (min-width: 54rem) {
-	#portfolio-grid ul li {
-		float: left;
-		width: 48%;
-		padding: 0 2%;
-	}
-	#portfolio-grid ul li > a {
-		max-height: 250px;
-	}
-	#portfolio-grid ul:after {
-		content: "";
-		clear: both;
-		display: table;
-		padding-top: 56.25%;
-	}
-}
-
-@media (min-width: 90rem) {
-	#portfolio-grid ul li a {
-		max-height: 313px;
-	}
-}
-
-/*--------------------------------------------------------------
-## Footer
---------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 1-Nov-2017, 9:07:18 AM
-    Author     : David
-*/
-.site-footer {
-	display: flex;
-	padding: 0.5em 0;
-	/*    #legal-menu {
-        li:last-child {
-            margin-left: 0.65em;
-        }
-    }    */
-}
-
-.site-footer nav a {
-	text-decoration: none;
-}
-
-.site-footer nav .menu {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.site-footer nav .menu li {
-	display: inline-block;
-}
-
-.site-footer nav .menu li a {
-	padding: 0 0.25em;
-}
-
-.site-footer > div,
-.site-footer > nav {
-	display: flex;
-	align-items: center;
-}
-
-.site-footer #copyright,
-.site-footer #legal-menu > ul {
-	font-size: 75%;
-}
-
-.site-footer #social-media-menu > ul {
-	font-size: 125%;
-}
-
-@media (max-width: 768px) {
-	.site-footer {
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-	.site-footer #social-media-menu {
-		order: 1;
-		flex-basis: 100%;
-		justify-content: center;
-		font-size: 150%;
-	}
-	.site-footer #legal-menu {
-		order: 2;
-		flex-basis: 100%;
-		justify-content: center;
-		margin: 0.5em 0;
-	}
-	.site-footer #legal-menu a {
-		padding: 0.5em;
-	}
-	.site-footer #copyright {
-		order: 3;
-		margin: 0.5em 0;
-	}
-}
-
-@media (min-width: 54rem) {
-	.site-footer {
-		justify-content: space-around;
-	}
-}
-
-.footer-widgets {
-	text-align: left;
-}
-
+/*@import "primary/portfolio";*/
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2904,6 +3070,9 @@ and open the template in the editor.
 ## Widgets
 --------------------------------------------------------------*/
 .widget {
+	width: 100%;
+	margin: 0 1em 1em;
+	padding-top: 1em;
 	margin: 0 0 1em;
 	padding: 0 0 1em;
 	font-family: "Titillium Web", sans-serif;
@@ -2945,7 +3114,7 @@ and open the template in the editor.
 }
 
 .widget a:hover, .widget a:focus {
-	border-bottom: #338c5f;
+	/*border-bottom: $color__link-hover;*/
 }
 
 .widget select {
@@ -2963,7 +3132,17 @@ and open the template in the editor.
 	margin-top: 0;
 	margin-bottom: .5em;
 	font-weight: bold;
-	color: #385f7e;
+	color: #EAF1F7;
+}
+
+/**
+ * Show list items on 'Recent Posts' and other specific list-type footer widgets
+ */
+.widget.widget_recent_entries ul > li {
+	display: list-item;
+	list-style: disc inside;
+	line-height: 1.5;
+	margin-bottom: 0.35em;
 }
 
 #nav_menu-2 .menu-footer-container .menu {
@@ -3158,71 +3337,75 @@ and open the template in the editor.
 
 /* Footer widget styles */
 .footer-widgets {
-	position: relative;
-	z-index: 1;
-	margin: 0;
-	padding: 1em 0;
-	background-color: #385f7e;
-	background: linear-gradient(to right, #385f7e, #213647);
-	color: #f3f3f3;
-}
+	/*position: relative;*/
+	/*z-index: 1;*/
+	/*    margin: 0;
+    padding: 1em 0;
+    @include linear-gradient(to right);*/
+	/*    .widget {
+        margin: 0 1em 1em;
+        padding-top: 1em;
 
-.footer-widgets .widget {
-	margin: 0 1em 1em;
-	padding-top: 1em;
-	/**
+        .widget-title {
+            color: $color-light;
+        }
+
+        *
           * Show list items on 'Recent Posts' and other specific list-type footer widgets
-          */
-}
+          
+        &.widget_recent_entries ul > li {
+            display: list-item;
+            list-style: disc inside;
+            line-height: 1.5;
+            margin-bottom: 0.35em;
+        }
+    }*/
+	/*    @media (min-width: 54rem) {
+        padding: 2em 1em;
+        display: flex;
+        flex-wrap: wrap;
+        .widget {
+            flex: 1 0 45%;
 
-.footer-widgets .widget .widget-title {
-	color: #EAF1F7;
-}
+            //@include border(2px,white);
+        }
+        .widget:first-of-type {
+            flex: 2 0 auto;
 
-.footer-widgets .widget.widget_recent_entries ul > li {
-	display: list-item;
-	list-style: disc inside;
-	line-height: 1.5;
-	margin-bottom: 0.35em;
+        }
+    }
+
+    @media (min-width: 90rem) {
+
+        flex-wrap: nowrap;
+        //justify-content: space-around;
+        //justify-content: center;
+
+        .widget {
+            flex: 1 1 auto;
+            flex: 0 1 40%;
+            //@include border;
+        }
+        .widget:first-of-type {
+            flex: 2 0 50%;
+        }
+
+         If only one widget is displayed, make it full width. 
+        .widget:only-of-type {
+                width: 100%;
+        }
+
+        .widget:first-child {
+            flex-basis: 40%;
+        }
+
+
+    }*/
 }
 
 .footer-widgets a {
-	color: white;
+	color: inherit;
 	padding: 0;
-}
-
-@media (min-width: 54rem) {
-	.footer-widgets {
-		padding: 2em 1em;
-		display: flex;
-		flex-wrap: wrap;
-	}
-	.footer-widgets .widget {
-		flex: 1 0 45%;
-	}
-	.footer-widgets .widget:first-of-type {
-		flex: 2 0 auto;
-	}
-}
-
-@media (min-width: 90rem) {
-	.footer-widgets {
-		flex-wrap: nowrap;
-		/* If only one widget is displayed, make it full width. */
-	}
-	.footer-widgets .widget {
-		flex: 1 1 auto;
-		flex: 0 1 40%;
-	}
-	.footer-widgets .widget:first-of-type {
-		flex: 2 0 50%;
-	}
-	.footer-widgets .widget:only-of-type {
-		width: 100%;
-	}
-	.footer-widgets .widget:first-child {
-		flex-basis: 40%;
-	}
 }
 
 /* connect with us menu */
@@ -3302,7 +3485,7 @@ body.single main header {
 
 body.blog main header .entry-title,
 body.single main header .entry-title {
-	font-size: 2.86875rem;
+	font-size: 2.3324rem;
 	font-weight: 600;
 	line-height: 1.2;
 	margin: 1.5rem 0 1rem;
@@ -3400,7 +3583,7 @@ body.blog main .entry-content .byline,
 body.single main .entry-content .byline {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.728rem;
-	line-height: 1.5;
+	line-height: 1.4;
 	font-weight: 300;
 	margin-top: 0;
 }

@@ -1,7 +1,8 @@
 <?php
 /**
- *
  * @package Peak_Theme
+ * 
+ * This custom page is for the 'Services Home' a.k.a the Services Landing Page
  */
 
 get_header(); ?>
@@ -26,8 +27,8 @@ get_header(); ?>
                 /**
                  * Call Services sections
                  */
-                //localhost $recent = new WP_Query( "page_id=2349" );
-                $recent = new WP_Query( "page_id=2520" );
+                $recent = new WP_Query( "page_id=2349" );
+                //$recent = new WP_Query( "page_id=2520" );
                 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
@@ -63,8 +64,8 @@ get_header(); ?>
                         
                 <?php endwhile; 
                 
-                //$recent = new WP_Query( "page_id=2351" );
-                $recent = new WP_Query( "page_id=2527" );
+                $recent = new WP_Query( "page_id=2351" );
+                //$recent = new WP_Query( "page_id=2527" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
@@ -100,8 +101,8 @@ get_header(); ?>
                         
                 <?php endwhile;
                 
-                //$recent = new WP_Query( "page_id=2353" );
-                $recent = new WP_Query( "page_id=2529" );
+                $recent = new WP_Query( "page_id=2353" );
+                //$recent = new WP_Query( "page_id=2529" );
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
                 
@@ -144,28 +145,11 @@ get_header(); ?>
              */
             
             /** if NOT Contact Page */
-            if ( !is_page( '1722' ) ) : ?>
+            if ( !is_page( '1722' ) ) : 
+                
+                include( get_template_directory() . '/inc/custom/service-call-to-actions.php' );
             
-                <article id="page-cta">
-                    <div>
-                        <?php if ( is_page( '1741' ) ) : ?>
-                        <h2 class="cta-heading">Ready for a website that works?</h2>
-                        <p class="cta-secondary-text">Let's build you a website that works for your business.</p>
-                        <?php elseif ( is_page( '1743' ) ) : ?>
-                        <h2 class="cta-heading">Ready to put your business on the map?</h2>
-                        <p class="cta-secondary-text">Let us help you to get the kinds of search results you're looking for.</p>
-                        <?php elseif ( is_page( '2376' ) ) : ?>
-                        <h2 class="cta-heading">Ready for targeted traffic to your site?</h2>
-                        <p class="cta-secondary-text">Let us help you to generate more of the traffic you actually want.</p>
-                        <?php else : ?>
-                        <h2 class="cta-heading">Ready to take the high road?</h2>
-                        <p class="cta-secondary-text">Let us lead the way towards better website conversion and increased exposure in Search.</p>
-                        <?php endif; ?>
-                        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
-                    </div>
-                </article>
-            
-            <?php endif; ?>
+            endif; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

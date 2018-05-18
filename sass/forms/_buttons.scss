@@ -3,21 +3,21 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: $color__border-button;
+	/*border-color: $color__border-button;*/
 	border-radius: 3px;
-	background: $color__background-button;
+	/*background: $color__background-button;*/
 	color: rgba(0, 0, 0, .8);
 	/*@include font-size(0.75);*/
 	line-height: 1;
 	padding: .6em 1em .4em;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		/*border-color: $color__border-button-hover;*/
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		/*border-color: $color__border-button-focus;*/
 	}
 }
 
@@ -27,7 +27,6 @@ input[type="submit"].peak-button,
     clear: both;
     background-color: $hero-green;
     border: 0 none;
-    
     @include border-radius;
     transition: all 0.23s ease-in-out 0s;
     color: $color-light;
@@ -37,8 +36,7 @@ input[type="submit"].peak-button,
     font-weight: normal;
     min-height: 1em;
     line-height: 1em;
-    margin: 0 5px 10px 0;
-    margin: $first_modular + rem 0 0;
+    margin: 1em 0;
     padding: 0.75em 1.25em;
     text-align: center;
     text-decoration: none;

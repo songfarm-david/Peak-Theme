@@ -1,4 +1,4 @@
-
+/*
 
 dfn, cite, em, i {
 	font-style: italic;
@@ -12,7 +12,7 @@ address {
 	margin: 0 0 1.5em;
 }
 
-/*pre {
+pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
 	@include font-size(0.9375);
@@ -22,11 +22,11 @@ address {
 	overflow: auto;
 	padding: 1.6em;
         white-space: initial;
-}*/
+}
 
 code, kbd, tt, var {
 	font-family: $font__code;
-	/*@include font-size(0.9375);*/
+	@include font-size(0.9375);
 }
 
 abbr, acronym {
@@ -41,4 +41,4 @@ mark, ins {
 
 big {
 	font-size: 125%;
-}
+}*/

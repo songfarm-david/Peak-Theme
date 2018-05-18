@@ -81,11 +81,11 @@
  * Regulate top padding on PAGES not Home
  * (second page ID is localhost)
  */
-body:not(.home):not(.blog):not(.single)
+/*body:not(.home):not(.blog):not(.single)
 :not(.page-id-2517):not(.page-id-2341) .site-content {
 
-/*     because masthead is set to position: absolute
-    we have to give site-content top padding */
+     because masthead is set to position: absolute
+    we have to give site-content top padding 
 
     // updated Apr. 2, 2018
     padding-top: 3.61em;
@@ -97,21 +97,20 @@ body:not(.home):not(.blog):not(.single)
     @media #{$desktop__breakpoint} {
         padding-top: 3.1em;
     }
-}
+}*/
 
-/**
- * Hide overflow in main content area site-wide
- */
-.page {
-    .content-area {
-        overflow: hidden;
-    }
-}
+
 
 /**
   * general PAGE styles
   */
-body.page {
+.page {
+    
+    .content-area {
+        
+        overflow: hidden;
+        
+    }
 
     .entry-header > div,
     .entry-content,
@@ -138,6 +137,27 @@ body.page {
     .entry-content {
         margin-top: 0;
         padding-bottom: 2em;
+        
+        > p:first-child {
+            margin-top: 1.5em;
+        }
+    }
+    
+    .site-content {
+
+/*     because masthead is set to position: absolute
+    we have to give site-content top padding */
+
+        // updated Apr. 2, 2018
+        padding-top: 3.61em;
+
+        @media #{$tablet__breakpoint} {
+            padding-top: 3.4em;
+        }
+
+        @media #{$desktop__breakpoint} {
+            padding-top: 3.59em;
+        }
     }
 
 }

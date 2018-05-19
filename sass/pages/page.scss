@@ -129,7 +129,10 @@
         padding-bottom: 2em;
 
         > p:first-child {
-            margin-top: 1.5em;
+
+            // TODO: This should be more flexible
+            // margin-top: 1.96em; // 1.4 to the power of 2
+
         }
     }
 

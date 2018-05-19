@@ -1,45 +1,46 @@
 /**
- * Footer styles 
+ * Footer styles
  */
 
 .footer-widgets {
-    
+
     text-align: left;
     background-color: $hero-color;
     color: $color-light;
     margin: 0;
     padding: 1.5em 1em 1em;
-    
+
     @include linear-gradient(to right);
-    
+
     a {
-        
+
         font-weight: 300;
-        
+        color: $color-light;
+
     }
-    
+
     @media #{$tablet__breakpoint} {
-        
+
         display: flex;
         flex-wrap: wrap;
         padding: 2.25em 3.375em;
-        
+
         .widget {
 
             width: auto;
             flex-grow: 1;
             flex-shrink: 1;
             padding: 0.5em;
-            
+
             &:first-of-type {
-               
+
                 flex-grow: 2;
                 flex-shrink: 2;
-                
+
             }
-            
+
         }
-        
+
     }
 
     @media #{$desktop__breakpoint} {
@@ -48,85 +49,85 @@
         padding-right: 5.063em;
 
         .widget {
-            
+
             flex: 1 0 30em;
-            
+
             &:first-of-type {
 
                 flex: 1 0 40em;
 
             }
-            
+
             &:last-of-type {
-            
+
                 flex-basis: 40em;
 
             }
-            
+
         }
-        
+
     }
-    
+
 }
 
 /**
  * NOTE: This is the legal footer
  */
 .site-footer {
-    
+
     display: flex;
     padding: 0.5em 0;
-    
+
     nav {
-        
+
         a {
-            
+
             text-decoration: none;
-            
+
         }
-        
+
         .menu {
-            
+
             list-style: none;
             padding: 0;
             margin: 0;
-            
+
             li {
-                
+
                 display: inline-block;
-                
+
                 a {
-                    padding: 0 0.25em; 
+                    padding: 0 0.25em;
                 }
             }
-            
+
         }
     }
-    
+
     > div,
     > nav {
         display: flex;
         align-items: center;
     }
-    
+
     #copyright,
     #legal-menu > ul {
-        
+
         font-size: 75%;
-        
+
     }
-    
+
     #social-media-menu > ul {
-        
+
         font-size: 125%;
-        
+
     }
 /*    #legal-menu {
         li:last-child {
             margin-left: 0.65em;
         }
     }    */
-    
+
     @media #{$mobile-only__breakpoint} {
         justify-content: center;
         flex-wrap: wrap;
@@ -150,9 +151,8 @@
             margin: 0.5em 0;
         }
     }
-    
+
     @media #{$tablet__breakpoint} {
-        justify-content: space-around;    
+        justify-content: space-around;
     }
 }
-

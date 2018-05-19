@@ -1,0 +1,59 @@
+/**
+ * Page-Banner suitable for pages
+ */
+#page-banner {
+
+    background-color: $hero-green;
+    background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/banner-background-min.png');
+    background-size: cover;
+    color: $color-light;
+    overflow: hidden;
+    box-shadow: 0px 4px 25px 0px $hero-color-transparent;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 1.5em 1em;
+    padding: 2.25em 1em 1.5em;
+
+
+    .banner-heading,
+    .banner-secondary-text {
+
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 1px 1px 2px #333;
+
+    }
+
+    .banner-heading {
+
+        color: $color-light;
+        margin-top: 0;
+        margin-bottom: 0;
+
+    }
+
+    .banner-secondary-text {}
+
+    @media #{$tablet__breakpoint} {
+
+        padding: 3.375em 2.25em 2.25em;
+
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        padding-left: 5.063em;
+        padding-right: 5.063em;
+        background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png');
+        // background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-lg-min.png');
+        .banner-heading,
+        .banner-secondary-text {
+
+            @include desktop_width;
+
+        }
+
+    }
+
+}

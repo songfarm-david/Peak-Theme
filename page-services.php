@@ -14,28 +14,24 @@ get_header(); ?>
 
                 get_template_part( 'template-parts/content', 'services' );
 
-                // If comments are open or we have at least one comment, load up the comment template.
-//                if ( comments_open() || get_comments_number() ) :
-//                        comments_template();
-//                endif;
-
             endwhile; // End of the loop.
             ?>
 
             <?php
-                /**
-                 * Call Services sections
-                 */
-                //localhost
-                // $recent = new WP_Query( "page_id=2349" );
-                // $recent = new WP_Query( "page_id=2520" );
+            /**
+             * Call Services sections
+             */
 
-                // TODO: Write a way to accept both args
-                $recent = ( new WP_Query( "page_id=2349" ) ) ?
-                  new WP_Query( "page_id=2349" ) :
-                  new WP_Query( "page_id=2520" );
+              // if production version exists
+              if ( get_post( 2520 ) ) {
+                $recent = new WP_Query( "page_id=2520" );
+              }
+              // elseif local version exists
+              elseif ( get_post( 2349 ) ) {
+                $recent = new WP_Query( "page_id=2349" );
+              }
 
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
 
                 <article id="content-section" class="panel-container">
                     <div class="entry-content panel-content">
@@ -67,12 +63,18 @@ get_header(); ?>
                     </div>
                 </article>
 
-                <?php endwhile;
+              <?php endwhile;
 
+              /* If Production version exists */
+              if ( get_post( 2527 ) ) {
+                $recent = new WP_Query( "page_id=2527" );
+              }
+              /* elseif Local version exists */
+              elseif ( get_post( 2351 ) ) {
                 $recent = new WP_Query( "page_id=2351" );
-                // $recent = new WP_Query( "page_id=2527" );
+              }
 
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
 
                 <article class="panel-container orange">
                     <div class="entry-content panel-content">
@@ -104,12 +106,18 @@ get_header(); ?>
                     </div>
                 </article>
 
-                <?php endwhile;
+              <?php endwhile;
 
+              /* If Production version exists */
+              if ( get_post( 2529 ) ) {
+                $recent = new WP_Query( "page_id=2529" );
+              }
+              /* elseif Local version exists */
+              elseif ( get_post( 2353 ) ) {
                 $recent = new WP_Query( "page_id=2353" );
-                // $recent = new WP_Query( "page_id=2529" );
+              }
 
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
 
                 <article class="panel-container purple">
                     <div class="entry-content panel-content">
@@ -141,37 +149,7 @@ get_header(); ?>
                     </div>
                 </article>
 
-                <?php endwhile; ?>
-
-            <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
-            <?php
-            /**
-             * Include Call-to-Action banner
-             */
-
-            /** if NOT Contact Page */
-            if ( !is_page( '1722' ) ) : ?>
-
-                <article id="page-cta">
-                    <div>
-                        <?php if ( is_page( '1741' ) ) : ?>
-                        <h2 class="cta-heading">Ready for a website that works?</h2>
-                        <p class="cta-secondary-text">Let's build you a website that works for your business.</p>
-                        <?php elseif ( is_page( '1743' ) ) : ?>
-                        <h2 class="cta-heading">Ready to put your business on the map?</h2>
-                        <p class="cta-secondary-text">Let us help you to get the kinds of search results you're looking for.</p>
-                        <?php elseif ( is_page( '2376' ) ) : ?>
-                        <h2 class="cta-heading">Ready for targeted traffic to your site?</h2>
-                        <p class="cta-secondary-text">Let us help you to generate more of the traffic you actually want.</p>
-                        <?php else : ?>
-                        <h2 class="cta-heading">Ready to take the high road?</h2>
-                        <p class="cta-secondary-text">Let us lead the way towards better website conversion and increased exposure in Search.</p>
-                        <?php endif; ?>
-                        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
-                    </div>
-                </article>
-
-            <?php endif; ?>
+              <?php endwhile; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

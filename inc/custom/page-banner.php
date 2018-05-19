@@ -1,4 +1,4 @@
-<article id="banner-page" class="hero">
+<article id="page-banner" class="hero">
     <div>
         <?php
         /** if Web Dev page */

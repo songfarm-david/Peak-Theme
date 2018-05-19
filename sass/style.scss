@@ -62,10 +62,15 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "pages/portfolio";
 
 /*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "widgets/widgets";
+
+/*--------------------------------------------------------------
 # Hero (Theme) Styles
 --------------------------------------------------------------*/
 @import "hero/landing-page";
-@import "hero/banner-page";
+@import "hero/page-banner";
 @import "hero/banner-about";
 @import "hero/buttons";
 

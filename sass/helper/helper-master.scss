@@ -1,0 +1,16 @@
+/**
+ * Site-wide Width contraints
+ */
+@mixin tablet_width() {
+    max-width: $tablet-width;
+}
+
+// desktop width
+@mixin desktop_width() {
+    max-width: $desktop-width;
+}
+
+// lg-desktop width
+@mixin lg-desktop_width() {
+    max-width: $lg-desktop-width;
+}

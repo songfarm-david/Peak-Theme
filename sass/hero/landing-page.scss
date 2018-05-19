@@ -1,0 +1,48 @@
+
+.hero-banner {
+
+	color: $hero-color;
+	background-color: $color-light;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	// .hero-banner-container {
+
+		.hero-text {}
+
+		.hero-headline {
+
+			font-family: $titillium_web;
+			font-size: ms(3);
+			font-weight: 700;
+			color: $hero-color;
+			text-transform: capitalize;
+
+			// TODO: Put this style in a mixin/variable
+	    text-shadow: -1px 1px 3px $panel-color;
+
+			> span {
+
+        color: $hero-green;
+        font-style: italic;
+
+	    }
+
+		}
+
+		.hero-byline {
+
+			font-family: $text_font;
+			font-size: ms(2, $thread: second);
+	    color: $hero-dark;
+			text-transform: capitalize;
+			// TODO: put 'text-shadow' in mixin/var
+	    text-shadow: -1px -1px 0px $hero-dark;
+
+		}
+
+	// }
+
+}

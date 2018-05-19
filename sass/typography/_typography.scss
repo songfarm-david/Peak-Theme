@@ -95,16 +95,20 @@ h4,
     font-weight: 600;
 }
 
-.small_text {
+.small-text {
     font-size: (100 / $second_scale) + 0%;
 }
 
-.quote {
+.blog-meta-text {
+  font-family: $titillium_web;
+  font-weight: 400;
+  @extend .small-text;
+}
 
+.quote {
     font-style: italic;
     font-size: ms(1, $thread: third);
     font-weight: 400;
-
 }
 
 @mixin heading-main() {
@@ -151,7 +155,10 @@ h4,
 }
 
 /* hero font styles */
+.hero-banner,
 .hero {
+
+
 
   .banner-page-text {
 
@@ -159,7 +166,7 @@ h4,
 
     &.banner-heading {
 
-        font-size: ms(3);
+        font-size: ms(4);
         font-weight: 700;
 
     }
@@ -170,6 +177,60 @@ h4,
         font-weight: 400;
 
     }
+
+  }
+
+
+}
+
+.hero-headline-text {
+
+  font-family: $titillium_web;
+  font-size: ms(3);
+  font-weight: 700;
+  text-transform: capitalize;
+  // text-shadow: -1px 1px 3px $panel-color;
+  color: $hero-color;
+
+  &.services-headline {
+    font-size: ms(2);
+    line-height: $second_line_height;
+  }
+
+  > span {
+    color: $hero-green;
+    font-style: italic;
+  }
+
+}
+
+
+.hero-byline-text {
+
+
+    font-family: $text_font;
+    font-size: ms(1, $thread: second);
+    color: $color-dark;
+    font-weight: 400;
+    text-transform: capitalize;
+    // // TODO: put 'text-shadow' in mixin/var
+    // text-shadow: -1px -1px 1px $hero-dark;
+
+
+}
+
+
+
+@media #{$tablet__breakpoint} {
+
+  .hero-headline-text {
+    &.services-headline {
+      font-size: ms(6, $thread: third);
+    }
+  }
+
+  .hero-byline-text {
+    font-size: ms(2, $thread: second);
 
   }
 

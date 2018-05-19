@@ -25,7 +25,7 @@ input[type="submit"].peak-button,
     width: auto;
     vertical-align: middle;
     transform: perspective(1px) translateZ(0);
-    // @include box-shadow;
+    @include box-shadow;
     transition-property: color;
     transition-duration: 0.3s;
 
@@ -38,6 +38,7 @@ input[type="submit"].peak-button,
         left: 0;
         right: 0;
         background: #2098D1;
+				@include border-radius;
         -webkit-transform: scaleX(0);
         transform: scaleX(0);
         -webkit-transform-origin: 50%;
@@ -49,19 +50,31 @@ input[type="submit"].peak-button,
         -webkit-transition-timing-function: ease-out;
         transition-timing-function: ease-out;
     }
+
     &:hover,
     &:focus {
+
         color: white;
     }
+
     &:hover:before,
     &:focus:before,
     &:active:before {
+
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
+
     }
+
     &:visited {
+
         color: $color-light;
+
     }
+
+		&.no-box-shadow {
+			box-shadow: none;
+		}
 }
 
 .peak-btn-highlight {

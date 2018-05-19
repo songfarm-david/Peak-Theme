@@ -66,6 +66,33 @@
 
 }
 
+.widget.widget_pages,
+.widget.widget_nav_menu {
+
+
+
+}
+
+.widget_pages,
+.widget_nav_menu {
+
+	a {
+
+    display: block;
+		text-decoration: none;
+		border-bottom: 1px dashed $color-light;
+
+		&:hover,
+		&:focus {
+			// TODO: Investigate this style
+			text-decoration: none;
+			border-bottom: 1px dashed $color-dark;
+
+		}
+
+	}
+  
+}
 /**
  * Show list items on 'Recent Posts' and other specific list-type footer widgets
  */
@@ -117,24 +144,7 @@
 // 	padding-bottom: .5em;
 // }
 
-// .widget_pages,
-// .widget_nav_menu {
-//
-// 	a {
-// 		display: block;
-// 		// padding: 1em 0;
-// 		text-decoration: none;
-// 		border-bottom: 1px dashed $color-light;
-//
-// 		&:hover,
-// 		&:focus {
-// 			// TODO: Investigate this style
-// 			text-decoration: none;
-// 			border-bottom: 1px dashed hsl(0, 0%, 50%);
-//
-// 		}
-//
-// 	}
+
 //
 // 	li {
 // 		padding: 0;

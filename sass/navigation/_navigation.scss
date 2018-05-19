@@ -1,27 +1,27 @@
 /**
-  * This file contains all navigation related styles 
+  * This file contains all navigation related styles
   */
 
 .main-navigation {
-    
+
     width: 100%;
     background-color: transparent;
-    
+
     /* general ul styles */
     ul {
         list-style: none;
         margin: 0;
         padding-left: 0;
     }
-    
+
     /* global nav links styles */
     a {
         display: block;
         text-decoration: none;
     }
-    
+
     /* #primary-menu */
-    .menu {        
+    .menu {
         display: none; /* hide until toggle class is added */
         background-color: #ffffff;
         position: absolute;
@@ -42,12 +42,12 @@
                 }
             }
         }
-        a, 
+        a,
         .fa {
-            color: $hero-color; 
+            color: $hero-color;
             line-height: 2;
         }
-        
+
         .menu-item-has-children {
             > a {
                 padding-right: 1.65em;
@@ -67,7 +67,7 @@
                 }
             }
         }
-        
+
         .sub-menu {
             float: left;
             position: absolute;
@@ -104,17 +104,17 @@
         width: 100%; /* fixes width issue on mobile nav menu */
         display: block;
     }
-    
+
     /* button.menu-toggle */
     .menu-toggle {
         display: block;
         background-color: transparent;
         margin-right: 3px;
         margin-left: auto;
-        width: 3.6em;
+        width: 2.75em;
         border-width: 0;
         > i {
-            font-size: 2em;
+            font-size: ms(2);
             color: $hero-color;
         }
     }
@@ -127,7 +127,7 @@
             display: flex;
             justify-content: flex-end;
             position: relative;
-            left: auto; 
+            left: auto;
             right: auto;
             top: auto;
             z-index: initial;
@@ -138,12 +138,12 @@
                     right: -10px;
                 }
             }
-            
+
             li:hover > ul,
             li.focus > ul {
                 left: auto;
             }
-            
+
             .sub-menu {
                 float: none;
                 display: block;
@@ -163,17 +163,17 @@
                 left: -999em;
             }
         }
-        
+
         /* hide hamburger menu on tablet */
         .menu-toggle {
             display: none;
 	}
-        
+
         &.toggled .menu {
             display: flex;
             box-shadow: none;
         }
-   
+
     }
 
     @media #{$desktop__breakpoint} {
@@ -189,7 +189,7 @@
             }
         }
     }
-    
+
 }
 
 .comment-navigation,
@@ -241,9 +241,9 @@
         > a {
             //color: $color-light;
             //@include box-shadow;
-            
+
         }
-        
+
     }
 }*/
 
@@ -270,7 +270,7 @@
         //@include border(2px, green);
         a,
         .fa {
-            color: $hero-color; 
+            color: $hero-color;
             line-height: 2;
             //border-bottom: 1px solid $color-light;
         }
@@ -286,5 +286,5 @@
     @include box-shadow-dual;
     margin: 0;
     padding: 0.5em 0;
-    width: 100%;  fixes width issue on mobile nav menu 
+    width: 100%;  fixes width issue on mobile nav menu
 }*/

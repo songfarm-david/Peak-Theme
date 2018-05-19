@@ -31,72 +31,24 @@
 
     .hero-headline-container {
 
-        // text-align: center;
-        // opacity: 0;
-        //margin-top: 1em;
-        // font-family: $text_font;
 
-        .hero-headline {
-
-            // margin: 0;
-            // line-height: 1.15;
-            // font-weight: 900;
-            // font-size: 2.369em;
-            // text-transform: capitalize;
-            // text-shadow: -4px 0px 7px #c4d7e5;
-
-            // > span {
-            //
-            //     color: $hero-green;
-            //     font-style: italic;
-            //
-            // }
-
-        }
-
-        .hero-byline {
-
-            /*color: #615d59;*/
-            /*font-weight: lighter;*/
-            /*text-shadow: -2px 0px 3px white;*/
-            /*text-shadow: -1px -1px 0px #615d59;*/
-            // margin-top: 0.5em;
-
-        }
-
-        // .peak-button {
-        //
-        //     margin: 0;
-        //
-        // }
-        //
-        // .hero-byline {
-        //
-        //     // font-size: 125%;
-        //     // font-size: 136%;
-        //
-        // }
 
         @media #{$tablet__breakpoint} {
-            margin: 3em auto 0;
-            max-width: 34em;
-            .hero-headline {
-                font-size: 3.157em;
-                font-size: 350%;
-            }
+            // margin: 3em auto 0;
+            // max-width: 34em;
         }
 
         @media #{$desktop__breakpoint} {
             text-align: left;
-            max-width: 38em;
+            // max-width: 38em;
             //@include font-size(1.250);
             margin-top: 6.5em;
-            .hero-headline {
-                line-height: $base_line_height;
-            }
-            .peak-button {
-                margin-top: 1em;
-            }
+            // .hero-headline {
+            //     line-height: $base_line_height;
+            // }
+            // .peak-button {
+            //     margin-top: 1em;
+            // }
         }
 
         // @media #{$lg-desktop__breakpoint} {

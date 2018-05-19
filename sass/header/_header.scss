@@ -48,6 +48,13 @@
         max-width: 2.5em;
     }
 
+    .site-title {
+        a:link,
+        a:visited {
+        color: $color-light;
+      }
+    }
+
 }
 
 .site-branding,
@@ -104,17 +111,22 @@
 }
 
 .site-title {
-/*    font-size: 1.777em;
-    line-height: normal;
-    font-weight: 300;*/
-    a {
-        text-decoration: none;
-        white-space: nowrap;
-    }
-    display: none;
-    @media #{$tablet__breakpoint} {
+
+  display: none;
+
+  a {
+    color: $hero-color;
+    text-decoration: none;
+    white-space: nowrap;
+      &:visited {
+        color: $hero-color;
+      }
+  }
+
+  @media #{$tablet__breakpoint} {
       display: block;
    }
+
 }
 
 .site-description {

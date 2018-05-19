@@ -44,11 +44,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "mixins/mixins-master";
 @import "helper/helper-master";
+@import "animation/animations";
 
 /*--------------------------------------------------------------
 # Global Elements
 --------------------------------------------------------------*/
-@import 'globals';
+@import "globals";
+@import "header/header";
 
 /*--------------------------------------------------------------
 # Navigation
@@ -72,7 +74,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "hero/landing-page";
 @import "hero/page-banner";
 @import "hero/banner-about";
-@import "hero/buttons";
+@import "hero/elements/buttons";
 
 /*--------------------------------------------------------------
 # Elements

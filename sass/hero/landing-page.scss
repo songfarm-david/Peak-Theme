@@ -8,41 +8,18 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 
-	// .hero-banner-container {
+	.hero-headline-container {
 
-		.hero-text {}
+		@include apply-device-width;
 
 		.hero-headline {
-
-			font-family: $titillium_web;
-			font-size: ms(3);
-			font-weight: 700;
-			color: $hero-color;
-			text-transform: capitalize;
-
-			// TODO: Put this style in a mixin/variable
-	    text-shadow: -1px 1px 3px $panel-color;
-
-			> span {
-
-        color: $hero-green;
-        font-style: italic;
-
-	    }
-
+			margin-bottom: 0;
 		}
 
-		.hero-byline {
-
-			font-family: $text_font;
-			font-size: ms(2, $thread: second);
-	    color: $hero-dark;
-			text-transform: capitalize;
-			// TODO: put 'text-shadow' in mixin/var
-	    text-shadow: -1px -1px 0px $hero-dark;
-
+		@media #{$desktop__breakpoint} {
+			width: $desktop-width;
 		}
 
-	// }
+	}
 
 }

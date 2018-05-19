@@ -35,6 +35,10 @@
 
     .banner-secondary-text {}
 
+    .peak-button {
+      box-shadow: none;
+    }
+
     @media #{$tablet__breakpoint} {
 
         padding: 3.375em 2.25em 2.25em;

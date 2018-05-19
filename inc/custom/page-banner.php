@@ -26,6 +26,6 @@
         <h2 class="banner-heading banner-page-text">Ready to take the high road?</h2>
         <p class="banner-secondary-text banner-page-text">Let us lead the way towards better website conversion and increased exposure in search.</p>
         <?php endif; ?>
-        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight">Contact Us</a>
+        <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight no-box-shadow">Contact Us</a>
     </div>
 </article>

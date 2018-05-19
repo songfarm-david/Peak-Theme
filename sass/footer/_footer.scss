@@ -15,6 +15,7 @@
     a {
 
         font-weight: 300;
+        @extend .all-links;
         color: $color-light;
 
     }

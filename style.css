@@ -553,36 +553,40 @@ big {
 /*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Helper Mixins
---------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 10-Nov-2017, 12:44:13 AM
-    Author     : David
-*/
 /**
-  * Grow on hover
+ /// Site-wide Width contraints
   */
-/* Grow */
-.grow-animate {
-	display: inline-block;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
-	-webkit-transition-duration: 0.25s;
-	transition-duration: 0.25s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
+/**
+ * Add width containers for each breakpoint to an element
+ */
+/**
+ * Apply minimum top padding to avoid colliding with site header (absolute positioned)
+ */
+/**
+/// For Testing
+ */
+/**
+ * Framework Mixins
+ */
+/**
+ * Fade In Animation Keyframe
+ */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
-.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
-	-webkit-transform: scale(1.5);
-	transform: scale(1.5);
+@keyframes float {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(30px);
+	}
 }
 
 /* animation of hero text on homepage */
@@ -603,38 +607,9 @@ and open the template in the editor.
 }
 
 /**
- /// Site-wide Width contraints
+  * Grow on hover
   */
-/**
- * Add width containers for each breakpoint to an element
- */
-/**
- * Apply minimum top padding to avoid colliding with site header (absolute positioned)
- */
-/**
-/// For Testing
- */
-/**
-/// Fade In Animation Keyframe
-*/
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes float {
-	0%, 100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(30px);
-	}
-}
-
+/* Grow */
 /*--------------------------------------------------------------
 # Global Elements
 --------------------------------------------------------------*/

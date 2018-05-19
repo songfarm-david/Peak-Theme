@@ -1,6 +1,9 @@
 
-
+/**
+ * Main Website Header
+ */
 .site-header {
+
     padding: 0 0.15em;
     background-color: transparent;
     position: absolute;
@@ -9,39 +12,27 @@
     z-index: 1001;
     display: flex;
     justify-content: space-between;
+    transition: all .25s ease-in;
+
     @media #{$tablet__breakpoint} {
+
         position: absolute;
+
     }
 
 }
 
 .header-sticky {
+
     position: fixed;
     background-color: $hero-color-transparent;
-    transition: all .1s ease-in;
-    animation: fadeIn .5s .1s ease-in both;
+    animation: fadeIn .5s ease-in;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+
     a {
+
         color: $color-light;
-    }
-    .main-navigation .menu-toggle > i.fa {
-        color: $color-light;
-    }
-    .main-navigation .menu a:hover,
-    .main-navigation .menu a:hover + button > i.fa {
-        background-color: $color-light;
-        color: $hero-color;
-    }
-    .main-navigation ul.sub-menu {
-        background-color: $hero-color !important;
-        opacity: 0.9;
-        & a:hover {
-            background-color: $color-light;
-            color: $hero-color;
-        }
-        @media #{$tablet__breakpoint} {
-            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-        }
+
     }
 
     .site-branding .custom-logo-link {
@@ -49,65 +40,91 @@
     }
 
     .site-title {
+
         a:link,
         a:visited {
+
         color: $color-light;
+
       }
+
     }
 
 }
 
 .site-branding,
 .site-navigation {
+
     flex: 1 0 auto;
+
 }
+
 /**
   * (flex) center vertically header/branding content
   */
 .custom-logo-link,
 .site-branding-text-container,
 .main-navigation {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     // have flexible height container: what is the em equivalent of 65px, 90px?
 }
 
 .site-branding {
+
     min-height: 65px;
     display: flex;
-    //margin-bottom: 3px; /* detail spacing */
     margin-left: 3px;
+
     @media #{$tablet__breakpoint} {
+
         flex: 1 0 auto;
+
     }
 
     @media #{$desktop__breakpoint} {
+
         flex-basis: 45%;
+
     }
 
     .custom-logo-link {
+
         margin-right: 0.25em;
         min-width: 60px;
         max-width: 1.5em;
         /* NOTE: revisit max-width property of Logo */
+
         @media #{$tablet__breakpoint} {
+
             max-width: 2em;
+
         }
+
         @media #{$desktop__breakpoint} {
+
             max-width: 3em;
+
         }
 
         img {
+
             vertical-align: middle;
+
         }
+
     }
 
 }
 
 .site-title,
 .site-description {
+
     margin: 0;
+
 }
 
 .site-title {
@@ -115,27 +132,37 @@
   display: none;
 
   a {
+
     color: $hero-color;
     text-decoration: none;
     white-space: nowrap;
-      &:visited {
-        color: $hero-color;
-      }
+
+    &:visited {
+
+      color: $hero-color;
+
+    }
+
   }
 
   @media #{$tablet__breakpoint} {
+
       display: block;
+
    }
 
 }
 
 .site-description {
-    /*line-height: 1;*/
+
     font-style: italic;
     display: none; // write function to toggle this off?? customizer??
+
 }
 
 .site-header:before,
 .site-header:after {
+
     content: none; /* this removes clears around site header so that flexbox justify properties will work */
+
 }

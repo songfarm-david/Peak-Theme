@@ -192,6 +192,44 @@
 
 }
 
+.header-sticky .main-navigation {
+
+  .menu-toggle > i.fa {
+
+      color: $color-light;
+
+  }
+
+  .menu a:hover,
+  .menu a:hover + button > i.fa {
+
+      background-color: $color-light;
+      color: $hero-color;
+
+  }
+
+  ul.sub-menu {
+
+      background-color: $hero-color;
+      opacity: 0.9;
+
+      & a:hover {
+
+          background-color: $color-light;
+          color: $hero-color;
+
+      }
+
+      @media #{$tablet__breakpoint} {
+
+          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+
+      }
+
+  }
+
+}
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {

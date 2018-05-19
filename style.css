@@ -826,6 +826,9 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	font-family: "Roboto", sans-serif;
 }
 
+/**
+ * Main Website Header
+ */
 .site-header {
 	padding: 0 0.15em;
 	background-color: transparent;
@@ -835,6 +838,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	z-index: 1001;
 	display: flex;
 	justify-content: space-between;
+	transition: all .25s ease-in;
 }
 
 @media (min-width: 54em) {
@@ -846,39 +850,12 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 .header-sticky {
 	position: fixed;
 	background-color: rgba(56, 95, 126, 0.89);
-	transition: all .1s ease-in;
-	animation: fadeIn .5s .1s ease-in both;
+	animation: fadeIn .5s ease-in;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .header-sticky a {
 	color: #EAF1F7;
-}
-
-.header-sticky .main-navigation .menu-toggle > i.fa {
-	color: #EAF1F7;
-}
-
-.header-sticky .main-navigation .menu a:hover,
-.header-sticky .main-navigation .menu a:hover + button > i.fa {
-	background-color: #EAF1F7;
-	color: #385f7e;
-}
-
-.header-sticky .main-navigation ul.sub-menu {
-	background-color: #385f7e !important;
-	opacity: 0.9;
-}
-
-.header-sticky .main-navigation ul.sub-menu a:hover {
-	background-color: #EAF1F7;
-	color: #385f7e;
-}
-
-@media (min-width: 54em) {
-	.header-sticky .main-navigation ul.sub-menu {
-		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-	}
 }
 
 .header-sticky .site-branding .custom-logo-link {
@@ -973,7 +950,6 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 .site-description {
-	/*line-height: 1;*/
 	font-style: italic;
 	display: none;
 }
@@ -1173,6 +1149,32 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	}
 	.main-navigation ul.menu .menu-item-has-children > button {
 		right: -6px;
+	}
+}
+
+.header-sticky .main-navigation .menu-toggle > i.fa {
+	color: #EAF1F7;
+}
+
+.header-sticky .main-navigation .menu a:hover,
+.header-sticky .main-navigation .menu a:hover + button > i.fa {
+	background-color: #EAF1F7;
+	color: #385f7e;
+}
+
+.header-sticky .main-navigation ul.sub-menu {
+	background-color: #385f7e;
+	opacity: 0.9;
+}
+
+.header-sticky .main-navigation ul.sub-menu a:hover {
+	background-color: #EAF1F7;
+	color: #385f7e;
+}
+
+@media (min-width: 54em) {
+	.header-sticky .main-navigation ul.sub-menu {
+		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	}
 }
 

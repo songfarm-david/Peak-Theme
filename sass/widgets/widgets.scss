@@ -1,10 +1,6 @@
 .widget {
 
     width: 100%;
-    margin: 0 1em 1em;
-    padding-top: 1em;
-    margin: 0 0 1em;
-    padding: 0 0 1em;
     font-family: $titillium_web;
 
     ul,
@@ -33,16 +29,6 @@
             }
     }
 
-    // a {
-    //
-    //     text-decoration: none;
-    //
-    //     &:hover,
-    //     &:focus {
-    //             /*border-bottom: $color__link-hover;*/
-    //     }
-    // }
-
     /* Make sure select elements fit in widgets. */
     select {
         width: 100%;
@@ -53,15 +39,14 @@
     }
 
     &:last-of-type {
-        margin-bottom: 0;
+        margin-bottom: 1em;
     }
 
     .widget-title {
-        margin-top: 0;
-        margin-bottom: .5em;
-        @extend .h4;
-        font-weight: bold;
+
+        margin: ($base_scale + rem) 0 1rem;
         color: $color-light;
+
     }
 
 }
@@ -69,7 +54,112 @@
 .widget.widget_pages,
 .widget.widget_nav_menu {
 
+}
 
+.blog {
+
+  :not(.footer-widgets).widget-area {
+
+    .widget-title {
+
+      color: $hero-color;
+
+    }
+
+		padding: 0 1em;
+
+    .widget_recent_entries {
+
+      ul > li {
+        display: list-item;
+        list-style: disc inside;
+        line-height: $second_line_height;
+        margin-bottom: 0.75em;
+      }
+
+    }
+
+    .social-media-menu {
+
+  		  margin-left: 0;
+        padding-top: 0;
+
+        li {
+
+          display: inline-block;
+          line-height: 1;
+          font-size: 200%;
+          margin-right: 0;
+          padding: 0;
+
+          a {
+
+            border-width: 0;
+            padding: 0 0.25em;
+            line-height: normal;
+
+          }
+
+      }
+
+    }
+
+  }
+
+}
+
+/* MailChimp signup form */
+.widget #mc_embed_signup {
+
+    p {
+
+        margin: 0.5em 0 1em;
+
+    }
+
+    .indicates-required {
+
+        display: none;
+
+    }
+
+    .mc-field-group {
+
+        clear:left;
+        position:relative;
+        width:100%;
+        padding-bottom: 1rem;
+        min-height:50px;
+        .asterisk {
+            color: red;
+        }
+
+    }
+
+    .mc-field-group label {
+        display: block;
+        font-weight: bold;
+        font-size: 85%;
+        margin-bottom: 0.25em;
+    }
+    .mc-field-group input {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        text-indent: 2%;
+
+    }
+    #mce-responses .response {
+        margin-bottom: .75em;
+    }
+
+    @media #{$desktop__breakpoint} {
+        .mc-field-group input,
+        div.mce_inline_error {
+            width: 96%;
+        }
+
+    }
 
 }
 
@@ -91,8 +181,9 @@
 		}
 
 	}
-  
+
 }
+
 /**
  * Show list items on 'Recent Posts' and other specific list-type footer widgets
  */
@@ -108,20 +199,6 @@
 		}
 
 }
-
-// #nav_menu-2 {
-//
-//     .menu-footer-container {
-//
-//         .menu {
-//
-//             margin-top: -5px;
-//
-//         }
-//
-//     }
-//
-// }
 
 /* Archive and Categories widgets */
 // .widget_archive li {
@@ -142,15 +219,6 @@
 // .widget_nav_menu .sub-menu {
 // 	padding-top: 0;
 // 	padding-bottom: .5em;
-// }
-
-
-//
-// 	li {
-// 		padding: 0;
-//
-// 	}
-//
 // }
 
 /* Meta widget */
@@ -258,90 +326,3 @@
 	}
 
 }
-
-/* MailChimp signup form */
-.widget #mc_embed_signup {
-    p {
-        margin: 0.5em 0 1em;
-    }
-    .indicates-required {
-        display: none;
-    }
-    .mc-field-group {
-        clear:left;
-        position:relative;
-        width:100%;
-        padding-bottom:3%;
-        min-height:50px;
-        .asterisk {
-            color: red;
-        }
-
-    }
-    .mc-field-group label {
-        display: block;
-        font-weight: bold;
-        font-size: 85%;
-        margin-bottom: 0.25em;
-    }
-    .mc-field-group input {
-        display: block;
-        width: 100%;
-        padding: 8px 0;
-        text-indent: 2%;
-
-    }
-    #mce-responses .response {
-        margin-bottom: .75em;
-    }
-
-    @media #{$desktop__breakpoint} {
-        .mc-field-group input,
-        div.mce_inline_error {
-            width: 96%;
-        }
-
-    }
-
-}
-
-/* connect with us menu */
-// ul.social-media-menu {
-//
-// 		margin-left: 0;
-//     padding-top: 0;
-//
-//     li {
-//
-//         display: inline-block;
-//         line-height: 1;
-//         font-size: 200%;
-//         margin-right: 0;
-//         padding: 0;
-//
-//         a {
-//             border-width: 0;
-//             padding: 0 0.25em;
-//             line-height: normal;
-//         }
-//
-//     }
-//
-// }
-
-// #secondary.widget-area {
-//
-// 		padding: 0 1em;
-//
-//     .widget_recent_entries {
-//
-//         ul > li {
-//             display: list-item;
-//             list-style: disc inside;
-//             line-height: $second_line_height;
-//             margin-bottom: 0.75em;
-//         }
-//
-//     }
-//
-// }

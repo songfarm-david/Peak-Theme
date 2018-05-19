@@ -78,7 +78,7 @@ h3,
 .h3 {
     font-size: ms(2);
     font-weight: 600;
-    margin: 1.5em 0 0;
+    margin: 1.5rem 0 0;
 }
 
 h3,
@@ -86,7 +86,7 @@ h3,
     font-family: $text_font;
     font-size: ms(2 , $thread: second);
     font-weight: 400;
-    margin-top: 1.66em;
+    margin-top: 1.4rem;
 }
 
 h4,
@@ -107,25 +107,14 @@ h4,
 
 .quote {
     font-style: italic;
-    font-size: ms(1, $thread: third);
+    font-size: ms(0, $thread: third);
     font-weight: 400;
 }
 
-@mixin heading-main() {
-    font-size: ms(3);
-    font-weight: 600;
-    line-height: $second_scale;
-    margin: 1.5rem 0 1rem;
-}
-
-@mixin heading-byline() {
-    font-family: $text_font;
-    font-size: ms(3 , $thread: second);
-    line-height: $base_line_height;
-    font-weight: 300;
-}
-
-/* site header & navigation */
+/**
+/// site header & navigation
+* TODO: give higher inheritance to this selector
+*/
 .site-header {
 
     .site-title,
@@ -144,21 +133,160 @@ h4,
             line-height: 1;
         }
     }
+
 }
 
+.page {
+
+  .entry-header {
+
+    .entry-title {
+
+      font-size: ms(2);
+
+    }
+
+  }
+
+  @media #{$tablet__breakpoint} {
+
+    .entry-header .entry-title {
+
+      font-size: ms(3);
+
+    }
+
+  }
+
+}
+
+.blog,
+.single {
+
+  font-family: $text_font;
+
+  .entry-title {
+
+    line-height: $second_line_height;
+
+  }
+
+  .entry-footer {
+
+    @extend .small-text;
+    text-transform: uppercase;
+
+  }
+
+  .more-link {
+
+      font-weight: bolder;
+      font-style: italic;
+
+  }
+
+}
+
+/**
+ * Single Blog Posts
+ */
+.single {
+
+  .entry-content {
+
+    .byline {
+
+      font-family: $text_font;
+      font-size: ms(3 , $thread: second);
+      line-height: $base_line_height;
+      font-weight: 300;
+
+    }
+
+  }
+
+}
+
+/**
+ * Blog Index page
+ */
 .blog {
+
+    .entry-title {
+
+      font-size: ms(2);
+
+    }
+
+    .byline {
+
+      font-size: ms(2 , $thread: second);
+
+    }
+
     .entry-meta {
         font-family: $text_font;
         font-weight: lighter;
         font-size: ms(1);
     }
+
+    .entry-footer {
+
+    }
+
 }
 
 /* hero font styles */
 .hero-banner,
 .hero {
 
+  .hero-headline-text {
 
+    font-family: $titillium_web;
+    font-size: ms(3);
+    font-weight: 700;
+    text-transform: capitalize;
+    color: $hero-color;
+
+    &.services-headline {
+      font-size: ms(2);
+      line-height: $second_line_height;
+    }
+
+    > span {
+      color: $hero-green;
+      font-style: italic;
+    }
+
+  }
+
+  .hero-byline-text {
+
+      font-family: $text_font;
+      font-size: ms(1, $thread: second);
+      color: $color-dark;
+      font-weight: 400;
+      text-transform: capitalize;
+
+  }
+
+  @media #{$tablet__breakpoint} {
+
+    .hero-headline-text {
+
+      &.hero-headline,
+      &.services-headline {
+        font-size: ms(6, $thread: third);
+      }
+
+    }
+
+    .hero-byline-text {
+      font-size: ms(2, $thread: second);
+
+    }
+
+  }
 
   .banner-page-text {
 
@@ -166,7 +294,7 @@ h4,
 
     &.banner-heading {
 
-        font-size: ms(4);
+        font-size: ms(3);
         font-weight: 700;
 
     }
@@ -180,62 +308,34 @@ h4,
 
   }
 
-
-}
-
-.hero-headline-text {
-
-  font-family: $titillium_web;
-  font-size: ms(3);
-  font-weight: 700;
-  text-transform: capitalize;
-  // text-shadow: -1px 1px 3px $panel-color;
-  color: $hero-color;
-
-  &.services-headline {
-    font-size: ms(2);
-    line-height: $second_line_height;
-  }
-
-  > span {
-    color: $hero-green;
-    font-style: italic;
-  }
-
-}
-
-
-.hero-byline-text {
-
-
-    font-family: $text_font;
-    font-size: ms(1, $thread: second);
-    color: $color-dark;
-    font-weight: 400;
-    text-transform: capitalize;
-    // // TODO: put 'text-shadow' in mixin/var
-    // text-shadow: -1px -1px 1px $hero-dark;
-
-
 }
 
 
 
-@media #{$tablet__breakpoint} {
+.widget {
 
-  .hero-headline-text {
-    &.services-headline {
-      font-size: ms(6, $thread: third);
-    }
-  }
+  .widget-title {
 
-  .hero-byline-text {
-    font-size: ms(2, $thread: second);
+    font-weight: bold;
+    font-size: ms(1);
 
   }
 
 }
 
-@import "headings";
+.blog .widget {
+
+  margin-bottom: 1rem;
+
+  .widget-title {
+
+    margin-top: 1.4rem;
+
+  }
+
+}
+
+
+// @import "headings";
 
 @import "copy";

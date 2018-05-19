@@ -1,88 +1,7 @@
 
-
 /**
-  * Page Headers Banners
-  */
-.page .entry-header {
-
-    text-align: center;
-    padding: 1em 0;
-    background-color: $color-light;
-    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    .entry-title {
-
-        color: $hero-color;
-        font-weight: bold;
-        line-height: $base_line_height;
-        margin: 0;
-        @extend .h2;
-
-    }
-
-    @media #{$tablet__breakpoint} {
-
-        padding: 1.5em 0;
-        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
-
-        .entry-title {
-
-            @include heading-1;
-
-        }
-
-    }
-
-    @media #{$desktop__breakpoint} {
-
-        padding: 2.5em 0;
-        margin-bottom: 1em;
-        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
-
-    }
-
-}
-
-/**
- * Web Maintenance, Content Creation, Contact
- * (first line is local, second line is prod)
+ * general PAGE styles
  */
-.page-id-2410, .page-id-2314, .page-id-1722,
-.page-id-2541, .page-id-2376 {
-
-    .entry-header {
-       background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
-       @media #{$tablet__breakpoint} {
-           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
-       }
-       @media #{$desktop__breakpoint} {
-           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
-       }
-    }
-
-}
-
-
-/** SEO, About Peak */
-.page-id-1743, .page-id-1718 {
-
-    .entry-header {
-        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
-        @media #{$tablet__breakpoint} {
-            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
-        }
-        @media #{$desktop__breakpoint} {
-            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
-        }
-    }
-
-}
-
-/**
-  * general PAGE styles
-  */
 .page:not(.page-id-2341) {
 
     .content-area { overflow: hidden; }
@@ -90,15 +9,7 @@
     // NOTE: This rule applies a page top padding to account for absolute-position site header
     .site-content {
 
-        padding-top: 5.03em;
-
-        @media #{$tablet__breakpoint} {
-            padding-top: 3.28em;
-        }
-
-        @media #{$desktop__breakpoint} {
-            padding-top: 3.12em;
-        }
+        @include apply-heading-padding;
 
     }
 
@@ -130,18 +41,87 @@
 
         > p:first-child {
 
-            // TODO: This should be more flexible
-            // margin-top: 1.96em; // 1.4 to the power of 2
+            margin-top: 1.4rem;
 
         }
+
     }
-
-
 
 }
 
 /**
-  * POST styles
+ * Page Headers Banners
+ */
+.page .entry-header {
+
+    text-align: center;
+    padding: 1em 0;
+    background-color: $color-light;
+    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .entry-title {
+
+        color: $hero-color;
+        font-weight: bold;
+        line-height: $base_line_height;
+        margin: 0;
+
+    }
+
+    @media #{$tablet__breakpoint} {
+
+        padding: 1.5em 0;
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
+
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        padding: 2.5em 0;
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
+
+    }
+
+}
+
+/**
+ * Web Maintenance, Content Creation, Contact
+ * (first line is local, second line is prod)
+ */
+.page-id-2410, .page-id-2314, .page-id-1722,
+.page-id-2541, .page-id-2376 {
+
+    .entry-header {
+       background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
+       @media #{$tablet__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
+       }
+       @media #{$desktop__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
+       }
+    }
+
+}
+
+/** SEO, About Peak */
+.page-id-1743, .page-id-1718 {
+
+    .entry-header {
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
+        @media #{$tablet__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
+        }
+        @media #{$desktop__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
+        }
+    }
+
+}
+
+/**
+  * Blog POST styles
   */
 body.blog,
 body.single,
@@ -150,9 +130,7 @@ body.archive {
     /* article post styles */
     .post {
 
-        /*@include box-shadow;*/
-        /*@include border(1px, $color-dark );*/
-        margin-bottom: 1.5em;
+        margin-bottom: ($base_scale + em);
         padding: 0 1em 1em;
 
         .entry-header {
@@ -179,47 +157,25 @@ body.archive {
         .entry-content {
             margin-top: 0;
         }
-        .more-link {
-            font-weight: bolder;
-            font-style: italic;
-            display: inline-block;
-            margin-bottom: 1em;
-        }
-
 
     }
 
+}
 
+.blog {
 
+  .site-content {
 
+    @include apply-heading-padding;
 
-    // #secondary {
-    //
-    //     //display: none;
-    //     padding-top: 1.65em;
-    //     background-color: $color-light;
-    //     width: 100%;
-    //     /* hide redundant widgets in mobile mode */
-    //     .widget_custom_html {
-    //         display: none;
-    //     }
-    //
-    //     @media #{$desktop__breakpoint} {
-    //         display: block;
-    //         padding-top: 1.65em;
-    //
-    //         .widget_custom_html {
-    //             display: block;
-    //         }
-    //     }
-    //
-    // }
+  }
+
 }
 
 /**
   * Single Blog posts
   */
-body.single {
+.single {
 
     figure, figcaption {
         //display: none;
@@ -370,11 +326,11 @@ body.single.post-template-single-portfolio-item {
 	display: none;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1em auto 0;
-}
+// .page-content,
+// .entry-content,
+// .entry-summary {
+// 	margin: 1em auto 0;
+// }
 
 .page-links {
 	clear: both;

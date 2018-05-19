@@ -1,17 +1,14 @@
 /**
  * Created May 16, 2018
  *
- * Styles for the blog!
+ * Styles pertaining to the Blog (index) and single Posts
  */
-body.blog,
-body.single {
-
-    font-family: $text_font;
+.blog,
+.single {
 
     .site-content {
 
         @extend .entry-content;
-        padding-top: 10.83em;
 
     }
 
@@ -23,7 +20,9 @@ body.single {
             //top: 2em; // to account for absolute position entry-meta box
 
             .entry-title {
-                @include heading-main;
+
+              margin: ($base_scale + rem) 0 1rem;
+
             }
 
             .entry-meta {
@@ -96,7 +95,7 @@ body.single {
         }
 
         .entry-content .byline {
-            @include heading-byline;
+            // @include heading-byline;
             margin-top: 0;
         }
 
@@ -109,8 +108,6 @@ body.single {
             margin: 0 auto;
             text-align: center;
         }
-
-
 
     }
 
@@ -130,10 +127,30 @@ body.single {
             @extend .blog-meta-text;
         }
     }
+
 }
 
-body.blog {
+/**
+ * Blog Index page
+ */
+.blog {
+
     .site-content {
-        box-shadow: none;
+        //box-shadow: none;
     }
+
+    .entry-title {
+      margin: 1rem;
+    }
+
+}
+
+.single {
+
+  .site-content {
+
+    padding-top: 10.83em;
+
+  }
+
 }

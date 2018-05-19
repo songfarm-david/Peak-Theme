@@ -33,7 +33,7 @@
         color: $hero-color;
     }
     .main-navigation ul.sub-menu {
-        background-color: $hero-color;
+        background-color: $hero-color !important;
         opacity: 0.9;
         & a:hover {
             background-color: $color-light;

@@ -29,8 +29,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Normalize & Global Vars
 --------------------------------------------------------------*/
 @import "normalize";
-// @import "variables-site/variables-site";
-// @import "site-variables";
 @import "variables/variables-master";
 
 /*--------------------------------------------------------------
@@ -74,7 +72,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "hero/landing-page";
 @import "hero/page-banner";
 @import "hero/banner-about";
-@import "hero/elements/buttons";
+@import "hero/elements/elements-master";
 
 /*--------------------------------------------------------------
 # Elements
@@ -101,6 +99,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+@import "layout/blog-index-layout";
 @import "layout/feature-grid";
 
 /*--------------------------------------------------------------

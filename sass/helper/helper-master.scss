@@ -17,7 +17,7 @@
 }
 
 /**
-/// Add width containers for each breakpoint to an element
+ * Add width containers for each breakpoint to an element
  */
 @mixin apply-device-width {
 
@@ -39,6 +39,23 @@
 
     }
 
+}
+
+/**
+ * Apply minimum top padding to avoid colliding with site header (absolute positioned)
+ */
+@mixin apply-heading-padding {
+
+  padding-top: 4.03em;
+
+  @media #{$tablet__breakpoint} {
+      padding-top: 3.28em;
+  }
+
+  @media #{$desktop__breakpoint} {
+      padding-top: 3.12em;
+  }
+  
 }
 
 /**

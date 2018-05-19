@@ -1,0 +1,23 @@
+body.blog {
+
+	.site-content {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		#primary,
+		#secondary {
+			// border: 1px solid green;
+		}
+
+		#primary {
+			// flex: 2 0 auto;
+		}
+
+		#secondary {
+			// flex: 1 0 auto;
+		}
+
+	}
+
+}

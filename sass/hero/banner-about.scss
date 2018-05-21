@@ -1,7 +1,7 @@
 .about-banner,
 .hero-call,
 .hero-section {
-    
+
     color: $color-light;
     background-color: $hero-green;
     @include linear-gradient(45deg, $hero-green, #17422c);
@@ -10,34 +10,34 @@
     transform: skewY(2deg);
 /*    border: 1px solid transparent;*/
     position: relative;
-    z-index: -1;
-    
+    // z-index: -1;
+
     @media #{$tablet__breakpoint} {
-        
+
         > div {
-            
+
             margin: auto auto auto 2.25em;
             width: $tablet-width;
-            
+
         }
     }
-    
+
     @media #{$desktop__breakpoint} {
-        
+
         > div {
-            
+
             margin: auto auto auto 2.25em;
             width: $desktop-width;
-            
+
         }
     }
-    
+
     a, h3, a:visited {
-        
+
         color: $color-light;
-        
+
     }
-    
+
     /* correct global skew of element */
     div {
         transform: skewY(-2deg);
@@ -84,4 +84,3 @@
         color: $hero-green;
     }
 }
-

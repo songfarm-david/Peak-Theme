@@ -9,8 +9,8 @@
     color: $color-light;
     margin: 0;
     padding: 1.5em 1em 1em;
-
     @include linear-gradient(to right);
+    position: relative;
 
     a {
 

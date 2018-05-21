@@ -8,14 +8,15 @@ body.blog {
 		#primary,
 		#secondary {
 			// border: 1px solid green;
+			// flex: 1 1 auto;
 		}
 
 		#primary {
-			// flex: 2 0 auto;
+			flex: 2 2 0px;
 		}
 
 		#secondary {
-			// flex: 1 0 auto;
+			flex: 1 1 0px;
 		}
 
 	}

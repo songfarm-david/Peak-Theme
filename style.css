@@ -2679,6 +2679,14 @@ body.blog .site-content {
 	flex-wrap: wrap;
 }
 
+body.blog .site-content #primary {
+	flex: 2 2 0px;
+}
+
+body.blog .site-content #secondary {
+	flex: 1 1 0px;
+}
+
 /**
  * Created on : 10-Jan-2018, 2:58:18 PM
  * Author     : David

@@ -68,7 +68,7 @@
                             }else{
                                 $target.attr('tabindex','-1'); //Adding tabindex for elements not focusable
                                 $target.focus(); //Setting focus
-                            };
+                            }
                             //location.hash = target; causes screen jump
                         });       
                     });

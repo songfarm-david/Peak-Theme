@@ -3,14 +3,17 @@
  * 
  * It also quietly loads "large" banner images  used on subsequent pages
  */
+
+function queueAnimation() {
+    headlineContainer.className += ' fadeInUp';
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     var headlineContainer;
     // if homepage
     if (document.querySelector('.hero-headline-container')) {
         headlineContainer = document.querySelector('.hero-headline-container');
-        function queueAnimation() {
-            headlineContainer.className += ' fadeInUp';
-        }
+        
         document.body.addEventListener('webkitAnimationEnd animationend oanimationend', queueAnimation());
     }
     

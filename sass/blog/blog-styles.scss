@@ -17,7 +17,6 @@
         header {
 
             position: relative;
-            //top: 2em; // to account for absolute position entry-meta box
 
             .entry-title {
 
@@ -35,12 +34,12 @@
                 margin-bottom: 1em;
 
                 /* TAG: Img */
-                figure.author-avatar {
+                .author-avatar {
 
                     float: left;
-                    margin: 0 0.5rem 0 0;
-                    min-height: 4em;
-                    line-height: 5;
+                    margin: 0 0.5em 0 0;
+                    // min-height: 4em;
+                    // line-height: 5;
 
                     > img {
 
@@ -52,31 +51,32 @@
 
                 > .author-vcard {
 
+                  .author-info {
+
+                    line-height: 1;
+
                     .author {
 
                         font-weight: 600;
 
                     }
 
+                  }
+
+
+
                     .author-bio,
                     .times {
 
                         display: block;
+                        line-height: $base_line_height;
                         color: slategrey;
-
-                    }
-
-                    .author-bio {
-
-                        line-height: 1.2;
-                        letter-spacing: 0.025em;
 
                     }
 
                     .social-links {
 
                         font-size: 156%;
-                        line-height: 1;
                         padding-left: 0.5rem;
 
                         .social-link {
@@ -128,6 +128,45 @@
         }
     }
 
+    .entry-meta {
+
+      // @include border;
+      display: flex;
+      align-items: center;
+
+      .author-avatar {
+
+        float: none;
+        flex: 1 0 auto;
+        min-height: none;
+        line-height: 1;
+
+      }
+
+      .author-vcard {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .author-info {
+          display: flex;
+          align-items: center;
+        }
+
+        .author,
+        .social-links {
+          flex: 0 0 auto;
+        }
+
+        .author-bio {
+          flex-basis: 100%;
+        }
+      }
+
+
+    }
+
 }
 
 /**
@@ -154,3 +193,5 @@
   }
 
 }
+
+@import "comments";

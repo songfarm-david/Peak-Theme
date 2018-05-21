@@ -8,14 +8,14 @@
  */
 
 if ( ! function_exists( 'peak_theme_posted_on' ) ) :
-  
+
   /**
    * Prints HTML with meta information for the current post-date/time and author.
    */
   function peak_theme_posted_on() {
-  
+
     $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		
+
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
       $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">  &mdash; Updated: %4$s</time>';
     }
@@ -34,48 +34,49 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
     );
 
 //    $userdata = get_user_meta( get_the_author_meta( 'ID' ) );
-     
+
     $social_links = '';
-    
+
     $twitter = get_the_author_meta('twitter');
     $linkedIn = get_the_author_meta('linkedIn');
     $googlePlus = get_the_author_meta('googlePlus');
     $facebook = get_the_author_meta('facebook');
-    
+
     if ( $twitter && $twitter != '') {
-      $social_links .= '<span class="social-link"><a href="' . $twitter . '" title="Twitter"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span>';
+      $social_links .= '<span class="social-link"><a href="' . $twitter . '" title="Twitter" class="grow-animate"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span>';
     }
     if ( $linkedIn && $linkedIn != '') {
-      $social_links .= '<span class="social-link"><a href="' . $linkedIn . '" title="Linked In"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></span>';
+      $social_links .= '<span class="social-link"><a href="' . $linkedIn . '" title="Linked In" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></span>';
     }
-    
+
     /* TODO: do this pattern for other social networks */
-    
+
     $byline = sprintf(
       /* translators: %s: post author. */
       esc_html_x( '%s', 'post author', 'peak-theme' ),
-      '<div class="author-vcard">' . 
-        '<span class="author">' . 
-          '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' . 
-        '<span class="social-links" aria-label="Social Media Links">' . $social_links . '</span><br />' .
-        '<span class="author-bio">' . esc_html( get_the_author_meta('description') ) . '</span>' .
+      '<div class="author-vcard">' .
+        '<div class="author-info">' .
+          '<span class="author">' .
+            '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' .
+        '<span class="social-links" aria-label="Social Media Links">' . $social_links . '</span></div>' .
+        '<div><span class="author-bio">' . esc_html( get_the_author_meta('description') ) . '</span></div>' .
         '<div class="times"><span class="read-time">7 min read</span><span class="posted-on">' . $posted_on . '</span></div>' .
       '</div>');
-    
+
 //    $author_bio = esc_html( get_the_author_meta('description') );
-                
+
     /* add avatar image - NOTE: not currently dynamic */
     $avatar = '<figure class="author-avatar"><img src="https://peakwebsites.ca/wp-content/uploads/2017/11/david-gaskin-face-pic-circle.gif" height="65" width="65"></figure>';
-                
+
     // NOTE: if Guest Post category
     if ( in_category(201) ) {
       echo '<p class="guest-post">The following is a guest post. Learn about <a href="' . get_permalink(2624) . '" title="contribute to the blog">contributing to the blog</a>.</p>';
     } else {
       echo $avatar .  $byline ; // WPCS: XSS OK.
     }
-    
+
   }
-  
+
 endif;
 
 if ( ! function_exists( 'peak_theme_entry_footer' ) ) :

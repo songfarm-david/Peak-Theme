@@ -304,7 +304,7 @@ h1,
 
 h2,
 .h2,
-.single .archive .page-title,
+.archive .page-title,
 h3,
 .h3 {
 	font-size: 2.352rem;
@@ -647,6 +647,22 @@ big {
   * Grow on hover
   */
 /* Grow */
+.grow-animate {
+	display: inline-block;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	transition-duration: 0.25s;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+
+.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
 /*--------------------------------------------------------------
 # Global Elements
 --------------------------------------------------------------*/
@@ -1537,137 +1553,91 @@ body.archive .post .single .site-content,
 }
 
 /**
-  * Single Blog posts
-  */
-.single {
-	/* note: could add quote styles here, etc..
-}
-
-/**
  * Extraneous pages
  */
-	/**
- * Archive page styles
- */
-	/**
- * Portfolio item styles
- */
-	/** NOTE: these should go into their own folder*/
-}
-
-.single figure, .single figcaption {
-	width: auto !important;
-}
-
-.single .post .entry-footer .cat-links {
-	margin: 1.5em 0 0;
-	display: inline-block;
-}
-
-.single .comments-area {
-	padding: 0 1em;
-	margin-top: 1em;
-}
-
-.single .comments-area .comment-list {
-	padding: 0;
-	margin-left: 0;
-	list-style: none;
-}
-
-.single .comments-area .comment-body {
-	margin: 1em 0 1.5em;
-	border-left: 3px solid #EAF1F7;
-	padding: 1em;
-}
-
-.single .comments-area .comment-body .comment-content > .comment-metadata {
-	margin-top: 0.5em;
-	font-style: italic;
-}
-
-@media (min-width: 54em) {
-	.single .comments-area {
-		padding: 0 0;
-	}
-}
-
-.single .error404 .site-content,
-.single .archive .site-content {
+.error404 .site-content,
+.archive .site-content {
 	margin: 0 auto;
 }
 
 @media (min-width: 54em) {
-	.single .error404 .site-content,
-	.single .archive .site-content {
+	.error404 .site-content,
+	.archive .site-content {
 		max-width: 45rem;
 	}
 }
 
 @media (min-width: 84em) {
-	.single .error404 .site-content,
-	.single .archive .site-content {
+	.error404 .site-content,
+	.archive .site-content {
 		max-width: 48rem;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.single .error404 .site-content,
-	.single .archive .site-content {
+	.error404 .site-content,
+	.archive .site-content {
 		max-width: 54rem;
 	}
 }
 
-.single .archive .page-title {
+/**
+ * Archive page styles
+ */
+.archive .page-title {
 	font-weight: normal;
 	padding-left: 0.25em;
 	border-left: 3px solid rgba(102, 102, 102, 0.79);
 	margin-top: 0;
 }
 
-.single body.single.post-template-single-portfolio-item {
+/**
+ * Portfolio item styles
+ */
+/** NOTE: these should go into their own folder*/
+body.single.post-template-single-portfolio-item {
 	/* styles for the main image */
 }
 
 @media (min-width: 84em) {
-	.single body.single.post-template-single-portfolio-item .site-content {
+	body.single.post-template-single-portfolio-item .site-content {
 		max-width: 90%;
 	}
-	.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
+	body.single.post-template-single-portfolio-item .site-content .website-img-full {
 		max-width: 67%;
 	}
 }
 
 @media (min-width: 118.75em) {
-	.single body.single.post-template-single-portfolio-item .site-content {
+	body.single.post-template-single-portfolio-item .site-content {
 		max-width: 80%;
 	}
-	.single body.single.post-template-single-portfolio-item .site-content .website-img-full {
+	body.single.post-template-single-portfolio-item .site-content .website-img-full {
 		max-width: 60%;
 	}
 }
 
-.single body.single.post-template-single-portfolio-item #primary {
+body.single.post-template-single-portfolio-item #primary {
 	-ms-flex-preferred-size: 100%;
 	    flex-basis: 100%;
 }
 
-.single body.single.post-template-single-portfolio-item img.website-img-full {
+body.single.post-template-single-portfolio-item img.website-img-full {
 	margin-bottom: 1em;
 	border: 0px solid #fff !important;
 	box-shadow: 2px 3px 7px rgba(102, 102, 102, 0.79);
 }
 
-.single body.single.post-template-single-portfolio-item .entry-footer {
+body.single.post-template-single-portfolio-item .entry-footer {
 	border-top: 1px solid #ccc;
 	padding-top: 1em;
 }
 
-.single body.single.post-template-single-portfolio-item .entry-footer > .navigation.post-navigation {
+body.single.post-template-single-portfolio-item .entry-footer > .navigation.post-navigation {
 	margin: 0;
 }
 
-.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-next a:after {
+body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-next a:after {
 	content: "\f054";
 	font-family: 'FontAwesome';
 	display: inline-block;
@@ -1675,7 +1645,7 @@ body.archive .post .single .site-content,
 	padding-left: 0.5em;
 }
 
-.single body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-previous a:before {
+body.single.post-template-single-portfolio-item .entry-footer .nav-links .nav-previous a:before {
 	content: "\f053";
 	font-family: 'FontAwesome';
 	display: inline-block;
@@ -1683,30 +1653,29 @@ body.archive .post .single .site-content,
 	padding-right: 0.5em;
 }
 
-.single body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
+body.single.post-template-single-portfolio-item .entry-footer .nav-links a {
 	display: inline-block;
 	padding: 0.65em;
 }
 
-.single .sticky {
+.sticky {
 	display: block;
 }
 
-.single .hentry {
+.hentry {
 	margin: 0;
 }
 
-.single .updated:not(.published) {
+.updated:not(.published) {
 	display: none;
 }
 
-.single .page-links {
+.page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
 
-.single .post-navigation,
-.single .comments-area {
+.post-navigation {
 	padding: 0 1em;
 }
 
@@ -2587,6 +2556,9 @@ display: block;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	padding: 0.5em 0;
 	/*    #legal-menu {
         li:last-child {
@@ -3107,15 +3079,7 @@ and open the template in the editor.
 /*--------------------------------------------------------------
 ## Services Sections
 --------------------------------------------------------------*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 18-Feb-2018, 3:56:07 PM
-    Author     : David
-*/
+/* TODO: Refactor this file */
 #maintenance-steps h2 + p {
 	/*font-weight: bold;*/
 }
@@ -3239,21 +3203,24 @@ and open the template in the editor.
 	/* TAG: Img */
 }
 
-.blog main header .entry-meta figure.author-avatar,
-.single main header .entry-meta figure.author-avatar {
+.blog main header .entry-meta .author-avatar,
+.single main header .entry-meta .author-avatar {
 	float: left;
-	margin: 0 0.5rem 0 0;
-	min-height: 4em;
-	line-height: 5;
+	margin: 0 0.5em 0 0;
 }
 
-.blog main header .entry-meta figure.author-avatar > img,
-.single main header .entry-meta figure.author-avatar > img {
+.blog main header .entry-meta .author-avatar > img,
+.single main header .entry-meta .author-avatar > img {
 	vertical-align: middle;
 }
 
-.blog main header .entry-meta > .author-vcard .author,
-.single main header .entry-meta > .author-vcard .author {
+.blog main header .entry-meta > .author-vcard .author-info,
+.single main header .entry-meta > .author-vcard .author-info {
+	line-height: 1;
+}
+
+.blog main header .entry-meta > .author-vcard .author-info .author,
+.single main header .entry-meta > .author-vcard .author-info .author {
 	font-weight: 600;
 }
 
@@ -3262,19 +3229,13 @@ and open the template in the editor.
 .single main header .entry-meta > .author-vcard .author-bio,
 .single main header .entry-meta > .author-vcard .times {
 	display: block;
+	line-height: 1.4;
 	color: slategrey;
-}
-
-.blog main header .entry-meta > .author-vcard .author-bio,
-.single main header .entry-meta > .author-vcard .author-bio {
-	line-height: 1.2;
-	letter-spacing: 0.025em;
 }
 
 .blog main header .entry-meta > .author-vcard .social-links,
 .single main header .entry-meta > .author-vcard .social-links {
 	font-size: 156%;
-	line-height: 1;
 	padding-left: 0.5rem;
 }
 
@@ -3306,6 +3267,63 @@ and open the template in the editor.
 	margin-bottom: 8.83em;
 }
 
+.blog .entry-meta,
+.single .entry-meta {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.blog .entry-meta .author-avatar,
+.single .entry-meta .author-avatar {
+	float: none;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1 0 auto;
+	        flex: 1 0 auto;
+	min-height: none;
+	line-height: 1;
+}
+
+.blog .entry-meta .author-vcard,
+.single .entry-meta .author-vcard {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	width: 100%;
+}
+
+.blog .entry-meta .author-vcard .author-info,
+.single .entry-meta .author-vcard .author-info {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.blog .entry-meta .author-vcard .author,
+.blog .entry-meta .author-vcard .social-links,
+.single .entry-meta .author-vcard .author,
+.single .entry-meta .author-vcard .social-links {
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 0 auto;
+	        flex: 0 0 auto;
+}
+
+.blog .entry-meta .author-vcard .author-bio,
+.single .entry-meta .author-vcard .author-bio {
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+}
+
 /**
  * Blog Index page
  */
@@ -3315,6 +3333,51 @@ and open the template in the editor.
 
 .single .site-content {
 	padding-top: 10.83em;
+}
+
+/**
+ * Comments for Single blog posts
+ */
+.single figure, .single figcaption {
+	width: auto !important;
+}
+
+.single .post .entry-footer .cat-links {
+	margin: 1.5em 0 0;
+	display: inline-block;
+}
+
+.single .comments-area {
+	padding: 0 1em;
+	margin-top: 1em;
+}
+
+.single .comments-area input,
+.single .comments-area textarea {
+	width: 100%;
+}
+
+.single .comments-area .comment-list {
+	padding: 0;
+	margin-left: 0;
+	list-style: none;
+}
+
+.single .comments-area .comment-body {
+	margin: 1em 0 1.5em;
+	border-left: 3px solid #EAF1F7;
+	padding: 1em;
+}
+
+.single .comments-area .comment-body .comment-content > .comment-metadata {
+	margin-top: 0.5em;
+	font-style: italic;
+}
+
+@media (min-width: 54em) {
+	.single .comments-area {
+		padding: 0 0;
+	}
 }
 
 /*--------------------------------------------------------------

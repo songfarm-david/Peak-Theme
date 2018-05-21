@@ -173,61 +173,6 @@ body.archive {
 }
 
 /**
-  * Single Blog posts
-  */
-.single {
-
-    figure, figcaption {
-        //display: none;
-        width: auto !important;
-    }
-
-    .post .entry-footer {
-        .cat-links {
-            margin: 1.5em 0 0;
-            display: inline-block;
-        }
-    }
-
-    .comments-area {
-        padding: 0 1em;
-        margin-top: 1em;
-        .comment-list {
-            padding: 0;
-            margin-left: 0;
-            list-style: none;
-            //@include border(2px,$color-light);
-        }
-        .comment-body {
-            margin: 1em 0 1.5em;
-            //@include border;
-            //background-color: #ccc;
-            border-left: 3px solid $color-light;
-            padding: 1em;
-
-            .comment-content,
-            .reply {
-                //margin: 0;
-                //@include border(1px, blue);
-                //padding: 0 0.5em;
-                //margin: 0 0.5em;
-            }
-            .comment-content > .comment-metadata {
-                margin-top: 0.5em;
-                font-style: italic;
-                @extend .small-text;
-            }
-        }
-
-        @media #{$tablet__breakpoint} {
-            padding: 0 0;
-        }
-    }
-
-    /* note: could add quote styles here, etc..
-}
-
-/**
  * Extraneous pages
  */
 .error404 .site-content,
@@ -248,9 +193,6 @@ body.archive {
         margin-top: 0;
     }
 }
-
-
-
 
 /**
  * Portfolio item styles
@@ -326,21 +268,13 @@ body.single.post-template-single-portfolio-item {
 	display: none;
 }
 
-// .page-content,
-// .entry-content,
-// .entry-summary {
-// 	margin: 1em auto 0;
-// }
-
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
 }
 
-.post-navigation,
-.comments-area {
+.post-navigation {
 
     padding: 0 1em;
-}
 
 }

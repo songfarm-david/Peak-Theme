@@ -1,12 +1,5 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 18-Feb-2018, 3:56:07 PM
-    Author     : David
-*/
+/* TODO: Refactor this file */
+
 #maintenance-steps {
     h2 + p {
         /*font-weight: bold;*/
@@ -41,12 +34,12 @@ and open the template in the editor.
             font-size: 90%;
         }
     }
-    
+
     @media #{$tablet__breakpoint} {
         flex-wrap: nowrap;
         .step-container {
             margin: 0 0.5em;
         }
     }
-    
+
 }

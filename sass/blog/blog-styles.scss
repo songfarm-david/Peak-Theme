@@ -174,12 +174,23 @@
  */
 .blog {
 
-    .site-content {
-        //box-shadow: none;
+    .post-details {
+      // @include border;
+      // margin-bottom: 1.4em;
+      @extend .small-text;
+    }
+
+    .byline {
+      display: none;
     }
 
     .entry-title {
       margin: 1rem;
+      text-transform: capitalize;
+    }
+
+    .wp-post-image {
+      margin-top: 1.4em;
     }
 
 }

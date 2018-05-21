@@ -334,7 +334,7 @@ h4,
 .blog .entry-footer .comments-link,
 .single .entry-footer .cat-links,
 .single .entry-footer .comments-link, .blog .entry-footer,
-.single .entry-footer, .single .comments-area .comment-body .comment-content > .comment-metadata, .wp-caption {
+.single .entry-footer, .blog .post-details, .single .comments-area .comment-body .comment-content > .comment-metadata, .wp-caption {
 	font-size: 83.33333%;
 }
 
@@ -1232,6 +1232,12 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	.header-sticky .main-navigation ul.sub-menu {
 		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	padding: 0 1em 1em;
 }
 
 .site-main .comment-navigation, .site-main
@@ -2761,14 +2767,28 @@ body.blog .site-content {
 
 body.blog .site-content #primary {
 	-webkit-box-flex: 2;
-	    -ms-flex: 2 2 0px;
-	        flex: 2 2 0px;
+	    -ms-flex: 2 0 0px;
+	        flex: 2 0 0px;
 }
 
 body.blog .site-content #secondary {
 	-webkit-box-flex: 1;
-	    -ms-flex: 1 1 0px;
-	        flex: 1 1 0px;
+	    -ms-flex: 1 2 0px;
+	        flex: 1 2 0px;
+	background-color: #EAF1F7;
+	height: 100%;
+	padding-bottom: 5.063em;
+	/* accounts for skewed about section */
+}
+
+@media (min-width: 54em) {
+	body.blog .site-content {
+		padding-top: 5.063em;
+	}
+	body.blog #primary,
+	body.blog #secondary {
+		margin: 0;
+	}
 }
 
 /**
@@ -3327,8 +3347,17 @@ and open the template in the editor.
 /**
  * Blog Index page
  */
+.blog .byline {
+	display: none;
+}
+
 .blog .entry-title {
 	margin: 1rem;
+	text-transform: capitalize;
+}
+
+.blog .wp-post-image {
+	margin-top: 1.4em;
 }
 
 .single .site-content {

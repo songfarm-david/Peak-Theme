@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-             
+
       <?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -21,25 +21,30 @@
             </div><!-- .entry-meta -->
 		<?php else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			$string = '<div class="post-details">' . get_the_author() . ' - ' . get_the_date('l F j, Y') . '</div>';
+			// $string = get_the_author();
+			// $string .= "&mdash";
+			// $string .= get_the_date('l F j, Y');
+			echo $string;
 		 endif; ?>
-        
-        
-                
-             <?php if ( 'post' === get_post_type() ) : 
-                    
+
+
+
+             <?php if ( 'post' === get_post_type() ) :
+
                     /* post thumbnail */
-                    if ( has_post_thumbnail() ) : 
+                    if ( has_post_thumbnail() ) :
                         echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
                         the_post_thumbnail();
                         echo '</a>';
                     endif; ?>
-                
-                    
-                
+
+
+
                 <?php endif; ?>
-                
-                
-		
+
+
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

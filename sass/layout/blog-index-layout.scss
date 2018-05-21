@@ -12,11 +12,31 @@ body.blog {
 		}
 
 		#primary {
-			flex: 2 2 0px;
+			flex: 2 0 0px;
 		}
 
 		#secondary {
-			flex: 1 1 0px;
+			flex: 1 2 0px;
+			background-color: $color-light;
+			height: 100%;
+			padding-bottom: 5.063em; /* accounts for skewed about section */
+		}
+
+	}
+
+	@media #{$tablet__breakpoint} {
+
+		.site-content {
+
+			padding-top: 5.063em;
+
+		}
+
+		#primary,
+		#secondary {
+
+			margin: 0;
+
 		}
 
 	}

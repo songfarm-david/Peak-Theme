@@ -146,6 +146,10 @@
         .author-info {
           display: flex;
           align-items: center;
+
+          a:visited {
+            color: $hero-color;
+          }
         }
 
         .author,

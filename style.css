@@ -1154,6 +1154,7 @@ table {
 .main-navigation .menu .sub-menu > li,
 .main-navigation .menu .sub-menu li a {
 	width: 100%;
+	white-space: normal;
 }
 
 .main-navigation .menu .sub-menu li:hover > ul,
@@ -1222,6 +1223,7 @@ table {
 	.main-navigation ul.menu li:hover > ul,
 	.main-navigation ul.menu li.focus > ul {
 		left: auto;
+		right: -100%;
 	}
 	.main-navigation ul.menu .sub-menu {
 		float: none;
@@ -2589,6 +2591,11 @@ a:visited > .fa-chevron-down {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+}
+
+.blog .entry-meta .author-vcard .author-info a:visited,
+.single .entry-meta .author-vcard .author-info a:visited {
+	color: #385f7e;
 }
 
 .blog .entry-meta .author-vcard .author,

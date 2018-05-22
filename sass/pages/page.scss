@@ -2,7 +2,8 @@
 /**
  * general PAGE styles
  */
-.page:not(.page-id-2341) {
+.page:not(.page-id-2341),
+.archive {
 
     .content-area { overflow: hidden; }
 
@@ -178,19 +179,30 @@ body.archive {
 .error404 .site-content,
 .archive .site-content {
     @include apply-device-width;
+
+    .page-header {
+      padding: 1.4em 1em 1em;
+    }
+
 }
 
 /**
  * Archive page styles
  */
 .archive {
+
     .page-title {
+
         @extend .h2;
         font-weight: normal;
-        //display: block;
-        padding-left: 0.25em;
         border-left: 3px solid $color-dark-transparent;
         margin-top: 0;
+
+    }
+
+    .page-title,
+    .archive-description {
+      padding-left: 0.5rem;
     }
 }
 

@@ -26,20 +26,18 @@
 
             .entry-meta {
 
-                @extend .blog-meta-text;
+                // @extend .blog-meta-text;
                 width: auto;
                 position: absolute;
                 top: -7em;
                 padding: 0.25rem 16% 0.25rem 0;
                 margin-bottom: 1em;
+                @extend .small-text;
 
-                /* TAG: Img */
                 .author-avatar {
 
                     float: left;
                     margin: 0 0.5em 0 0;
-                    // min-height: 4em;
-                    // line-height: 5;
 
                     > img {
 
@@ -51,26 +49,17 @@
 
                 > .author-vcard {
 
-                  .author-info {
-
-                    line-height: 1;
-
-                    .author {
+                    .author-info .author {
 
                         font-weight: 600;
 
                     }
 
-                  }
-
-
-
                     .author-bio,
                     .times {
 
                         display: block;
-                        line-height: $base_line_height;
-                        color: slategrey;
+                        line-height: inherit;
 
                     }
 
@@ -130,7 +119,6 @@
 
     .entry-meta {
 
-      // @include border;
       display: flex;
       align-items: center;
 
@@ -140,6 +128,7 @@
         flex: 1 0 auto;
         min-height: none;
         line-height: 1;
+        line-height: inherit; /* experimental */
 
       }
 
@@ -162,8 +151,8 @@
         .author-bio {
           flex-basis: 100%;
         }
-      }
 
+      }
 
     }
 

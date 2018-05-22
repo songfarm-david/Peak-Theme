@@ -12,6 +12,12 @@
     @include linear-gradient(to right);
     position: relative;
 
+    .widget .widget-title {
+
+      color: $color-light;
+
+    }
+
     a {
 
         font-weight: 300;
@@ -122,6 +128,11 @@
     #social-media-menu > ul {
 
         font-size: 125%;
+
+        a:link,
+        a:visited {
+          color: $hero-color;
+        }
 
     }
 /*    #legal-menu {

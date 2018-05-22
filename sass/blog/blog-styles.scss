@@ -195,6 +195,9 @@
 
 }
 
+/**
+ * Single Blog Posts
+ */
 .single {
 
   .site-content {
@@ -203,6 +206,20 @@
 
   }
 
+  .entry-content {
+
+    .byline {
+
+      font-family: $text_font;
+      font-size: ms(3 , $thread: second);
+      line-height: $base_line_height;
+      font-weight: 300;
+
+    }
+
+  }
+
 }
 
+@import "blog-widgets";
 @import "comments";

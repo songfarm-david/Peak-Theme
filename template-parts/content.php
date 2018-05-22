@@ -21,7 +21,7 @@
             </div><!-- .entry-meta -->
 		<?php else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			$string = '<div class="post-details">' . get_the_author() . ' - ' . get_the_date('l F j, Y') . '</div>';
+			$string = '<div class="post-details">' . get_the_date('l F j, Y') . ' - ' . get_the_author() . '</div>';
 			// $string = get_the_author();
 			// $string .= "&mdash";
 			// $string .= get_the_date('l F j, Y');

@@ -17,11 +17,8 @@
     }
 
     a > i {
-        font-size: ms(2);
-        animation: float 1s ease-in-out infinite both;
-        @media #{$tablet__breakpoint} {
-
-        }
+        // font-size: ms(2);
+        // animation: float 1s ease-in-out infinite both;
     }
 
     @media #{$tablet__breakpoint} {

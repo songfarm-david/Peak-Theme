@@ -17,6 +17,33 @@
 }
 
 /**
+ * Global Container Widths
+ */
+.entry-content {
+
+    margin: 0 auto;
+
+    @media #{$tablet__breakpoint} {
+
+        @include tablet_width;
+
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        @include desktop_width;
+
+    }
+
+    @media #{$lg-desktop__breakpoint} {
+
+        @include lg-desktop_width;
+
+    }
+
+}
+
+/**
  * Add width containers for each breakpoint to an element
  */
 @mixin apply-device-width {
@@ -57,6 +84,31 @@
   }
 
 }
+
+.hero-color-text {
+  color: $hero-color;
+}
+
+/**
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+    position: relative;
+    span[class="anchor-target"] {
+        display: block;
+        position: absolute;
+        top: -150px;
+        top: -7.5rem;
+        padding-bottom: 81px;
+        outline: none;
+        border-width: 0;
+        &:active, &:focus {
+            outline: none;
+            border-width: 0;
+        }
+    }
+}
+
 
 /**
 /// For Testing

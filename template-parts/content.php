@@ -21,11 +21,15 @@
             </div><!-- .entry-meta -->
 		<?php else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-			$string = '<div class="post-details">' . get_the_date('l F j, Y') . ' - ' . get_the_author() . '</div>';
-			// $string = get_the_author();
-			// $string .= "&mdash";
-			// $string .= get_the_date('l F j, Y');
+
+			// If custom field 'guest_post' exists, then it's a guest post
+			if ( $value = get_post_meta($post->ID, 'guest_post', true) ) {
+				$string = '<div class="post-details">' . get_the_date('l F j, Y') . ' - ' . $value . '</div>';
+			} else {
+				$string = '<div class="post-details">' . get_the_date('l F j, Y') . ' - ' . get_the_author() . '</div>';
+			}
 			echo $string;
+
 		 endif; ?>
 
 

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // add fadeIn class to body
-    document.body.className += ' fadeIn';
+    // document.body.className += ' fadeIn';
 
     // preload image strings
     var mobileImages = '<img src="https://peakwebsites.ca/wp-content/uploads/2018/02/sm-screen-80.jpg" width="1"height="1" alt="" /><img src="https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png" width="1" height="1" alt="" /><img src="https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png" width="1" height="1" alt="" /><img src="https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png" width="1" height="1" alt="" />';

@@ -102,3 +102,26 @@ peak-btn-highlight-light {
 
     }
 }*/
+
+/* Bouncing Indicator arrow */
+a > .fa-chevron-down {
+	font-size: ms(2);
+	cursor: pointer;
+	animation: float 1s ease-in-out infinite both;
+}
+
+a:visited > .fa-chevron-down {
+	color: $hero-color;
+}
+
+/*****
+** Excluded on mobile
+*/
+@media #{$mobile-only__breakpoint} {
+
+	a > .fa-chevron-down {
+
+		display: none;
+
+	}
+}

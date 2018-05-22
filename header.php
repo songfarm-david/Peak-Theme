@@ -8,7 +8,7 @@
  */
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html class="fadeIn" <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,11 +24,9 @@
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
 
-        <?php //if ( is_single() ) echo '<link rel="canonical" href="https://www.moreinmedia.com/single-post/2017/05/30/Why-Your-Business-Needs-A-Website" />'; ?>
-
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'fadeIn' ); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'peak-theme' ); ?></a>
 

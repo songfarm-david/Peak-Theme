@@ -32,7 +32,6 @@
                 top: -7em;
                 padding: 0.25rem 16% 0.25rem 0;
                 margin-bottom: 1em;
-                @extend .small-text;
 
                 .author-avatar {
 
@@ -80,6 +79,12 @@
 
                 }
 
+            }
+
+            .post-meta {
+              .post-meta-key {
+                display: none;
+              }
             }
         }
 
@@ -141,6 +146,10 @@
         .author-info {
           display: flex;
           align-items: center;
+
+          a:visited {
+            color: $hero-color;
+          }
         }
 
         .author,

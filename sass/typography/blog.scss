@@ -3,6 +3,14 @@
 
   font-family: $text_font;
 
+  .entry-meta,
+  .post-meta {
+      font-family: $text_font;
+      font-weight: bold;
+      font-size: ms(1);
+      font-size: .66em;
+  }
+
   .entry-title {
 
     line-height: $second_line_height;
@@ -60,11 +68,7 @@
 
     }
 
-    .entry-meta {
-        font-family: $text_font;
-        font-weight: lighter;
-        font-size: ms(1);
-    }
+
 
     .entry-footer {
 

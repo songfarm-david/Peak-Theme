@@ -1,0 +1,76 @@
+body.blog {
+
+	.site-content {
+
+		display: flex;
+		flex-wrap: wrap;
+
+		#primary,
+		#secondary {
+
+			flex-basis: 100%;
+
+		}
+
+		#secondary {
+
+			background-color: $color-light;
+			height: 100%;
+			padding: 1.4em 1em 5.063em; /* bottom padding accounts for skewed about section */
+
+			a:visited {
+				color: $hero-color;
+			}
+
+		}
+
+		.widget-area {
+
+			/* hides the connect with us widget */
+			.widget_custom_html:last-child {
+
+				display: none;
+
+			}
+
+		}
+
+	}
+
+	@media #{$tablet__breakpoint} {
+
+		.widget-area {
+
+			.widget_custom_html:last-child {
+
+				display: block;
+
+			}
+
+		}
+
+		.site-content {
+
+			padding-top: 5.063em;
+			flex-wrap: nowrap;
+
+			#primary {
+
+				flex: 0 0 25em;
+
+			}
+
+			#secondary {
+
+				flex: 1 1 0px;
+				margin: 5.063em 1em 1em 0;
+				padding-top: 0;
+        box-shadow: -1px 0px 15px -4px #777;
+
+			}
+
+		}
+
+	}
+
+}

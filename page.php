@@ -28,45 +28,45 @@ get_header(); ?>
                 endif;
 
             endwhile; // End of the loop.
-            ?>       
-            
+            ?>
+
             <!-- If Web Development & Design -->
             <?php if( is_page( '1741' ) ) :
-                
+
                 // include portfolio grid
                 include( get_template_directory() . '/inc/custom/portfolio-grid.php' );
-                
+
             endif; ?>
-            
+
             <!--If Website Maintenance Page-->
             <?php if( is_page( '2410' ) || is_page( '2541' ) ) :
-                
+
                 include( get_template_directory() . '/inc/custom/website-maintenance-panel.php' );
-                
+
             endif; ?>
-            
+
             <!-- If Content Creation Service page => Include Features section -->
             <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
-                
+
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-content-creation.php' );
-            
+
             endif; ?>
-            
+
             <!--If SEO Services page => Include Features section -->
             <?php if( is_page( '1743' ) ) :
-                
+
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-SEO.php' );
-            
+
             endif; ?>
-            
-            <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
-            <?php if ( !is_page( '1722' ) ) : 
-            
+
+            <!-- Page Banner - Show this on all pages EXCEPT Contact Page -->
+            <?php if ( !is_page( '1722' ) ) :
+
                 // include final call-to-actions
-                include( get_template_directory() . '/inc/custom/service-call-to-actions.php' );
-            
+                include( get_template_directory() . '/inc/custom/page-banner.php' );
+
             endif; ?>
 
         </main><!-- #main -->

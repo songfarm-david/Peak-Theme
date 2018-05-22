@@ -1,0 +1,86 @@
+.about-banner,
+.hero-call,
+.hero-section {
+
+    color: $color-light;
+    background-color: $hero-green;
+    @include linear-gradient(45deg, $hero-green, #17422c);
+    margin: -2em 0;
+    padding: 2.25em 1em 5.063em;
+    transform: skewY(2deg);
+/*    border: 1px solid transparent;*/
+    position: relative;
+    // z-index: -1;
+
+    @media #{$tablet__breakpoint} {
+
+        > div {
+
+            margin: auto auto auto 2.25em;
+            width: $tablet-width;
+
+        }
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        > div {
+
+            margin: auto auto auto 2.25em;
+            width: $desktop-width;
+
+        }
+    }
+
+    a, h3, a:visited {
+
+        color: $color-light;
+
+    }
+
+    /* correct global skew of element */
+    div {
+        transform: skewY(-2deg);
+    }
+    .intro-container {
+/*       margin-top: 2em;*/
+        >p {
+/*            font-size: 125%;
+            margin-bottom: 2em;*/
+        }
+    }
+    .intro-container,
+    .service-container {
+        @media #{$desktop__breakpoint} {
+            margin-left: 17%;
+
+        }
+    }
+    .service-container {
+
+        //@include border(4px);
+        /*padding-bottom: 2em;*/
+        h3 {
+            @extend .h4;
+/*            font-weight: bold !important;
+            text-transform: uppercase;
+            text-decoration: underline;*/
+        }
+        @media #{$tablet__breakpoint} {
+            width: 60%;
+        }
+        @media #{$desktop__breakpoint} {
+            max-width: 46em;
+            width: 43%;
+        }
+        @media #{$lg-desktop__breakpoint} {
+            max-width: 48em;
+            width: 43%;
+        }
+    }
+
+
+    a:hover:not(.peak-button) {
+        color: $hero-green;
+    }
+}

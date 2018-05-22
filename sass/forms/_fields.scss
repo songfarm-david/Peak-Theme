@@ -14,18 +14,21 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: $color__text-input;
-	border: 1px solid $color__border-input;
+
+	border: 1px solid $color-dark-transparent;
 	border-radius: 3px;
 	padding: 3px;
 
 	&:focus {
-		color: $color__text-input-focus;
+
+		/*color: $color__text-input-focus;*/
+		
 	}
+
 }
 
 select {
-	border: 1px solid $color__border-input;
+	border: 1px solid #333;
 }
 
 textarea {
@@ -33,7 +36,7 @@ textarea {
 }
 
 .wpforms-form {
-    
+
     input {
         padding: 8px 0;
         text-indent: 2%;
@@ -42,10 +45,10 @@ textarea {
     .wpforms-field-label {
         font-size: 85%;
     }
-    
+
 }
 /*
 display: block;
     width: 100%;
-    
+
 */

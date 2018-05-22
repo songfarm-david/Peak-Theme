@@ -1,0 +1,95 @@
+.blog,
+.single {
+
+  font-family: $text_font;
+
+  .entry-meta,
+  .post-meta {
+      font-family: $text_font;
+      font-weight: bold;
+      font-size: ms(1);
+      font-size: .66em;
+  }
+
+  .entry-title {
+
+    line-height: $second_line_height;
+
+  }
+
+  .entry-footer {
+
+    @extend .small-text;
+    text-transform: uppercase;
+
+  }
+
+  .widget {
+
+    margin-bottom: 1rem;
+
+    .widget-title {
+
+      margin-top: 1.4rem;
+      font-weight: 300;
+
+    }
+
+  }
+
+  .more-link {
+
+      font-weight: bolder;
+      font-style: italic;
+
+  }
+
+}
+
+/**
+ * Blog Index page
+ */
+.blog {
+
+    .entry-title {
+
+      font-size: ms(2);
+
+    }
+
+    .post-details {
+      font-size: 66%;
+      font-weight: bold;
+    }
+
+    .byline {
+
+      font-size: ms(2 , $thread: second);
+
+    }
+
+
+
+    .entry-footer {
+
+    }
+
+}
+
+.blog-meta-text {
+  font-family: $titillium_web;
+  font-weight: 400;
+  @extend .small-text;
+}
+
+// .blog .widget {
+//
+//   margin-bottom: 1rem;
+//
+//   .widget-title {
+//
+//     margin-top: 1.4rem;
+//
+//   }
+//
+// }

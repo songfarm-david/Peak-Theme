@@ -3,115 +3,20 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: $color__border-button;
+	/*border-color: $color__border-button;*/
 	border-radius: 3px;
-	background: $color__background-button;
+	/*background: $color__background-button;*/
 	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
+	/*@include font-size(0.75);*/
 	line-height: 1;
 	padding: .6em 1em .4em;
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		/*border-color: $color__border-button-hover;*/
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-focus;
+		/*border-color: $color__border-button-focus;*/
 	}
 }
-
-button[type="submit"].peak-button,
-input[type="submit"].peak-button,
-.peak-button {
-    clear: both;
-    background-color: $hero-green;
-    border: 0 none;
-    
-    @include border-radius;
-    transition: all 0.23s ease-in-out 0s;
-    color: $color-light;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1em;
-    font-weight: normal;
-    min-height: 1em;
-    line-height: 1em;
-    margin: 0 5px 10px 0;
-    margin: $first_modular + rem 0 0;
-    padding: 0.75em 1.25em;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: top;
-    white-space: nowrap;
-    width: auto;
-    vertical-align: middle;
-    -webkit-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    //box-shadow: 0 0 1px transparent;
-    @include box-shadow;
-    position: relative;
-    -webkit-transition-property: color;
-    transition-property: color;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #2098D1;
-        -webkit-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transform-origin: 50%;
-        transform-origin: 50%;
-        -webkit-transition-property: transform;
-        transition-property: transform;
-        -webkit-transition-duration: 0.3s;
-        transition-duration: 0.3s;
-        -webkit-transition-timing-function: ease-out;
-        transition-timing-function: ease-out;
-    }
-    &:hover,
-    &:focus {
-        color: white;
-    }
-    &:hover:before, 
-    &:focus:before, 
-    &:active:before {
-        -webkit-transform: scaleX(1);
-        transform: scaleX(1);
-    }
-    &:visited {
-        color: $color-light;
-    }
-}
-
-.peak-btn-highlight {
-    background-color: transparent;
-    border: 2px solid $color-light;
-    text-transform: uppercase;
-    //font-size: 125%;
-    &:before {
-        background: rgba(155,155,155,.75);
-        background: $hero-orange;
-        background: $hero-purple;
-        
-    }
-}
-
-peak-btn-highlight-light {
-    &:hover {
-        color: white;
-    }
-}
-
-/*.peak-button-container {
-    position: relative;
-    &::before {
-        
-    }
-}*/

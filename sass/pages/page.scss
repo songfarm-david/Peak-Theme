@@ -1,0 +1,292 @@
+
+/**
+ * general PAGE styles
+ */
+.page:not(.page-id-2341):not(.page-id-2517),
+.archive {
+
+    .content-area { overflow: hidden; }
+
+    // NOTE: This rule applies a page top padding to account for absolute-position site header
+    .site-content {
+
+        @include apply-heading-padding;
+
+    }
+
+    .entry-header > div,
+    .entry-content,
+    .entry-footer {
+
+        padding: 0 1em;
+
+        @media #{$tablet__breakpoint} {
+            margin: 0 auto;
+            @include tablet_width;
+        }
+
+        @media #{$desktop__breakpoint} {
+            @include desktop_width;
+        }
+
+        @media #{$lg-desktop__breakpoint} {
+            @include lg-desktop_width;
+        }
+
+    }
+
+    /** remove top margin on page content on mobile devices */
+    .entry-content {
+        margin-top: 0;
+        padding-bottom: 2em;
+
+        > p:first-child {
+
+            margin-top: 1.4rem;
+
+        }
+
+    }
+
+}
+
+/**
+ * Page Headers Banners
+ */
+.page .entry-header {
+
+    text-align: center;
+    padding: 1em 0;
+    background-color: $color-light;
+    background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1200-min.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .entry-title {
+
+        color: $hero-color;
+        font-weight: bold;
+        line-height: $base_line_height;
+        margin: 0;
+
+    }
+
+    @media #{$tablet__breakpoint} {
+
+        padding: 1.5em 0;
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-1800-min.png);
+
+    }
+
+    @media #{$desktop__breakpoint} {
+
+        padding: 2.5em 0;
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/green-2400-min.png);
+
+    }
+
+}
+
+/**
+ * Web Maintenance, Content Creation, Contact
+ * (first line is local, second line is prod)
+ */
+.page-id-2410, .page-id-2314, .page-id-1722,
+.page-id-2541, .page-id-2376 {
+
+    .entry-header {
+       background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1200-min.png);
+       @media #{$tablet__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-1800-min.png);
+       }
+       @media #{$desktop__breakpoint} {
+           background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/orange-2400-min.png);
+       }
+    }
+
+}
+
+/** SEO, About Peak */
+.page-id-1743, .page-id-1718 {
+
+    .entry-header {
+        background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1200-min.png);
+        @media #{$tablet__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-1800-min.png);
+        }
+        @media #{$desktop__breakpoint} {
+            background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/purple-2400-min.png);
+        }
+    }
+
+}
+
+/**
+  * Blog POST styles
+  */
+body.blog,
+body.single,
+body.archive {
+
+    /* article post styles */
+    .post {
+
+        margin-bottom: ($base_scale + em);
+        padding: 0 1em 1em;
+
+        .entry-header {
+
+            // make featured image attachment full width and responsive
+            img[class*="attachment-"] {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+            }
+            .entry-title {
+                //line-height: $base_line_height;
+                /*@extend .h2;*/
+                //@include border;
+                > a {
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .entry-content {
+            margin-top: 0;
+        }
+
+    }
+
+}
+
+.blog {
+
+  .site-content {
+
+    @include apply-heading-padding;
+
+  }
+
+}
+
+/**
+ * Extraneous pages
+ */
+.error404 .site-content,
+.archive .site-content {
+    @include apply-device-width;
+
+    .page-header {
+      padding: 1.4em 1em 1em;
+    }
+
+}
+
+/**
+ * Archive page styles
+ */
+.archive {
+
+    .page-title {
+
+        @extend .h2;
+        font-weight: normal;
+        border-left: 3px solid $color-dark-transparent;
+        margin-top: 0;
+
+    }
+
+    .page-title,
+    .archive-description {
+      padding-left: 0.5rem;
+    }
+}
+
+/**
+ * Portfolio item styles
+ */
+/** NOTE: these should go into their own folder*/
+body.single.post-template-single-portfolio-item {
+
+    .site-content {
+        @media #{$desktop__breakpoint} {
+            max-width: 90%;
+            .website-img-full {
+                max-width: 67%;
+            }
+        }
+        @media #{$lg-desktop__breakpoint} {
+            max-width: 80%;
+            .website-img-full {
+                max-width: 60%;
+            }
+        }
+    }
+    #primary {
+        //@include border;
+        flex-basis: 100%;
+    }
+
+    /* styles for the main image */
+    img.website-img-full {
+        margin-bottom: 1em;
+        border: 0px solid #fff !important;
+        @include box-shadow;
+    }
+
+    .entry-footer {
+        border-top: 1px solid #ccc;
+        padding-top: 1em;
+        > .navigation.post-navigation {
+            margin: 0;
+        }
+        .nav-links {
+            .nav-next a:after {
+                content: "\f054";
+                font-family: 'FontAwesome';
+                display: inline-block;
+                color: inherit;
+                padding-left: 0.5em;
+            }
+            .nav-previous a:before {
+                content: "\f053";
+                font-family: 'FontAwesome';
+                display: inline-block;
+                color: inherit;
+                padding-right: 0.5em;
+            }
+            a {
+                display: inline-block;
+                padding: 0.65em;
+            }
+        }
+    }
+
+}
+
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.post-navigation {
+
+    padding: 0 1em;
+
+}

@@ -1,0 +1,25 @@
+
+.hero-banner {
+
+	color: $hero-color;
+	background-color: $color-light;
+	background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
+	background-position: center 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	.hero-headline-container {
+
+		@include apply-device-width;
+
+		.hero-headline {
+			margin-bottom: 0;
+		}
+
+		@media #{$desktop__breakpoint} {
+			width: $desktop-width;
+		}
+
+	}
+
+}

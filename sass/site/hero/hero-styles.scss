@@ -2,174 +2,65 @@
     Created on : 22-Oct-2017, 2:11:04 PM
     Author     : David
 */
-.hero-headline {
-    text-transform: capitalize;
-    color: $hero-color;
-    text-shadow: -4px 0px 7px #c4d7e5;
-    >span {
-        color: $hero-green;
-        font-style: italic;
-    }
-}
-.hero-byline {
-    color: #615d59;
-    text-shadow: -1px -1px 0px #615d59;
-}
+// .hero-headline {
+//     text-transform: capitalize;
+//     color: $hero-color;
+//     text-shadow: -4px 0px 7px #c4d7e5;
+//     >span {
+//         color: $hero-green;
+//         font-style: italic;
+//     }
+// }
+// .hero-byline {
+//     color: #615d59;
+//     text-shadow: -1px -1px 0px #615d59;
+// }
 
 #hero-banner {
     position: relative;
-    background-color: #ccc;
-    background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
-    background-position: center 0%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-color: $color-light;
+    // background-image: url(https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg);
+    // background-position: center 0%;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     height: auto;
     min-height: 26.666em;
     text-align: center;
     padding: 5em 0.5em 2em;
     height: 100vh;
+
     .hero-headline-container {
-        text-align: center;
-        opacity: 0;
-        //margin-top: 1em;
-        font-family: $font__header;
-        .hero-headline {
-            margin: 0;
-            line-height: 1.15;
-            font-weight: 900;
-            font-size: 2.369em;
-            /*text-transform: capitalize;*/
-/*            text-shadow: -4px 0px 7px #c4d7e5;*/
-/*            >span {
-                color: $hero-green;
-                font-style: italic;
-            }*/
-        }
-        .hero-byline {
-            /*color: #615d59;*/
-            /*font-weight: lighter;*/
-            /*text-shadow: -2px 0px 3px white;*/
-            /*text-shadow: -1px -1px 0px #615d59;*/
-            margin-top: 0.5em;
-        }
-        .peak-button {
-            margin: 0;
-        }
-        .hero-byline,
-        //.peak-button
-        {
-            /*font-size: 125%;*/
-            font-size: 136%;
-        }
+
+
 
         @media #{$tablet__breakpoint} {
-            margin: 3em auto 0;
-            max-width: 34em;
-            .hero-headline {
-                font-size: 3.157em;
-                font-size: 350%;
-            }
+            // margin: 3em auto 0;
+            // max-width: 34em;
         }
 
         @media #{$desktop__breakpoint} {
             text-align: left;
-            max-width: 38em;
+            // max-width: 38em;
             //@include font-size(1.250);
             margin-top: 6.5em;
-            .hero-headline {
-                line-height: $line-height-header;
-            }
-            .peak-button {
-                margin-top: 1em;
-            }
+            // .hero-headline {
+            //     line-height: $base_line_height;
+            // }
+            // .peak-button {
+            //     margin-top: 1em;
+            // }
         }
 
-        @media #{$lg-desktop__breakpoint} {
-            max-width: 41.5em;
-            //@include font-size(1.375);
-        }
+        // @media #{$lg-desktop__breakpoint} {
+        //     // max-width: 41.5em;
+        //     //@include font-size(1.375);
+        // }
     }
 
     @media #{$desktop__breakpoint} {
+
         padding-top: 3.5em;
-    }
-}
 
-#main-content {
-    @extend .h3;
-    margin-top: 1em;
-    &:focus {
-        outline: none;
     }
 
-    & + p {
-        font-style: italic;
-        font-family: $font__header;
-        margin-top: 1.5em;
-        font-weight: bold;
-    }
-}
-
-#blog-about-peak,
-.hero-call,
-.hero-section {
-    background-color: $hero-green;
-    color: $color-light;
-    @include linear-gradient(45deg, $hero-green, #17422c);
-    margin-top: -2em;
-    margin-bottom: -2em;
-    transform: skewY(2deg);
-    border: 1px solid transparent;
-    position: relative;
-    z-index: 0;
-    padding: 2em 1em 6em;
-    //padding-bottom: 7em;
-    a, h3, a:visited {
-        color: $color-light;
-    }
-    /* correct global skew of element */
-    div {
-        transform: skewY(-2deg);
-    }
-    .intro-container {
-       margin-top: 2em;
-        >p {
-            font-size: 125%;
-            margin-bottom: 2em;
-        }
-    }
-    .intro-container,
-    .service-container {
-        @media #{$desktop__breakpoint} {
-            margin-left: 17%;
-
-        }
-    }
-    .service-container {
-
-        //@include border(4px);
-        padding-bottom: 2em;
-        h3 {
-            @extend .h4;
-            font-weight: bold !important;
-            text-transform: uppercase;
-            text-decoration: underline;
-        }
-        @media #{$tablet__breakpoint} {
-            width: 60%;
-        }
-        @media #{$desktop__breakpoint} {
-            max-width: 46em;
-            width: 43%;
-        }
-        @media #{$lg-desktop__breakpoint} {
-            max-width: 48em;
-            width: 43%;
-        }
-    }
-
-
-    a:hover:not(.peak-button) {
-        color: $hero-green;
-    }
 }

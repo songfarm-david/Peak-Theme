@@ -1,0 +1,61 @@
+/**
+ * Comments for Single blog posts
+ */
+.single {
+
+    figure, figcaption {
+        width: auto !important;
+    }
+
+    .post .entry-footer {
+
+        .cat-links {
+
+            margin: 1.5em 0 0;
+            display: inline-block;
+
+        }
+
+    }
+
+    .comments-area {
+
+        padding: 0 1em;
+        margin-top: 1em;
+
+				input,
+				textarea {
+					width: 100%;
+				}
+
+        .comment-list {
+
+            padding: 0;
+            margin-left: 0;
+            list-style: none;
+
+        }
+
+        .comment-body {
+
+            margin: 1em 0 1.5em;
+            border-left: 3px solid $color-light;
+            padding: 1em;
+
+            .comment-content > .comment-metadata {
+                margin-top: 0.5em;
+                font-style: italic;
+                @extend .small-text;
+            }
+
+        }
+
+        @media #{$tablet__breakpoint} {
+
+            padding: 0 0;
+
+        }
+
+    }
+
+}

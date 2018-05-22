@@ -1,5 +1,5 @@
 /*!
-Theme Name: Peak Themessss
+Theme Name: Peak Themes
 Theme URI: http://underscores.me/
 Author: David Gaskin
 Author URI: https://peakwebsites.ca
@@ -23,52 +23,68 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
---------------------------------------------------------------*/
-@import "variables-site/variables-site";
-@import "mixins/mixins-master";
+# TODO: fill in TOC
 
-/*--------------------------------------------------------------
-# Normalize
+--------------------------------------------------------------
+# Normalize & Global Vars
 --------------------------------------------------------------*/
 @import "normalize";
+@import "variables/variables-master";
 
 /*--------------------------------------------------------------
-# Typography
+# Fonts & Typographic Styles
 --------------------------------------------------------------*/
+@import "typography/fonts";
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-# Elements
+# Helpers
 --------------------------------------------------------------*/
-@import "elements/elements";
+// @import "mixins/mixins-master";
+@import "helper/helper-master";
+@import "animation/animations";
 
 /*--------------------------------------------------------------
-# Forms
+# Global Elements
 --------------------------------------------------------------*/
-@import "forms/forms";
+@import "globals";
+@import "header/header";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Pages
+--------------------------------------------------------------*/
+@import "pages/page";
+@import "pages/portfolio";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "widgets/widgets";
+
+/*--------------------------------------------------------------
+# Hero (Theme) Styles
+--------------------------------------------------------------*/
+@import "hero/landing-page";
+@import "hero/page-banner";
+@import "hero/banner-about";
+@import "hero/elements/elements-master";
+
+/*--------------------------------------------------------------
+# Blog
+--------------------------------------------------------------*/
+@import "blog/blog-styles";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+// @import "elements/elements";
+@import "forms/forms";
+@import "footer/footer";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -88,6 +104,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+@import "layout/blog-index-layout";
 @import "layout/feature-grid";
 
 /*--------------------------------------------------------------
@@ -95,15 +112,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "site/site";
 
-/*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-//@import "site/secondary/widgets";
 
-/*--------------------------------------------------------------
-# Hero Styles
---------------------------------------------------------------*/
-//@import "site/hero/hero-styles";
+
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -111,6 +121,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "modules/infinite-scroll";
 
 /*--------------------------------------------------------------
-# Media
+# Framework Styles (pre-included)
 --------------------------------------------------------------*/
-@import "media/media";
+@import "wp-framework/framework-master";

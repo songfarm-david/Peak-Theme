@@ -1,0 +1,159 @@
+
+
+
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+/**
+ * Body animation and class for onpage load fadein
+ */
+html, body {
+
+    opacity: 0;
+    animation: fadeIn 1.35s;
+
+    &.fadeIn {
+
+        opacity: 1;
+
+    }
+
+}
+
+hr {
+
+  background-color: $hero-color;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+
+}
+
+/**
+/// Site Wide Links
+*/
+a,
+.all-links {
+
+    color: $hero-color;
+
+	&:visited {
+
+		color: $hero-green;
+
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+
+		color: $hero-green;
+
+	}
+
+	&:focus {
+
+		outline: thin dotted $hero-green;
+
+	}
+
+	&:hover,
+	&:active {
+
+		outline: 0;
+
+	}
+
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+  display: table-column;
+}
+
+/**
+/// Lists
+*/
+ul, ol {
+
+	//margin: 0 0 1.5em 3em;
+
+}
+
+ul {
+
+	list-style: disc;
+
+}
+
+ol {
+
+	list-style: decimal;
+
+}
+
+li > ul,
+li > ol {
+
+	margin-bottom: 0;
+	margin-left: 1.5em;
+
+}
+
+dt {
+
+	font-weight: bold;
+
+}
+
+dd {
+
+	margin: 0 1.5em 1.5em;
+
+}
+
+table {
+
+	margin: 0 0 1.5em;
+	width: 100%;
+
+}
+
+/**
+ * Hide featured thumbnail on blog index for post: SEO in 2018
+ */
+.blog,
+.single {
+
+    /* post SEO in 2018 trends */
+    .post-2106 .entry-header > a img {
+        /*display: none;*/
+    }
+
+}
+
+/* If homepage or service homepage, preload images */
+#preload-container {
+    display: none;
+}
+
+/* style header disclaimer on guest posts */
+.guest-post {
+    font-weight: bold;
+    font-style: italic;
+    font-family: $text_font;
+}

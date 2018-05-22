@@ -1,0 +1,50 @@
+/**
+ * Styling for Home Page Compass Image
+ */
+#post-1735 {
+
+    >.entry-content {
+
+        position: relative;
+
+    }
+
+    p {
+
+        position: static;
+
+    }
+
+    .compass-bg {
+
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -50%;
+
+    }
+
+    @media #{$tablet__breakpoint} {
+
+        .compass-bg {
+
+            right: -80%;
+
+        }
+
+    }
+
+    @media #{$desktop__breakpoint} {
+      
+        .compass-bg {
+          
+            bottom: -300px;
+            right: -70%;
+            width: 1000px;
+            height: auto;
+            
+        }
+        
+    }
+
+}

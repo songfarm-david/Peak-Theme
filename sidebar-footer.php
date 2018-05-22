@@ -1,17 +1,11 @@
 <?php
 /**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Peak_Theme
+ * NOTE: This block actually is a sidebar but is used visually as a footer
  */
-
 if ( ! is_active_sidebar( 'footer-1' ) ) {
 	return;
-}
-?>
+} ?>
 
-<aside id="footer-widgets-area" class="widget-area footer-widgets">
+<footer id="footer-widgets-area" class="widget-area footer-widgets">
 	<?php dynamic_sidebar( 'footer-1' ); ?>
-</aside><!-- #secondary -->
+</footer><!-- #secondary -->

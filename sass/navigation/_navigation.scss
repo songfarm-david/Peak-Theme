@@ -1,27 +1,27 @@
 /**
-  * This file contains all navigation related styles 
+  * This file contains all navigation related styles
   */
 
 .main-navigation {
-    
+
     width: 100%;
     background-color: transparent;
-    
+
     /* general ul styles */
     ul {
         list-style: none;
         margin: 0;
         padding-left: 0;
     }
-    
+
     /* global nav links styles */
     a {
         display: block;
         text-decoration: none;
     }
-    
+
     /* #primary-menu */
-    .menu {        
+    .menu {
         display: none; /* hide until toggle class is added */
         background-color: #ffffff;
         position: absolute;
@@ -34,7 +34,6 @@
             position: relative;
             a {
                 padding: 0.5em 1.5em;
-                font-weight: 400;
                 text-align: center;
                 white-space: nowrap;
                 width: 100%;
@@ -43,12 +42,12 @@
                 }
             }
         }
-        a, 
+        a,
         .fa {
-            color: $hero-color; 
+            color: $hero-color;
             line-height: 2;
         }
-        
+
         .menu-item-has-children {
             > a {
                 padding-right: 1.65em;
@@ -68,7 +67,7 @@
                 }
             }
         }
-        
+
         .sub-menu {
             float: left;
             position: absolute;
@@ -78,6 +77,7 @@
             > li,
             li a {
                 width: 100%;
+                white-space: normal;
             }
             li {
                 &:hover > ul,
@@ -105,17 +105,17 @@
         width: 100%; /* fixes width issue on mobile nav menu */
         display: block;
     }
-    
+
     /* button.menu-toggle */
     .menu-toggle {
         display: block;
         background-color: transparent;
         margin-right: 3px;
         margin-left: auto;
-        width: 3.6em;
+        width: 2.75em;
         border-width: 0;
         > i {
-            font-size: 2em;
+            font-size: ms(2);
             color: $hero-color;
         }
     }
@@ -128,7 +128,7 @@
             display: flex;
             justify-content: flex-end;
             position: relative;
-            left: auto; 
+            left: auto;
             right: auto;
             top: auto;
             z-index: initial;
@@ -139,12 +139,13 @@
                     right: -10px;
                 }
             }
-            
+
             li:hover > ul,
             li.focus > ul {
                 left: auto;
+                right: -100%;
             }
-            
+
             .sub-menu {
                 float: none;
                 display: block;
@@ -164,24 +165,24 @@
                 left: -999em;
             }
         }
-        
+
         /* hide hamburger menu on tablet */
         .menu-toggle {
             display: none;
 	}
-        
+
         &.toggled .menu {
             display: flex;
             box-shadow: none;
         }
-   
+
     }
 
     @media #{$desktop__breakpoint} {
         ul.menu {
             .sub-menu,
             .sub-menu.toggled {
-                background-color: rgba(255,255,255,0.35);
+                background-color: rgba(255,255,255,0.95);
             }
             .menu-item-has-children {
                 > button {
@@ -190,15 +191,17 @@
             }
         }
     }
-    
+
 }
 
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
 
+  padding: 0 1em 1em;
+
 	.site-main & {
-		margin: 0 0 1.5em;
+		margin: 0 0 4.5em;
 		overflow: hidden;
 	}
 
@@ -215,38 +218,20 @@
 }
 
 /* Links */
-a {
-	color: $color__link;
-
-	&:visited {
-		color: $color__link-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
-
 .header-sticky {
+
     .main-navigation:not(.toggled) {
-    a, .fa,
-    a + .dropdown-toggle > i.fa {
-        color: white;
+
+
+        // .main-navigation.toggled {
+        //     a + .dropdown-toggle > i.fa {
+        //
+        //         color: white;
+        //         color: $color-dark;
+        //
+        //     }
+        // }
     }
-    .main-navigation.toggled {
-        a + .dropdown-toggle > i.fa {
-            color: white;
-        }
-    }
-}
 }
 
 
@@ -262,9 +247,9 @@ a {
         > a {
             //color: $color-light;
             //@include box-shadow;
-            
+
         }
-        
+
     }
 }*/
 
@@ -291,7 +276,7 @@ a {
         //@include border(2px, green);
         a,
         .fa {
-            color: $hero-color; 
+            color: $hero-color;
             line-height: 2;
             //border-bottom: 1px solid $color-light;
         }
@@ -307,5 +292,5 @@ a {
     @include box-shadow-dual;
     margin: 0;
     padding: 0.5em 0;
-    width: 100%;  fixes width issue on mobile nav menu 
+    width: 100%;  fixes width issue on mobile nav menu
 }*/

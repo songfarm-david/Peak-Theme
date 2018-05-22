@@ -1,8 +1,7 @@
 <?php
 /**
+ *
  * @package Peak_Theme
- * 
- * This custom page is for the 'Services Home' a.k.a the Services Landing Page
  */
 
 get_header(); ?>
@@ -15,23 +14,25 @@ get_header(); ?>
 
                 get_template_part( 'template-parts/content', 'services' );
 
-                // If comments are open or we have at least one comment, load up the comment template.
-//                if ( comments_open() || get_comments_number() ) :
-//                        comments_template();
-//                endif;
-
             endwhile; // End of the loop.
             ?>
 
-            <?php 
-                /**
-                 * Call Services sections
-                 */
+            <?php
+            /**
+             * Call Services sections
+             */
+
+              // if production version exists
+              if ( get_post( 2520 ) ) {
+                $recent = new WP_Query( "page_id=2520" );
+              }
+              // elseif local version exists
+              elseif ( get_post( 2349 ) ) {
                 $recent = new WP_Query( "page_id=2349" );
-                //$recent = new WP_Query( "page_id=2520" );
-                
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+              }
+
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
+
                 <article id="content-section" class="panel-container">
                     <div class="entry-content panel-content">
 
@@ -57,18 +58,24 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
-                <?php endwhile; 
-                
-                $recent = new WP_Query( "page_id=2351" );
-                //$recent = new WP_Query( "page_id=2527" );
 
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+              <?php endwhile;
+
+              /* If Production version exists */
+              if ( get_post( 2527 ) ) {
+                $recent = new WP_Query( "page_id=2527" );
+              }
+              /* elseif Local version exists */
+              elseif ( get_post( 2351 ) ) {
+                $recent = new WP_Query( "page_id=2351" );
+              }
+
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
+
                 <article class="panel-container orange">
                     <div class="entry-content panel-content">
 
@@ -94,18 +101,24 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
-                <?php endwhile;
-                
-                $recent = new WP_Query( "page_id=2353" );
-                //$recent = new WP_Query( "page_id=2529" );
 
-                while( $recent->have_posts() ) : $recent->the_post(); ?>
-                
+              <?php endwhile;
+
+              /* If Production version exists */
+              if ( get_post( 2529 ) ) {
+                $recent = new WP_Query( "page_id=2529" );
+              }
+              /* elseif Local version exists */
+              elseif ( get_post( 2353 ) ) {
+                $recent = new WP_Query( "page_id=2353" );
+              }
+
+              while( $recent->have_posts() ) : $recent->the_post(); ?>
+
                 <article class="panel-container purple">
                     <div class="entry-content panel-content">
 
@@ -131,25 +144,12 @@ get_header(); ?>
                                     );
                                 ?>
                             </footer><!-- .entry-footer -->
-                        <?php endif; ?> 
+                        <?php endif; ?>
 
                     </div>
                 </article>
-                        
-                <?php endwhile; ?>
-                        
-            <!-- Call-to-Action Banner - Show this on all pages EXCEPT Contact Page -->
-            <?php 
-            /**
-             * Include Call-to-Action banner
-             */
-            
-            /** if NOT Contact Page */
-            if ( !is_page( '1722' ) ) : 
-                
-                include( get_template_directory() . '/inc/custom/service-call-to-actions.php' );
-            
-            endif; ?>
+
+              <?php endwhile; ?>
 
         </main><!-- #main -->
     </div><!-- #primary -->

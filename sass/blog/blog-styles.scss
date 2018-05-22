@@ -1,0 +1,223 @@
+/**
+ * Created May 16, 2018
+ *
+ * Styles pertaining to the Blog (index) and single Posts
+ */
+.blog,
+.single {
+
+    .site-content {
+
+        @extend .entry-content;
+
+    }
+
+    main {
+
+        header {
+
+            position: relative;
+
+            .entry-title {
+
+              margin: ($base_scale + rem) 0 1rem;
+
+            }
+
+            .entry-meta {
+
+                // @extend .blog-meta-text;
+                width: auto;
+                position: absolute;
+                top: -7em;
+                padding: 0.25rem 16% 0.25rem 0;
+                margin-bottom: 1em;
+
+                .author-avatar {
+
+                    float: left;
+                    margin: 0 0.5em 0 0;
+
+                    > img {
+
+                        vertical-align: middle;
+
+                    }
+
+                }
+
+                > .author-vcard {
+
+                    .author-info .author {
+
+                        font-weight: 600;
+
+                    }
+
+                    .author-bio,
+                    .times {
+
+                        display: block;
+                        line-height: inherit;
+
+                    }
+
+                    .social-links {
+
+                        font-size: 156%;
+                        padding-left: 0.5rem;
+
+                        .social-link {
+
+                            margin: 0 0.1rem 0 0;
+                            padding: 0.25rem;
+                            vertical-align: top;
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+            .post-meta {
+              .post-meta-key {
+                display: none;
+              }
+            }
+        }
+
+        .entry-content .byline {
+            // @include heading-byline;
+            margin-top: 0;
+        }
+
+        /* Blog images */
+        p > img[class*="wp-image-"] {
+            /*TODO: replace this with a nice gradient or box-shadow*/
+            @include border(4px, $color-dark);
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+    }
+
+    .comments-area {
+
+        margin-bottom: 8.83em;
+
+        input[type="submit"] {
+            @extend .peak-button;
+        }
+
+    }
+
+    .entry-footer {
+        .cat-links,
+        .comments-link {
+            @extend .blog-meta-text;
+        }
+    }
+
+    .entry-meta {
+
+      display: flex;
+      align-items: center;
+
+      .author-avatar {
+
+        float: none;
+        flex: 1 0 auto;
+        min-height: none;
+        line-height: 1;
+        line-height: inherit; /* experimental */
+
+      }
+
+      .author-vcard {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .author-info {
+          display: flex;
+          align-items: center;
+
+          a:visited {
+            color: $hero-color;
+          }
+        }
+
+        .author,
+        .social-links {
+          flex: 0 0 auto;
+        }
+
+        .author-bio {
+          flex-basis: 100%;
+        }
+
+      }
+
+    }
+
+}
+
+/**
+ * Blog Index page
+ */
+.blog {
+
+    .post-details {
+      // @include border;
+      // margin-bottom: 1.4em;
+      @extend .small-text;
+    }
+
+    .byline {
+      display: none;
+    }
+
+    .entry-title {
+      margin: 1rem;
+      text-transform: capitalize;
+    }
+
+    .wp-post-image {
+      margin-top: 1.4em;
+    }
+
+}
+
+/**
+ * Single Blog Posts
+ */
+.single {
+
+  .site-content {
+
+    padding-top: 10.83em;
+
+  }
+
+  .entry-content {
+
+    .byline {
+
+      font-family: $text_font;
+      font-size: ms(3 , $thread: second);
+      line-height: $base_line_height;
+      font-weight: 300;
+
+    }
+
+  }
+
+}
+
+@import "blog-widgets";
+@import "comments";

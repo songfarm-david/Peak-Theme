@@ -332,10 +332,8 @@ h4,
 .single .entry-footer, .blog-meta-text, .blog .entry-footer .cat-links,
 .blog .entry-footer .comments-link,
 .single .entry-footer .cat-links,
-.single .entry-footer .comments-link, .blog main header .entry-meta,
-.single main header .entry-meta, .blog .post-details, .single .comments-area .comment-body .comment-content > .comment-metadata, .wp-caption {
+.single .entry-footer .comments-link, .blog .post-details, .single .comments-area .comment-body .comment-content > .comment-metadata, .wp-caption {
 	font-size: 83.33333%;
-	font-size: 66%;
 	font-weight: bold;
 }
 
@@ -450,6 +448,16 @@ h4,
 	font-family: "Roboto", sans-serif;
 }
 
+.blog .entry-meta,
+.blog .post-meta,
+.single .entry-meta,
+.single .post-meta {
+	font-family: "Roboto", sans-serif;
+	font-weight: bold;
+	font-size: 1.68rem;
+	font-size: .66em;
+}
+
 .blog .entry-title,
 .single .entry-title {
 	line-height: 1.2;
@@ -491,12 +499,6 @@ h4,
 
 .blog .byline {
 	font-size: 1.44rem;
-}
-
-.blog .entry-meta {
-	font-family: "Roboto", sans-serif;
-	font-weight: lighter;
-	font-size: 1.68rem;
 }
 
 .blog-meta-text, .blog .entry-footer .cat-links,
@@ -558,11 +560,66 @@ big {
  /// Site-wide Width contraints
   */
 /**
+ * Global Container Widths
+ */
+.entry-content, .blog .site-content,
+.single .site-content {
+	margin: 0 auto;
+}
+
+@media (min-width: 54em) {
+	.entry-content, .blog .site-content,
+	.single .site-content {
+		max-width: 45rem;
+	}
+}
+
+@media (min-width: 84em) {
+	.entry-content, .blog .site-content,
+	.single .site-content {
+		max-width: 48rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.entry-content, .blog .site-content,
+	.single .site-content {
+		max-width: 54rem;
+	}
+}
+
+/**
  * Add width containers for each breakpoint to an element
  */
 /**
  * Apply minimum top padding to avoid colliding with site header (absolute positioned)
  */
+.hero-color-text {
+	color: #385f7e;
+}
+
+/**
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+	position: relative;
+}
+
+h2 span[class="anchor-target"], p span[class="anchor-target"] {
+	display: block;
+	position: absolute;
+	top: -150px;
+	top: -7.5rem;
+	padding-bottom: 81px;
+	outline: none;
+	border-width: 0;
+}
+
+h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p span[class="anchor-target"]:active, p span[class="anchor-target"]:focus {
+	outline: none;
+	border-width: 0;
+}
+
 /**
 /// For Testing
  */
@@ -570,7 +627,7 @@ big {
  * Framework Mixins
  */
 /**
- * Fade In Animation Keyframe
+ *  Fade In Animation Keyframe
  */
 @-webkit-keyframes fadeIn {
 	from {
@@ -667,35 +724,6 @@ big {
 /*--------------------------------------------------------------
 # Global Elements
 --------------------------------------------------------------*/
-/**
- * Global Container Widths
- */
-.entry-content, .blog .site-content,
-.single .site-content {
-	margin: 0 auto;
-}
-
-@media (min-width: 54em) {
-	.entry-content, .blog .site-content,
-	.single .site-content {
-		max-width: 45rem;
-	}
-}
-
-@media (min-width: 84em) {
-	.entry-content, .blog .site-content,
-	.single .site-content {
-		max-width: 48rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	.entry-content, .blog .site-content,
-	.single .site-content {
-		max-width: 54rem;
-	}
-}
-
 html {
 	box-sizing: border-box;
 }
@@ -710,13 +738,14 @@ html {
 /**
  * Body animation and class for onpage load fadein
  */
+html,
 body {
 	opacity: 0;
 	-webkit-animation: fadeIn 1.35s;
 	        animation: fadeIn 1.35s;
 }
 
-body.fadeIn {
+html.fadeIn, body.fadeIn {
 	opacity: 1;
 }
 
@@ -810,28 +839,6 @@ table {
 }
 
 /**
- * TODO: Add this to a 'hotfix' helper file that will load later
- * Add padding to anchored bookmarks to account for fixed header + some margin
- */
-h2, p {
-	position: relative;
-}
-
-h2 span[class="anchored-header-target"], p span[class="anchored-header-target"] {
-	display: block;
-	position: absolute;
-	top: -81px;
-	padding-bottom: 81px;
-	outline: none;
-	border-width: 0;
-}
-
-h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-target"]:focus, p span[class="anchored-header-target"]:active, p span[class="anchored-header-target"]:focus {
-	outline: none;
-	border-width: 0;
-}
-
-/**
  * Hide featured thumbnail on blog index for post: SEO in 2018
  */
 .blog,
@@ -883,10 +890,37 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 
 .header-sticky {
 	position: fixed;
-	background-color: rgba(56, 95, 126, 0.89);
+	background-color: rgba(255, 255, 255, 0.9);
 	-webkit-animation: fadeIn .5s ease-in;
 	        animation: fadeIn .5s ease-in;
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-sticky .main-navigation:not(.toggled) a, .header-sticky .main-navigation:not(.toggled) .fa,
+.header-sticky .main-navigation:not(.toggled) a + .dropdown-toggle > i.fa {
+	color: white;
+	color: #385f7e;
+}
+
+.header-sticky .main-navigation:not(.toggled) .main-navigation.toggled a + .dropdown-toggle > i.fa {
+	color: white;
+	color: rgba(255, 255, 255, 0.9);
+}
+
+.header-sticky ul.sub-menu {
+	background-color: #385f7e;
+	opacity: 0.9;
+}
+
+.header-sticky ul.sub-menu a:hover {
+	background-color: #EAF1F7;
+	color: #385f7e;
+}
+
+@media (min-width: 54em) {
+	.header-sticky ul.sub-menu {
+		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	}
 }
 
 .header-sticky a {
@@ -897,9 +931,28 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	max-width: 2.5em;
 }
 
+.header-sticky .site-title a {
+	font-weight: 300;
+}
+
 .header-sticky .site-title a:link,
 .header-sticky .site-title a:visited {
 	color: #EAF1F7;
+	color: #385f7e;
+}
+
+.header-sticky .menu a:hover,
+.header-sticky .menu a:hover + button > i.fa {
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #385f7e;
+}
+
+@media (min-width: 54em) {
+	.header-sticky .menu,
+	.header-sticky .menu .sub-menu {
+		font-size: 1rem;
+		font-weight: bold;
+	}
 }
 
 .site-branding,
@@ -1202,36 +1255,10 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 @media (min-width: 84em) {
 	.main-navigation ul.menu .sub-menu,
 	.main-navigation ul.menu .sub-menu.toggled {
-		background-color: rgba(255, 255, 255, 0.35);
+		background-color: rgba(255, 255, 255, 0.95);
 	}
 	.main-navigation ul.menu .menu-item-has-children > button {
 		right: -6px;
-	}
-}
-
-.header-sticky .main-navigation .menu-toggle > i.fa {
-	color: #EAF1F7;
-}
-
-.header-sticky .main-navigation .menu a:hover,
-.header-sticky .main-navigation .menu a:hover + button > i.fa {
-	background-color: #EAF1F7;
-	color: #385f7e;
-}
-
-.header-sticky .main-navigation ul.sub-menu {
-	background-color: #385f7e;
-	opacity: 0.9;
-}
-
-.header-sticky .main-navigation ul.sub-menu a:hover {
-	background-color: #EAF1F7;
-	color: #385f7e;
-}
-
-@media (min-width: 54em) {
-	.header-sticky .main-navigation ul.sub-menu {
-		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
 	}
 }
 
@@ -1264,15 +1291,6 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 /* Links */
-.header-sticky .main-navigation:not(.toggled) a, .header-sticky .main-navigation:not(.toggled) .fa,
-.header-sticky .main-navigation:not(.toggled) a + .dropdown-toggle > i.fa {
-	color: white;
-}
-
-.header-sticky .main-navigation:not(.toggled) .main-navigation.toggled a + .dropdown-toggle > i.fa {
-	color: white;
-}
-
 /**
   * Make last list item stand out
   */
@@ -1304,7 +1322,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
         }
 }*/
 /*#primary-menu {
-    @media (max-width: 768px) {
+    @media (max-width: 54em) {
         background-color: transparent;
         //@include border(2px, green);
         a,
@@ -1332,42 +1350,42 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 /**
  * general PAGE styles
  */
-.page:not(.page-id-2341),
+.page:not(.page-id-2341):not(.page-id-2517),
 .archive {
 	/** remove top margin on page content on mobile devices */
 }
 
-.page:not(.page-id-2341) .content-area,
+.page:not(.page-id-2341):not(.page-id-2517) .content-area,
 .archive .content-area {
 	overflow: hidden;
 }
 
-.page:not(.page-id-2341) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517) .site-content,
 .archive .site-content {
 	padding-top: 4.03em;
 }
 
 @media (min-width: 54em) {
-	.page:not(.page-id-2341) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .site-content,
 	.archive .site-content {
 		padding-top: 3.28em;
 	}
 }
 
 @media (min-width: 84em) {
-	.page:not(.page-id-2341) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .site-content,
 	.archive .site-content {
 		padding-top: 3.12em;
 	}
 }
 
-.page:not(.page-id-2341) .entry-header > div,
-.page:not(.page-id-2341) .entry-content,
-.page:not(.page-id-2341) .blog .site-content,
-.blog .page:not(.page-id-2341) .site-content,
-.page:not(.page-id-2341) .single .site-content,
-.single .page:not(.page-id-2341) .site-content,
-.page:not(.page-id-2341) .entry-footer,
+.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
+.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
+.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
+.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
+.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
 .archive .entry-header > div,
 .archive .entry-content,
 .archive .blog .site-content,
@@ -1379,13 +1397,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 @media (min-width: 54em) {
-	.page:not(.page-id-2341) .entry-header > div,
-	.page:not(.page-id-2341) .entry-content,
-	.page:not(.page-id-2341) .blog .site-content,
-	.blog .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .single .site-content,
-	.single .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1399,13 +1417,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 @media (min-width: 84em) {
-	.page:not(.page-id-2341) .entry-header > div,
-	.page:not(.page-id-2341) .entry-content,
-	.page:not(.page-id-2341) .blog .site-content,
-	.blog .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .single .site-content,
-	.single .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1418,13 +1436,13 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 @media (min-width: 118.75em) {
-	.page:not(.page-id-2341) .entry-header > div,
-	.page:not(.page-id-2341) .entry-content,
-	.page:not(.page-id-2341) .blog .site-content,
-	.blog .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .single .site-content,
-	.single .page:not(.page-id-2341) .site-content,
-	.page:not(.page-id-2341) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1437,11 +1455,11 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 }
 
 
-.page:not(.page-id-2341) .entry-content,
-.page:not(.page-id-2341) .blog .site-content,
-.blog .page:not(.page-id-2341) .site-content,
-.page:not(.page-id-2341) .single .site-content,
-.single .page:not(.page-id-2341) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
+.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
+.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
+.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
 .archive .entry-content,
 .archive .blog .site-content,
 .blog .archive .site-content,
@@ -1451,7 +1469,7 @@ h2 span[class="anchored-header-target"]:active, h2 span[class="anchored-header-t
 	padding-bottom: 2em;
 }
 
-.page:not(.page-id-2341) .entry-content > p:first-child, .page:not(.page-id-2341) .blog .site-content > p:first-child, .blog .page:not(.page-id-2341) .site-content > p:first-child, .page:not(.page-id-2341) .single .site-content > p:first-child, .single .page:not(.page-id-2341) .site-content > p:first-child,
+.page:not(.page-id-2341):not(.page-id-2517) .entry-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517) .blog .site-content > p:first-child, .blog .page:not(.page-id-2341):not(.page-id-2517) .site-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517) .single .site-content > p:first-child, .single .page:not(.page-id-2341):not(.page-id-2517) .site-content > p:first-child,
 .archive .entry-content > p:first-child,
 .archive .blog .site-content > p:first-child,
 .blog .archive .site-content > p:first-child,
@@ -2379,6 +2397,27 @@ peak-btn-highlight-light:hover {
 
     }
 }*/
+/* Bouncing Indicator arrow */
+a > .fa-chevron-down {
+	font-size: 2.352rem;
+	cursor: pointer;
+	-webkit-animation: float 1s ease-in-out infinite both;
+	        animation: float 1s ease-in-out infinite both;
+}
+
+a:visited > .fa-chevron-down {
+	color: #385f7e;
+}
+
+/*****
+** Excluded on mobile
+*/
+@media (max-width: 54em) {
+	a > .fa-chevron-down {
+		display: none;
+	}
+}
+
 /**
  * Styling for Home Page Compass Image
  */
@@ -2480,6 +2519,11 @@ peak-btn-highlight-light:hover {
 	margin: 0 0.1rem 0 0;
 	padding: 0.25rem;
 	vertical-align: top;
+}
+
+.blog main header .post-meta .post-meta-key,
+.single main header .post-meta .post-meta-key {
+	display: none;
 }
 
 .blog main .entry-content .byline, .blog main .site-content .byline,
@@ -2916,7 +2960,7 @@ display: block;
 	color: #385f7e;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 54em) {
 	.site-footer {
 		-webkit-box-pack: center;
 		    -ms-flex-pack: center;
@@ -3333,13 +3377,6 @@ and open the template in the editor.
 #post-2517 .single .site-content,
 .single #post-2517 .site-content {
 	padding-top: 4em;
-}
-
-#post-2341 a > i,
-#post-2517 a > i {
-	font-size: 2.352rem;
-	-webkit-animation: float 1s ease-in-out infinite both;
-	        animation: float 1s ease-in-out infinite both;
 }
 
 @media (min-width: 54em) {

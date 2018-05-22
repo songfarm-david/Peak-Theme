@@ -180,7 +180,7 @@
         ul.menu {
             .sub-menu,
             .sub-menu.toggled {
-                background-color: rgba(255,255,255,0.35);
+                background-color: rgba(255,255,255,0.95);
             }
             .menu-item-has-children {
                 > button {
@@ -189,44 +189,6 @@
             }
         }
     }
-
-}
-
-.header-sticky .main-navigation {
-
-  .menu-toggle > i.fa {
-
-      color: $color-light;
-
-  }
-
-  .menu a:hover,
-  .menu a:hover + button > i.fa {
-
-      background-color: $color-light;
-      color: $hero-color;
-
-  }
-
-  ul.sub-menu {
-
-      background-color: $hero-color;
-      opacity: 0.9;
-
-      & a:hover {
-
-          background-color: $color-light;
-          color: $hero-color;
-
-      }
-
-      @media #{$tablet__breakpoint} {
-
-          box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-
-      }
-
-  }
 
 }
 
@@ -255,17 +217,19 @@
 
 /* Links */
 .header-sticky {
+
     .main-navigation:not(.toggled) {
-    a, .fa,
-    a + .dropdown-toggle > i.fa {
-        color: white;
+
+
+        // .main-navigation.toggled {
+        //     a + .dropdown-toggle > i.fa {
+        //
+        //         color: white;
+        //         color: $color-dark;
+        //
+        //     }
+        // }
     }
-    .main-navigation.toggled {
-        a + .dropdown-toggle > i.fa {
-            color: white;
-        }
-    }
-}
 }
 
 

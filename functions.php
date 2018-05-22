@@ -172,13 +172,13 @@ function peak_theme_scripts() {
 //        wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
 
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
-        
+
         $custom_css = ".post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_one, .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_three, body > div.nc_wrapper.floatBottom { display: none !important; }";
         wp_add_inline_style( 'peak-style', $custom_css);
 
         //test loader script
         wp_enqueue_script('loader-script-custom', get_template_directory_uri() . '/js/loader-script.js', '', '', true);
-        
+
         // google analytics
         wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
         wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );
@@ -193,9 +193,9 @@ function peak_theme_scripts() {
 
 	// load Google fonts
 //        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
-        
+
     wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,400,500,600,700,800,900');
-        
+
 
         // load Font Awesome CDN
         wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
@@ -363,7 +363,7 @@ add_action( 'wp_footer', function () { ?>
 
 /**
  * Exclude category (or multiple) from Blog posts page
- * 
+ *
  * To exclude more than 1 category, separate category IDs with commas
  */
 function exclude_category_from_blogroll( $query ) {
@@ -389,9 +389,9 @@ add_filter('pre_get_posts', 'exclude_category_from_RSS');
  * Also sets posts number to show
 */
 function exclude_posts_from_recentPostWidget_by_cat() {
-    $exclude = array( 
-        'cat' => '-199', 
-        'posts_per_page' => 5 
+    $exclude = array(
+        'cat' => '-199',
+        'posts_per_page' => 5
     );
     return $exclude;
 }
@@ -399,6 +399,7 @@ add_filter('widget_posts_args','exclude_posts_from_recentPostWidget_by_cat');
 
 /**
  * Manually override Canonical URL for specific Posts
+ * NOTE: could create an array here and a function to loop
  */
 function override_canonical( $canonical_url, $post ) {
     if ($post->ID == 197) {
@@ -409,7 +410,7 @@ function override_canonical( $canonical_url, $post ) {
 add_filter( 'get_canonical_url', 'override_canonical', 10, 2 );
 
 /**
- * Add 
+ * Add
  */
 function add_to_author_profile( $contactMethods ) {
   $contactMethods['twitter'] = 'Twitter Profile';
@@ -423,7 +424,7 @@ add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 function remove_RSS_by_id() {
   global $post;
-  
+
   /* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
   if ($post->ID == 2659) {
     remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds

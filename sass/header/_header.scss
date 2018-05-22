@@ -25,9 +25,49 @@
 .header-sticky {
 
     position: fixed;
-    background-color: $hero-color-transparent;
+    background-color: $sticky-header;
     animation: fadeIn .5s ease-in;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+
+    .main-navigation:not(.toggled) {
+
+        a, .fa,
+        a + .dropdown-toggle > i.fa {
+
+            color: white;
+            color: $hero-color;
+
+        }
+
+        .main-navigation.toggled {
+            a + .dropdown-toggle > i.fa {
+
+                color: white;
+                color: $sticky-header;
+
+            }
+        }
+    }
+
+    ul.sub-menu {
+
+        background-color: $hero-color;
+        opacity: 0.9;
+
+        & a:hover {
+
+            background-color: $color-light;
+            color: $hero-color;
+
+        }
+
+        @media #{$tablet__breakpoint} {
+
+            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+
+        }
+
+    }
 
     a {
 
@@ -41,14 +81,38 @@
 
     .site-title {
 
+      a {
+        font-weight: 300;
+      }
+
         a:link,
         a:visited {
 
         color: $color-light;
+        color: $hero-color;
 
       }
 
     }
+
+    .menu a:hover,
+    .menu a:hover + button > i.fa {
+
+        background-color: $sticky-header;
+        color: $hero-color;
+
+    }
+
+    @media #{$tablet__breakpoint} {
+
+      .menu,
+      .menu .sub-menu {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+    }
+
 
 }
 

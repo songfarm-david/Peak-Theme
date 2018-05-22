@@ -1,32 +1,7 @@
 
 
 
-/**
- * Global Container Widths
- */
-.entry-content {
 
-    margin: 0 auto;
-
-    @media #{$tablet__breakpoint} {
-
-        @include tablet_width;
-
-    }
-
-    @media #{$desktop__breakpoint} {
-
-        @include desktop_width;
-
-    }
-
-    @media #{$lg-desktop__breakpoint} {
-
-        @include lg-desktop_width;
-
-    }
-
-}
 
 html {
     box-sizing: border-box;
@@ -41,7 +16,7 @@ html {
 /**
  * Body animation and class for onpage load fadein
  */
-body {
+html, body {
 
     opacity: 0;
     animation: fadeIn 1.35s;
@@ -156,26 +131,6 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 
-}
-
-/**
- * TODO: Add this to a 'hotfix' helper file that will load later
- * Add padding to anchored bookmarks to account for fixed header + some margin
- */
-h2, p {
-    position: relative;
-    span[class="anchored-header-target"] {
-        display: block;
-        position: absolute;
-        top: -81px;
-        padding-bottom: 81px;
-        outline: none;
-        border-width: 0;
-        &:active, &:focus {
-            outline: none;
-            border-width: 0;
-        }
-    }
 }
 
 /**

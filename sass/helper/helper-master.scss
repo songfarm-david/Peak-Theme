@@ -168,3 +168,5 @@ h2, p {
  @mixin column-width($numberColumns: 3) {
  	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
  }
+
+@import "hotfix";

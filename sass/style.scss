@@ -86,6 +86,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 @import "footer/footer";
 
 /*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "layout/layout-master";
+
+/*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
 @import "modules/accessibility";
@@ -100,11 +105,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "modules/clearings";
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@import "layout/blog-index-layout";
-@import "layout/feature-grid";
+
 
 /*--------------------------------------------------------------
 # Content

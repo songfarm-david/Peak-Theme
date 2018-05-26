@@ -21,6 +21,12 @@
     background-image: url('https://peakwebsites.ca/wp-content/uploads/2017/12/default-blank.jpg');
 }*/
 
+.single.post-template-single-portfolio-item {
+  .site-content {
+    padding-top: 7em;
+  }
+}
+
 #portfolio-grid {
 
     ul {
@@ -55,7 +61,7 @@
             }
         }
     }
-    
+
     @media #{$tablet__breakpoint} {
         ul {
             li {
@@ -74,13 +80,13 @@
             }
         }
     }
-    
+
     @media #{$desktop__breakpoint} {
         ul li a {
-            max-height: 313px;
+            max-height: 225px;
         }
     }
-    
 
-    
+
+
 }

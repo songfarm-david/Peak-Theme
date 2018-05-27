@@ -304,7 +304,7 @@ h3,
 .h3 {
 	font-size: 2.352rem;
 	font-weight: 600;
-	margin: 1.5rem 0 0;
+	margin: 1.4em 0 0;
 }
 
 h3,
@@ -312,7 +312,7 @@ h3,
 	font-family: "Roboto", sans-serif;
 	font-size: 1.44rem;
 	font-weight: 400;
-	margin-top: 1.4rem;
+	margin-top: 1.4em;
 }
 
 h4,
@@ -3097,7 +3097,7 @@ body.blog .site-content .widget-area .widget_custom_html:last-child {
 	color: #EAF1F7;
 }
 
-.post-template-single-portfolio-item .post .website-img-full {
+.post-template-single-portfolio-item .post.category-portfolio img {
 	margin-right: 1em;
 	margin-bottom: 1em;
 	border-width: 0px;

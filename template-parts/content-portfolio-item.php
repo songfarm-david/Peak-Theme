@@ -17,16 +17,16 @@
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
-                
-                if ( 'post' === get_post_type() ) : 
-                    
+
+                if ( 'post' === get_post_type() ) :
+
                     /* post thumbnail */
-                    if ( has_post_thumbnail() ) : 
-                        echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
-                        the_post_thumbnail();
-                        echo '</a>';
-                    endif; 
-                    
+                    // if ( has_post_thumbnail() ) :
+                    //     echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
+                    //     the_post_thumbnail();
+                    //     echo '</a>';
+                    // endif; 
+
                 endif; ?>
 
 	</header><!-- .entry-header -->
@@ -50,18 +50,18 @@
                     'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'peak-theme' ),
                     'after'  => '</div>',
                 ) );
-                
+
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-            <?php 
+            <?php
                 the_post_navigation( array(
                     'prev_text'     => __( 'Previous project' ),
                     'next_text'     => __( 'Next project' ),
                     'in_same_term'  => true
-                ) ); 
-                
+                ) );
+
                 //peak_theme_entry_footer();
             ?>
 	</footer><!-- .entry-footer -->

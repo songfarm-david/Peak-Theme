@@ -36,14 +36,16 @@
               </li>
             <?php } ?>
 
-            <?php if ( get_post( $coastalChiro_production ) ) { // NOTE: if production
+            <?php if ( get_post( $coastalChiro_production ) && "post" == get_post_type( $coastalChiro_production ) ) {
+              // NOTE: if production
               $postID = $coastalChiro_production; ?>
               <li class="item small">
                 <a href="<?php echo get_permalink( $postID ); ?>" class="image-hover" id="project-2" aria-label="View project: <?php echo get_the_title( $postID )?>">
                   <img src="<?php echo get_the_post_thumbnail_url( $postID ); ?>" width="100%" aria-labelledby="project-2">
                 </a>
               </li>
-            <?php } elseif ( get_post( $coastalChiro_localhost ) ) { $postID = $coastalChiro_localhost; // if local version ?>
+            <?php } elseif ( get_post( $coastalChiro_localhost ) ) { // if local version
+              $postID = $coastalChiro_localhost; ?>
               <li class="item small">
                 <a href="<?php echo get_permalink( $postID ); ?>" class="image-hover" id="project-2" aria-label="View project: <?php echo get_the_title( $postID )?>">
                   <img src="<?php echo get_the_post_thumbnail_url( $postID ); ?>" width="100%" aria-labelledby="project-2">
@@ -51,7 +53,7 @@
               </li>
             <?php } ?>
 
-            <?php if ( get_post( $songfarm_production ) ) { // NOTE: if production
+            <?php if ( get_post( $songfarm_production ) && "post" == get_post_type( $songfarm_production ) ) { // NOTE: if production
               $postID = $songfarm_production; ?>
               <li class="item small">
                 <a href="<?php echo get_permalink( $postID ); ?>" class="image-hover" id="project-3" aria-label="View project: <?php echo get_the_title( $postID )?>">
@@ -67,7 +69,7 @@
               </li>
             <?php } ?>
 
-            <?php if ( $postID = get_post( $cirs_production ) ) { // NOTE: if production ?>
+            <?php if ( $postID = get_post( $cirs_production ) && "post" == get_post_type( $songfarm_production ) ) { // NOTE: if production ?>
               <li class="item small">
                 <a href="<?php echo get_permalink( $postID ); ?>" class="image-hover" id="project-4" aria-label="View project: <?php echo get_the_title( $postID )?>">
                   <img src="<?php echo get_the_post_thumbnail_url( $postID ); ?>" width="100%" aria-labelledby="project-4">

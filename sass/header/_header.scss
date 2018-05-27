@@ -22,119 +22,11 @@
 
 }
 
-.header-sticky {
-
-    position: fixed;
-    background-color: $sticky-header;
-    animation: fadeIn .5s ease-in;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-
-    .main-navigation:not(.toggled) {
-
-        a, .fa,
-        a + .dropdown-toggle > i.fa {
-
-            color: white;
-            color: $hero-color;
-
-        }
-
-        .main-navigation.toggled {
-            a + .dropdown-toggle > i.fa {
-
-                color: white;
-                color: $sticky-header;
-
-            }
-        }
-    }
-
-    ul.sub-menu {
-
-        background-color: $hero-color;
-        opacity: 0.9;
-
-        & a:hover {
-
-            background-color: $color-light;
-            color: $hero-color;
-
-        }
-
-        @media #{$tablet__breakpoint} {
-
-            box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-
-        }
-
-    }
-
-    a {
-
-        color: $color-light;
-
-    }
-
-    .site-branding .custom-logo-link {
-        max-width: 2.5em;
-    }
-
-    .site-title {
-
-      a {
-        font-weight: 300;
-      }
-
-        a:link,
-        a:visited {
-
-        color: $color-light;
-        color: $hero-color;
-
-      }
-
-    }
-
-    .menu a:hover,
-    .menu a:hover + button > i.fa {
-
-        background-color: $sticky-header;
-        color: $hero-color;
-
-    }
-
-    @media #{$tablet__breakpoint} {
-
-      .menu,
-      .menu .sub-menu {
-        font-size: 1rem;
-        font-weight: bold;
-      }
-
-    }
-
-
-}
-
 .site-branding,
 .site-navigation {
 
     flex: 1 0 auto;
 
-}
-
-/**
-  * (flex) center vertically header/branding content
-  */
-.custom-logo-link,
-.site-branding-text-container,
-.main-navigation {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    // have flexible height container: what is the em equivalent of 65px, 90px?
 }
 
 .site-branding {
@@ -230,5 +122,96 @@
 .site-header:after {
 
     content: none; /* this removes clears around site header so that flexbox justify properties will work */
+
+}
+
+/**
+  * (flex) center vertically header/branding content
+  */
+.custom-logo-link,
+.site-branding-text-container,
+.main-navigation {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.header-sticky {
+
+    position: fixed;
+    background-color: $sticky-header;
+    color: $hero-color;
+    animation: fadeIn .5s ease-in;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+
+    .main-navigation {
+
+      .menu {
+
+        li:hover {
+          background-color: $hero-color;
+          > a, > a + button i {
+            color: $color-light;
+          }
+        }
+
+        .sub-menu {
+
+          background-color: $sticky-header;
+
+            & a:hover {
+
+              background-color: $hero-color;
+              color: $color-light;
+
+            }
+
+            @media #{$tablet__breakpoint} {
+
+                box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+
+            }
+
+        }
+
+      }
+
+    }
+
+    .site-branding .custom-logo-link {
+
+        max-width: 2.5em;
+
+    }
+
+    .site-title {
+
+      a {
+
+        font-weight: 300;
+
+        &:link,
+        &:visited {
+
+          color: $hero-color;
+
+        }
+
+      }
+
+    }
+
+    @media #{$tablet__breakpoint} {
+
+      .menu,
+      .menu .sub-menu {
+        
+        font-size: 1rem;
+        
+      }
+
+    }
 
 }

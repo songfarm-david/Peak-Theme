@@ -1,0 +1,44 @@
+/**
+/// Popup Maker - Custom Styles
+ */
+#popmake-2496,
+#popmake-2722 {
+
+	padding: 2.25em 2em;
+	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) fixed no-repeat bottom right;
+	// background-repeat: no-repeat;
+	// background-position: right bottom;
+
+	.pum-title {
+		text-transform: capitalize;
+		font-weight: 700;
+		font-size: ms(3);
+		line-height: 1.2;
+	}
+
+	/* hide inadvertant p tag */
+	.pum-container .pum-content > :last-child {
+		display: none;
+	}
+
+	/* add bottom margin to label */
+	.wpforms-container .wpforms-field-label {
+		margin-bottom: 8px;
+	}
+
+	@media #{$mobile-only__breakpoint} {
+
+		top: 10% !important;
+	  left: 50% !important;
+	  transform: translateX(-50%);
+		background-image: none;
+
+		.pum-title {
+
+			font-size: ms(2);
+
+		}
+
+	}
+
+}

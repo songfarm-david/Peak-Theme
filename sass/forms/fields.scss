@@ -22,7 +22,7 @@ textarea {
 	&:focus {
 
 		/*color: $color__text-input-focus;*/
-		
+
 	}
 
 }
@@ -38,12 +38,12 @@ textarea {
 .wpforms-form {
 
     input {
-        padding: 8px 0;
+        padding: 0.5rem 0;
         text-indent: 2%;
         border-radius: 3px;
     }
     .wpforms-field-label {
-        font-size: 85%;
+        // font-size: 85%;
     }
 
 }

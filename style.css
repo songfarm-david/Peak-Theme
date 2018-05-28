@@ -1004,29 +1004,6 @@ table {
 	box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 }
 
-.header-sticky .main-navigation .menu li:hover {
-	background-color: #385f7e;
-}
-
-.header-sticky .main-navigation .menu li:hover > a, .header-sticky .main-navigation .menu li:hover > a + button i {
-	color: #EAF1F7;
-}
-
-.header-sticky .main-navigation .menu .sub-menu {
-	background-color: rgba(255, 255, 255, 0.9);
-}
-
-.header-sticky .main-navigation .menu .sub-menu a:hover {
-	background-color: #385f7e;
-	color: #EAF1F7;
-}
-
-@media (min-width: 54em) {
-	.header-sticky .main-navigation .menu .sub-menu {
-		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-	}
-}
-
 .header-sticky .site-branding .custom-logo-link {
 	max-width: 2.5em;
 }
@@ -1052,6 +1029,18 @@ table {
 /**
   * This file contains all navigation related styles
   */
+/* show different hover styles when on home OR services home pages */
+.home .main-navigation .menu li:hover,
+.page-template-page-services .main-navigation .menu li:hover {
+	background-color: rgba(255, 255, 255, 0.35);
+}
+
+.home .main-navigation .menu li:hover > a, .home .main-navigation .menu li:hover .fa,
+.page-template-page-services .main-navigation .menu li:hover > a,
+.page-template-page-services .main-navigation .menu li:hover .fa {
+	color: #385f7e;
+}
+
 .main-navigation {
 	width: 100%;
 	background-color: transparent;
@@ -1088,7 +1077,11 @@ table {
 }
 
 .main-navigation .menu li:hover {
-	background-color: rgba(255, 255, 255, 0.35);
+	background-color: #385f7e;
+}
+
+.main-navigation .menu li:hover > a, .main-navigation .menu li:hover .fa {
+	color: #EAF1F7;
 }
 
 .main-navigation .menu li a {
@@ -1254,12 +1247,39 @@ table {
 	}
 }
 
-.sticky-header .main-navigation .menu .menu-item-has-children a {
+.header-sticky .main-navigation .menu li {
+	transition: all 0.2s;
+}
+
+.header-sticky .main-navigation .menu li:hover {
+	background-color: #385f7e;
+}
+
+.header-sticky .main-navigation .menu li:hover > a, .header-sticky .main-navigation .menu li:hover > a + button i {
+	color: #EAF1F7;
+}
+
+.header-sticky .main-navigation .menu .sub-menu {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+.header-sticky .main-navigation .menu .sub-menu a:hover {
+	background-color: #385f7e;
+	color: #EAF1F7;
+}
+
+@media (min-width: 54em) {
+	.header-sticky .main-navigation .menu .sub-menu {
+		box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+	}
+}
+
+.header-sticky .main-navigation .menu .menu-item-has-children a {
 	display: inline-block;
 	padding-right: 0;
 }
 
-.sticky-header .main-navigation .menu .menu-item-has-children a > button {
+.header-sticky .main-navigation .menu .menu-item-has-children a > button {
 	padding: 0;
 }
 

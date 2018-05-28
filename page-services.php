@@ -1,7 +1,7 @@
 <?php
-/**
- *
- * @package Peak_Theme
+/*
+ * Template Name: Services Home
+ * Template Post Type: page
  */
 
 get_header(); ?>

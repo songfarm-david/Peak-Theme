@@ -2,6 +2,17 @@
   * This file contains all navigation related styles
   */
 
+/* show different hover styles when on home OR services home pages */
+.home,
+.page-template-page-services {
+  .main-navigation .menu li:hover {
+   background-color: $navigation-hover;
+   > a, .fa {
+     color: $hero-color;
+   }
+ }
+}
+
 .main-navigation {
 
     width: 100%;
@@ -35,7 +46,13 @@
           position: relative;
 
           &:hover {
-            background-color: $navigation-hover;
+
+            background-color: $hero-color;
+
+            > a, .fa {
+              color: $color-light;
+            }
+
           }
 
           a {
@@ -55,7 +72,7 @@
 
         .menu-item-has-children {
 
-          a {
+          > a {
 
             padding-right: 0.25em;
 
@@ -179,7 +196,8 @@
 
             li:hover > ul,
             li.focus > ul {
-                left: auto;
+                // left: auto;
+                left: 0;
                 right: -100%;
             }
 
@@ -246,9 +264,40 @@
 
 }
 
-.sticky-header {
+.header-sticky {
+
   .main-navigation {
+
     .menu {
+
+      li { transition: all 0.2s; }
+
+      li:hover {
+        background-color: $hero-color;
+        > a, .fa {
+          color: $color-light;
+        }
+      }
+
+      .sub-menu {
+
+        background-color: $sticky-header;
+
+          & a:hover {
+
+            background-color: $hero-color;
+            color: $color-light;
+
+          }
+
+          @media #{$tablet__breakpoint} {
+
+              box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+
+          }
+
+      }
+
       .menu-item-has-children {
 
         a {
@@ -262,7 +311,9 @@
         }
 
       }
+
     }
+
   }
 }
 

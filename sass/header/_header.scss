@@ -146,55 +146,17 @@
     animation: fadeIn .5s ease-in;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
 
-    .main-navigation {
-
-      .menu {
-
-        li:hover {
-          background-color: $hero-color;
-          > a, > a + button i {
-            color: $color-light;
-          }
-        }
-
-        .sub-menu {
-
-          background-color: $sticky-header;
-
-            & a:hover {
-
-              background-color: $hero-color;
-              color: $color-light;
-
-            }
-
-            @media #{$tablet__breakpoint} {
-
-                box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
-
-            }
-
-        }
-
-      }
-
-    }
-
     .site-branding .custom-logo-link {
-
         max-width: 2.5em;
-
     }
 
     .site-title {
 
       a {
-
         font-weight: 300;
 
         &:link,
         &:visited {
-
           color: $hero-color;
 
         }
@@ -207,9 +169,9 @@
 
       .menu,
       .menu .sub-menu {
-        
+
         font-size: 1rem;
-        
+
       }
 
     }

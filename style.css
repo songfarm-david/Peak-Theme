@@ -1097,11 +1097,11 @@ table {
 	line-height: 2;
 }
 
-.main-navigation .menu .menu-item-has-children a {
+.main-navigation .menu .menu-item-has-children > a {
 	padding-right: 0.25em;
 }
 
-.main-navigation .menu .menu-item-has-children a + button {
+.main-navigation .menu .menu-item-has-children > a + button {
 	height: 100%;
 	position: absolute;
 	top: 0;
@@ -1114,13 +1114,13 @@ table {
 	z-index: 99999;
 }
 
-.main-navigation .menu .menu-item-has-children a + button > .fa {
+.main-navigation .menu .menu-item-has-children > a + button > .fa {
 	padding: 0 0.5em;
 	height: 100%;
 	/* centers the icon */
 }
 
-.main-navigation .menu .menu-item-has-children a + button > .fa:before {
+.main-navigation .menu .menu-item-has-children > a + button > .fa:before {
 	position: relative;
 	top: 5px;
 }
@@ -1200,7 +1200,7 @@ table {
 	}
 	.main-navigation .menu li:hover > ul,
 	.main-navigation .menu li.focus > ul {
-		left: auto;
+		left: 0;
 		right: -100%;
 	}
 	.main-navigation .menu .menu-item-has-children {
@@ -1255,7 +1255,7 @@ table {
 	background-color: #385f7e;
 }
 
-.header-sticky .main-navigation .menu li:hover > a, .header-sticky .main-navigation .menu li:hover > a + button i {
+.header-sticky .main-navigation .menu li:hover > a, .header-sticky .main-navigation .menu li:hover .fa {
 	color: #EAF1F7;
 }
 

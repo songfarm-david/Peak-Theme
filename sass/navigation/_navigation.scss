@@ -13,8 +13,6 @@
  }
 }
 
-
-
 .main-navigation {
 
     width: 100%;
@@ -74,7 +72,7 @@
 
         .menu-item-has-children {
 
-          a {
+          > a {
 
             padding-right: 0.25em;
 
@@ -198,7 +196,8 @@
 
             li:hover > ul,
             li.focus > ul {
-                left: auto;
+                // left: auto;
+                left: 0;
                 right: -100%;
             }
 
@@ -275,7 +274,7 @@
 
       li:hover {
         background-color: $hero-color;
-        > a, > a + button i {
+        > a, .fa {
           color: $color-light;
         }
       }

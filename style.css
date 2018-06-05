@@ -1980,6 +1980,7 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 .hero-banner .hero-headline-container {
+	opacity: 0;
 	margin: 0 auto;
 }
 

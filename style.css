@@ -508,6 +508,144 @@ h4,
 	font-weight: 400;
 }
 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+/**
+ * Body animation and class for onpage load fadein
+ */
+html {
+	opacity: 0;
+	-webkit-animation: fadeIn 1.35s;
+	        animation: fadeIn 1.35s;
+}
+
+html.fadeIn {
+	opacity: 1;
+}
+
+hr {
+	background-color: #385f7e;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/**
+/// Site Wide Links
+*/
+a,
+.all-links,
+.footer-widgets a {
+	color: #385f7e;
+}
+
+a:visited,
+.all-links:visited,
+.footer-widgets a:visited {
+	color: #338c5f;
+}
+
+a:hover, a:focus, a:active,
+.all-links:hover,
+.footer-widgets a:hover,
+.all-links:focus,
+.footer-widgets a:focus,
+.all-links:active,
+.footer-widgets a:active {
+	color: #338c5f;
+}
+
+a:focus,
+.all-links:focus,
+.footer-widgets a:focus {
+	outline: thin dotted #338c5f;
+}
+
+a:hover, a:active,
+.all-links:hover,
+.footer-widgets a:hover,
+.all-links:active,
+.footer-widgets a:active {
+	outline: 0;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1em 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+	display: table-column;
+}
+
+/**
+/// Lists
+*/
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/**
+ * Hide featured thumbnail on blog index for post: SEO in 2018
+ */
+.blog,
+.single {
+	/* post SEO in 2018 trends */
+}
+
+.blog .post-2106 .entry-header > a img,
+.single .post-2106 .entry-header > a img {
+	/*display: none;*/
+}
+
+/* If homepage or service homepage, preload images */
+#preload-container {
+	display: none;
+}
+
+/* style header disclaimer on guest posts */
+.guest-post {
+	font-weight: bold;
+	font-style: italic;
+	font-family: "Roboto", sans-serif;
+}
+
 /*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
@@ -721,147 +859,8 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 /*--------------------------------------------------------------
-# Global Elements
+# Header
 --------------------------------------------------------------*/
-html {
-	box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
-/**
- * Body animation and class for onpage load fadein
- */
-html,
-body {
-	opacity: 0;
-	-webkit-animation: fadeIn 1.35s;
-	        animation: fadeIn 1.35s;
-}
-
-html.fadeIn, body.fadeIn {
-	opacity: 1;
-}
-
-hr {
-	background-color: #385f7e;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-/**
-/// Site Wide Links
-*/
-a,
-.all-links,
-.footer-widgets a {
-	color: #385f7e;
-}
-
-a:visited,
-.all-links:visited,
-.footer-widgets a:visited {
-	color: #338c5f;
-}
-
-a:hover, a:focus, a:active,
-.all-links:hover,
-.footer-widgets a:hover,
-.all-links:focus,
-.footer-widgets a:focus,
-.all-links:active,
-.footer-widgets a:active {
-	color: #338c5f;
-}
-
-a:focus,
-.all-links:focus,
-.footer-widgets a:focus {
-	outline: thin dotted #338c5f;
-}
-
-a:hover, a:active,
-.all-links:hover,
-.footer-widgets a:hover,
-.all-links:active,
-.footer-widgets a:active {
-	outline: 0;
-}
-
-img {
-	height: auto;
-	/* Make sure images are scaled correctly. */
-	max-width: 100%;
-	/* Adhere to container width. */
-}
-
-figure {
-	margin: 1em 0;
-	/* Extra wide images within figure tags don't overflow the content area. */
-	display: table-column;
-}
-
-/**
-/// Lists
-*/
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-}
-
-dt {
-	font-weight: bold;
-}
-
-dd {
-	margin: 0 1.5em 1.5em;
-}
-
-table {
-	margin: 0 0 1.5em;
-	width: 100%;
-}
-
-/**
- * Hide featured thumbnail on blog index for post: SEO in 2018
- */
-.blog,
-.single {
-	/* post SEO in 2018 trends */
-}
-
-.blog .post-2106 .entry-header > a img,
-.single .post-2106 .entry-header > a img {
-	/*display: none;*/
-}
-
-/* If homepage or service homepage, preload images */
-#preload-container {
-	display: none;
-}
-
-/* style header disclaimer on guest posts */
-.guest-post {
-	font-weight: bold;
-	font-style: italic;
-	font-family: "Roboto", sans-serif;
-}
-
 /**
  * Main Website Header
  */

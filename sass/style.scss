@@ -36,17 +36,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 @import "typography/typography";
 
+@import "globals";
+
+
 /*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
-// @import "mixins/mixins-master";
 @import "helper/helper-master";
 @import "animation/animations";
 
 /*--------------------------------------------------------------
-# Global Elements
+# Header
 --------------------------------------------------------------*/
-@import "globals";
 @import "header/header";
 
 /*--------------------------------------------------------------

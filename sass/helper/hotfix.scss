@@ -41,4 +41,27 @@
 
 	}
 
+
+
+}
+
+/* MailChimp form */
+#mc4wp-form-2 {
+
+	label {
+		font-weight: bold;
+		margin-bottom: 0.25em;
+		color: $color-dark;
+		font-size: 85%;
+		span {
+			color: red;
+		}
+	}
+
+	input[type="email"] {
+		display: block;
+		width: 80%;
+		padding: 8px 0;
+		text-indent: 2%;
+	}
 }

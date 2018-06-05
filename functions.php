@@ -169,7 +169,7 @@ add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
  * Enqueue scripts and styles.
  */
 function peak_theme_scripts() {
-//        wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
+	// wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
 
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
 
@@ -192,37 +192,37 @@ function peak_theme_scripts() {
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	// load Google fonts
-//        wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
+	// wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
 
-    wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,400,500,600,700,800,900');
+	wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,400,500,600,700,800,900');
 
 
-        // load Font Awesome CDN
-        wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
+	// load Font Awesome CDN
+	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
 
-        // load custom javascript
-        wp_enqueue_script('custom-functions', get_template_directory_uri() . '/js/custom-functions.js', array( 'jquery' ), '', true );
+	// load custom javascript
+	wp_enqueue_script('custom-functions', get_template_directory_uri() . '/js/custom-functions.js', array( 'jquery' ), '', true );
 
-        if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-        // load Faebook pixel
-        //wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
+	// load Faebook pixel
+	//wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
 
-        /**
-         * Load tracking data on select pages
-         */
-        // if ( is_page( 'search-engine-optimization' ) || is_page( 'website-development-design') ) {
-        //     wp_add_inline_script('facebook-pixel', "fbq('track', 'ViewContent');" );
-        // }
+	/**
+	* Load tracking data on select pages
+	*/
+	// if ( is_page( 'search-engine-optimization' ) || is_page( 'website-development-design') ) {
+	//     wp_add_inline_script('facebook-pixel', "fbq('track', 'ViewContent');" );
+	// }
 
-        /**
-         * Track leads on contact page
-         */
-        // if ( is_page( 'contact-us' ) ) {
-        //     wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
-        // }
+	/**
+	* Track leads on contact page
+	*/
+	// if ( is_page( 'contact-us' ) ) {
+	//     wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
+	// }
 
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
@@ -410,7 +410,7 @@ function override_canonical( $canonical_url, $post ) {
 add_filter( 'get_canonical_url', 'override_canonical', 10, 2 );
 
 /**
- * Add
+ * Add Social Media contacts to an Author
  */
 function add_to_author_profile( $contactMethods ) {
   $contactMethods['twitter'] = 'Twitter Profile';

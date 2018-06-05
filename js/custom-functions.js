@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * 
+ *
  * Custom user-defined functions
  */
 

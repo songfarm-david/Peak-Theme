@@ -508,221 +508,6 @@ h4,
 	font-weight: 400;
 }
 
-/*--------------------------------------------------------------
-# Helpers
---------------------------------------------------------------*/
-/**
- /// Site-wide Width contraints
-  */
-/**
- * Global Container Widths
- */
-.entry-content, .blog .site-content,
-.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-	margin: 0 auto;
-}
-
-@media (min-width: 54em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 45rem;
-	}
-}
-
-@media (min-width: 84em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 48rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 54rem;
-	}
-}
-
-/**
- * Add width containers for each breakpoint to an element
- */
-/**
- * Apply minimum top padding to avoid colliding with site header (absolute positioned)
- */
-.hero-color-text {
-	color: #385f7e;
-}
-
-/**
- * Add padding to anchored bookmarks to account for fixed header + some margin
- */
-h2, p {
-	position: relative;
-}
-
-h2 span[class="anchor-target"], p span[class="anchor-target"] {
-	display: block;
-	position: absolute;
-	top: -150px;
-	top: -7.5rem;
-	padding-bottom: 81px;
-	outline: none;
-	border-width: 0;
-}
-
-h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p span[class="anchor-target"]:active, p span[class="anchor-target"]:focus {
-	outline: none;
-	border-width: 0;
-}
-
-/**
-/// For Testing
- */
-/**
- * Framework Mixins
- */
-/**
-/// Popup Maker - Custom Styles
- */
-#popmake-2496,
-#popmake-2722 {
-	padding: 2.25em 2em;
-	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) fixed no-repeat bottom right;
-	/* hide inadvertant p tag */
-	/* add bottom margin to label */
-}
-
-#popmake-2496 .pum-title,
-#popmake-2722 .pum-title {
-	text-transform: capitalize;
-	font-weight: 700;
-	font-size: 3.2928rem;
-	line-height: 1.2;
-}
-
-#popmake-2496 .pum-container .pum-content > :last-child,
-#popmake-2722 .pum-container .pum-content > :last-child {
-	display: none;
-}
-
-#popmake-2496 .wpforms-container .wpforms-field-label,
-#popmake-2722 .wpforms-container .wpforms-field-label {
-	margin-bottom: 8px;
-}
-
-@media (max-width: 54em) {
-	#popmake-2496,
-	#popmake-2722 {
-		top: 10% !important;
-		left: 50% !important;
-		-webkit-transform: translateX(-50%);
-		        transform: translateX(-50%);
-		background-image: none;
-	}
-	#popmake-2496 .pum-title,
-	#popmake-2722 .pum-title {
-		font-size: 2.352rem;
-	}
-}
-
-/**
- *  Fade In Animation Keyframe
- */
-@-webkit-keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@-webkit-keyframes float {
-	0%, 100% {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-	}
-	50% {
-		-webkit-transform: translateY(30px);
-		        transform: translateY(30px);
-	}
-}
-
-@keyframes float {
-	0%, 100% {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-	}
-	50% {
-		-webkit-transform: translateY(30px);
-		        transform: translateY(30px);
-	}
-}
-
-/* animation of hero text on homepage */
-@-webkit-keyframes fadeInUp {
-	0% {
-		-webkit-transform: translateY(2rem);
-		        transform: translateY(2rem);
-		opacity: 0;
-	}
-	100% {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
-}
-@keyframes fadeInUp {
-	0% {
-		-webkit-transform: translateY(2rem);
-		        transform: translateY(2rem);
-		opacity: 0;
-	}
-	100% {
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
-		opacity: 1;
-	}
-}
-
-.fadeInUp {
-	-webkit-animation: fadeInUp .85s ease-out forwards;
-	        animation: fadeInUp .85s ease-out forwards;
-	-webkit-animation-fill-mode: both;
-	        animation-fill-mode: both;
-}
-
-/**
-  * Grow on hover
-  */
-/* Grow */
-.grow-animate {
-	display: inline-block;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
-	transition-duration: 0.25s;
-	transition-property: -webkit-transform;
-	transition-property: transform;
-	transition-property: transform, -webkit-transform;
-}
-
-.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
-	-webkit-transform: scale(1.5);
-	transform: scale(1.5);
-}
-
-/*--------------------------------------------------------------
-# Global Elements
---------------------------------------------------------------*/
 html {
 	box-sizing: border-box;
 }
@@ -737,14 +522,13 @@ html {
 /**
  * Body animation and class for onpage load fadein
  */
-html,
-body {
+html {
 	opacity: 0;
 	-webkit-animation: fadeIn 1.35s;
 	        animation: fadeIn 1.35s;
 }
 
-html.fadeIn, body.fadeIn {
+html.fadeIn {
 	opacity: 1;
 }
 
@@ -862,6 +646,240 @@ table {
 	font-family: "Roboto", sans-serif;
 }
 
+/*--------------------------------------------------------------
+# Helpers
+--------------------------------------------------------------*/
+/**
+ /// Site-wide Width contraints
+  */
+/**
+ * Global Container Widths
+ */
+.entry-content, .blog .site-content,
+.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+	margin: 0 auto;
+}
+
+@media (min-width: 54em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 45rem;
+	}
+}
+
+@media (min-width: 84em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 48rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 54rem;
+	}
+}
+
+/**
+ * Add width containers for each breakpoint to an element
+ */
+/**
+ * Apply minimum top padding to avoid colliding with site header (absolute positioned)
+ */
+.hero-color-text {
+	color: #385f7e;
+}
+
+/**
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+	position: relative;
+}
+
+h2 span[class="anchor-target"], p span[class="anchor-target"] {
+	display: block;
+	position: absolute;
+	top: -150px;
+	top: -7.5rem;
+	padding-bottom: 81px;
+	outline: none;
+	border-width: 0;
+}
+
+h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p span[class="anchor-target"]:active, p span[class="anchor-target"]:focus {
+	outline: none;
+	border-width: 0;
+}
+
+/**
+/// For Testing
+ */
+/**
+ * Framework Mixins
+ */
+/**
+/// Popup Maker - Custom Styles
+ */
+#popmake-2496,
+#popmake-2722 {
+	padding: 2.25em 2em;
+	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) fixed no-repeat bottom right;
+	/* hide inadvertant p tag */
+	/* add bottom margin to label */
+}
+
+#popmake-2496 .pum-title,
+#popmake-2722 .pum-title {
+	text-transform: capitalize;
+	font-weight: 700;
+	font-size: 3.2928rem;
+	line-height: 1.2;
+}
+
+#popmake-2496 .pum-container .pum-content > :last-child,
+#popmake-2722 .pum-container .pum-content > :last-child {
+	display: none;
+}
+
+#popmake-2496 .wpforms-container .wpforms-field-label,
+#popmake-2722 .wpforms-container .wpforms-field-label {
+	margin-bottom: 8px;
+}
+
+@media (max-width: 54em) {
+	#popmake-2496,
+	#popmake-2722 {
+		top: 10% !important;
+		left: 50% !important;
+		-webkit-transform: translateX(-50%);
+		        transform: translateX(-50%);
+		background-image: none;
+	}
+	#popmake-2496 .pum-title,
+	#popmake-2722 .pum-title {
+		font-size: 2.352rem;
+	}
+}
+
+/* MailChimp form */
+#mc4wp-form-2 label {
+	font-weight: bold;
+	margin-bottom: 0.25em;
+	color: #666;
+	font-size: 85%;
+}
+
+#mc4wp-form-2 label span {
+	color: red;
+}
+
+#mc4wp-form-2 input[type="email"] {
+	display: block;
+	width: 80%;
+	padding: 8px 0;
+	text-indent: 2%;
+}
+
+/**
+ *  Fade In Animation Keyframe
+ */
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+@keyframes float {
+	0%, 100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+	}
+	50% {
+		-webkit-transform: translateY(30px);
+		        transform: translateY(30px);
+	}
+}
+
+/* animation of hero text on homepage */
+@-webkit-keyframes fadeInUp {
+	0% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+@keyframes fadeInUp {
+	0% {
+		-webkit-transform: translateY(2rem);
+		        transform: translateY(2rem);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		        transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+.fadeInUp {
+	-webkit-animation: fadeInUp .85s ease-out forwards;
+	        animation: fadeInUp .85s ease-out forwards;
+	-webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+}
+
+/**
+  * Grow on hover
+  */
+/* Grow */
+.grow-animate {
+	display: inline-block;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	transition-duration: 0.25s;
+	transition-property: -webkit-transform;
+	transition-property: transform;
+	transition-property: transform, -webkit-transform;
+}
+
+.grow-animate:hover, .grow-animate:focus, .grow-animate:active {
+	-webkit-transform: scale(1.5);
+	transform: scale(1.5);
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 /**
  * Main Website Header
  */
@@ -1981,6 +1999,7 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 .hero-banner .hero-headline-container {
+	opacity: 0;
 	margin: 0 auto;
 }
 

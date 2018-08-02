@@ -3,7 +3,7 @@
 
 $base_font_size: 1.2rem;
 $base_scale: 1.4;
-$base_line_height: $base_scale;
+$base_line_height: 1.6;
 
 $second_font_size: 1rem;
 $second_scale: 1.2;
@@ -170,7 +170,6 @@ h4,
 
     &.services-headline {
       font-size: ms(2);
-      line-height: $second_line_height;
     }
 
     > span {
@@ -187,7 +186,14 @@ h4,
       color: $color-dark;
       font-weight: 400;
       text-transform: capitalize;
+      // margin-top: 0;
 
+  }
+
+  @media #{$mobile-only__breakpoint} {
+     .hero-byline-text {
+        padding: 0 1rem;
+     }
   }
 
   @media #{$tablet__breakpoint} {
@@ -197,36 +203,18 @@ h4,
       &.hero-headline,
       &.services-headline {
         font-size: ms(6, $thread: third);
+        line-height: 1;
       }
 
     }
 
     .hero-byline-text {
       font-size: ms(2, $thread: second);
-
     }
 
   }
 
-  .banner-page-text {
-
-    line-height: $second_line_height;
-
-    &.banner-heading {
-
-        font-size: ms(3);
-        font-weight: 700;
-
-    }
-
-    &.banner-secondary-text {
-
-        font-size: ms(1);
-        font-weight: 400;
-
-    }
-
-  }
+  
 
 }
 

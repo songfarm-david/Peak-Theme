@@ -4,7 +4,7 @@
 #page-banner {
 
     background-color: $hero-green;
-    background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/banner-background-min.png');
+    background-image: url('https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png');
     background-size: cover;
     color: $color-light;
     overflow: hidden;
@@ -25,15 +25,31 @@
 
     }
 
-    .banner-heading {
+    .banner-page-text {
 
-        color: $color-light;
-        margin-top: 0;
-        margin-bottom: 0;
+      line-height: $base_line_height;
+
+      &.banner-heading {
+
+         color: $color-light;
+         font-size: ms(3);
+         font-weight: 700;
+         text-transform: capitalize;
+         line-height: 1;
+         margin: 0 auto 1rem;
+
+      }
+
+      &.banner-secondary-text {
+
+          font-size: ms(1);
+          font-weight: 400;
+          margin-top: 0;
+          line-height: 1.4;
+
+      }
 
     }
-
-    .banner-secondary-text {}
 
     .peak-button {
       box-shadow: none;

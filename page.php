@@ -61,6 +61,16 @@ get_header(); ?>
 
             endif; ?>
 
+            <?php
+
+               if (is_front_page()) :
+
+                  include( get_template_directory() . '/inc/custom/testimonial.php' );
+
+               endif;
+
+            ?>
+
             <!-- Page Banner - Show this on all pages EXCEPT Contact Page -->
             <?php if ( !is_page( '1722' ) ) :
 

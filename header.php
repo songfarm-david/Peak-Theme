@@ -24,6 +24,24 @@
         <meta name="description" content="<?php bloginfo('description'); ?>">
         <?php endif; ?>
 
+	<!-- Favicon meta -->
+	<?php // TODO: make sure this is standard ?>
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<!-- <link rel="manifest" href="/site.webmanifest"> -->
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#603cba">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="manifest" href="/manifest.json">
+
+	<?php if (is_front_page()) {
+
+			echo file_get_contents(get_template_directory() . '/assets/structured-data/local-business.js');
+
+	} ?>
+
 </head>
 
 <body <?php body_class( 'fadeIn' ); ?>>

@@ -13,17 +13,13 @@
     position: relative;
 
     .widget .widget-title {
-
       color: $color-light;
-
     }
 
     a {
-
-        font-weight: 300;
-        @extend .all-links;
-        color: $color-light;
-
+      font-weight: 300;
+      @extend .all-links;
+      color: $color-light;
     }
 
     @media #{$tablet__breakpoint} {
@@ -33,20 +29,21 @@
         padding: 2.25em 3.375em;
 
         .widget {
-
             width: auto;
-            flex-grow: 1;
-            flex-shrink: 1;
             padding: 0.5em;
-
-            &:first-of-type {
-
-                flex-grow: 2;
-                flex-shrink: 2;
-
+            &:first-child {
+               flex: 1 1 32rem;
             }
-
+            &:nth-child(2) {
+               flex: 1 1 0px;
+            }
+            &:nth-child(3),
+            &:last-child {
+               flex: 1 1 100%;
+            }
         }
+
+
 
     }
 
@@ -55,23 +52,7 @@
         padding-left: 5.063em;
         padding-right: 5.063em;
 
-        .widget {
 
-            flex: 1 0 30em;
-
-            &:first-of-type {
-
-                flex: 1 0 40em;
-
-            }
-
-            &:last-of-type {
-
-                flex-basis: 40em;
-
-            }
-
-        }
 
     }
 

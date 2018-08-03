@@ -224,7 +224,7 @@ function peak_theme_scripts() {
 	//     wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
 	// }
 
-	
+
 
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
@@ -435,3 +435,12 @@ function remove_RSS_by_id() {
   }
 }
 add_action('wp_head', 'remove_RSS_by_id', 0, 1);
+
+/**
+* Remove hentry from post_class
+*/
+function remove_hentry_class( $classes ) {
+    $classes = array_diff( $classes, array( 'hentry' ) );
+    return $classes;
+}
+add_filter( 'post_class', 'remove_hentry_class' );

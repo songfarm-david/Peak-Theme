@@ -24,16 +24,15 @@
     @media #{$tablet__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
         text-align: center;
-        .services-headline {
-            // padding-top: 2em;
-            //@extend .h1;
-            // font-size: 3.157em;
-            //font-size: 3.157em; /* corrects font back to initial size */
 
+        .services-headline {
+           margin-bottom: 0;
+           margin-top: 3.5rem;
         }
+
         .services-byline {
-            // font-size: 125%;
         }
+
     }
 
     @media #{$desktop__breakpoint} {

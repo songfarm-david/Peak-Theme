@@ -258,7 +258,7 @@ body {
 	font-size: 100%;
 	color: #666;
 	font-family: "Titillium Web", sans-serif;
-	line-height: 1.4;
+	line-height: 1.6;
 }
 
 @media (min-width: 54em) {
@@ -281,7 +281,7 @@ body {
 
 p {
 	font-size: 1.2rem;
-	line-height: 1.4;
+	line-height: 1.6;
 	font-weight: 300;
 }
 
@@ -387,7 +387,6 @@ h4,
 .hero-banner .hero-headline-text.services-headline,
 .hero .hero-headline-text.services-headline {
 	font-size: 2.352rem;
-	line-height: 1.2;
 }
 
 .hero-banner .hero-headline-text > span,
@@ -405,33 +404,24 @@ h4,
 	text-transform: capitalize;
 }
 
+@media (max-width: 54em) {
+	.hero-banner .hero-byline-text,
+	.hero .hero-byline-text {
+		padding: 0 1rem;
+	}
+}
+
 @media (min-width: 54em) {
 	.hero-banner .hero-headline-text.hero-headline, .hero-banner .hero-headline-text.services-headline,
 	.hero .hero-headline-text.hero-headline,
 	.hero .hero-headline-text.services-headline {
 		font-size: 3.58318rem;
+		line-height: 1;
 	}
 	.hero-banner .hero-byline-text,
 	.hero .hero-byline-text {
 		font-size: 1.44rem;
 	}
-}
-
-.hero-banner .banner-page-text,
-.hero .banner-page-text {
-	line-height: 1.2;
-}
-
-.hero-banner .banner-page-text.banner-heading,
-.hero .banner-page-text.banner-heading {
-	font-size: 3.2928rem;
-	font-weight: 700;
-}
-
-.hero-banner .banner-page-text.banner-secondary-text,
-.hero .banner-page-text.banner-secondary-text {
-	font-size: 1.68rem;
-	font-weight: 400;
 }
 
 /**
@@ -1130,6 +1120,7 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 	font-size: 125%;
 	padding: 0;
 	z-index: 99999;
+	min-width: 82px;
 }
 
 .main-navigation .menu .menu-item-has-children > a + button > .fa {
@@ -1335,44 +1326,44 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 /**
  * general PAGE styles
  */
-.page:not(.page-id-2341):not(.page-id-2517),
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735),
 .archive {
 	/** remove top margin on page content on mobile devices */
 }
 
-.page:not(.page-id-2341):not(.page-id-2517) .content-area,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .content-area,
 .archive .content-area {
 	overflow: hidden;
 }
 
-.page:not(.page-id-2341):not(.page-id-2517) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
 .archive .site-content {
 	padding-top: 4.03em;
 }
 
 @media (min-width: 54em) {
-	.page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
 	.archive .site-content {
 		padding-top: 3.28em;
 	}
 }
 
 @media (min-width: 84em) {
-	.page:not(.page-id-2341):not(.page-id-2517) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
 	.archive .site-content {
 		padding-top: 3.12em;
 	}
 }
 
-.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
-.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
-.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
-.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
-.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-.page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header,
-.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header,
-.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header > div,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content,
+.blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content,
+.single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header,
+.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-footer,
 .archive .entry-header > div,
 .archive .entry-content,
 .archive .blog .site-content,
@@ -1386,15 +1377,15 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 @media (min-width: 54em) {
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
-	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
-	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header,
-	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header,
+	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1410,15 +1401,15 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 @media (min-width: 84em) {
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
-	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
-	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header,
-	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header,
+	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1433,15 +1424,15 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 @media (min-width: 118.75em) {
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-header > div,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
-	.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
-	.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-	.page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header,
-	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header,
-	.page:not(.page-id-2341):not(.page-id-2517) .entry-footer,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header > div,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content,
+	.blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content,
+	.single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header,
+	.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header,
+	.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-footer,
 	.archive .entry-header > div,
 	.archive .entry-content,
 	.archive .blog .site-content,
@@ -1456,13 +1447,13 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 
-.page:not(.page-id-2341):not(.page-id-2517) .entry-content,
-.page:not(.page-id-2341):not(.page-id-2517) .blog .site-content,
-.blog .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-.page:not(.page-id-2341):not(.page-id-2517) .single .site-content,
-.single .page:not(.page-id-2341):not(.page-id-2517) .site-content,
-.page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header,
-.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content,
+.blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content,
+.single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header,
+.post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header,
 .archive .entry-content,
 .archive .blog .site-content,
 .blog .archive .site-content,
@@ -1470,11 +1461,10 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 .single .archive .site-content,
 .archive .post-template-single-portfolio-item .post .entry-header,
 .post-template-single-portfolio-item .post .archive .entry-header {
-	margin-top: 0;
-	padding-bottom: 2em;
+	padding: 1rem 0 2em;
 }
 
-.page:not(.page-id-2341):not(.page-id-2517) .entry-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517) .blog .site-content > p:first-child, .blog .page:not(.page-id-2341):not(.page-id-2517) .site-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517) .single .site-content > p:first-child, .single .page:not(.page-id-2341):not(.page-id-2517) .site-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517) .post-template-single-portfolio-item .post .entry-header > p:first-child, .post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517) .entry-header > p:first-child,
+.page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .blog .site-content > p:first-child, .blog .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .single .site-content > p:first-child, .single .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .site-content > p:first-child, .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .post-template-single-portfolio-item .post .entry-header > p:first-child, .post-template-single-portfolio-item .post .page:not(.page-id-2341):not(.page-id-2517):not(.page-id-1735) .entry-header > p:first-child,
 .archive .entry-content > p:first-child,
 .archive .blog .site-content > p:first-child,
 .blog .archive .site-content > p:first-child,
@@ -1500,7 +1490,7 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 .page .entry-header .entry-title {
 	color: #385f7e;
 	font-weight: bold;
-	line-height: 1.4;
+	line-height: 1.6;
 	margin: 0;
 }
 
@@ -2036,7 +2026,7 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
  */
 #page-banner {
 	background-color: #338c5f;
-	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/banner-background-min.png");
+	background-image: url("https://peakwebsites.ca/wp-content/themes/peak-theme/assets/backgrounds/cta-background-min.png");
 	background-size: cover;
 	color: #EAF1F7;
 	overflow: hidden;
@@ -2055,10 +2045,24 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	text-shadow: 1px 1px 2px #333;
 }
 
-#page-banner .banner-heading {
+#page-banner .banner-page-text {
+	line-height: 1.6;
+}
+
+#page-banner .banner-page-text.banner-heading {
 	color: #EAF1F7;
+	font-size: 3.2928rem;
+	font-weight: 700;
+	text-transform: capitalize;
+	line-height: 1;
+	margin: 0 auto 1rem;
+}
+
+#page-banner .banner-page-text.banner-secondary-text {
+	font-size: 1.68rem;
+	font-weight: 400;
 	margin-top: 0;
-	margin-bottom: 0;
+	line-height: 1.4;
 }
 
 #page-banner .peak-button, #page-banner .blog .comments-area input[type="submit"], .blog .comments-area #page-banner input[type="submit"],
@@ -2588,7 +2592,7 @@ a:visited > .fa-chevron-down {
 .single .entry-content .byline, .single .site-content .byline, .single .post-template-single-portfolio-item .post .entry-header .byline, .post-template-single-portfolio-item .post .single .entry-header .byline {
 	font-family: "Roboto", sans-serif;
 	font-size: 1.728rem;
-	line-height: 1.4;
+	line-height: 1.6;
 	font-weight: 300;
 }
 
@@ -2815,19 +2819,22 @@ display: block;
 	}
 	.footer-widgets .widget {
 		width: auto;
-		-webkit-box-flex: 1;
-		    -ms-flex-positive: 1;
-		        flex-grow: 1;
-		-ms-flex-negative: 1;
-		    flex-shrink: 1;
 		padding: 0.5em;
 	}
-	.footer-widgets .widget:first-of-type {
-		-webkit-box-flex: 2;
-		    -ms-flex-positive: 2;
-		        flex-grow: 2;
-		-ms-flex-negative: 2;
-		    flex-shrink: 2;
+	.footer-widgets .widget:first-child {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 32rem;
+		        flex: 1 1 32rem;
+	}
+	.footer-widgets .widget:nth-child(2) {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 0px;
+		        flex: 1 1 0px;
+	}
+	.footer-widgets .widget:nth-child(3), .footer-widgets .widget:last-child {
+		-webkit-box-flex: 1;
+		    -ms-flex: 1 1 100%;
+		        flex: 1 1 100%;
 	}
 }
 
@@ -2835,20 +2842,6 @@ display: block;
 	.footer-widgets {
 		padding-left: 5.063em;
 		padding-right: 5.063em;
-	}
-	.footer-widgets .widget {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 30em;
-		        flex: 1 0 30em;
-	}
-	.footer-widgets .widget:first-of-type {
-		-webkit-box-flex: 1;
-		    -ms-flex: 1 0 40em;
-		        flex: 1 0 40em;
-	}
-	.footer-widgets .widget:last-of-type {
-		-ms-flex-preferred-size: 40em;
-		    flex-basis: 40em;
 	}
 }
 
@@ -3225,15 +3218,6 @@ body.blog .site-content .widget-area .widget_custom_html:last-child {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-/**
-  * This file compiles all sitewide styles
-  */
-/*--------------------------------------------------------------
-## Global styles
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 ## Color Panels
 --------------------------------------------------------------*/
@@ -3307,13 +3291,6 @@ and open the template in the editor.
 }
 
 /*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-/*@import "primary/pages";*/
-/*--------------------------------------------------------------
-## Hero CTA Banner
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 ## Services home page
 --------------------------------------------------------------*/
 /**
@@ -3344,6 +3321,11 @@ and open the template in the editor.
 	#post-2517 {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
 		text-align: center;
+	}
+	#post-2341 .services-headline,
+	#post-2517 .services-headline {
+		margin-bottom: 0;
+		margin-top: 3.5rem;
 	}
 }
 
@@ -3475,12 +3457,51 @@ and open the template in the editor.
 }
 
 /*--------------------------------------------------------------
-## Compass
+## Testimonials
 --------------------------------------------------------------*/
-/*--------------------------------------------------------------
-## Portfolio
---------------------------------------------------------------*/
-/*@import "primary/portfolio";*/
+.testimonial-container {
+	font-size: 90%;
+	margin-bottom: 2rem;
+}
+
+.testimonial-container .testimonial,
+.testimonial-container .testimonial-author {
+	font-size: inherit;
+}
+
+.testimonial-container .testimonial {
+	font-style: italic;
+}
+
+.testimonial-container .testimonial::before {
+	content: "\f10d";
+	font-family: "FontAwesome";
+	font-weight: 900;
+	display: inline-block;
+	float: left;
+	padding: 0 1.25rem 0 0;
+	font-size: 2.352rem;
+	color: #385f7e;
+	text-align: center;
+	position: relative;
+	top: 8px;
+	left: 0;
+}
+
+.testimonial-container .testimonial-author {
+	font-weight: lighter;
+	font-weight: 95%;
+}
+
+.testimonial-container .testimonial-author > a {
+	font-style: italic;
+	color: inherit;
+}
+
+.testimonial-container .testimonial-author > a:hover {
+	color: #385f7e;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -3493,9 +3514,6 @@ and open the template in the editor.
 }
 
 /*--------------------------------------------------------------
-## Widgets
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 ## Panels
 --------------------------------------------------------------*/
 /*
@@ -3503,7 +3521,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 7-Dec-2017, 10:05:34 PM
     Author     : David
 */

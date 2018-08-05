@@ -229,7 +229,48 @@ body.archive {
 
 }
 
-// .page .page > .entry-content {
-//    padding-top: 1rem;
-//
-// }
+/**
+ * Add padding to main content on smaller viewports
+ */
+.page .content-area .entry-content {
+   @media #{$mobile-only__breakpoint} {
+      padding: 0 1rem !important;
+   }
+}
+
+/**
+ * About page
+ */
+.post-1718 {
+
+   @media #{$tablet__breakpoint} {
+
+      .entry-content p:not(:first-child) {
+         float: left;
+         width: auto;
+         max-width: 62%;
+         margin-top: 0;
+         clear: left;
+      }
+
+   }
+
+}
+
+.post-1722 {
+   @media #{$tablet__breakpoint} {
+
+      #wpforms-1782,
+      .entry-content p {
+         float: left;
+         max-width: 62%;
+         margin-top: 0;
+         clear: left;
+      }
+
+      #address-sidebar {
+         margin-top: 1em;
+      }
+
+   }
+}

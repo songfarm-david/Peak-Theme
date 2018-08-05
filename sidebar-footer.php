@@ -1,6 +1,8 @@
 <?php
 /**
- * NOTE: This block actually is a sidebar but is used visually as a footer
+ * The footer "sidebar"
+ *
+ * @package Peak_Theme
  */
 if ( ! is_active_sidebar( 'footer-1' ) ) {
 	return;

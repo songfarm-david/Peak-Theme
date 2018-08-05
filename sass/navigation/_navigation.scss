@@ -265,6 +265,13 @@
 
 }
 
+.main-navigation .menu .menu-item-has-children > a {
+   @media #{$mobile-only__breakpoint} {
+      padding-left: 0;
+      padding-right: 0;
+   }
+}
+
 .header-sticky {
 
   .main-navigation {

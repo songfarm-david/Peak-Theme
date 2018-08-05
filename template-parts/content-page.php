@@ -10,23 +10,29 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    
+
         <!-- show page title only on pages NOT front page -->
         <?php if ( !is_front_page() ) : ?>
-        
+
             <header class="entry-header">
                 <div>
                     <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 </div>
-                    
-                
+
+
             </header><!-- .entry-header -->
-        
+
         <?php endif; ?>
 
 	<div class="entry-content">
 		<?php
+
 			the_content();
+
+         /* if is About Page or Contact Page */
+         if (is_page('1718') || is_page('1722')) {
+            get_sidebar('address');
+         }
 
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'peak-theme' ),

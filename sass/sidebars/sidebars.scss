@@ -1,0 +1,29 @@
+#address-sidebar {
+
+	background-color: lighten($hero-green, 48%);
+	margin: 0 0 1em;
+	padding: 0.5em 0.5em 2em;
+
+	.widget-title {
+		color: $hero-color;
+	}
+
+	.address-widget,
+	.contacts-widget {
+		font-size: $second_font_size;
+
+		span {
+			display: inline-block;
+			width: 100%;
+		}
+
+	}
+
+	@media #{$tablet__breakpoint} {
+		display: block;
+		margin: 0 0 0 auto;
+		max-width: 33%;
+		width: auto;
+	}
+
+}

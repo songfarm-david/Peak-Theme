@@ -773,6 +773,21 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 /**
+ * Controls width layout of Wp-Forms when Item is floated next to it.
+ * Encourage form to extend to full width fields on small screems and removes any max-widths from form fields
+*/
+@media (min-width: 54em) {
+	.post-1722 #wpforms-1782 {
+		width: 100%;
+		margin-right: 1em;
+	}
+}
+
+.post-1722 #wpforms-1782 .wpforms-field-medium {
+	max-width: none;
+}
+
+/**
  *  Fade In Animation Keyframe
  */
 @-webkit-keyframes fadeIn {
@@ -1256,6 +1271,13 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 	}
 }
 
+@media (max-width: 54em) {
+	.main-navigation .menu .menu-item-has-children > a {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .header-sticky .main-navigation .menu li {
 	transition: all 0.2s;
 }
@@ -1321,7 +1343,7 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 }
 
 /*--------------------------------------------------------------
-# Pages
+# Pages / Sidebar
 --------------------------------------------------------------*/
 /**
  * general PAGE styles
@@ -1688,6 +1710,78 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 
 .post-navigation {
 	padding: 0 1em;
+}
+
+/**
+ * Add padding to main content on smaller viewports
+ */
+@media (max-width: 54em) {
+	.page .content-area .entry-content, .page .content-area .blog .site-content, .blog .page .content-area .site-content,
+	.page .content-area .single .site-content, .single .page .content-area .site-content, .page .content-area .post-template-single-portfolio-item .post .entry-header, .post-template-single-portfolio-item .post .page .content-area .entry-header {
+		padding: 0 1rem !important;
+	}
+}
+
+/**
+ * About page
+ */
+@media (min-width: 54em) {
+	.post-1718 .entry-content p:not(:first-child), .post-1718 .blog .site-content p:not(:first-child), .blog .post-1718 .site-content p:not(:first-child), .post-1718 .single .site-content p:not(:first-child), .single .post-1718 .site-content p:not(:first-child), .post-1718 .post-template-single-portfolio-item .post .entry-header p:not(:first-child), .post-template-single-portfolio-item .post .post-1718 .entry-header p:not(:first-child) {
+		float: left;
+		width: auto;
+		max-width: 62%;
+		margin-top: 0;
+		clear: left;
+	}
+}
+
+@media (min-width: 54em) {
+	.post-1722 #wpforms-1782,
+	.post-1722 .entry-content p,
+	.post-1722 .blog .site-content p,
+	.blog .post-1722 .site-content p,
+	.post-1722 .single .site-content p,
+	.single .post-1722 .site-content p,
+	.post-1722 .post-template-single-portfolio-item .post .entry-header p,
+	.post-template-single-portfolio-item .post .post-1722 .entry-header p {
+		float: left;
+		max-width: 62%;
+		margin-top: 0;
+		clear: left;
+	}
+	.post-1722 #address-sidebar {
+		margin-top: 1em;
+	}
+}
+
+#address-sidebar {
+	background-color: #fff5f0;
+	margin: 0;
+	padding: 0.5em 0.5em 2em;
+}
+
+#address-sidebar .widget-title {
+	color: #385f7e;
+}
+
+#address-sidebar .address-widget,
+#address-sidebar .contacts-widget {
+	font-size: 1rem;
+}
+
+#address-sidebar .address-widget span,
+#address-sidebar .contacts-widget span {
+	display: inline-block;
+	width: 100%;
+}
+
+@media (min-width: 54em) {
+	#address-sidebar {
+		display: block;
+		margin: 0 0 0 auto;
+		max-width: 33%;
+		width: auto;
+	}
 }
 
 /** Portfolio styles */
@@ -3009,7 +3103,6 @@ body.blog .site-content .widget-area .widget_custom_html:last-child {
 		        flex: 1 1 0px;
 		margin: 5.063em 1em 1em 0;
 		padding-top: 0;
-		box-shadow: -1px 0px 15px -4px #777;
 	}
 }
 

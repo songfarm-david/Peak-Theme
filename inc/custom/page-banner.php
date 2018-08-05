@@ -14,7 +14,7 @@
         /** if Maintenance page */
         elseif ( is_page( '2541' ) ) : ?>
         <h2 class="banner-heading banner-page-text">Take the worry out of having a website</h2>
-        <p class="banner-secondary-text banner-page-text">Your website is in good hands when Peak has your back.</p>
+        <p class="banner-secondary-text banner-page-text">Your website is in good hands with Peak.</p>
         <?php
         /** if Content Creation page */
         elseif ( is_page( '2376' ) ) : ?>

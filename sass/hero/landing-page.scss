@@ -14,11 +14,31 @@
 		@include apply-device-width;
 
 		.hero-headline {
+
 			margin-bottom: 0;
+			line-height: $second-line-height;
+
+			@media #{$mobile-only__breakpoint} {
+				margin-top: 0;
+			}
+
 		}
+
+
 
 		@media #{$desktop__breakpoint} {
 			width: $desktop-width;
+		}
+
+	}
+
+	.hero-byline {
+
+		@media #{$mobile-only__breakpoint} {
+			background: rgba(255, 255, 255, 0.55);
+			border-radius: 3px;
+			padding: 0.5em;
+			box-shadow	: 0px 2px 22px 0px rgba(0,0,0,0.42);
 		}
 
 	}

@@ -1755,9 +1755,15 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 #address-sidebar {
-	background-color: #fff5f0;
-	margin: 0;
+	background-color: #dbe9f4;
+	margin: 0 0 1em;
 	padding: 0.5em 0.5em 2em;
+	box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.42);
+	font-family: "Roboto", sans-serif;
+}
+
+#address-sidebar iframe {
+	width: 100%;
 }
 
 #address-sidebar .widget-title {
@@ -1767,12 +1773,17 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 #address-sidebar .address-widget,
 #address-sidebar .contacts-widget {
 	font-size: 1rem;
+	font-weight: 300;
 }
 
 #address-sidebar .address-widget span,
 #address-sidebar .contacts-widget span {
 	display: inline-block;
 	width: 100%;
+}
+
+#address-sidebar .address-widget span {
+	line-height: 1;
 }
 
 @media (min-width: 54em) {
@@ -1924,8 +1935,8 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 /**
-///  MailChimp signup form
-*/
+ *  MailChimp signup form
+ */
 .widget #mc_embed_signup p {
 	margin: 0.5em 0 1em;
 }
@@ -1976,13 +1987,14 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	display: block;
 	text-decoration: none;
 	border-bottom: 1px dashed #EAF1F7;
+	transition: all 0.25s ease-in;
 }
 
 .widget_pages a:hover, .widget_pages a:focus,
 .widget_nav_menu a:hover,
 .widget_nav_menu a:focus {
 	text-decoration: none;
-	border-bottom: 1px dashed #666;
+	color: #cdcdcd;
 }
 
 /**
@@ -1995,10 +2007,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	margin-bottom: 0.35em;
 }
 
-/* Archive and Categories widgets */
-/* Search widget. */
-/* Pages and Menu widgets */
-/* Meta widget */
 /* Recent comments */
 .widget_recent_comments li {
 	line-height: 1.3em;
@@ -2017,7 +2025,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	margin-top: 0;
 }
 
-/* RSS widget */
 /* Search widget */
 .widget_search input[type="search"] {
 	box-sizing: border-box;
@@ -2070,6 +2077,37 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	text-decoration: none;
 }
 
+/**
+ * Styles the 'Quick Links' footer widget
+ */
+.menu-quick-links-container ul li {
+	line-height: 1.2;
+	padding: 0.5em 0;
+	border-bottom: 1px dashed #EAF1F7;
+}
+
+.menu-quick-links-container ul li > a {
+	border-bottom: none;
+}
+
+/**
+ * Styles the 'Top Posts' footer widget
+ */
+.widget ul.dpe-flexible-posts .post {
+	margin: 0;
+	line-height: 1.2;
+	padding: 0.5em 0;
+}
+
+.widget ul.dpe-flexible-posts .post a:hover {
+	text-decoration: none;
+}
+
+.widget ul.dpe-flexible-posts .post a:hover > div {
+	transition: all 0.25s ease-in;
+	color: #cdcdcd;
+}
+
 /*--------------------------------------------------------------
 # Hero (Theme) Styles
 --------------------------------------------------------------*/
@@ -2107,11 +2145,27 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 
 .hero-banner .hero-headline-container .hero-headline {
 	margin-bottom: 0;
+	line-height: 1.2;
+}
+
+@media (max-width: 54em) {
+	.hero-banner .hero-headline-container .hero-headline {
+		margin-top: 0;
+	}
 }
 
 @media (min-width: 84em) {
 	.hero-banner .hero-headline-container {
 		width: 48rem;
+	}
+}
+
+@media (max-width: 54em) {
+	.hero-banner .hero-byline {
+		background: rgba(255, 255, 255, 0.55);
+		border-radius: 3px;
+		padding: 0.5em;
+		box-shadow: 0px 2px 22px 0px rgba(0, 0, 0, 0.42);
 	}
 }
 
@@ -2148,7 +2202,7 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	font-size: 3.2928rem;
 	font-weight: 700;
 	text-transform: capitalize;
-	line-height: 1;
+	line-height: 1.2;
 	margin: 0 auto 1rem;
 }
 

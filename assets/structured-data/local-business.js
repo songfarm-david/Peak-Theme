@@ -43,7 +43,10 @@
 	"knowsAbout": "Web Development, Web Design, Search Engine Optimization, Programming, Progressive Web Apps",
 	"knowsLanguage": "HTML5, CSS3, JavaScript ES6, PHP, XML, JSON",
 	"legalName": "Peak Website Services",
-	"location": "Victoria, British Columbia",
+	"location": {
+		"@type": "Place",
+		"name": "Victoria, British Columbia"
+	},
 	"logo": "https://peakwebsites.ca/wp-content/uploads/2017/09/peak_logo.png",
 	"telephone": "7785879220",
 	"geo": {
@@ -56,6 +59,10 @@
 	"image": "https://peakwebsites.ca/wp-content/uploads/2017/10/air-triangulated.jpg",
 	"url": "https://peakwebsites.ca",
 	"name": "Peak Websites",
+	"hasMap": {
+		"@type": "Map",
+		"url": "https://www.google.ca/maps/place/Peak+Websites/@48.423379,-123.3575287,17z/data=!3m1!4b1!4m5!3m4!1s0x548f0d5fc97ca0cf:0xe2e36cceda92621c!8m2!3d48.423379!4d-123.35534"
+	},
 	"sameAs": ["https://twitter.com/peakwebsite","https://plus.google.com/+PeakWebsitesVictoria","https://www.facebook.com/peakwebsiteservices/"]
 }
 </script>

@@ -12,7 +12,7 @@
 		"@type": "Organization",
 		"name": "Peak Websites"
 	},
-	"headline": "Peak Websites - Experience Web Design, Development, and SEO",
+	"headline": "Peak Websites - Experienced Web Design, Development, and SEO",
 	"inLanguage": "English",
 	"keywords": "Web Design, Web Development, SEO, Search Engine Optimization, Internet Marketing, Websites, Website Maintenance, Web Services, Programming, Progressive Web Apps, PWAs, SEO Company, SEO Agency",
 	"sourceOrganization": {

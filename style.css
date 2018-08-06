@@ -258,7 +258,6 @@ body {
 	font-size: 100%;
 	color: #666;
 	font-family: "Titillium Web", sans-serif;
-	line-height: 1.6;
 }
 
 @media (min-width: 54em) {
@@ -305,9 +304,14 @@ h2,
 .archive .page-title,
 h3,
 .h3 {
+	margin: 1.2em 0 0;
+}
+
+h2,
+.h2,
+.archive .page-title {
 	font-size: 2.352rem;
 	font-weight: 600;
-	margin: 1.4em 0 0;
 }
 
 h3,
@@ -315,7 +319,6 @@ h3,
 	font-family: "Roboto", sans-serif;
 	font-size: 1.44rem;
 	font-weight: 400;
-	margin-top: 1.4em;
 }
 
 h4,
@@ -1511,7 +1514,7 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 .page .entry-header .entry-title {
 	color: #385f7e;
 	font-weight: bold;
-	line-height: 1.6;
+	line-height: 1.2;
 	margin: 0;
 }
 
@@ -1722,7 +1725,7 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 /**
- * About page
+ * About page to accomodate for a floating sidebar
  */
 @media (min-width: 54em) {
 	.post-1718 .entry-content p:not(:first-child), .post-1718 .blog .site-content p:not(:first-child), .blog .post-1718 .site-content p:not(:first-child), .post-1718 .single .site-content p:not(:first-child), .single .post-1718 .site-content p:not(:first-child), .post-1718 .post-template-single-portfolio-item .post .entry-header p:not(:first-child), .post-template-single-portfolio-item .post .post-1718 .entry-header p:not(:first-child) {
@@ -1734,6 +1737,9 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	}
 }
 
+/**
+ * Contact page to accomodate for a floating sidebar
+ */
 @media (min-width: 54em) {
 	.post-1722 #wpforms-1782,
 	.post-1722 .entry-content p,
@@ -1751,6 +1757,13 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	.post-1722 #address-sidebar {
 		margin-top: 1em;
 	}
+}
+
+/**
+ * Maintenance "3-steps" section on Monthly Website Maintenance Page
+ */
+#maintenance-steps .entry-content > h2, #maintenance-steps .blog .site-content > h2, .blog #maintenance-steps .site-content > h2, #maintenance-steps .single .site-content > h2, .single #maintenance-steps .site-content > h2, #maintenance-steps .post-template-single-portfolio-item .post .entry-header > h2, .post-template-single-portfolio-item .post #maintenance-steps .entry-header > h2 {
+	margin-top: 0;
 }
 
 #address-sidebar {
@@ -3659,6 +3672,12 @@ and open the template in the editor.
 
 .panel-container.portfolio {
 	background-color: #F2F7F2;
+}
+
+.stylized-list {
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.6;
 }
 
 /*--------------------------------------------------------------

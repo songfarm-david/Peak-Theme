@@ -13,8 +13,8 @@
         <?php
         /** if Maintenance page */
         elseif ( is_page( '2541' ) ) : ?>
-        <h2 class="banner-heading banner-page-text">Take the worry out of having a website</h2>
-        <p class="banner-secondary-text banner-page-text">Your website is in good hands.</p>
+        <h2 class="banner-heading banner-page-text">Take the stress out of having an online presence</h2>
+        <p class="banner-secondary-text banner-page-text">With Peak, you're in good hands.</p>
         <?php
         /** if Content Creation page */
         elseif ( is_page( '2376' ) ) : ?>

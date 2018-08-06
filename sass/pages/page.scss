@@ -66,7 +66,7 @@
 
         color: $hero-color;
         font-weight: bold;
-        line-height: $base_line_height;
+        line-height: $second_line_height;
         margin: 0;
 
     }
@@ -239,7 +239,7 @@ body.archive {
 }
 
 /**
- * About page
+ * About page to accomodate for a floating sidebar
  */
 .post-1718 {
 
@@ -257,6 +257,9 @@ body.archive {
 
 }
 
+/**
+ * Contact page to accomodate for a floating sidebar
+ */
 .post-1722 {
    @media #{$tablet__breakpoint} {
 
@@ -273,4 +276,15 @@ body.archive {
       }
 
    }
+}
+
+/**
+ * Maintenance "3-steps" section on Monthly Website Maintenance Page
+ */
+#maintenance-steps {
+
+   .entry-content > h2 {
+      margin-top: 0;
+   }
+
 }

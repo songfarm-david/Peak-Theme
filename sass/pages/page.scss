@@ -243,6 +243,21 @@ body.archive {
  */
 .post-1718 {
 
+   #david-bio {
+
+      // background-color: grey;
+      padding: 1.6em 0;
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey;
+      margin-bottom: 2em;
+
+      img {
+         max-width: 20%;
+         margin: 0.5em;
+      }
+
+   }
+
    @media #{$tablet__breakpoint} {
 
       .entry-content p:not(:first-child) {
@@ -251,6 +266,31 @@ body.archive {
          max-width: 62%;
          margin-top: 0;
          clear: left;
+      }
+
+      #david-bio {
+
+         float: left;
+         margin-bottom: 0;
+
+         img {
+            max-width: 15%;
+         }
+
+         p {
+            float: none;
+            clear: none;
+            max-width: none;
+         }
+
+         p:first-child {
+            margin-top: 0;
+         }
+
+         p:last-child {
+            margin-bottom: 0;
+         }
+
       }
 
    }

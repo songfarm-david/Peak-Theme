@@ -1727,6 +1727,18 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 /**
  * About page to accomodate for a floating sidebar
  */
+.post-1718 #david-bio {
+	padding: 1.6em 0;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	margin-bottom: 2em;
+}
+
+.post-1718 #david-bio img {
+	max-width: 20%;
+	margin: 0.5em;
+}
+
 @media (min-width: 54em) {
 	.post-1718 .entry-content p:not(:first-child), .post-1718 .blog .site-content p:not(:first-child), .blog .post-1718 .site-content p:not(:first-child), .post-1718 .single .site-content p:not(:first-child), .single .post-1718 .site-content p:not(:first-child), .post-1718 .post-template-single-portfolio-item .post .entry-header p:not(:first-child), .post-template-single-portfolio-item .post .post-1718 .entry-header p:not(:first-child) {
 		float: left;
@@ -1734,6 +1746,24 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 		max-width: 62%;
 		margin-top: 0;
 		clear: left;
+	}
+	.post-1718 #david-bio {
+		float: left;
+		margin-bottom: 0;
+	}
+	.post-1718 #david-bio img {
+		max-width: 15%;
+	}
+	.post-1718 #david-bio p {
+		float: none;
+		clear: none;
+		max-width: none;
+	}
+	.post-1718 #david-bio p:first-child {
+		margin-top: 0;
+	}
+	.post-1718 #david-bio p:last-child {
+		margin-bottom: 0;
 	}
 }
 

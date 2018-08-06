@@ -278,7 +278,7 @@ function register_social_menu( $items, $args ) {
     if ( $args->theme_location == 'social-media' ) {
         $items .= '<li><a href="https://www.facebook.com/peakwebsiteservices/" target="_blank" title="Facebook: Peak Websites" class="grow-animate"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
         $items .= '<li><a href="https://twitter.com/peakwebsite" target="_blank" title="Twitter: Peak Websites" class="grow-animate"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
-        $items .= '<li><a href="https://www.linkedin.com/in/david-gaskin-75339b134/" target="_blank" title="LinkedIn: Peak Websites" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>';
+        // $items .= '<li><a href="https://www.linkedin.com/in/david-gaskin-75339b134/" target="_blank" title="LinkedIn: Peak Websites" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>';
         $items .= '<li><a href="https://plus.google.com/+PeakWebsitesVictoria" target="_blank" title="Google+: Peak Websites" class="grow-animate"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>';
     }
     return $items;

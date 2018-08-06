@@ -63,9 +63,19 @@ get_header(); ?>
 
             <?php
 
-               if (is_front_page()) :
+               if ( is_front_page() ) :
 
-                  include( get_template_directory() . '/inc/custom/testimonial.php' );
+                  include( get_template_directory() . '/inc/custom/testimonial-homepage.php' );
+
+               endif;
+
+            ?>
+
+            <?php
+               /* About page */
+               if ( is_page( '1718' ) ) :
+
+                  include( get_template_directory() . '/inc/custom/testimonial-about.php' );
 
                endif;
 

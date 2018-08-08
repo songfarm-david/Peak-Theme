@@ -329,3 +329,37 @@ body.archive {
    }
 
 }
+
+
+.post-template-page-definition.single {
+
+   .site-content {
+      padding-top: 5em;
+   }
+
+   .post {
+
+      .entry-title {
+         @include h3;
+         margin-bottom: 0;
+         padding-bottom: 0.5em;
+         border-bottom: 1px solid #c3c3c3;
+      }
+   }
+
+   #recent-posts-4.widget {
+
+      margin: 0 1em 4em;
+      padding: 1em;
+      background: aliceblue;
+      width: auto;
+      box-sizing: 0px 2px 22px 0px rgba(0, 0, 0, 0.42);
+
+      .widget-title {
+         color: $hero-color;
+         @include h4;
+         text-transform: capitalize;
+         margin-top: 0;
+      }
+   }
+}

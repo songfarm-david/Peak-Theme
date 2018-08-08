@@ -10,7 +10,7 @@
     padding: 4em 0;
     .feature-item-container {
         flex-wrap: nowrap;
-        
+
         .feature-item {
             flex: 1 0 100%;
             text-align: center;
@@ -22,11 +22,11 @@
             .feature-icon {
                 height: 4.5em;
                 width: auto;
-                margin-top: 1em;
+                // margin-top: 1em;
             }
         }
     }
-    
+
     @media #{$tablet__breakpoint} {
         .feature-item-container {
             display: flex;
@@ -38,10 +38,10 @@
                 margin: 1em 0.5em;
             }
 
-        }    
+        }
     }
-    
-    
+
+
 }
 
 .features-section {

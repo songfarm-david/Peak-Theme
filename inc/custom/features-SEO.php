@@ -3,13 +3,13 @@
 <?php include( get_template_directory() . '/assets/icons/seo-icons/SEOSprite.svg' );?>
 
 <article id="SEO-features-section" class="features-section panel-container panel-color">
-    
+
     <div class="entry-content">
-        <h2>SEO Features:</h2>
+        <h2>Our SEO Strategy in a nutshell:</h2>
         <p>Our approach to SEO is unique to each business, driven by data, and follows industry best-practices. Here is some of what you can expect from our SEO Service:</p>
-        
+
         <div class="feature-item-container">
-            
+
             <article class="feature-item">
                 <h4>Customized Strategy</h4>
                 <!--image here-->
@@ -60,7 +60,7 @@
                 </svg>
                 <p>SEO is an ongoing process and to be most effective, one has to track results over time. We record and monitor everything we do and provide regular campaign reports so you can see what’s working and what’s <em>not</em>, allowing you to focus only on the things that matter to your bottom line.</p>
             </article>
-            
+
             <article class="feature-item">
                 <h4>Competitor Analysis</h4>
                 <!--image here-->
@@ -77,16 +77,16 @@
                 </svg>
                 <p>Part of what drives success for online business is delivering a positive user experience from any location or device. Our expert developers optimize your web presence for maximum performance and speed so that you provide a winning online experience to customers every time.</p>
             </article>
-            
+
         </div>
     </div>
-  
+
 </article>
 
 <!--SEO Services In-Detail-->
-<article class="hero-section">
+<!-- <article class="hero-section">
     <div class="intro-container">
-        <h2>SEO Services:</h2>     
+        <h2>SEO Services:</h2>
         <p>Choose the SEO Service best suited to your current needs:</p>
     </div>
     <div class="service-container">
@@ -113,5 +113,4 @@
         <p>We work with you to understand and determine the necessary actions, now and in the future, to secure the kind of placement your business would like to see.</p>
         <a href="<?php echo get_permalink( '1722' ); ?>" class="peak-button peak-btn-highlight peak-btn-highlight-light">Get it now</a>
     </div>
-</article>
-
+</article> -->

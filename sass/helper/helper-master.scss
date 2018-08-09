@@ -169,4 +169,16 @@ h2, p {
  	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
  }
 
+ /**
+ /// Skewed Green background */
+@mixin backgroundSkewed {
+   transform: skewY(2deg);
+   color: $color-light;
+   background-color: $hero-green;
+   @include linear-gradient(45deg, $hero-green, #17422c);
+   margin: -2em 0;
+   padding: 2.25em 1em 5.063em;
+   position: relative;
+}
+
 @import "hotfix";

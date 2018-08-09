@@ -1,0 +1,13 @@
+#seo-packages {
+
+	@include backgroundSkewed;
+
+	.entry-content {
+		transform: skewY(-2deg);
+	}
+
+	h2, h3 {
+		color: $color-light;
+	}
+
+}

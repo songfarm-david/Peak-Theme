@@ -712,6 +712,8 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
  * Framework Mixins
  */
 /**
+ /// Skewed Green background */
+/**
 /// Popup Maker - Custom Styles
  */
 #popmake-2496,
@@ -787,6 +789,14 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 
 .post-1722 #wpforms-1782 .wpforms-field-medium {
 	max-width: none;
+}
+
+/**
+ * Adjust the width of the local-pack image on Main SEO service page
+ */
+#attachment_2831,
+#attachment_2529 {
+	max-width: 50%;
 }
 
 /**
@@ -1987,6 +1997,27 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	}
 }
 
+#seo-packages {
+	-webkit-transform: skewY(2deg);
+	        transform: skewY(2deg);
+	color: #EAF1F7;
+	background-color: #338c5f;
+	background: linear-gradient(45deg, #338c5f, #17422c);
+	margin: -2em 0;
+	padding: 2.25em 1em 5.063em;
+	position: relative;
+}
+
+#seo-packages .entry-content, #seo-packages .blog .site-content, .blog #seo-packages .site-content,
+#seo-packages .single .site-content, .single #seo-packages .site-content, #seo-packages .post-template-single-portfolio-item .post .entry-header, .post-template-single-portfolio-item .post #seo-packages .entry-header {
+	-webkit-transform: skewY(-2deg);
+	        transform: skewY(-2deg);
+}
+
+#seo-packages h2, #seo-packages h3 {
+	color: #EAF1F7;
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -2347,14 +2378,13 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 .about-banner,
 .hero-call,
 .hero-section {
+	-webkit-transform: skewY(2deg);
+	        transform: skewY(2deg);
 	color: #EAF1F7;
 	background-color: #338c5f;
 	background: linear-gradient(45deg, #338c5f, #17422c);
 	margin: -2em 0;
 	padding: 2.25em 1em 5.063em;
-	-webkit-transform: skewY(2deg);
-	        transform: skewY(2deg);
-	/*    border: 1px solid transparent;*/
 	position: relative;
 	/* correct global skew of element */
 }
@@ -3286,7 +3316,7 @@ body.blog .site-content .widget-area .widget_custom_html:last-child {
 }
 
 .features-section .feature-item-container .feature-item h3 {
-	margin-top: 0.5em;
+	margin-bottom: 1em;
 }
 
 .features-section .feature-item-container .feature-item .feature-icon {

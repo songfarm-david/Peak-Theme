@@ -59,9 +59,14 @@ get_header(); ?>
                 // include content creation features
                 include( get_template_directory() . '/inc/custom/features-SEO.php' );
 
-                if ( get_post( 2854 ) ) :
+                /**
+                 * SEO Services and Packages post
+                 */
+                if ( get_post( 2854 ) ) {
                    $recent = new WP_Query( "page_id=2854" );
-                endif;
+                } elseif ( get_post( 2545 ) ) {
+                   $recent = new WP_Query( "page_id=2545" );
+                }
 
                 while( $recent->have_posts() ) : $recent->the_post(); ?>
 
@@ -96,6 +101,49 @@ get_header(); ?>
                     </article>
 
                <?php endwhile;
+
+               /**
+                * Frequently Asked Questions post
+                */
+               if ( get_post( 2849 ) ) {
+                  $recent = new WP_Query( "page_id=2849" );
+               } elseif ( get_post( 2557 ) ) {
+                  $recent = new WP_Query( "page_id=2557" );
+               }
+
+               while( $recent->have_posts() ) : $recent->the_post(); ?>
+
+                   <article id="seo-faq" class="panel-container">
+                       <div class="entry-content panel-content">
+
+                       <?php the_content();
+
+                           /* Edit link */
+                           if ( get_edit_post_link() ) : ?>
+                              <footer class="panel-footer">
+                                   <?php
+                                       edit_post_link(
+                                           sprintf(
+                                               wp_kses(__( 'Edit <span class="screen-reader-text">%s</span>', 'peak-theme' ),
+                                                   array(
+                                                       'span' => array(
+                                                           'class' => array(),
+                                                       ),
+                                                   )
+                                               ),
+                                           get_the_title()
+                                       ),
+                                       '<span class="edit-link">',
+                                       '</span>'
+                                       );
+                                   ?>
+                              </footer><!-- .entry-footer -->
+                           <?php endif; ?>
+
+                       </div>
+                   </article>
+
+              <?php endwhile;
 
             endif; ?>
 

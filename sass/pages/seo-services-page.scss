@@ -6,8 +6,20 @@
 		transform: skewY(-2deg);
 	}
 
-	h2, h3 {
+	h2, h3,
+	.edit-link,
+	a:visited {
 		color: $color-light;
 	}
+
+	a,
+	a:hover {
+		transition: all 0.23s ease-in-out 0s;
+	}
+
+	a:hover:not(.peak-button) {
+		color: darken($color-light, 30%);
+	}
+
 
 }

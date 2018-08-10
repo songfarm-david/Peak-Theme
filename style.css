@@ -2014,8 +2014,19 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	        transform: skewY(-2deg);
 }
 
-#seo-packages h2, #seo-packages h3 {
+#seo-packages h2, #seo-packages h3,
+#seo-packages .edit-link,
+#seo-packages a:visited {
 	color: #EAF1F7;
+}
+
+#seo-packages a,
+#seo-packages a:hover {
+	transition: all 0.23s ease-in-out 0s;
+}
+
+#seo-packages a:hover:not(.peak-button) {
+	color: #7ba7cd;
 }
 
 /*--------------------------------------------------------------
@@ -2624,9 +2635,14 @@ input[type="submit"].peak-button.no-box-shadow,
 	background: rgba(155, 155, 155, 0.75);
 	background: #F75C03;
 	background: #835EA8;
+	background: #2098D1;
 }
 
 peak-btn-highlight-light:hover {
+	color: white;
+}
+
+peak-btn-highlight-light:hover a {
 	color: white;
 }
 

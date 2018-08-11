@@ -13,42 +13,25 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
+				
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'peak-theme' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! Looks like the page you\'re looking for isn\'t here!', 'peak-theme' ); ?></h1>
+					<p class="page-byline">Sorry about that! Try checking out <a href="<?php echo get_permalink( '703' ) ?>">the blog</a> visiting our <a href="<?php echo get_permalink( '1735' ) ?>">homepage</a>, or <a href="<?php echo get_permalink( '1722' ) ?>">get in touch with us</a>!</p>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'peak-theme' ); ?></p>
 
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'peak-theme' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'peak-theme' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+					<div class="help-widgets-container">
+						<div class="help-widget widget">
+							<h2>Quick Links</h2>
+							<?php wp_nav_menu( 'Footer' ) ?>
+						</div>
+						<div class="help-widget">
+							<?php
+							$title = 'Top Posts';
+							the_widget( 'WP_Widget_Recent_Posts', "title=$title&number=5" ); ?>
+						</div>
+					</div>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->

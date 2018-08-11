@@ -1,3 +1,8 @@
+@mixin widget-list-items {
+   line-height: 1.2;
+   padding: 0.4em 0;
+}
+
 .widget {
 
     width: 100%;
@@ -13,7 +18,7 @@
 
             li {
                 display: block;
-                line-height: 2em;
+                @include widget-list-items;
 
                 ul,
                 ol {
@@ -140,8 +145,7 @@
 
 			display: list-item;
 			list-style: disc inside;
-			line-height: 1.5;
-			margin-bottom: 0.35em;
+         @include widget-list-items;
 
 		}
 

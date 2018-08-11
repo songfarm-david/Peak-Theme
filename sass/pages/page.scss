@@ -50,10 +50,12 @@
 
 }
 
+
 /**
  * Page Headers Banners
  */
 .page .entry-header {
+
 
     text-align: center;
     padding: 1em 0;
@@ -63,11 +65,7 @@
     background-repeat: no-repeat;
 
     .entry-title {
-
-        color: $hero-color;
-        font-weight: bold;
-        line-height: $second_line_height;
-        margin: 0;
+      @include page-header;
 
     }
 
@@ -177,13 +175,24 @@ body.archive {
  * Extraneous pages
  */
 .error404 .site-content,
-.archive .site-content {
-    @include apply-device-width;
+.archive .site-content,
+.search .site-content {
+    // @include apply-device-width;
+    @include apply-heading-padding;
 
-    .page-header {
-      padding: 1.4em 1em 1em;
-    }
+    .error-404 {
+      @include all-widths;
+   }
 
+   .page-header {
+      @include page-header;
+   }
+
+}
+
+.search .page-header {
+   @include all-widths;
+   margin: 0 auto !important;
 }
 
 /**
@@ -232,9 +241,15 @@ body.archive {
 /**
  * Add padding to main content on smaller viewports
  */
-.page .content-area .entry-content {
+.page .content-area .entry-content,
+.search .page-header,
+.search article .entry-summary,
+.search article.post,
+.search .page-content,
+.error404 .content-area {
    @media #{$mobile-only__breakpoint} {
-      padding: 0 1rem !important;
+      // padding: 0 1rem !important;
+      @include mobile-padding;
    }
 }
 

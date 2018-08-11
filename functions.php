@@ -446,14 +446,15 @@ function add_to_author_profile( $contactMethods ) {
 add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 function remove_RSS_by_id() {
-  global $post;
+	global $post;
 
-  /* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
-  if ($post->ID == 2659) {
-    remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
-    remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
-    remove_action( 'wp_head', 'rsd_link' );
-  }
+	/* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
+	if ($post && $post->ID == 2659) {
+		remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+		remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+		remove_action( 'wp_head', 'rsd_link' );
+	}
+
 }
 add_action('wp_head', 'remove_RSS_by_id', 0, 1);
 
@@ -478,3 +479,14 @@ function remove_empty_p( $content ) {
 	return $content;
 }
 add_filter('the_content', 'remove_empty_p', 20, 1);
+
+/**
+ * Tries to direct search engines to not index attachment pages
+ * NOTE: There is a plugin activated in the theme that is supposed to do that automagically
+ */
+function noindex_attachment_pages() {
+	if( is_attachment() ) {
+		echo '<meta name="robots" content="noindex" />';
+	}
+}
+add_action('wp_head', 'noindex_attachment_pages');

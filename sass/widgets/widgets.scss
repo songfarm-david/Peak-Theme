@@ -1,3 +1,8 @@
+@mixin widget-list-items {
+   line-height: 1.2;
+   padding: 0.4em 0;
+}
+
 .widget {
 
     width: 100%;
@@ -13,7 +18,7 @@
 
             li {
                 display: block;
-                line-height: 2em;
+                @include widget-list-items;
 
                 ul,
                 ol {
@@ -51,14 +56,9 @@
 
 }
 
-.widget.widget_pages,
-.widget.widget_nav_menu {
-
-}
-
 /**
-///  MailChimp signup form
-*/
+ *  MailChimp signup form
+ */
 .widget #mc_embed_signup {
 
     p {
@@ -118,15 +118,17 @@
 
 	a {
 
-    display: block;
+      display: block;
 		text-decoration: none;
 		border-bottom: 1px dashed $color-light;
+      transition: all 0.25s ease-in;
 
 		&:hover,
 		&:focus {
 			// TODO: Investigate this style
 			text-decoration: none;
-			border-bottom: 1px dashed $color-dark;
+         color: #cdcdcd;
+			// border-bottom: 1px dashed $color-dark;
 
 		}
 
@@ -143,38 +145,11 @@
 
 			display: list-item;
 			list-style: disc inside;
-			line-height: 1.5;
-			margin-bottom: 0.35em;
+         @include widget-list-items;
 
 		}
 
 }
-
-/* Archive and Categories widgets */
-// .widget_archive li {
-// 	color: #7D7D7D;
-// }
-
-// .widget_categories .children {
-// 	padding-top: 0;
-// }
-
-/* Search widget. */
-// .widget_search .search-submit {
-// 	display: none;
-// }
-
-/* Pages and Menu widgets */
-// .widget_pages .children,
-// .widget_nav_menu .sub-menu {
-// 	padding-top: 0;
-// 	padding-bottom: .5em;
-// }
-
-/* Meta widget */
-// .widget_meta li {
-// 	padding: 0;
-// }
 
 /* Recent comments */
 .widget_recent_comments {
@@ -200,29 +175,6 @@
     }
 
 }
-
-/* RSS widget */
-// .widget_rss li {
-// 	margin-bottom: 1em;
-// }
-// .widget li a.rsswidget {
-// 	padding-right: .5em;
-// 	font-size: 1em;
-// 	line-height: 1.4em;
-// }
-
-// .rss-date,
-// .widget_rss cite {
-// 	color: #333;
-// 	font-size: .8em;
-// }
-
-// .rssSummary {
-// 	padding: .5em 0;
-// 	//font-family: $text_font;
-// 	font-size: .8em;
-//     line-height: 1.4em;
-// }
 
 /* Search widget */
 .widget_search input[type="search"] {
@@ -274,5 +226,46 @@
 		font-weight: 900;
 		text-decoration: none;
 	}
+
+}
+
+/**
+ * Styles the 'Quick Links' footer widget
+ */
+.menu-quick-links-container {
+
+   ul li {
+      line-height: $second-line-height;
+      padding: 0.5em 0;
+      border-bottom: 1px dashed #EAF1F7;
+
+      > a {
+         border-bottom: none;
+      }
+
+   }
+}
+
+/**
+ * Styles the 'Top Posts' footer widget
+ */
+.widget ul.dpe-flexible-posts .post {
+   margin: 0;
+   line-height: $second-line-height;
+   padding: 0.5em 0;
+
+   a {
+      // transition: all 0.5s ease-in;
+      &:hover {
+         text-decoration: none;
+         // transition: all 0.5s ease-in;
+
+         > div {
+            transition: all 0.25s ease-in;
+            color: #cdcdcd;
+         }
+      }
+   }
+
 
 }

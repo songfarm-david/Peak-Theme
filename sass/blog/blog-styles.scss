@@ -3,6 +3,91 @@
  *
  * Styles pertaining to the Blog (index) and single Posts
  */
+.entry-meta {
+
+   display: flex;
+   align-items: center;
+   padding: 0.25rem 16% 0.25rem 0;
+
+   .author-vcard {
+
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .author,
+      .social-links {
+         flex: 0 0 auto;
+      }
+
+      .author-bio {
+         flex-basis: 100%;
+      }
+
+      .author-bio,
+      .read-time {
+         display: inline-block;
+         line-height: 1.2;
+      }
+
+      .author-info {
+
+       display: flex;
+       align-items: flex-end;
+
+       .author {
+           font-weight: 600;
+       }
+
+       a:visited {
+         color: $hero-color;
+       }
+
+      }
+
+      .social-links {
+
+        font-size: 1.5rem;
+        line-height: 1;
+        margin-left: 0.32rem;
+
+        .social-link {
+
+            padding: 1rem 0.32rem 0;
+            vertical-align: baseline;
+
+            a {
+               line-height: 1;
+               vertical-align: text-top;
+            }
+
+        }
+
+      }
+
+      .times {
+         font-weight: 300;
+         line-height: 1.2;
+      }
+
+   }
+
+   .author-avatar {
+
+     display: block;
+     flex: 1 0 auto;
+     min-height: none;
+     line-height: 1;
+     margin: 0 0.5em 0 0.5em;
+
+     > img {
+         vertical-align: middle;
+     }
+
+   }
+
+}
+
 .blog,
 .single {
 
@@ -24,62 +109,62 @@
 
             }
 
-            .entry-meta {
-
-                // @extend .blog-meta-text;
-                width: auto;
-                position: absolute;
-                top: -7em;
-                padding: 0.25rem 16% 0.25rem 0;
-                margin-bottom: 1em;
-
-                .author-avatar {
-
-                    float: left;
-                    margin: 0 0.5em 0 0;
-
-                    > img {
-
-                        vertical-align: middle;
-
-                    }
-
-                }
-
-                > .author-vcard {
-
-                    .author-info .author {
-
-                        font-weight: 600;
-
-                    }
-
-                    .author-bio,
-                    .times {
-
-                        display: block;
-                        line-height: inherit;
-
-                    }
-
-                    .social-links {
-
-                        font-size: 156%;
-                        padding-left: 0.5rem;
-
-                        .social-link {
-
-                            margin: 0 0.1rem 0 0;
-                            padding: 0.25rem;
-                            vertical-align: top;
-
-                        }
-
-                    }
-
-                }
-
-            }
+            // .entry-meta {
+            //
+            //     // @extend .blog-meta-text;
+            //     width: auto;
+            //     position: absolute;
+            //     top: -7em;
+            //     // padding: 0.25rem 16% 0.25rem 0;
+            //     // margin-bottom: 1em;
+            //
+            //     .author-avatar {
+            //
+            //         float: left;
+            //         margin: 0 0.5em 0 0;
+            //
+            //         > img {
+            //
+            //             vertical-align: middle;
+            //
+            //         }
+            //
+            //     }
+            //
+            //     > .author-vcard {
+            //
+            //         .author-info .author {
+            //
+            //             font-weight: 600;
+            //
+            //         }
+            //
+            //         .author-bio,
+            //         .times {
+            //
+            //             display: block;
+            //             line-height: inherit;
+            //
+            //         }
+            //
+            //         .social-links {
+            //
+            //             font-size: 156%;
+            //             padding-left: 0.5rem;
+            //
+            //             .social-link {
+            //
+            //                 margin: 0 0.1rem 0 0;
+            //                 padding: 0.25rem;
+            //                 vertical-align: top;
+            //
+            //             }
+            //
+            //         }
+            //
+            //     }
+            //
+            // }
 
             .post-meta {
               .post-meta-key {
@@ -124,44 +209,7 @@
 
     .entry-meta {
 
-      display: flex;
-      align-items: center;
 
-      .author-avatar {
-
-        float: none;
-        flex: 1 0 auto;
-        min-height: none;
-        line-height: 1;
-        line-height: inherit; /* experimental */
-
-      }
-
-      .author-vcard {
-
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        .author-info {
-          display: flex;
-          align-items: center;
-
-          a:visited {
-            color: $hero-color;
-          }
-        }
-
-        .author,
-        .social-links {
-          flex: 0 0 auto;
-        }
-
-        .author-bio {
-          flex-basis: 100%;
-        }
-
-      }
 
     }
 

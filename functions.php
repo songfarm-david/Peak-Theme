@@ -136,7 +136,7 @@ function peak_theme_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-        register_sidebar( array(
+  register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widgets', 'peak' ),
 		'id'            => 'footer-1',
 		'description'   => esc_html__( 'Add footer widgets here.', 'peak' ),
@@ -145,6 +145,27 @@ function peak_theme_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	register_sidebar( array(
+ 		'name'          => esc_html__( 'Contact/Address', 'peak' ),
+ 		'id'            => 'address-1',
+ 		'description'   => esc_html__( 'Add a map and structured address in HTML.', 'peak' ),
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+ 		'after_widget'  => '</section>',
+ 		'before_title'  => '<h2 class="widget-title">',
+ 		'after_title'   => '</h2>',
+ 	) );
+
+	register_sidebar( array(
+ 		'name'          => esc_html__( 'Definition Page', 'peak' ),
+ 		'id'            => 'definition-1',
+ 		'description'   => esc_html__( 'Add your widgets, Cowboy.', 'peak' ),
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+ 		'after_widget'  => '</section>',
+ 		'before_title'  => '<h2 class="widget-title">',
+ 		'after_title'   => '</h2>',
+ 	) );
+
 }
 add_action( 'widgets_init', 'peak_theme_widgets_init' );
 
@@ -267,7 +288,7 @@ function register_social_menu( $items, $args ) {
     if ( $args->theme_location == 'social-media' ) {
         $items .= '<li><a href="https://www.facebook.com/peakwebsiteservices/" target="_blank" title="Facebook: Peak Websites" class="grow-animate"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>';
         $items .= '<li><a href="https://twitter.com/peakwebsite" target="_blank" title="Twitter: Peak Websites" class="grow-animate"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>';
-        $items .= '<li><a href="https://www.linkedin.com/in/david-gaskin-75339b134/" target="_blank" title="LinkedIn: Peak Websites" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>';
+        // $items .= '<li><a href="https://www.linkedin.com/in/david-gaskin-75339b134/" target="_blank" title="LinkedIn: Peak Websites" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>';
         $items .= '<li><a href="https://plus.google.com/+PeakWebsitesVictoria" target="_blank" title="Google+: Peak Websites" class="grow-animate"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>';
     }
     return $items;
@@ -425,14 +446,15 @@ function add_to_author_profile( $contactMethods ) {
 add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 function remove_RSS_by_id() {
-  global $post;
+	global $post;
 
-  /* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
-  if ($post->ID == 2659) {
-    remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
-    remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
-    remove_action( 'wp_head', 'rsd_link' );
-  }
+	/* NOTE: ID 2659 is for Blog post: New Generation of Mobile Apps, PWA */
+	if ($post && $post->ID == 2659) {
+		remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds
+		remove_action( 'wp_head', 'feed_links', 2 ); // Display the links to the general feeds: Post and Comment Feed
+		remove_action( 'wp_head', 'rsd_link' );
+	}
+
 }
 add_action('wp_head', 'remove_RSS_by_id', 0, 1);
 
@@ -444,3 +466,27 @@ function remove_hentry_class( $classes ) {
     return $classes;
 }
 add_filter( 'post_class', 'remove_hentry_class' );
+
+/**
+ * Remove empty paragraphs created by wpautop()
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+	$content = force_balance_tags( $content );
+	$content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '', $content );
+	$content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '', $content );
+	return $content;
+}
+add_filter('the_content', 'remove_empty_p', 20, 1);
+
+/**
+ * Tries to direct search engines to not index attachment pages
+ * NOTE: There is a plugin activated in the theme that is supposed to do that automagically
+ */
+function noindex_attachment_pages() {
+	if( is_attachment() ) {
+		echo '<meta name="robots" content="noindex" />';
+	}
+}
+add_action('wp_head', 'noindex_attachment_pages');

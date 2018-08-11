@@ -86,13 +86,16 @@ input[type="submit"].peak-button,
         background: rgba(155,155,155,.75);
         background: $hero-orange;
         background: $hero-purple;
-
+		  background: #2098D1;
     }
 }
 
 peak-btn-highlight-light {
     &:hover {
         color: white;
+		  a {
+			  color: white;
+		  }
     }
 }
 

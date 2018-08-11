@@ -65,7 +65,6 @@ body.blog {
 				flex: 1 1 0px;
 				margin: 5.063em 1em 1em 0;
 				padding-top: 0;
-        box-shadow: -1px 0px 15px -4px #777;
 
 			}
 
@@ -74,3 +73,30 @@ body.blog {
 	}
 
 }
+
+// article#post-1718,
+// article#post-1722 {
+//
+// 	display: flex;
+// 	flex-wrap: wrap;
+//
+//
+// 	.entry-header,
+// 	.entry-content,
+// 	.widget-area {
+// 		flex-basis: 100%;
+// 	}
+//
+// 	@media #{$tablet__breakpoint} {
+//
+// 		justify-content: space-around;
+// 		// max-width: $tablet-width;
+//
+// 		.entry-content {
+// 			flex: 0 0 25em;
+// 		}
+// 		.widget-area {
+// 			flex: 1 1 0px;
+// 		}
+// 	}
+// }

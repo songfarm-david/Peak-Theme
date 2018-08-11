@@ -2,15 +2,18 @@
 .hero-call,
 .hero-section {
 
-    color: $color-light;
-    background-color: $hero-green;
-    @include linear-gradient(45deg, $hero-green, #17422c);
-    margin: -2em 0;
-    padding: 2.25em 1em 5.063em;
-    transform: skewY(2deg);
-/*    border: 1px solid transparent;*/
-    position: relative;
-    // z-index: -1;
+   @include backgroundSkewed;
+
+
+//     color: $color-light;
+//     background-color: $hero-green;
+//     @include linear-gradient(45deg, $hero-green, #17422c);
+//     margin: -2em 0;
+//     padding: 2.25em 1em 5.063em;
+//     transform: skewY(2deg);
+// /*    border: 1px solid transparent;*/
+//     position: relative;
+//     // z-index: -1;
 
     @media #{$tablet__breakpoint} {
 

@@ -65,3 +65,31 @@
 		text-indent: 2%;
 	}
 }
+
+/**
+ * Controls width layout of Wp-Forms when Item is floated next to it.
+ * Encourage form to extend to full width fields on small screems and removes any max-widths from form fields
+*/
+.post-1722 #wpforms-1782 {
+
+	// display: inline-block;
+	// width: 100%;
+	//
+	@media #{$tablet__breakpoint} {
+		width: 100%;
+		margin-right: 1em;
+	}
+
+	.wpforms-field-medium {
+		max-width: none;
+	}
+
+}
+
+/**
+ * Adjust the width of the local-pack image on Main SEO service page
+ */
+#attachment_2831,
+#attachment_2529 {
+	max-width: 50%;
+}

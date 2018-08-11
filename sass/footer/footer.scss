@@ -29,17 +29,26 @@
         padding: 2.25em 3.375em;
 
         .widget {
+           
             width: auto;
             padding: 0.5em;
+            
             &:first-child {
-               flex: 1 1 32rem;
+               flex: 1 1 40rem;
             }
+            
             &:nth-child(2) {
                flex: 1 1 0px;
+               flex-basis: auto;
             }
+            
             &:nth-child(3),
             &:last-child {
-               flex: 1 1 100%;
+               flex: 1 1 auto;
+            }
+
+            &:last-child {
+               margin-left: 1em;
             }
         }
 
@@ -56,6 +65,14 @@
 
     }
 
+}
+
+.footer-widgets #custom_html-6 {
+   span {
+      display: inline-block;
+      width: 100%;
+      line-height: 1;
+   }
 }
 
 /**

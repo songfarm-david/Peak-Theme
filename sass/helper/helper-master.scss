@@ -16,6 +16,23 @@
     max-width: $lg-desktop-width;
 }
 
+@mixin all-widths() {
+
+   @media #{$tablet__breakpoint} {
+       margin: 0 auto;
+       @include tablet_width;
+   }
+
+   @media #{$desktop__breakpoint} {
+       @include desktop_width;
+   }
+
+   @media #{$lg-desktop__breakpoint} {
+       @include lg-desktop_width;
+   }
+
+}
+
 /**
  * Global Container Widths
  */
@@ -83,6 +100,13 @@
       padding-top: 3.12em;
   }
 
+}
+
+@mixin page-header() {
+   color: $hero-color;
+   font-weight: bold;
+   line-height: $second_line_height;
+   margin: 0;
 }
 
 .hero-color-text {
@@ -168,5 +192,21 @@ h2, p {
  @mixin column-width($numberColumns: 3) {
  	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
  }
+
+ /**
+ /// Skewed Green background */
+@mixin backgroundSkewed {
+   transform: skewY(2deg);
+   color: $color-light;
+   background-color: $hero-green;
+   @include linear-gradient(45deg, $hero-green, #17422c);
+   margin: -2em 0;
+   padding: 2.25em 1em 5.063em;
+   position: relative;
+}
+
+@mixin mobile-padding {
+   padding: 0 1rem !important;
+}
 
 @import "hotfix";

@@ -15,7 +15,7 @@ body {
    font-size: 100%;
    color: $color-dark;
   	font-family: $titillium_web;
-  	line-height: $base_line_height;
+  	// line-height: $base_line_height;
 
     @media #{$tablet__breakpoint} {
 
@@ -76,9 +76,13 @@ h2,
 .h2,
 h3,
 .h3 {
-    font-size: ms(2);
-    font-weight: 600;
-    margin: 1.4em 0 0;
+    margin: 1.2em 0 0;
+}
+
+h2,
+.h2 {
+   font-size: ms(2);
+   font-weight: 600;
 }
 
 h3,
@@ -86,13 +90,23 @@ h3,
     font-family: $text_font;
     font-size: ms(2 , $thread: second);
     font-weight: 400;
-    margin-top: 1.4em;
+}
+
+@mixin h3 {
+   font-family: $text_font;
+   font-size: ms(2 , $thread: second);
+   font-weight: 400;
 }
 
 h4,
 .h4 {
     font-size: ms(1 , $thread: second);
     font-weight: 600;
+}
+
+@mixin h4 {
+   font-size: ms(1 , $thread: second);
+   font-weight: 600;
 }
 
 .small-text {
@@ -214,7 +228,7 @@ h4,
 
   }
 
-  
+
 
 }
 

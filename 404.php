@@ -23,8 +23,8 @@ get_header(); ?>
 
 					<div class="help-widgets-container">
 						<div class="help-widget widget">
-							<h2>Quick Links</h2>
-							<?php wp_nav_menu( 'Footer' ) ?>
+							<h2>Services</h2>
+							<?php	wp_nav_menu( array( 'theme_location' => 'footer-menu') ) ?>
 						</div>
 						<div class="help-widget">
 							<?php

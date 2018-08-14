@@ -2805,7 +2805,7 @@ a:visited > .fa-chevron-down {
 .entry-meta .author-vcard .author-bio,
 .entry-meta .author-vcard .read-time {
 	display: inline-block;
-	line-height: 1.2;
+	line-height: 1.4;
 }
 
 .entry-meta .author-vcard .author-info {
@@ -2815,6 +2815,7 @@ a:visited > .fa-chevron-down {
 	-webkit-box-align: end;
 	    -ms-flex-align: end;
 	        align-items: flex-end;
+	margin-bottom: 4px;
 }
 
 .entry-meta .author-vcard .author-info .author {
@@ -2843,7 +2844,8 @@ a:visited > .fa-chevron-down {
 
 .entry-meta .author-vcard .times {
 	font-weight: 300;
-	line-height: 1.2;
+	line-height: 1.4;
+	margin-top: 4px;
 }
 
 .entry-meta .author-avatar {

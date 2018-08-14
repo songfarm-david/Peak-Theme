@@ -27,13 +27,15 @@
       .author-bio,
       .read-time {
          display: inline-block;
-         line-height: 1.2;
+         line-height: 1.4;
+
       }
 
       .author-info {
 
        display: flex;
        align-items: flex-end;
+       margin-bottom: 4px;
 
        .author {
            font-weight: 600;
@@ -67,7 +69,8 @@
 
       .times {
          font-weight: 300;
-         line-height: 1.2;
+         line-height: 1.4;
+         margin-top: 4px;
       }
 
    }

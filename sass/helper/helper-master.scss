@@ -231,4 +231,10 @@ h2, p {
    @include box-shadow;
 }
 
+@mixin stylized-list {
+	font-weight: 300;
+	font-style: italic;
+	line-height: $base_line_height;
+}
+
 @import "hotfix";

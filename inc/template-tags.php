@@ -29,7 +29,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 
     $posted_on = sprintf(
       /* translators: %s: post date. */
-      esc_html_x( '&ndash; %s', 'post date', 'peak-theme' ), $time_string
+      esc_html_x( ' &ndash; %s', 'post date', 'peak-theme' ), $time_string
 //      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' .  . '</a>'
     );
 

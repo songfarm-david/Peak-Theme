@@ -182,13 +182,15 @@
         }
 
         /* Blog images */
-        p > img[class*="wp-image-"] {
+        p > img[class*="wp-image-"],
+        figure > img[class*="wp-image-"] {
             /*TODO: replace this with a nice gradient or box-shadow*/
-            @include border(4px, $color-dark);
+            // @include border(4px, #ccc);
             max-width: 100%;
             height: auto;
             margin: 0 auto;
             text-align: center;
+            @include box-shadow;
         }
 
     }
@@ -250,10 +252,19 @@
 .single {
 
    .site-content {
+      padding-top: 10.83em;
+   }
 
-    padding-top: 10.83em;
+   h2, h3, h4 {
+      margin-top: 1.2rem;
+   }
 
-  }
+   .content-area {
+      ul, li {
+         @include stylized-list;
+      }
+   }
+
 
   .entry-content {
 

@@ -35,6 +35,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Fonts & Typography
 --------------------------------------------------------------*/
 @import "typography/typography";
+@import "helper/helper-master";
 
 @import "globals";
 
@@ -42,7 +43,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
-@import "helper/helper-master";
 @import "animation/animations";
 
 /*--------------------------------------------------------------

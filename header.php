@@ -81,7 +81,7 @@
 		},
 		"foundingDate": "2016-10-21",
 		"foundingLocation": "Victoria, British Columbia",
-		"knowsAbout": "Web Development, Web Design, Search Engine Optimization, Programming, Progressive Web Apps",
+		"knowsAbout": "Web Development, Web Design, Search Engine Optimization, Programming, Progressive Web Apps, Google, SEO, Local SEO",
 		"knowsLanguage": "HTML5, CSS3, JavaScript ES6, PHP, XML, JSON",
 		"legalName": "Peak Website Services",
 		"location": {
@@ -168,19 +168,18 @@
 				"ratingValue": "4.6"
 			}
 		},
-		"reviewBody": "David did an excellent job ~ he was able, quick, dedicated and paid attention to detail. I now have a beautiful professional website that I am very proud of.",
+		"reviewBody": "Dave at Peak Websites was a breath of fresh air in working with our team to build and design our new website. He brought a proactive approach to the work that ensured that our project continued to move forward, even when we dropped the ball. He was not afraid to get his hands dirty and work outside the box to get the results we needed. Dave offered many great design suggestions and has an eye for detail and layout that allowed us to translate our vision of our business into an effective and visually appealing website. We have already got lots of positive feedback about the site. Thanks Dave!",
 		"author": {
 			"@type": "Person",
-			"name": "Nancy Crites",
-			"url": "https://nancycrites.com/"
+			"name": "Steve Gaskin",
+			"url": "https://www.lighthousewealthvictoria.com/"
 		}
 	}
 	</script>
 
 	<?php
 	/**
-	 * If pages About or Contact
-	 * || is_page( '1722' )
+	 * If About Page
 	 */
 	if ( is_page( '1718' ) ) : ?>
 	<!-- AboutPage -->
@@ -261,7 +260,7 @@
 
 	<?php
 	/**
-	 * If pages About or Contact
+	 * If Contact Page
 	 */
 	if ( is_page( '1722' ) ) : ?>
 	<!-- ContactPage -->

@@ -1,8 +1,8 @@
 <?php
 
  /*
-  * Template Name: Description Page
-  * Template Post Type: post
+  * Template Name: Definition Page
+  * Template Post Type: page
   *
   * @package Peak_Theme
   */

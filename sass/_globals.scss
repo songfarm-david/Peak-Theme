@@ -150,3 +150,16 @@ table {
     font-style: italic;
     font-family: $text_font;
 }
+
+blockquote {
+   font-weight: 400;
+   font-style: italic;
+   &::before {
+      @include quotes;
+   }
+   > p {
+      font-weight: inherit;
+   }
+}
+
+@import "site/secondary/lists";

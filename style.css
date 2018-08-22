@@ -304,7 +304,7 @@ h2,
 .archive .page-title,
 h3,
 .h3 {
-	margin: 1.2em 0 0;
+	margin: 1.2rem 0 0;
 }
 
 h2,
@@ -500,6 +500,171 @@ h4,
 	font-weight: 400;
 }
 
+/**
+ /// Site-wide Width contraints
+  */
+/**
+ * Global Container Widths
+ */
+.entry-content, .blog .site-content,
+.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+	margin: 0 auto;
+}
+
+@media (min-width: 54em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 45rem;
+	}
+}
+
+@media (min-width: 84em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 48rem;
+	}
+}
+
+@media (min-width: 118.75em) {
+	.entry-content, .blog .site-content,
+	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
+		max-width: 54rem;
+	}
+}
+
+/**
+ * Add width containers for each breakpoint to an element
+ */
+/**
+ * Apply minimum top padding to avoid colliding with site header (absolute positioned)
+ */
+.hero-color-text {
+	color: #385f7e;
+}
+
+/**
+ * Add padding to anchored bookmarks to account for fixed header + some margin
+ */
+h2, p {
+	position: relative;
+}
+
+h2 span[class="anchor-target"], p span[class="anchor-target"] {
+	display: block;
+	position: absolute;
+	top: -150px;
+	top: -7.5rem;
+	padding-bottom: 81px;
+	outline: none;
+	border-width: 0;
+}
+
+h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p span[class="anchor-target"]:active, p span[class="anchor-target"]:focus {
+	outline: none;
+	border-width: 0;
+}
+
+/**
+/// For Testing
+ */
+/**
+ * Framework Mixins
+ */
+/**
+ /// Skewed Green background */
+/**
+/// Class for adding a box shadow to WP images
+*/
+.page-image {
+	box-shadow: 2px 3px 7px rgba(102, 102, 102, 0.79);
+}
+
+/**
+/// Popup Maker - Custom Styles
+ */
+#popmake-2496,
+#popmake-2722 {
+	padding: 2.25em 2em;
+	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) fixed no-repeat bottom right;
+	/* hide inadvertant p tag */
+	/* add bottom margin to label */
+}
+
+#popmake-2496 .pum-title,
+#popmake-2722 .pum-title {
+	text-transform: capitalize;
+	font-weight: 700;
+	font-size: 3.2928rem;
+	line-height: 1.2;
+}
+
+#popmake-2496 .pum-container .pum-content > :last-child,
+#popmake-2722 .pum-container .pum-content > :last-child {
+	display: none;
+}
+
+#popmake-2496 .wpforms-container .wpforms-field-label,
+#popmake-2722 .wpforms-container .wpforms-field-label {
+	margin-bottom: 8px;
+}
+
+@media (max-width: 54em) {
+	#popmake-2496,
+	#popmake-2722 {
+		top: 10% !important;
+		left: 50% !important;
+		-webkit-transform: translateX(-50%);
+		        transform: translateX(-50%);
+		background-image: none;
+	}
+	#popmake-2496 .pum-title,
+	#popmake-2722 .pum-title {
+		font-size: 2.352rem;
+	}
+}
+
+/* MailChimp form */
+#mc4wp-form-2 label {
+	font-weight: bold;
+	margin-bottom: 0.25em;
+	color: #666;
+	font-size: 85%;
+}
+
+#mc4wp-form-2 label span {
+	color: red;
+}
+
+#mc4wp-form-2 input[type="email"] {
+	display: block;
+	width: 80%;
+	padding: 8px 0;
+	text-indent: 2%;
+}
+
+/**
+ * Controls width layout of Wp-Forms when Item is floated next to it.
+ * Encourage form to extend to full width fields on small screems and removes any max-widths from form fields
+*/
+@media (min-width: 54em) {
+	.post-1722 #wpforms-1782 {
+		width: 100%;
+		margin-right: 1em;
+	}
+}
+
+.post-1722 #wpforms-1782 .wpforms-field-medium {
+	max-width: none;
+}
+
+/**
+ * Adjust the width of the local-pack image on Main SEO service page
+ */
+#attachment_2831,
+#attachment_2529 {
+	max-width: 50%;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -638,167 +803,39 @@ table {
 	font-family: "Roboto", sans-serif;
 }
 
+blockquote {
+	font-weight: 400;
+	font-style: italic;
+}
+
+blockquote::before {
+	content: "\f10d";
+	font-family: "FontAwesome";
+	font-weight: 900;
+	display: inline-block;
+	float: left;
+	padding: 0 1.25rem 0 0;
+	font-size: 2.352rem;
+	color: #385f7e;
+	text-align: center;
+	position: relative;
+	top: 8px;
+	left: 0;
+}
+
+blockquote > p {
+	font-weight: inherit;
+}
+
+.stylized-list {
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.6;
+}
+
 /*--------------------------------------------------------------
 # Helpers
 --------------------------------------------------------------*/
-/**
- /// Site-wide Width contraints
-  */
-/**
- * Global Container Widths
- */
-.entry-content, .blog .site-content,
-.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-	margin: 0 auto;
-}
-
-@media (min-width: 54em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 45rem;
-	}
-}
-
-@media (min-width: 84em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 48rem;
-	}
-}
-
-@media (min-width: 118.75em) {
-	.entry-content, .blog .site-content,
-	.single .site-content, .post-template-single-portfolio-item .post .entry-header {
-		max-width: 54rem;
-	}
-}
-
-/**
- * Add width containers for each breakpoint to an element
- */
-/**
- * Apply minimum top padding to avoid colliding with site header (absolute positioned)
- */
-.hero-color-text {
-	color: #385f7e;
-}
-
-/**
- * Add padding to anchored bookmarks to account for fixed header + some margin
- */
-h2, p {
-	position: relative;
-}
-
-h2 span[class="anchor-target"], p span[class="anchor-target"] {
-	display: block;
-	position: absolute;
-	top: -150px;
-	top: -7.5rem;
-	padding-bottom: 81px;
-	outline: none;
-	border-width: 0;
-}
-
-h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p span[class="anchor-target"]:active, p span[class="anchor-target"]:focus {
-	outline: none;
-	border-width: 0;
-}
-
-/**
-/// For Testing
- */
-/**
- * Framework Mixins
- */
-/**
- /// Skewed Green background */
-/**
-/// Popup Maker - Custom Styles
- */
-#popmake-2496,
-#popmake-2722 {
-	padding: 2.25em 2em;
-	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) fixed no-repeat bottom right;
-	/* hide inadvertant p tag */
-	/* add bottom margin to label */
-}
-
-#popmake-2496 .pum-title,
-#popmake-2722 .pum-title {
-	text-transform: capitalize;
-	font-weight: 700;
-	font-size: 3.2928rem;
-	line-height: 1.2;
-}
-
-#popmake-2496 .pum-container .pum-content > :last-child,
-#popmake-2722 .pum-container .pum-content > :last-child {
-	display: none;
-}
-
-#popmake-2496 .wpforms-container .wpforms-field-label,
-#popmake-2722 .wpforms-container .wpforms-field-label {
-	margin-bottom: 8px;
-}
-
-@media (max-width: 54em) {
-	#popmake-2496,
-	#popmake-2722 {
-		top: 10% !important;
-		left: 50% !important;
-		-webkit-transform: translateX(-50%);
-		        transform: translateX(-50%);
-		background-image: none;
-	}
-	#popmake-2496 .pum-title,
-	#popmake-2722 .pum-title {
-		font-size: 2.352rem;
-	}
-}
-
-/* MailChimp form */
-#mc4wp-form-2 label {
-	font-weight: bold;
-	margin-bottom: 0.25em;
-	color: #666;
-	font-size: 85%;
-}
-
-#mc4wp-form-2 label span {
-	color: red;
-}
-
-#mc4wp-form-2 input[type="email"] {
-	display: block;
-	width: 80%;
-	padding: 8px 0;
-	text-indent: 2%;
-}
-
-/**
- * Controls width layout of Wp-Forms when Item is floated next to it.
- * Encourage form to extend to full width fields on small screems and removes any max-widths from form fields
-*/
-@media (min-width: 54em) {
-	.post-1722 #wpforms-1782 {
-		width: 100%;
-		margin-right: 1em;
-	}
-}
-
-.post-1722 #wpforms-1782 .wpforms-field-medium {
-	max-width: none;
-}
-
-/**
- * Adjust the width of the local-pack image on Main SEO service page
- */
-#attachment_2831,
-#attachment_2529 {
-	max-width: 50%;
-}
-
 /**
  *  Fade In Animation Keyframe
  */
@@ -1895,6 +1932,12 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	margin-top: 0;
 }
 
+.page .content-area ul, .page .content-area ol {
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.6;
+}
+
 #address-sidebar {
 	background-color: #dbe9f4;
 	margin: 0 0 1em;
@@ -2805,7 +2848,7 @@ a:visited > .fa-chevron-down {
 .entry-meta .author-vcard .author-bio,
 .entry-meta .author-vcard .read-time {
 	display: inline-block;
-	line-height: 1.2;
+	line-height: 1.4;
 }
 
 .entry-meta .author-vcard .author-info {
@@ -2815,6 +2858,7 @@ a:visited > .fa-chevron-down {
 	-webkit-box-align: end;
 	    -ms-flex-align: end;
 	        align-items: flex-end;
+	margin-bottom: 4px;
 }
 
 .entry-meta .author-vcard .author-info .author {
@@ -2843,7 +2887,8 @@ a:visited > .fa-chevron-down {
 
 .entry-meta .author-vcard .times {
 	font-weight: 300;
-	line-height: 1.2;
+	line-height: 1.4;
+	margin-top: 4px;
 }
 
 .entry-meta .author-avatar {
@@ -2889,13 +2934,15 @@ a:visited > .fa-chevron-down {
 }
 
 .blog main p > img[class*="wp-image-"],
-.single main p > img[class*="wp-image-"] {
+.blog main figure > img[class*="wp-image-"],
+.single main p > img[class*="wp-image-"],
+.single main figure > img[class*="wp-image-"] {
 	/*TODO: replace this with a nice gradient or box-shadow*/
-	border: 4px solid #666;
 	max-width: 100%;
 	height: auto;
 	margin: 0 auto;
 	text-align: center;
+	box-shadow: 2px 3px 7px rgba(102, 102, 102, 0.79);
 }
 
 .blog .comments-area,
@@ -2924,6 +2971,16 @@ a:visited > .fa-chevron-down {
  */
 .single .site-content {
 	padding-top: 10.83em;
+}
+
+.single h2, .single h3, .single h4 {
+	margin-top: 1.2rem;
+}
+
+.single .content-area ul, .single .content-area li {
+	font-weight: 300;
+	font-style: italic;
+	line-height: 1.6;
 }
 
 .single .entry-content .byline, .single .site-content .byline, .single .post-template-single-portfolio-item .post .entry-header .byline, .post-template-single-portfolio-item .post .single .entry-header .byline {
@@ -3988,12 +4045,6 @@ and open the template in the editor.
 	background-color: #F2F7F2;
 }
 
-.stylized-list {
-	font-weight: 300;
-	font-style: italic;
-	line-height: 1.6;
-}
-
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
@@ -4048,6 +4099,7 @@ object {
 .wp-caption .wp-caption-text {
 	margin: 0.8075em 0;
 	font-size: inherit;
+	font-weight: 300;
 }
 
 .wp-caption-text {

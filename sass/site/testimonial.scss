@@ -13,18 +13,7 @@
 	}
 
 	.testimonial::before {
-		content: "\f10d";
-	    font-family: "FontAwesome";
-	    font-weight: 900;
-	    display: inline-block;
-	    float: left;
-	    padding: 0 1.25rem 0 0;
-	    font-size: ms(2);
-	    color: $hero-color;
-	    text-align: center;
-	    position: relative;
-	    top: 8px;
-	    left: 0;
+		@include quotes;
 	}
 
 	.testimonial-author {

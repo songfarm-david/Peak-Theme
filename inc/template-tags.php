@@ -29,7 +29,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 
     $posted_on = sprintf(
       /* translators: %s: post date. */
-      esc_html_x( '&ndash; %s', 'post date', 'peak-theme' ), $time_string
+      esc_html_x( ' &ndash; %s', 'post date', 'peak-theme' ), $time_string
 //      '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' .  . '</a>'
     );
 
@@ -44,6 +44,9 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
 
     if ( $twitter && $twitter != '') {
       $social_links .= '<span class="social-link"><a href="' . $twitter . '" title="Twitter" class="grow-animate"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></span>';
+    }
+    if ( $facebook && $facebook != '') {
+      $social_links .= '<span class="social-link"><a href="' . $facebook . '" title="Facebook" class="grow-animate"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></span>';
     }
     if ( $linkedIn && $linkedIn != '') {
       $social_links .= '<span class="social-link"><a href="' . $linkedIn . '" title="Linked In" class="grow-animate"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></span>';
@@ -60,7 +63,7 @@ if ( ! function_exists( 'peak_theme_posted_on' ) ) :
             '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>' .
         '<span class="social-links" aria-label="Social Media Links">' . $social_links . '</span></div>' .
         '<div><span class="author-bio">' . esc_html( get_the_author_meta('description') ) . '</span></div>' .
-        '<div class="times"><span class="read-time">7 min read</span><span class="posted-on">' . $posted_on . '</span></div>' .
+        '<div class="times"><span class="read-time">' . get_post_meta( get_the_ID(), 'read_time', true ) . '</span><span class="posted-on">' . $posted_on . '</span></div>' .
       '</div>');
 
 //    $author_bio = esc_html( get_the_author_meta('description') );

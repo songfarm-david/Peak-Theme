@@ -229,7 +229,7 @@ function peak_theme_scripts() {
 	}
 
 	// load Faebook pixel
-	//wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
+	wp_enqueue_script( 'facebook-pixel', get_template_directory_uri() . '/js/facebook-pixel.js', array(), false, true );
 
 	/**
 	* Load tracking data on select pages

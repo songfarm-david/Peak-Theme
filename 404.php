@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
-
+				
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'Oops! Looks like the page you\'re looking for isn\'t here!', 'peak-theme' ); ?></h1>
 					<p class="page-byline">Sorry about that! Try checking out <a href="<?php echo get_permalink( '703' ) ?>">the blog</a> visiting our <a href="<?php echo get_permalink( '1735' ) ?>">homepage</a>, or <a href="<?php echo get_permalink( '1722' ) ?>">get in touch with us</a>!</p>

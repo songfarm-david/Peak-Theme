@@ -15,11 +15,21 @@
         elseif ( is_page( '2541' ) ) : ?>
         <h2 class="banner-heading banner-page-text">Take the stress out of having an online presence</h2>
         <p class="banner-secondary-text banner-page-text">You're in good hands</p>
+
         <?php
         /** if Content Creation page */
         elseif ( is_page( '2376' ) ) : ?>
         <h2 class="banner-heading banner-page-text">Ready for targeted traffic to your site?</h2>
         <p class="banner-secondary-text banner-page-text">Let Peak put you on track towards a website that improves your business</p>
+
+        <?php
+        /**
+         *  if Local SEO page
+         */
+        elseif ( is_page( '2844' ) ) : ?>
+        <h2 class="banner-heading banner-page-text">Get found by local customers</h2>
+        <p class="banner-secondary-text banner-page-text">Let Peak help put your business on the map</p>
+
         <?php
         /** if anything else */
         else : ?>

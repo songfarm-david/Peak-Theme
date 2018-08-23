@@ -24,9 +24,11 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-        
-        comment_form();
-        
+        $args = array(
+			  'title_reply' => __('Leave a Comment')
+		  );
+        comment_form( $args );
+
 	if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
@@ -69,7 +71,7 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	
+
 	?>
 
 </div><!-- #comments -->

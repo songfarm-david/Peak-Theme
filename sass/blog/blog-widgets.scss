@@ -10,7 +10,7 @@
 	li > a {
 
 		font-weight: 300;
-		
+
 	}
 
 	.widget_recent_entries {
@@ -59,4 +59,48 @@
 
   }
 
+}
+
+.single {
+
+	article.post {
+
+		+ #newsletter-signup-blog {
+
+			padding: 1rem;
+			background-color: $color-light;
+			box-sizing: border-box;
+			margin-bottom: 2em;
+
+			h3 {
+				text-transform: capitalize;
+				margin: 1rem 0;
+			}
+
+			.indicates-required {
+				text-align: right;
+				@include small-text;
+				display: none;
+			}
+
+			input[type="email"] {
+				display: block;
+				width: 100%;
+				padding: 10px 0;
+				text-indent: 1%;
+			}
+
+			.asterisk {
+				color: red;
+			}
+
+			button[type="submit"].peak-button {
+				background: $hero-color;
+			}
+
+			@include box-shadow;
+
+		}
+
+	}
 }

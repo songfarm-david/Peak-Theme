@@ -3042,6 +3042,40 @@ a:visited > .fa-chevron-down {
 	color: #385f7e;
 }
 
+.single article.post + #newsletter-signup-blog {
+	padding: 1rem;
+	background-color: #EAF1F7;
+	box-sizing: border-box;
+	margin-bottom: 2em;
+	box-shadow: 2px 3px 7px rgba(102, 102, 102, 0.79);
+}
+
+.single article.post + #newsletter-signup-blog h3 {
+	text-transform: capitalize;
+	margin: 1rem 0;
+}
+
+.single article.post + #newsletter-signup-blog .indicates-required {
+	text-align: right;
+	font-size: 83.33333%;
+	display: none;
+}
+
+.single article.post + #newsletter-signup-blog input[type="email"] {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	text-indent: 1%;
+}
+
+.single article.post + #newsletter-signup-blog .asterisk {
+	color: red;
+}
+
+.single article.post + #newsletter-signup-blog button[type="submit"].peak-button {
+	background: #385f7e;
+}
+
 /**
  * Comments for Single blog posts
  */

@@ -490,3 +490,15 @@ function noindex_attachment_pages() {
 	}
 }
 add_action('wp_head', 'noindex_attachment_pages');
+
+/**
+ * Remove the 'URL' field from Comment form
+ * https://crunchify.com/how-to-remove-url-website-field-from-wordpress-comment-form/
+ */
+function remove_URL( $fields ) {
+	if ( isset( $fields['url'] ) ) {
+		unset( $fields['url'] );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'remove_URL' );

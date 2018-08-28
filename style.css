@@ -3124,6 +3124,71 @@ a:visited > .fa-chevron-down {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+/**
+/// SEO Audit Pop-up
+*/
+#popmake-3019 {
+	padding: 0;
+	font-size: 80%;
+	font-family: "Roboto", sans-serif;
+}
+
+#popmake-3019 > .popmake-title {
+	text-align: center;
+	padding: 1em;
+	font-size: 1.68rem;
+	font-weight: bold;
+}
+
+#popmake-3019 > .popmake-title,
+#popmake-3019 .popmake-content > p {
+	background-color: #338c5f;
+	color: #EAF1F7;
+}
+
+#popmake-3019 .popmake-content > p {
+	padding: 0 1em;
+	font-weight: 400;
+	margin: 0;
+}
+
+#popmake-3019 .popmake-content > p:nth-child(2) {
+	padding: 1em;
+}
+
+#popmake-3019 .popmake-content > p:last-of-type {
+	display: none;
+}
+
+#popmake-3019 #mc_embed_signup {
+	font-size: 1rem;
+	background: none;
+}
+
+#popmake-3019 #mc-embedded-subscribe {
+	margin-left: 1em;
+}
+
+#newsletter-signup-blog #mc_embed_signup,
+.textwidget #mc_embed_signup {
+	background: inherit !important;
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
+#newsletter-signup-blog #mc_embed_signup form,
+.textwidget #mc_embed_signup form {
+	padding: 0;
+}
+
+#newsletter-signup-blog #mc_embed_signup button[type="submit"],
+.textwidget #mc_embed_signup button[type="submit"] {
+	font-size: 1rem;
+	padding: 0.5em 1em;
+	height: auto;
+	background: #878787;
+}
+
 button,
 input[type="button"],
 input[type="reset"],

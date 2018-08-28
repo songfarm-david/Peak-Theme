@@ -665,6 +665,74 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 	max-width: 50%;
 }
 
+/**
+/// SEO Audit Giveaway Pop-Up
+*/
+#popmake-3043 {
+	padding: 2.25em 2em;
+	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) no-repeat bottom right;
+}
+
+#popmake-3043 .pum-content h2,
+#popmake-3043 .pum-content .small-text,
+#popmake-3043 .pum-content .blog .entry-footer,
+.blog #popmake-3043 .pum-content .entry-footer,
+#popmake-3043 .pum-content .single .entry-footer,
+.single #popmake-3043 .pum-content .entry-footer,
+#popmake-3043 .pum-content .blog-meta-text,
+#popmake-3043 .pum-content .blog .entry-footer .cat-links,
+.blog .entry-footer #popmake-3043 .pum-content .cat-links,
+#popmake-3043 .pum-content .blog .entry-footer .comments-link,
+.blog .entry-footer #popmake-3043 .pum-content .comments-link,
+#popmake-3043 .pum-content .single .entry-footer .cat-links,
+.single .entry-footer #popmake-3043 .pum-content .cat-links,
+#popmake-3043 .pum-content .single .entry-footer .comments-link,
+.single .entry-footer #popmake-3043 .pum-content .comments-link,
+#popmake-3043 .pum-content .blog .post-details,
+.blog #popmake-3043 .pum-content .post-details,
+#popmake-3043 .pum-content .single .comments-area .comment-body .comment-content > .comment-metadata,
+.single .comments-area .comment-body #popmake-3043 .pum-content .comment-content > .comment-metadata,
+#popmake-3043 .pum-content .wp-caption {
+	margin-top: 0;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup {
+	background: none;
+	font: inherit;
+	font-size: 1rem;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup .indicates-required {
+	display: none;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup .asterisk {
+	color: red;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup label {
+	display: block;
+	font-weight: 700;
+	float: none;
+	color: #555;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup input:not([type="submit"]) {
+	padding: 0.5rem 0;
+	text-indent: 2%;
+	border-radius: 3px;
+	width: 60%;
+	margin-bottom: 0.75em;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup #mce-responses + p {
+	display: none;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup p:empty {
+	height: 0;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -2346,6 +2414,10 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	padding: 0.5em 0;
 }
 
+.widget ul.dpe-flexible-posts .post a {
+	display: block;
+}
+
 .widget ul.dpe-flexible-posts .post a:hover {
 	text-decoration: none;
 }
@@ -2773,6 +2845,10 @@ a:visited > .fa-chevron-down {
 /**
  * Styling for Home Page Compass Image
  */
+#post-1735 {
+	overflow: hidden;
+}
+
 #post-1735 > .entry-content, .blog #post-1735 > .site-content,
 .single #post-1735 > .site-content, .post-template-single-portfolio-item .post #post-1735 > .entry-header {
 	position: relative;

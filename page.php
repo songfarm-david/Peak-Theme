@@ -39,11 +39,11 @@ get_header(); ?>
             endif; ?>
 
             <!--If Website Maintenance Page-->
-            <?php if( is_page( '2410' ) || is_page( '2541' ) ) :
+            <?php //if( is_page( '2410' ) || is_page( '2541' ) ) :
 
-                include( get_template_directory() . '/inc/custom/website-maintenance-panel.php' );
+                //include( get_template_directory() . '/inc/custom/website-maintenance-panel.php' );
 
-            endif; ?>
+            //endif; ?>
 
             <!-- If Content Creation Service page => Include Features section -->
             <?php if( is_page( '2314' ) || is_page( '2376' ) ) :
@@ -149,21 +149,22 @@ get_header(); ?>
 
             <?php
 
-               if ( is_front_page() ) :
-
-                  include( get_template_directory() . '/inc/custom/testimonial-homepage.php' );
-
-               endif;
+               // NOTE: This testimonial is hardcoded into the WordPress editor using CSS classes
+               // if ( is_front_page() ) :
+               //
+               //    include( get_template_directory() . '/inc/custom/testimonial-homepage.php' );
+               //
+               // endif;
 
             ?>
 
             <?php
                /* About page */
-               if ( is_page( '1718' ) ) :
-
-                  include( get_template_directory() . '/inc/custom/testimonial-about.php' );
-
-               endif;
+               // if ( is_page( '1718' ) ) :
+               //
+               //    include( get_template_directory() . '/inc/custom/testimonial-about.php' );
+               //
+               // endif;
 
             ?>
 

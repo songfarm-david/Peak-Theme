@@ -733,6 +733,12 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 	height: 0;
 }
 
+/**
+/// Round images */
+.rounded-image {
+	border-radius: 50%;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -1898,7 +1904,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 .post-1718 #david-bio {
 	padding: 1.6em 0;
 	border-top: 1px solid grey;
-	border-bottom: 1px solid grey;
 	margin-bottom: 2em;
 }
 

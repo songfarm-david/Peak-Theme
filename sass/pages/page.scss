@@ -273,13 +273,13 @@ body.archive {
 
    @media #{$tablet__breakpoint} {
 
-      .entry-content p:not(:first-child) {
-         float: left;
-         width: auto;
-         max-width: 62%;
-         margin-top: 0;
-         clear: left;
-      }
+      // .entry-content p:not(:first-child) {
+      //    float: left;
+      //    width: auto;
+      //    max-width: 62%;
+      //    margin-top: 0;
+      //    clear: left;
+      // }
 
       #david-bio {
 

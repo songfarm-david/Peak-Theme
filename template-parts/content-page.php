@@ -31,7 +31,7 @@
 
          /* if is About Page or Contact Page */
          if (is_page('1718') || is_page('1722')) {
-            get_sidebar('address');
+            //get_sidebar('address');
          }
 
 			wp_link_pages( array(

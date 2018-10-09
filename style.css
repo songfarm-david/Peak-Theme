@@ -387,11 +387,6 @@ h4,
 	color: #385f7e;
 }
 
-.hero-banner .hero-headline-text.services-headline,
-.hero .hero-headline-text.services-headline {
-	font-size: 2.352rem;
-}
-
 .hero-banner .hero-headline-text > span,
 .hero .hero-headline-text > span {
 	color: #338c5f;
@@ -401,16 +396,24 @@ h4,
 .hero-banner .hero-byline-text,
 .hero .hero-byline-text {
 	font-family: "Roboto", sans-serif;
-	font-size: 1.2rem;
+	font-size: 1.44rem;
 	color: #666;
 	font-weight: 400;
 	text-transform: capitalize;
+	margin: 0;
+	margin-top: 0.25em;
+}
+
+.hero-banner .hero-byline-text + p,
+.hero .hero-byline-text + p {
+	margin: 0;
 }
 
 @media (max-width: 54em) {
 	.hero-banner .hero-byline-text,
 	.hero .hero-byline-text {
 		padding: 0 1rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -419,7 +422,7 @@ h4,
 	.hero .hero-headline-text.hero-headline,
 	.hero .hero-headline-text.services-headline {
 		font-size: 3.58318rem;
-		line-height: 1;
+		line-height: 1.2;
 	}
 	.hero-banner .hero-byline-text,
 	.hero .hero-byline-text {
@@ -433,6 +436,11 @@ h4,
 .widget .widget-title {
 	font-weight: bold;
 	font-size: 1.68rem;
+}
+
+.hero .services-headline {
+	font-size: 1.68rem;
+	line-height: 1.2;
 }
 
 .blog,
@@ -552,9 +560,7 @@ h2, p {
 h2 span[class="anchor-target"], p span[class="anchor-target"] {
 	display: block;
 	position: absolute;
-	top: -150px;
-	top: -7.5rem;
-	padding-bottom: 81px;
+	top: -96px;
 	outline: none;
 	border-width: 0;
 }
@@ -1913,13 +1919,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 @media (min-width: 54em) {
-	.post-1718 .entry-content p:not(:first-child), .post-1718 .blog .site-content p:not(:first-child), .blog .post-1718 .site-content p:not(:first-child), .post-1718 .single .site-content p:not(:first-child), .single .post-1718 .site-content p:not(:first-child), .post-1718 .post-template-single-portfolio-item .post .entry-header p:not(:first-child), .post-template-single-portfolio-item .post .post-1718 .entry-header p:not(:first-child) {
-		float: left;
-		width: auto;
-		max-width: 62%;
-		margin-top: 0;
-		clear: left;
-	}
 	.post-1718 #david-bio {
 		float: left;
 		margin-bottom: 0;
@@ -3995,6 +3994,12 @@ and open the template in the editor.
 	background-size: cover;
 }
 
+#post-2341 .services-headline,
+#post-2517 .services-headline {
+	margin-top: 2.25em;
+	margin-bottom: 0;
+}
+
 #post-2341 .entry-content, #post-2341 .blog .site-content, .blog #post-2341 .site-content,
 #post-2341 .single .site-content, .single #post-2341 .site-content, #post-2341 .post-template-single-portfolio-item .post .entry-header, .post-template-single-portfolio-item .post #post-2341 .entry-header,
 #post-2517 .entry-content,
@@ -4005,6 +4010,7 @@ and open the template in the editor.
 #post-2517 .post-template-single-portfolio-item .post .entry-header,
 .post-template-single-portfolio-item .post #post-2517 .entry-header {
 	padding-top: 4em;
+	margin: 0 auto;
 }
 
 @media (min-width: 54em) {
@@ -4013,11 +4019,6 @@ and open the template in the editor.
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
 		text-align: center;
 	}
-	#post-2341 .services-headline,
-	#post-2517 .services-headline {
-		margin-bottom: 0;
-		margin-top: 3.5rem;
-	}
 }
 
 @media (min-width: 84em) {
@@ -4025,6 +4026,13 @@ and open the template in the editor.
 	#post-2517 {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
 	}
+}
+
+#post-2341 a > i,
+#post-2517 a > i {
+	font-size: 2.352rem;
+	-webkit-animation: float 1s ease-in-out infinite both;
+	        animation: float 1s ease-in-out infinite both;
 }
 
 /**

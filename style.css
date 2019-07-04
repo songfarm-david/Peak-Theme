@@ -1073,6 +1073,7 @@ blockquote > p {
 	margin-right: 0.25em;
 	min-width: 60px;
 	max-width: 1.5em;
+	max-height: 60px;
 	/* NOTE: revisit max-width property of Logo */
 }
 
@@ -1158,6 +1159,7 @@ blockquote > p {
 
 .header-sticky .site-branding .custom-logo-link {
 	max-width: 2.5em;
+	max-height: 60px;
 }
 
 .header-sticky .site-title a {

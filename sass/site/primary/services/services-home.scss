@@ -10,38 +10,34 @@
     background-color: $color-light;
     background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/sm-screen-80.jpg);
     background-size: cover;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    .services-headline {
+      margin-top: 2.25em;
+      margin-bottom: 0;
+   }
 
     .entry-content {
-      // border: 2px solid green;
       padding-top: 4em;
-    }
-
-    a > i {
-        // font-size: ms(2);
-        // animation: float 1s ease-in-out infinite both;
+      margin: 0 auto;
     }
 
     @media #{$tablet__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
         text-align: center;
-
-        .services-headline {
-           margin-bottom: 0;
-           margin-top: 3.5rem;
-        }
-
-        .services-byline {
-        }
-
     }
 
     @media #{$desktop__breakpoint} {
         background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
-
-        .services-headline {
-            // padding-top: 3em;
-        }
     }
+
+    a > i {
+        font-size: ms(2);
+        animation: float 1s ease-in-out infinite both;
+    }
+
 }
 
 /**

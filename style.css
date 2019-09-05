@@ -1,6 +1,6 @@
 /*!
 Theme Name: Peak Themes
-Theme URI: http://underscores.me/
+Theme URI: https://peakwebsites.ca
 Author: David Gaskin
 Author URI: https://peakwebsites.ca
 Description: A sleek, powerful and elegant WordPress theme designed for mobility and accessibility.
@@ -387,11 +387,6 @@ h4,
 	color: #385f7e;
 }
 
-.hero-banner .hero-headline-text.services-headline,
-.hero .hero-headline-text.services-headline {
-	font-size: 2.352rem;
-}
-
 .hero-banner .hero-headline-text > span,
 .hero .hero-headline-text > span {
 	color: #338c5f;
@@ -401,16 +396,24 @@ h4,
 .hero-banner .hero-byline-text,
 .hero .hero-byline-text {
 	font-family: "Roboto", sans-serif;
-	font-size: 1.2rem;
+	font-size: 1.44rem;
 	color: #666;
 	font-weight: 400;
 	text-transform: capitalize;
+	margin: 0;
+	margin-top: 0.25em;
+}
+
+.hero-banner .hero-byline-text + p,
+.hero .hero-byline-text + p {
+	margin: 0;
 }
 
 @media (max-width: 54em) {
 	.hero-banner .hero-byline-text,
 	.hero .hero-byline-text {
 		padding: 0 1rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -419,7 +422,7 @@ h4,
 	.hero .hero-headline-text.hero-headline,
 	.hero .hero-headline-text.services-headline {
 		font-size: 3.58318rem;
-		line-height: 1;
+		line-height: 1.2;
 	}
 	.hero-banner .hero-byline-text,
 	.hero .hero-byline-text {
@@ -433,6 +436,11 @@ h4,
 .widget .widget-title {
 	font-weight: bold;
 	font-size: 1.68rem;
+}
+
+.hero .services-headline {
+	font-size: 1.68rem;
+	line-height: 1.2;
 }
 
 .blog,
@@ -552,9 +560,7 @@ h2, p {
 h2 span[class="anchor-target"], p span[class="anchor-target"] {
 	display: block;
 	position: absolute;
-	top: -150px;
-	top: -7.5rem;
-	padding-bottom: 81px;
+	top: -96px;
 	outline: none;
 	border-width: 0;
 }
@@ -663,6 +669,80 @@ h2 span[class="anchor-target"]:active, h2 span[class="anchor-target"]:focus, p s
 #attachment_2831,
 #attachment_2529 {
 	max-width: 50%;
+}
+
+/**
+/// SEO Audit Giveaway Pop-Up
+*/
+#popmake-3043 {
+	padding: 2.25em 2em;
+	background: #fff url(https://peakwebsites.ca/wp-content/uploads/2018/02/compass-grey-light-min.png) no-repeat bottom right;
+}
+
+#popmake-3043 .pum-content h2,
+#popmake-3043 .pum-content .small-text,
+#popmake-3043 .pum-content .blog .entry-footer,
+.blog #popmake-3043 .pum-content .entry-footer,
+#popmake-3043 .pum-content .single .entry-footer,
+.single #popmake-3043 .pum-content .entry-footer,
+#popmake-3043 .pum-content .blog-meta-text,
+#popmake-3043 .pum-content .blog .entry-footer .cat-links,
+.blog .entry-footer #popmake-3043 .pum-content .cat-links,
+#popmake-3043 .pum-content .blog .entry-footer .comments-link,
+.blog .entry-footer #popmake-3043 .pum-content .comments-link,
+#popmake-3043 .pum-content .single .entry-footer .cat-links,
+.single .entry-footer #popmake-3043 .pum-content .cat-links,
+#popmake-3043 .pum-content .single .entry-footer .comments-link,
+.single .entry-footer #popmake-3043 .pum-content .comments-link,
+#popmake-3043 .pum-content .blog .post-details,
+.blog #popmake-3043 .pum-content .post-details,
+#popmake-3043 .pum-content .single .comments-area .comment-body .comment-content > .comment-metadata,
+.single .comments-area .comment-body #popmake-3043 .pum-content .comment-content > .comment-metadata,
+#popmake-3043 .pum-content .wp-caption {
+	margin-top: 0;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup {
+	background: none;
+	font: inherit;
+	font-size: 1rem;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup .indicates-required {
+	display: none;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup .asterisk {
+	color: red;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup label {
+	display: block;
+	font-weight: 700;
+	float: none;
+	color: #555;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup input:not([type="submit"]) {
+	padding: 0.5rem 0;
+	text-indent: 2%;
+	border-radius: 3px;
+	width: 60%;
+	margin-bottom: 0.75em;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup #mce-responses + p {
+	display: none;
+}
+
+#popmake-3043 .pum-content #mc_embed_signup p:empty {
+	height: 0;
+}
+
+/**
+/// Round images */
+.rounded-image {
+	border-radius: 50%;
 }
 
 html {
@@ -993,6 +1073,7 @@ blockquote > p {
 	margin-right: 0.25em;
 	min-width: 60px;
 	max-width: 1.5em;
+	max-height: 60px;
 	/* NOTE: revisit max-width property of Logo */
 }
 
@@ -1078,6 +1159,7 @@ blockquote > p {
 
 .header-sticky .site-branding .custom-logo-link {
 	max-width: 2.5em;
+	max-height: 60px;
 }
 
 .header-sticky .site-title a {
@@ -1830,7 +1912,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 .post-1718 #david-bio {
 	padding: 1.6em 0;
 	border-top: 1px solid grey;
-	border-bottom: 1px solid grey;
 	margin-bottom: 2em;
 }
 
@@ -1840,13 +1921,6 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 }
 
 @media (min-width: 54em) {
-	.post-1718 .entry-content p:not(:first-child), .post-1718 .blog .site-content p:not(:first-child), .blog .post-1718 .site-content p:not(:first-child), .post-1718 .single .site-content p:not(:first-child), .single .post-1718 .site-content p:not(:first-child), .post-1718 .post-template-single-portfolio-item .post .entry-header p:not(:first-child), .post-template-single-portfolio-item .post .post-1718 .entry-header p:not(:first-child) {
-		float: left;
-		width: auto;
-		max-width: 62%;
-		margin-top: 0;
-		clear: left;
-	}
 	.post-1718 #david-bio {
 		float: left;
 		margin-bottom: 0;
@@ -2346,6 +2420,10 @@ body.archive .post-template-single-portfolio-item .post .entry-header,
 	padding: 0.5em 0;
 }
 
+.widget ul.dpe-flexible-posts .post a {
+	display: block;
+}
+
 .widget ul.dpe-flexible-posts .post a:hover {
 	text-decoration: none;
 }
@@ -2773,6 +2851,10 @@ a:visited > .fa-chevron-down {
 /**
  * Styling for Home Page Compass Image
  */
+#post-1735 {
+	overflow: hidden;
+}
+
 #post-1735 > .entry-content, .blog #post-1735 > .site-content,
 .single #post-1735 > .site-content, .post-template-single-portfolio-item .post #post-1735 > .entry-header {
 	position: relative;
@@ -3042,6 +3124,40 @@ a:visited > .fa-chevron-down {
 	color: #385f7e;
 }
 
+.single article.post + #newsletter-signup-blog {
+	padding: 1rem;
+	background-color: #EAF1F7;
+	box-sizing: border-box;
+	margin-bottom: 2em;
+	box-shadow: 2px 3px 7px rgba(102, 102, 102, 0.79);
+}
+
+.single article.post + #newsletter-signup-blog h3 {
+	text-transform: capitalize;
+	margin: 1rem 0;
+}
+
+.single article.post + #newsletter-signup-blog .indicates-required {
+	text-align: right;
+	font-size: 83.33333%;
+	display: none;
+}
+
+.single article.post + #newsletter-signup-blog input[type="email"] {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	text-indent: 1%;
+}
+
+.single article.post + #newsletter-signup-blog .asterisk {
+	color: red;
+}
+
+.single article.post + #newsletter-signup-blog button[type="submit"].peak-button {
+	background: #385f7e;
+}
+
 /**
  * Comments for Single blog posts
  */
@@ -3090,6 +3206,71 @@ a:visited > .fa-chevron-down {
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
+/**
+/// SEO Audit Pop-up
+*/
+#popmake-3019 {
+	padding: 0;
+	font-size: 80%;
+	font-family: "Roboto", sans-serif;
+}
+
+#popmake-3019 > .popmake-title {
+	text-align: center;
+	padding: 1em;
+	font-size: 1.68rem;
+	font-weight: bold;
+}
+
+#popmake-3019 > .popmake-title,
+#popmake-3019 .popmake-content > p {
+	background-color: #338c5f;
+	color: #EAF1F7;
+}
+
+#popmake-3019 .popmake-content > p {
+	padding: 0 1em;
+	font-weight: 400;
+	margin: 0;
+}
+
+#popmake-3019 .popmake-content > p:nth-child(2) {
+	padding: 1em;
+}
+
+#popmake-3019 .popmake-content > p:last-of-type {
+	display: none;
+}
+
+#popmake-3019 #mc_embed_signup {
+	font-size: 1rem;
+	background: none;
+}
+
+#popmake-3019 #mc-embedded-subscribe {
+	margin-left: 1em;
+}
+
+#newsletter-signup-blog #mc_embed_signup,
+.textwidget #mc_embed_signup {
+	background: inherit !important;
+	font-family: inherit !important;
+	font-size: inherit !important;
+}
+
+#newsletter-signup-blog #mc_embed_signup form,
+.textwidget #mc_embed_signup form {
+	padding: 0;
+}
+
+#newsletter-signup-blog #mc_embed_signup button[type="submit"],
+.textwidget #mc_embed_signup button[type="submit"] {
+	font-size: 1rem;
+	padding: 0.5em 1em;
+	height: auto;
+	background: #878787;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -3737,7 +3918,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 13-Feb-2018, 11:08:45 PM
     Author     : David
 */
@@ -3815,6 +3996,12 @@ and open the template in the editor.
 	background-size: cover;
 }
 
+#post-2341 .services-headline,
+#post-2517 .services-headline {
+	margin-top: 2.25em;
+	margin-bottom: 0;
+}
+
 #post-2341 .entry-content, #post-2341 .blog .site-content, .blog #post-2341 .site-content,
 #post-2341 .single .site-content, .single #post-2341 .site-content, #post-2341 .post-template-single-portfolio-item .post .entry-header, .post-template-single-portfolio-item .post #post-2341 .entry-header,
 #post-2517 .entry-content,
@@ -3825,6 +4012,7 @@ and open the template in the editor.
 #post-2517 .post-template-single-portfolio-item .post .entry-header,
 .post-template-single-portfolio-item .post #post-2517 .entry-header {
 	padding-top: 4em;
+	margin: 0 auto;
 }
 
 @media (min-width: 54em) {
@@ -3833,11 +4021,6 @@ and open the template in the editor.
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/md-screen-80.jpg);
 		text-align: center;
 	}
-	#post-2341 .services-headline,
-	#post-2517 .services-headline {
-		margin-bottom: 0;
-		margin-top: 3.5rem;
-	}
 }
 
 @media (min-width: 84em) {
@@ -3845,6 +4028,13 @@ and open the template in the editor.
 	#post-2517 {
 		background-image: url(https://peakwebsites.ca/wp-content/uploads/2018/02/lg-screen-80.jpg);
 	}
+}
+
+#post-2341 a > i,
+#post-2517 a > i {
+	font-size: 2.352rem;
+	-webkit-animation: float 1s ease-in-out infinite both;
+	        animation: float 1s ease-in-out infinite both;
 }
 
 /**

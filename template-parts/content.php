@@ -22,7 +22,7 @@
 	<header class="entry-header">
 
       <?php
-		if ( is_singular() ) :
+		if ( is_singular()) :
 			the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
 		<?php else :
@@ -36,22 +36,24 @@
 			}
 			echo $string;
 
-		 endif; ?>
+		 endif;
 
+		 if ( 'post' === get_post_type() ) :
+           /* post thumbnail */
+           if ( has_post_thumbnail() ) :
+               echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
+               the_post_thumbnail();
+               echo '</a>';
+           endif; ?><?php
+	    endif; ?>
 
-
-             <?php if ( 'post' === get_post_type() ) :
-
-                    /* post thumbnail */
-                    if ( has_post_thumbnail() ) :
-                        echo '<a href="' . esc_url( get_permalink() ) . '" title="' . esc_attr( get_the_title() ) . '">';
-                        the_post_thumbnail();
-                        echo '</a>';
-                    endif; ?>
-
-
-
-                <?php endif; ?>
+		 <?php if ( is_singular( 'pk_projects' )):
+			 $project_date = get_post_meta( get_the_ID(), 'project_date', true );
+			 if ( !empty($project_date)) {
+			 	echo $project_date;
+			 }
+			 ?>
+		 <?php endif; ?>
 
 
 

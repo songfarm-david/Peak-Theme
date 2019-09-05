@@ -250,15 +250,16 @@
  * Styles the 'Top Posts' footer widget
  */
 .widget ul.dpe-flexible-posts .post {
+
    margin: 0;
    line-height: $second-line-height;
    padding: 0.5em 0;
 
    a {
-      // transition: all 0.5s ease-in;
+      display: block;
+
       &:hover {
          text-decoration: none;
-         // transition: all 0.5s ease-in;
 
          > div {
             transition: all 0.25s ease-in;
@@ -266,6 +267,5 @@
          }
       }
    }
-
 
 }

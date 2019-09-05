@@ -54,7 +54,6 @@ p {
     font-size: ms(0);
     line-height: $base_line_height;
     font-weight: 300;
-    // margin: ($base_scale + em) 0 0;
 }
 
 ul,
@@ -111,8 +110,11 @@ h4,
 
 .small-text {
     font-size: (100 / $second_scale) + 0%;
-    // font-size: 66%;
     font-weight: bold;
+}
+
+@mixin small-text {
+   font-size: (100 / $second_scale) + 0%;
 }
 
 .quote {
@@ -182,9 +184,9 @@ h4,
     text-transform: capitalize;
     color: $hero-color;
 
-    &.services-headline {
-      font-size: ms(2);
-    }
+    // &.services-headline {
+    //   font-size: ms(2);
+    // }
 
     > span {
       color: $hero-green;
@@ -196,17 +198,23 @@ h4,
   .hero-byline-text {
 
       font-family: $text_font;
-      font-size: ms(1, $thread: second);
+      font-size: ms(1, $thread: third);
       color: $color-dark;
       font-weight: 400;
       text-transform: capitalize;
-      // margin-top: 0;
+      margin: 0;
+      margin-top: 0.25em;
 
+  }
+
+  .hero-byline-text + p {
+     margin: 0;
   }
 
   @media #{$mobile-only__breakpoint} {
      .hero-byline-text {
         padding: 0 1rem;
+        font-size: ms(1, $thread: second);
      }
   }
 
@@ -217,7 +225,7 @@ h4,
       &.hero-headline,
       &.services-headline {
         font-size: ms(6, $thread: third);
-        line-height: 1;
+        line-height: $second_line_height;
       }
 
     }
@@ -227,8 +235,6 @@ h4,
     }
 
   }
-
-
 
 }
 
@@ -243,6 +249,21 @@ h4,
     font-size: ms(1);
 
   }
+
+}
+
+.hero {
+
+   .services-headline {
+      font-size: ms(1);
+      line-height: $second_line_height;
+      // @media #{$tablet__breakpoint} {
+      //    border: 2px solid green;
+      //    font-size: ms(2);
+      // }
+
+   }
+
 
 }
 

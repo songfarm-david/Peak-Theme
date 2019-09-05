@@ -3,48 +3,36 @@
  */
 #post-1735 {
 
-    >.entry-content {
+   overflow: hidden;
 
-        position: relative;
+   >.entry-content {
+      position: relative;
+   }
 
-    }
+   p {
+      position: static;
+   }
 
-    p {
+   .compass-bg {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -50%;
+   }
 
-        position: static;
+   @media #{$tablet__breakpoint} {
+      .compass-bg {
+         right: -80%;
+      }
+   }
 
-    }
-
-    .compass-bg {
-
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: -50%;
-
-    }
-
-    @media #{$tablet__breakpoint} {
-
-        .compass-bg {
-
-            right: -80%;
-
-        }
-
-    }
-
-    @media #{$desktop__breakpoint} {
-      
-        .compass-bg {
-          
-            bottom: -300px;
-            right: -70%;
-            width: 1000px;
-            height: auto;
-            
-        }
-        
-    }
+   @media #{$desktop__breakpoint} {
+      .compass-bg {
+         bottom: -300px;
+         right: -70%;
+         width: 1000px;
+         height: auto;
+      }
+   }
 
 }

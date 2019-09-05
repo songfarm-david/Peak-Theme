@@ -261,7 +261,7 @@ body.archive {
       // background-color: grey;
       padding: 1.6em 0;
       border-top: 1px solid grey;
-      border-bottom: 1px solid grey;
+      // border-bottom: 1px solid grey;
       margin-bottom: 2em;
 
       img {
@@ -273,13 +273,13 @@ body.archive {
 
    @media #{$tablet__breakpoint} {
 
-      .entry-content p:not(:first-child) {
-         float: left;
-         width: auto;
-         max-width: 62%;
-         margin-top: 0;
-         clear: left;
-      }
+      // .entry-content p:not(:first-child) {
+      //    float: left;
+      //    width: auto;
+      //    max-width: 62%;
+      //    margin-top: 0;
+      //    clear: left;
+      // }
 
       #david-bio {
 

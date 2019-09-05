@@ -6,7 +6,6 @@
  *
  * @package Peak_Theme
  */
-
 if ( ! function_exists( 'peak_theme_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -16,6 +15,7 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function peak_theme_setup() {
+
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -81,8 +81,9 @@ if ( ! function_exists( 'peak_theme_setup' ) ) :
 			'height'      => 111,
 			'width'       => 111,
 			'flex-width'  => true,
-                        'flex-height' => true
+         'flex-height' => true
 		) );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'peak_theme_setup' );
@@ -103,7 +104,6 @@ function peak_theme_resource_hints( $urls, $relation_type ) {
 			'crossorigin',
 		);
 	}
-
 	return $urls;
 }
 add_filter( 'wp_resource_hints', 'peak_theme_resource_hints', 10, 2 );
@@ -116,6 +116,7 @@ add_filter( 'wp_resource_hints', 'peak_theme_resource_hints', 10, 2 );
  * @global int $content_width
  */
 function peak_theme_content_width() {
+	// NOTE: does this ever get called? The filter is never called/added
 	$GLOBALS['content_width'] = apply_filters( 'peak_theme_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'peak_theme_content_width', 0 );
@@ -126,6 +127,7 @@ add_action( 'after_setup_theme', 'peak_theme_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function peak_theme_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar Widgets', 'peak' ),
 		'id'            => 'sidebar-1',
@@ -136,15 +138,15 @@ function peak_theme_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-  register_sidebar( array(
-		'name'          => esc_html__( 'Footer Widgets', 'peak' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add footer widgets here.', 'peak' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+	register_sidebar( array(
+		 'name'          => esc_html__( 'Footer Widgets', 'peak' ),
+		 'id'            => 'footer-1',
+		 'description'   => esc_html__( 'Add footer widgets here.', 'peak' ),
+		 'before_widget' => '<section id="%1$s" class="widget %2$s">',
+	 'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
-	) );
+	 ) 	);
 
 	register_sidebar( array(
  		'name'          => esc_html__( 'Contact/Address', 'peak' ),
@@ -170,39 +172,22 @@ function peak_theme_widgets_init() {
 add_action( 'widgets_init', 'peak_theme_widgets_init' );
 
 /**
- * Custom function to add async attribute to scripts
- * https://matthewhorne.me/defer-async-wordpress-scripts/
- */
-function add_async_attribute($tag, $handle) {
-   // add script handles to the array below
-   $scripts_to_async = array( 'google-analytics-prescript', 'google-analytics', 'peak-fonts', 'font-awesome', 'jquery-migrate' );
-
-   foreach($scripts_to_async as $async_script) {
-      if ($async_script === $handle) {
-         return str_replace('type=\'text/javascript\'', 'type=\'text/javascript\' async="async"', $tag);
-      }
-   }
-   return $tag;
-}
-add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
-
-/**
- * Enqueue scripts and styles.
+ * Enqueue theme scripts and styles.
  */
 function peak_theme_scripts() {
 	// wp_register_script('jquery', includes_url() . 'js/jquery/jquery.js', array(), true, true );
 
 	wp_enqueue_style( 'peak-style', get_stylesheet_uri() );
 
-        $custom_css = ".post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_one, .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_three, body > div.nc_wrapper.floatBottom { display: none !important; }";
-        wp_add_inline_style( 'peak-style', $custom_css);
+	$custom_css = ".post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_one, .post-template-single-portfolio-item .nc_socialPanel.swp_flatFresh.swp_d_fullColor.swp_i_fullColor.swp_o_fullColor.scale-100.scale-fullWidth.swp_three, body > div.nc_wrapper.floatBottom { display: none !important; }";
+	wp_add_inline_style( 'peak-style', $custom_css);
 
-        //test loader script
-        wp_enqueue_script('loader-script-custom', get_template_directory_uri() . '/js/loader-script.js', '', '', true);
+	//test loader script
+	wp_enqueue_script('loader-script-custom', get_template_directory_uri() . '/js/loader-script.js', '', '', true);
 
-        // google analytics
-        wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
-        wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );
+	// google analytics
+	wp_enqueue_script('google-analytics-prescript', 'https://www.googletagmanager.com/gtag/js?id=UA-86141289-1' );
+	wp_enqueue_script( 'google-analytics', get_template_directory_uri() . '/js/google-analytics.js' );
 
 	wp_enqueue_script( 'peak-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20151215', true );
         wp_localize_script('peak-navigation', 'peakScreenReaderText', array( 'expand' => __( 'Expand child menu', 'peak'),
@@ -212,11 +197,7 @@ function peak_theme_scripts() {
 
 	wp_enqueue_script( 'peak-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	// load Google fonts
-	// wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Raleway:800,300,400|Titillium+Web');
-
 	wp_enqueue_style( 'peak-fonts', 'https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,900,900i|Titillium+Web:300,400,500,600,700,800,900');
-
 
 	// load Font Awesome CDN
 	wp_enqueue_script( 'font-awesome', 'https://use.fontawesome.com/ff486a1dc9.js' );
@@ -244,8 +225,6 @@ function peak_theme_scripts() {
 	// if ( is_page( 'contact-us' ) ) {
 	//     wp_add_inline_script('facebook-pixel', "fbq('track', 'Lead');" );
 	// }
-
-
 
 }
 add_action( 'wp_enqueue_scripts', 'peak_theme_scripts' );
@@ -345,10 +324,9 @@ add_action('wp_head', 'add_meta_prop_og_image');
  * Remove featured image default width & height, now to be styled externally via CSS stylesheet
  */
 function modify_post_thumbnail_html( $html ) {
-
     return preg_replace( '/(width|height)="\d*"/', '', $html );
 }
-add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html' );
+add_filter( 'post_thumbnail_html', 'modify_post_thumbnail_html', 5, 1);
 
 /**
  * Add support for 'excerpt' on Pages
@@ -490,3 +468,42 @@ function noindex_attachment_pages() {
 	}
 }
 add_action('wp_head', 'noindex_attachment_pages');
+
+/**
+ * Remove the 'URL' field from Comment form
+ * https://crunchify.com/how-to-remove-url-website-field-from-wordpress-comment-form/
+ */
+function remove_URL( $fields ) {
+	if ( isset( $fields['url'] ) ) {
+		unset( $fields['url'] );
+	}
+	return $fields;
+}
+add_filter( 'comment_form_default_fields', 'remove_URL' );
+
+/**
+ * Custom function to add async attribute to scripts for improved performance
+ * https://matthewhorne.me/defer-async-wordpress-scripts/
+ */
+function add_async_attribute($tag, $handle) {
+	// var_dump(func_get_args());
+
+	// add script handles to the array below
+   $scripts_to_async = array(
+		'google-analytics-prescript',
+		'google-analytics',
+		'peak-fonts',
+		'font-awesome',
+		'jquery-migrate'
+	);
+
+   foreach( $scripts_to_async as $async_script ) {
+      if ( $async_script === $handle ) {
+         return str_replace('type=\'text/javascript\'', 'type=\'text/javascript\' async="async"', $tag);
+      }
+   }
+
+   return $tag;
+
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 3);

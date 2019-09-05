@@ -1,2 +1,68 @@
+/**
+/// SEO Audit Pop-up
+*/
+#popmake-3019 {
+	padding: 0;
+	font-size: 80%;
+	font-family: $text_font;
+	> .popmake-title {
+		text-align: center;
+		padding: 1em;
+		font-size: ms(1);
+		font-weight: bold;
+	}
+
+	> .popmake-title,
+	.popmake-content > p {
+		background-color: $hero-green;
+		color: $color-light;
+	}
+
+	.popmake-content > p {
+		padding: 0 1em;
+		font-weight: 400;
+		margin: 0;
+	}
+
+	.popmake-content > p:nth-child(2) {
+		padding: 1em;
+	}
+
+	.popmake-content > p:last-of-type {
+		display: none;
+	}
+
+	#mc_embed_signup {
+		font-size: 1rem;
+		background: none;
+
+
+	}
+
+	#mc-embedded-subscribe {
+		margin-left: 1em;
+	}
+
+}
+
+#newsletter-signup-blog #mc_embed_signup,
+.textwidget #mc_embed_signup {
+
+	background: inherit !important;
+	font-family: inherit !important;
+	font-size: inherit !important;
+
+	form {
+		padding: 0;
+	}
+
+	button[type="submit"] {
+		font-size: 1rem;
+		padding: 0.5em 1em;
+		height: auto;
+		background: #878787;
+	}
+}
+
 @import "buttons";
 @import "fields";

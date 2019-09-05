@@ -43,16 +43,12 @@ get_header(); ?>
 					<!--End mc_embed_signup-->
 			</article>
 
-
 			<?php
-
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
-                        //the_post_navigation();
 
 		endwhile; // End of the loop.
 		?>

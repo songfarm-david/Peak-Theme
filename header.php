@@ -13,16 +13,26 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-
 	<?php wp_head(); ?>
 
-        <!-- Dynamically load meta descriptions (excerpt) for posts and pages,
-        display siteinfo on home page.-->
-        <?php if (is_single() || is_page() ) : if (have_posts() ) : while (have_posts() ) : the_post(); ?>
-        <meta name="description" content="<?php echo get_the_excerpt();?>">
-        <?php endwhile; endif; elseif (is_home() ): ?>
-        <meta name="description" content="<?php bloginfo('description'); ?>">
-        <?php endif; ?>
+	<!-- Dynamically load meta descriptions (excerpt) for posts and pages,
+	display siteinfo on home page.-->
+	<?php
+	if ( is_single() || is_page() ) :
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post(); ?>
+	<meta name="description" content="<?php echo get_the_excerpt(); ?>"><?php
+			endwhile;
+		endif;
+		elseif ( is_home() ) : ?>
+	<meta name="description" content="<?php bloginfo('description'); ?>"><?php
+		endif;
+
+	// do not index project pages
+	if ( is_singular( 'pk_projects' )) : ?>
+	<meta name="robots" content="noindex" /><?php
+	endif; ?>
 
 	<!-- Favicon meta -->
 	<?php // TODO: make sure this is standard ?>
@@ -309,8 +319,8 @@
 
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
-                    <?php the_custom_logo(); ?>
-                    <div class="site-branding-text-container">
+			<?php the_custom_logo(); ?>
+			<div class="site-branding-text-container">
 			<?php if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
